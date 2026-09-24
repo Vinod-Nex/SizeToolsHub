@@ -1,0 +1,23 @@
+{
+  "title": "US to Australia Shoe Size Converter",
+  "primaryKeyword": "US to Australia Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to Australian shoe sizes for Men and Women with exact conversion formulas and brand guides.",
+  "directAnswer": "Australian men's shoe sizes follow the UK sizing standard (subtract 1 from US Men's: US 10 equals AU 9). Australian women's shoe sizes, however, are typically identical to US Women's sizing (US 8 equals AU 8). Always verify whether an Australian retailer lists UK-based men's or US-based unisex sizing before buying.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "Australia Size (AU)",
+  "faq": [
+    {
+      "question": "Are Australian men's shoe sizes the same as US?",
+      "answer": "No. Australian men's shoe sizes are based on UK sizing and are one full size smaller than US Men's (a US 10 is an AU 9)."
+    },
+    {
+      "question": "Are Australian women's shoe sizes the same as US?",
+      "answer": "Yes, Australian women's sizing generally follows US sizing directly (an AU Women's 7 is a US Women's 7)."
+    },
+    {
+      "question": "What size is an Australian kids' shoe in US?",
+      "answer": "Australian children's sizes generally mirror UK children's sizes, running approximately half a size smaller than US kids' sizes."
+    }
+  ]
+}

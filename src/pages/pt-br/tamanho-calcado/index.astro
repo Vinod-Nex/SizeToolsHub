@@ -1,0 +1,187 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ShoeConverterIsland from '../../../components/ShoeConverterIsland';
+import ShoeStaticTablePtBr from '../../../components/ShoeStaticTablePtBr.astro';
+
+// Query all Portuguese shoe converters
+const entries = await getCollection('converters', ({ id, data }) =>
+  id.startsWith('pt-br/tamanho-calcado/') || data.converterType === 'tamanho-calcado'
+);
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^pt-br\/tamanho-calcado\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "Como converter o tamanho de calçado dos EUA para o Brasil?",
+    answer: "A regra prática mais comum para sapatos masculinos é somar 31 ou 32 ao tamanho dos EUA (um US 9 masc equivale ao 40 no Brasil; US 10 equivale ao 41). Para calçados femininos, adicione 29 (um US 7 fem equivale ao 36 BR). O padrão brasileiro é derivado do sistema europeu subtraído de 2 números (BR = EU - 2)."
+  },
+  {
+    question: "Qual a diferença entre o tamanho de calçado europeu (EU) e o brasileiro (BR)?",
+    answer: "O Brasil utiliza o sistema de Ponto Francês, porém com uma defasagem de dois números em relação à Europa. Portanto, a numeração brasileira é sempre dois números menor que a europeia: se você calça 38 no Brasil, o seu tamanho europeu será 40 (EU 40 = BR 38; EU 42 = BR 40)."
+  },
+  {
+    question: "Como medir o pé em centímetros para acertar o tamanho de tênis importado?",
+    answer: "Pise descalço sobre uma folha de papel rente a uma parede. Marque a ponta do dedão com uma caneta e meça a distância até o calcanhar com uma régua. Adicione entre 0,5 cm e 1 cm de folga e consulte a medida 'CM' ou 'JP' da etiqueta do calçado."
+  },
+  {
+    question: "Tênis esportivos (Nike, Adidas, Asics) têm formas diferentes?",
+    answer: "Sim. A Nike costuma ter formas ligeiramente mais justas nas laterais, enquanto a Asics segue à risca a tabela em centímetros. Tênis da Adidas com frações (como 40 2/3) equivalem ao 39-40 no Brasil. Já o Converse All Star possui forma reconhecidamente maior no Brasil, sendo comum comprar um número abaixo do habitual."
+  }
+];
+---
+
+<BaseLayout
+  title="Tabela de Conversão de Tamanhos de Calçados: Brasil x EUA x Europa — SizeToolsHub"
+  description="Converta tamanhos de sapatos e tênis entre Brasil (BR), Estados Unidos (US), Europa (EU) e Reino Unido (UK). Calculadora interativa e tabelas completas para masculino, feminino e infantil."
+  lang="pt-br"
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/pt-br/" class="hover:text-ink transition-colors">Início</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Tamanho de Calçado</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Guia de Calçados Brasil
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Conversores Especializados
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        Tabela de Tamanho de Calçados: Brasil, EUA e Europa.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Nunca mais erre o tamanho em compras internacionais. Converta medidas de tênis e sapatos entre Brasil (BR), Estados Unidos (US), Europa (EU) e centímetros com calibração ISO 9407 para homens, mulheres e crianças.
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Calculadora de Calçados em Tempo Real
+        </h2>
+        <span class="text-xs text-text-muted">Interativo</span>
+      </div>
+      <ShoeConverterIsland
+        client:load
+        initialFromUnit="US Size"
+        initialToUnit="EU Size"
+        primaryKeyword="Conversor de Tamanho de Calçado"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="tools-directory-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Ferramentas Específicas</span>
+          </div>
+          <h2 id="tools-directory-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Diretório de Conversores de Calçados.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Escolha o conversor exato para a sua necessidade de compra ou marca específica.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tools.map((tool) => (
+          <a
+            href={`/pt-br/tamanho-calcado/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.99]"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[11px] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>{tool.fromUnit} ⇄ {tool.toUnit}</span>
+                </span>
+                <span class="text-xs text-text-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all font-bold">
+                  ↗
+                </span>
+              </div>
+
+              <h3 class="text-base sm:text-lg font-bold text-ink mb-2 group-hover:text-accent transition-colors leading-snug">
+                {tool.title}
+              </h3>
+
+              <p class="text-xs sm:text-sm text-text-muted line-clamp-3 leading-relaxed font-normal">
+                {tool.description}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-hairline-soft flex items-center justify-between text-xs font-semibold text-ink group-hover:text-accent transition-colors">
+              <span>Abrir Calculadora</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comprehensive Reference Static Table -->
+    <section class="mb-16">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold tracking-tight text-ink">
+          Tabela Comparativa de Numeração: Brasil, EUA e Europa.
+        </h2>
+        <p class="text-sm text-text-muted font-light mt-1">
+          Guia padronizado de equivalência de tamanhos para calçados adultos masculinos e femininos com base no comprimento do pé em centímetros.
+        </p>
+      </div>
+
+      <ShoeStaticTablePtBr />
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="mb-16 pt-10 border-t border-hairline-soft" aria-labelledby="hub-faq-heading">
+      <div class="mb-8">
+        <h2 id="hub-faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Dúvidas Frequentes sobre Tamanhos de Calçados no Brasil.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Tudo o que você precisa saber sobre compras de calçados importados e conversões de medidas.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {hubFaq.map((item) => (
+          <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+            <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

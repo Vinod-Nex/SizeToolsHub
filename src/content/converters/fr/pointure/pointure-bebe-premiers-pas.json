@@ -1,0 +1,23 @@
+{
+  "title": "Pointures Chaussures Bébé Premiers Pas",
+  "primaryKeyword": "Pointure Bébé Premiers Pas",
+  "metaDescription": "Guide pour bien chausser bébé au moment de l’apprentissage de la marche (tailles 18 à 23). Conseils pédiatriques.",
+  "directAnswer": "Les chaussures premiers pas correspondent aux pointures 18 à 22 (9 à 24 mois, pieds de 11 à 13.5 cm). Choisissez des semelles très souples et un contrefort maintenant le talon sans comprimer la cheville.",
+  "converterType": "pointure",
+  "fromUnit": "Mois / Longueur en cm",
+  "toUnit": "Pointure Premiers Pas",
+  "faq": [
+    {
+      "question": "Quand faut-il mettre de vraies chaussures à un bébé ?",
+      "answer": "Seulement lorsqu’il marche de manière autonome en extérieur. En intérieur, le pied nu ou avec chaussettes antidérapantes favorise le tonus musculaire."
+    },
+    {
+      "question": "Comment savoir si la chaussure de premiers pas est trop petite ?",
+      "answer": "Si les orteils sont recroquevillés ou si vous observez des marques rouges sur le cou-de-pied ou au talon lors du déchaussage."
+    },
+    {
+      "question": "La semelle doit-elle avoir une voûte plantaire rigide ?",
+      "answer": "Non, les pédiatres recommandent des semelles plates et souples car les bébés ont un coussinet graisseux physiologique sous la voûte jusqu’à 3 ans."
+    }
+  ]
+}

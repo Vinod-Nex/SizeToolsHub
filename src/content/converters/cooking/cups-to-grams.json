@@ -1,0 +1,23 @@
+{
+  "title": "Cups to Grams Converter",
+  "primaryKeyword": "Cups to Grams Converter",
+  "metaDescription": "Convert US cups to grams for flour, sugar, butter, rice, and liquids with ingredient density precision.",
+  "directAnswer": "Converting cups to grams requires knowing your ingredient's density, because volume does not translate directly to weight. For all-purpose flour, 1 cup equals 125 grams. For granulated white sugar, 1 cup equals 200 grams. For butter, 1 cup equals 227 grams, while 1 cup of white rice equals 185 grams.",
+  "converterType": "cooking",
+  "fromUnit": "US Cups",
+  "toUnit": "Grams (g)",
+  "faq": [
+    {
+      "question": "How many grams are in 1 cup of all-purpose flour?",
+      "answer": "One level cup of all-purpose flour scooped using the spoon-and-level method weighs approximately 125 grams (4.4 oz)."
+    },
+    {
+      "question": "Why do flour and sugar weigh different amounts in the same cup?",
+      "answer": "Sugar crystals pack closely together, giving granulated sugar a high density (200g/cup), whereas flour contains trapped air pockets, resulting in a lighter density (125g/cup)."
+    },
+    {
+      "question": "How many grams is 1 cup of butter?",
+      "answer": "One cup of butter (two standard US sticks) weighs exactly 226.8 grams (8 ounces)."
+    }
+  ]
+}

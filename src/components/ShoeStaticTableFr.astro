@@ -1,0 +1,62 @@
+---
+/**
+ * Tableau Statique de Correspondance des Pointures (France / Europe)
+ * Zéro JavaScript, accessible et conforme aux normes ISO 9407 (Mondopoint) et Point de Paris.
+ */
+
+const adultRows = [
+  { fr: '35', usMen: '3.5', usWomen: '5.0', uk: '3.0', cm: '22.0', in: '8.66' },
+  { fr: '36', usMen: '4.5', usWomen: '6.0', uk: '3.5', cm: '22.5', in: '8.86' },
+  { fr: '37', usMen: '5.0', usWomen: '6.5', uk: '4.5', cm: '23.5', in: '9.25' },
+  { fr: '38', usMen: '6.0', usWomen: '7.5', uk: '5.0', cm: '24.0', in: '9.45' },
+  { fr: '39', usMen: '6.5', usWomen: '8.0', uk: '6.0', cm: '24.5', in: '9.65' },
+  { fr: '40', usMen: '7.5', usWomen: '9.0', uk: '6.5', cm: '25.5', in: '10.04' },
+  { fr: '41', usMen: '8.0', usWomen: '9.5', uk: '7.5', cm: '26.0', in: '10.24' },
+  { fr: '42', usMen: '9.0', usWomen: '10.5', uk: '8.0', cm: '27.0', in: '10.63' },
+  { fr: '43', usMen: '10.0', usWomen: '11.5', uk: '9.0', cm: '27.5', in: '10.83' },
+  { fr: '44', usMen: '10.5', usWomen: '12.0', uk: '9.5', cm: '28.5', in: '11.22' },
+  { fr: '45', usMen: '11.5', usWomen: '13.0', uk: '10.5', cm: '29.0', in: '11.42' },
+  { fr: '46', usMen: '12.0', usWomen: '13.5', uk: '11.5', cm: '30.0', in: '11.81' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Tableau de Référence Officiel</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Guide des Pointures : France, Europe, États-Unis (US) et Royaume-Uni (UK).
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Correspondance officielle basée sur le Point de Paris (6,67 mm) et la longueur réelle du pied en centimètres. Comparez instantanément vos pointures françaises et américaines.
+    </p>
+  </div>
+
+  <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+    <table class="w-full text-left text-sm border-collapse">
+      <thead>
+        <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+          <th class="py-4 px-5 text-accent">Pointure France / EU</th>
+          <th class="py-4 px-5">US Homme</th>
+          <th class="py-4 px-5">US Femme</th>
+          <th class="py-4 px-5">Royaume-Uni (UK)</th>
+          <th class="py-4 px-5">Longueur du Pied</th>
+          <th class="py-4 px-5">Pouces</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-hairline-soft text-ink">
+        {adultRows.map((row, idx) => (
+          <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+            <td class="py-3.5 px-5 font-bold text-accent text-base">{row.fr}</td>
+            <td class="py-3.5 px-5 font-semibold text-ink">{row.usMen}</td>
+            <td class="py-3.5 px-5 font-medium text-text-muted">{row.usWomen}</td>
+            <td class="py-3.5 px-5 font-medium">{row.uk}</td>
+            <td class="py-3.5 px-5 font-mono">{row.cm} cm</td>
+            <td class="py-3.5 px-5 font-mono text-text-muted">{row.in}″</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</section>

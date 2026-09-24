@@ -1,0 +1,23 @@
+{
+  "title": "US to Mexico Shoe Size Converter",
+  "primaryKeyword": "US to Mexico Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to Mexican shoe sizes in centimeters for Men, Women, and Children with width recommendations.",
+  "directAnswer": "Mexican shoe sizes correspond directly to foot length in centimeters, identical to the Japanese system. To convert US to Mexico sizes, a US Men's 9 converts to Mexico 27, and a US Women's 7 converts to Mexico 24. Half sizes (e.g., 27.5) represent identical length but offer slightly wider last volume.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "Mexico Size (cm)",
+  "faq": [
+    {
+      "question": "How do Mexican shoe sizes work?",
+      "answer": "Mexican shoe sizes are measured in centimeters (cm). For example, a size 28 indicates a 28 cm foot length."
+    },
+    {
+      "question": "What do half sizes mean in Mexican footwear?",
+      "answer": "In traditional Mexican footwear, a half size (such as 27.5) often denotes extra width and volume rather than increased sole length."
+    },
+    {
+      "question": "What is a US Men's 10.5 in Mexico size?",
+      "answer": "A US Men's 10.5 corresponds to a Mexican size 28.5 (or size 28 wide)."
+    }
+  ]
+}

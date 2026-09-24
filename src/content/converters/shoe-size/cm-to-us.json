@@ -1,0 +1,23 @@
+{
+  "title": "CM to US Shoe Size Converter",
+  "primaryKeyword": "CM to US Shoe Size Converter",
+  "metaDescription": "Convert foot length in centimeters (cm) and Mondopoint millimeters directly to US shoe sizes for athletic and casual footwear.",
+  "converterType": "shoe-size",
+  "fromUnit": "Centimeters (cm)",
+  "toUnit": "US Size",
+  "faq": [
+    {
+      "question": "What is 27 cm in US shoe size?",
+      "answer": "A 27 cm foot length is equivalent to a US Men's 9 (or EU 42.5), and a US Women's 10.5."
+    },
+    {
+      "question": "Is CM measurement the most accurate for shoes?",
+      "answer": "Yes, Japanese sizing and Mondopoint represent actual foot length in centimeters and millimeters, making them the most objective basis for cross-brand fit."
+    },
+    {
+      "question": "Is foot length measured in the morning or evening?",
+      "answer": "Always measure your foot length in the late afternoon or evening, as feet expand by up to half a centimeter throughout the day."
+    }
+  ],
+  "directAnswer": "To convert foot length in centimeters to US shoe size, add 1.5 cm of clearance allowance to your bare foot length. A 26.5 cm foot length requires a 28 cm shoe last, translating directly to a US Men's size 10 or Women's size 11.5."
+}

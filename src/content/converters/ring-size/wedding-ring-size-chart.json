@@ -1,0 +1,23 @@
+{
+  "title": "Wedding Ring Size Chart & Band Width Guide",
+  "primaryKeyword": "Wedding Ring Size Chart & Band Width Guide",
+  "metaDescription": "Wedding band size conversion chart for men and women with band width thickness allowances (2mm to 8mm comfort fit).",
+  "directAnswer": "When selecting wedding bands, band width significantly impacts fit. Standard delicate bands (2mm to 3mm) fit true to size, while wider bands (6mm to 8mm commonly chosen for men's rings) displace more skin and require ordering a half-size larger than your standard measured thin ring size for all-day comfort.",
+  "converterType": "ring-size",
+  "fromUnit": "Band Width (mm)",
+  "toUnit": "Adjusted Ring Size",
+  "faq": [
+    {
+      "question": "What is a 'Comfort Fit' wedding band?",
+      "answer": "Comfort fit bands have a domed, rounded interior surface rather than a flat one, reducing friction and making the ring feel slightly looser (about a quarter size looser)."
+    },
+    {
+      "question": "What is the average men's wedding ring size?",
+      "answer": "The average men's ring size is US 9 to 10 (UK R 1/2 to T 1/2, EU 60 to 62), with an average band width of 6 mm."
+    },
+    {
+      "question": "Can tungsten, titanium, or silicone wedding bands be resized?",
+      "answer": "No, alternative contemporary metals like tungsten carbide, titanium, and cobalt cannot be resized due to their extreme hardness; jewelers typically replace the band instead."
+    }
+  ]
+}

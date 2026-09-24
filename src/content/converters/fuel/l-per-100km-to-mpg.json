@@ -1,0 +1,23 @@
+{
+  "title": "L/100km to MPG Fuel Economy Converter",
+  "primaryKeyword": "L/100km to MPG",
+  "metaDescription": "Convert Liters per 100km (L/100km) to US Miles Per Gallon (MPG) and British Imperial MPG. Understand European fuel ratings and vehicle efficiency benchmarks.",
+  "directAnswer": "To convert Liters per 100 Kilometers (L/100km) to Miles Per Gallon (US MPG), divide 235.215 by the L/100km number. For Imperial UK MPG, divide 282.481 instead. An automobile consuming 8.0 L/100km achieves 29.4 US MPG and 35.3 UK MPG. Unlike linear metric conversions, lower L/100km values translate directly into higher MPG ratings.",
+  "converterType": "fuel",
+  "fromUnit": "L/100km",
+  "toUnit": "US MPG",
+  "faq": [
+    {
+      "question": "What is good fuel consumption in L/100km?",
+      "answer": "In Europe and Australia, below 4.5 L/100km is considered exceptional (typical of plug-in hybrids), 5.0 to 7.0 L/100km is high efficiency, 7.0 to 9.5 L/100km is average for family crossovers, and above 10.0 L/100km is low economy."
+    },
+    {
+      "question": "How do you calculate US MPG from L/100km?",
+      "answer": "Divide 235.215 by your vehicle's L/100km consumption rating. For example, if a car consumes 6.0 L/100km: 235.215 ÷ 6.0 = 39.2 US MPG."
+    },
+    {
+      "question": "How do you convert L/100km to km per liter (km/L)?",
+      "answer": "Divide 100 by the L/100km number. For example, 8.0 L/100km equals 100 ÷ 8.0 = 12.5 kilometers per liter."
+    }
+  ]
+}

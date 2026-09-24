@@ -1,0 +1,23 @@
+{
+  "title": "EU Ring Size Converter & ISO 8653 Chart",
+  "primaryKeyword": "EU Ring Size Converter & ISO 8653 Chart",
+  "metaDescription": "Convert European (EU) ring sizes directly to US and UK sizes based on ISO 8653 inside circumference in millimeters.",
+  "directAnswer": "European ring sizes use the ISO 8653 standard, where the size number matches the exact inner circumference of the ring in millimeters. An EU size 54 equals a 54 mm circumference, converting directly to a US size 7, a UK size N 1/2, and an inner diameter of 17.3 mm.",
+  "converterType": "ring-size",
+  "fromUnit": "EU (ISO 8653 mm)",
+  "toUnit": "US / UK Ring Size",
+  "faq": [
+    {
+      "question": "How is European ring size calculated?",
+      "answer": "European ring sizes (ISO 8653) simply state the ring's inside circumference in millimeters (e.g., size 52 means a 52 mm circumference)."
+    },
+    {
+      "question": "What is an EU 52 in US ring size?",
+      "answer": "An EU size 52 is equivalent to a US size 6 (UK L 1/2, diameter 16.51 mm)."
+    },
+    {
+      "question": "Do French and German ring sizes use the same system?",
+      "answer": "Most of Continental Europe follows ISO 8653, though some traditional French jewelers subtract 40 from the circumference (e.g., size 14 instead of 54)."
+    }
+  ]
+}

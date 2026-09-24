@@ -1,0 +1,23 @@
+{
+  "title": "Sugar Converter (Granulated, Brown, Powdered)",
+  "primaryKeyword": "Sugar Converter",
+  "metaDescription": "Convert cups to grams for granulated white sugar, packed brown sugar, and powdered confectioners sugar.",
+  "directAnswer": "Sugar types have very different weights per cup. One cup of granulated white sugar weighs 200 grams (7.1 oz). One cup of firmly packed brown sugar weighs 220 grams (7.8 oz) due to added molasses moisture, while one cup of unsifted confectioners or powdered sugar weighs only 120 grams.",
+  "converterType": "cooking",
+  "fromUnit": "Sugar Cups",
+  "toUnit": "Sugar Grams",
+  "faq": [
+    {
+      "question": "Why must brown sugar be packed when measuring by volume?",
+      "answer": "Packing brown sugar removes large air pockets created by moist molasses coating the crystals, ensuring consistent density (220g per packed cup)."
+    },
+    {
+      "question": "What is 1 cup of powdered sugar in grams?",
+      "answer": "One cup of powdered sugar (confectioners / icing sugar) weighs approximately 120 grams unsifted, or 100 grams if sifted before measuring."
+    },
+    {
+      "question": "How many grams is 1/2 cup of granulated sugar?",
+      "answer": "1/2 cup of granulated white sugar equals exactly 100 grams."
+    }
+  ]
+}

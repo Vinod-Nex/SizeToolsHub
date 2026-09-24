@@ -1,0 +1,23 @@
+{
+  "title": "Fahrenheit to Celsius Oven Converter",
+  "primaryKeyword": "Fahrenheit to Celsius Oven Converter",
+  "metaDescription": "Quickly convert American recipe oven temperatures (°F) to European metric Celsius (°C) and convection fan temperatures.",
+  "directAnswer": "Converting oven temperatures from Fahrenheit to Celsius is essential when baking international recipes. Common conversions include 325°F (165°C / Gas Mark 3), 350°F (177°C / Gas Mark 4), 375°F (190°C / Gas Mark 5), 400°F (200°C / Gas Mark 6), and 425°F (220°C / Gas Mark 7). Convection ovens require reducing heat by 20°C.",
+  "converterType": "cooking",
+  "fromUnit": "Fahrenheit (°F)",
+  "toUnit": "Celsius (°C)",
+  "faq": [
+    {
+      "question": "What is 375°F in Celsius?",
+      "answer": "375°F equals 190°C conventional (170°C fan-forced / Gas Mark 5)."
+    },
+    {
+      "question": "What is 425°F in Celsius for roasting vegetables?",
+      "answer": "425°F equals 218°C (rounded to 220°C conventional, or 200°C fan-forced / Gas Mark 7)."
+    },
+    {
+      "question": "Is 180°C the same as 350°F?",
+      "answer": "Yes, 180°C is the universal European kitchen equivalent for American 350°F baking recipes (exact mathematical value is 176.7°C)."
+    }
+  ]
+}

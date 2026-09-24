@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas de Ropa Infantil por Edad y Estatura",
+  "primaryKeyword": "Talla de Ropa Infantil",
+  "metaDescription": "Tabla de conversión de tallas para bebés, niños y adolescentes según estatura en centímetros y edad. Equivalencia entre Europa y EE. UU.",
+  "directAnswer": "En España y Europa, la ropa infantil se cataloga por la altura del niño en centímetros: talla 104 cm (3-4 años), talla 116 cm (5-6 años), talla 128 cm (7-8 años), talla 140 cm (9-10 años).",
+  "converterType": "talla-ropa",
+  "fromUnit": "Estatura en Centímetros",
+  "toUnit": "Talla Infantil (Años / US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es 4T en ropa de niños en EE. UU.?",
+      "answer": "4T significa \"Toddler 4 años\", diseñada para niños de unos 98 a 104 cm de estatura y unos 15 a 17 kg de peso."
+    },
+    {
+      "question": "¿Es más fiable elegir la ropa de niños por edad o por altura?",
+      "answer": "Siempre por altura y peso en centímetros, ya que el ritmo de crecimiento varía ampliamente entre niños de la misma edad."
+    },
+    {
+      "question": "¿Cómo tallan marcas como Zara Kids o Mango Kids?",
+      "answer": "Suelen ajustarse con precisión a la estatura en centímetros indicada en su etiqueta."
+    }
+  ]
+}

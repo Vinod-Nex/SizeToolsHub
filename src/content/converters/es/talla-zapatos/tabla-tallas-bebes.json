@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas de Zapatos para Bebés",
+  "primaryKeyword": "Talla Zapatos de Bebé",
+  "metaDescription": "Tabla de calzado para recién nacidos y bebés de 0 a 12 meses. Equivalencia entre meses de edad, longitud en cm y tallas EU y US.",
+  "directAnswer": "Para recién nacidos (0-3 meses) la talla estándar es la EU 16 (US 0.5-1 / 9.5 cm). De 3 a 6 meses suele ser la EU 17 (US 2 / 10.5 cm) y de 6 a 12 meses la EU 18-19 (US 3-4 / 11.5 cm).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Edad en Meses",
+  "toUnit": "Talla Bebé (EU/US)",
+  "faq": [
+    {
+      "question": "¿Qué talla usa un bebé de 6 meses?",
+      "answer": "Normalmente una talla 17 o 18 en Europa, o talla 2 a 3 en Estados Unidos (unos 10 a 11 cm de pie)."
+    },
+    {
+      "question": "¿Cómo se mide el pie de un bebé que no para de moverse?",
+      "answer": "Utiliza una cinta métrica suave mientras el bebé duerme o marca suavemente el contorno de su pie en un cartón."
+    },
+    {
+      "question": "¿Los zapatos de bebé deben tener soporte rígido?",
+      "answer": "No, el pie del bebé está formado principalmente por cartílago; el calzado rígido puede obstaculizar el desarrollo natural de los tendones."
+    }
+  ]
+}

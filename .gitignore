@@ -22,3 +22,11 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# AI assistant & tool caches
+.agents/
+.aider-desk/
+.claude/
+.crush/
+.qwen/
+skills-lock.json

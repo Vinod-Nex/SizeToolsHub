@@ -1,0 +1,222 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CookingConverterIsland from '../../components/CookingConverterIsland';
+import CookingStaticTable from '../../components/CookingStaticTable.astro';
+
+// Query all cooking converters
+const entries = await getCollection('converters', ({ data }) => data.converterType === 'cooking');
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^cooking\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "Why do cups and grams convert differently for different ingredients?",
+    answer: "A cup measures volume (space occupied), while a gram measures mass (weight). Because flour is airy and granulated sugar is dense, 1 cup of flour weighs 125g while 1 cup of sugar weighs 200g."
+  },
+  {
+    question: "How many tablespoons are in one US cup?",
+    answer: "There are exactly 16 tablespoons in 1 US cup (48 teaspoons, or approximately 236.6 milliliters)."
+  },
+  {
+    question: "How much does 1 stick of butter weigh?",
+    answer: "In the United States, 1 stick of butter equals 1/2 cup, 8 tablespoons, 4 ounces, or 113.4 grams."
+  },
+  {
+    question: "How do I convert standard oven recipes for a fan-forced (convection) oven?",
+    answer: "Reduce the baking temperature by 20°C (or 25°F) when using a fan-forced oven, as circulating air transfers heat more rapidly to the food surface."
+  }
+];
+---
+
+<BaseLayout
+  title="Cooking Measurement Converters & Baking Charts — SizeToolsHub"
+  description="Convert kitchen volume to weight with ingredient-aware precision (flour, sugar, butter, rice) across cups, grams, tablespoons, and oven temperatures."
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Cooking</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Category Hub
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Dedicated Converters
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        Cooking & Baking Measurement Converters.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Eliminate kitchen guesswork. Convert volume to weight with ingredient density accuracy for flour, sugar, butter, and rice, or translate oven temperatures across Fahrenheit, Celsius, and British Gas Marks.
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Universal Culinary Engine
+        </h2>
+        <span class="text-xs text-text-muted">Interactive Calculator</span>
+      </div>
+      <CookingConverterIsland
+        client:visible
+        initialFromUnit="Cups"
+        initialToUnit="Grams"
+        primaryKeyword="Universal Cooking Measurement Converter"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="tools-directory-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Specialized Tools</span>
+          </div>
+          <h2 id="tools-directory-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Cooking Measurement Directory.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Ingredient-specific converters, butter sticks, and oven temperature calculators.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a
+            href={`/cooking/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-3xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted">
+                  {tool.fromUnit} ⇄ {tool.toUnit}
+                </span>
+                <span class="text-sm text-text-faint group-hover:text-accent font-bold transition-colors">
+                  ↗
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {tool.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-text-muted line-clamp-2 leading-relaxed mb-4">
+                {tool.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-hairline-soft flex items-center justify-between text-xs">
+              <span class="text-text-faint font-medium">Density Verified</span>
+              <span class="font-semibold text-ink group-hover:text-accent transition-colors">
+                Launch tool →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Culinary Measurement Guide Section -->
+    <section class="mb-16 p-8 sm:p-10 rounded-3xl bg-canvas border border-hairline-soft">
+      <div class="max-w-2xl mb-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+          Kitchen Measurement Basics
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          The Science of Kitchen Measurement.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Why professional chefs and bakers worldwide weigh ingredients in grams rather than relying on volume cups.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            01
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Liquid vs Dry Cups</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Liquid measuring cups feature a pour spout and clear headspace to measure meniscus level. Dry cups must be leveled flat across the rim with a straight knife.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            02
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Compaction Error</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            A dipped cup of flour can weigh anywhere from 120g to 160g depending on humidity and packing force. Weighing grams eliminates up to 30% recipe error.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            03
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Convection Dynamics</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Ovens lose 25°F to 50°F every time the door opens. Use an independent oven thermometer rather than relying solely on built-in dials.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Static International Size Comparison Table -->
+    <CookingStaticTable />
+
+    <!-- FAQ Accordion -->
+    <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="hub-faq-heading">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+          <span>Culinary FAQ</span>
+        </div>
+        <h2 id="hub-faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Frequently Asked Questions About Kitchen Units.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Everything you need to know before substituting baking ingredients.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {hubFaq.map((item) => (
+          <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+            <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

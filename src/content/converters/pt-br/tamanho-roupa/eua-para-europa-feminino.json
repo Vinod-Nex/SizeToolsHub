@@ -1,0 +1,19 @@
+{
+  "title": "Conversor de Roupas Femininas EUA para Europa",
+  "primaryKeyword": "Tamanho de Roupa EUA para Europa Feminino",
+  "metaDescription": "Tabela de conversão de roupas femininas dos Estados Unidos (US) para a Europa (EU). Saiba equivalências de vestidos, saias e blusas.",
+  "directAnswer": "Para converter roupas femininas dos EUA para a Europa, a regra geral é somar 30 ao tamanho numérico americano: US 4 feminino equivale ao EU 34-36 (BR 38 / P), US 6 equivale ao EU 38 (BR 40 / M), e US 8 equivale ao EU 40 (BR 42 / G).",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Europa (EU)",
+  "faq": [
+    {
+      "question": "Qual tamanho nos EUA é o M ou 40 no Brasil?",
+      "answer": "O tamanho 40 no Brasil (M) equivale ao tamanho US 6 ou US 8 nos Estados Unidos."
+    },
+    {
+      "question": "Como converter vestidos da Zara e marcas europeias?",
+      "answer": "Marcas europeias como a Zara estampam a numeração EUR e USA na etiqueta. O EUR 38 equivale ao USA 6 e ao tamanho 40 no Brasil."
+    }
+  ]
+}

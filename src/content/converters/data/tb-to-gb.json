@@ -1,0 +1,23 @@
+{
+  "title": "TB to GB Converter",
+  "primaryKeyword": "TB to GB Converter",
+  "metaDescription": "Convert Terabytes (TB) to Gigabytes (GB) for hard drives, SSDs, and cloud storage with Windows usable space analysis.",
+  "directAnswer": "To convert Terabytes (TB) to Gigabytes (GB), multiply by 1,000 for decimal storage drives (1 TB = 1,000 GB), or multiply by 1,024 for binary operating systems (1 TiB = 1,024 GiB). A 2 TB drive contains 2,000 GB in manufacturer decimal capacity, which Windows reports as approximately 1,862.6 GiB.",
+  "converterType": "data",
+  "fromUnit": "Terabytes (TB)",
+  "toUnit": "Gigabytes (GB)",
+  "faq": [
+    {
+      "question": "How many GB are in 1 TB?",
+      "answer": "There are 1,000 GB in 1 TB according to drive makers, and 1,024 GiB in 1 TiB according to binary memory systems."
+    },
+    {
+      "question": "Why does my 2TB drive only have 1,862 GB of space in Windows?",
+      "answer": "Drive manufacturers provide 2,000,000,000,000 bytes. Windows divides this by 1,024³ (1,073,741,824) to calculate Gibibytes, displaying 1,862.6 GiB."
+    },
+    {
+      "question": "What is 4 TB in GB?",
+      "answer": "4 TB equals 4,000 GB decimal, or 4,096 GiB binary (yielding ~3,725 GiB usable in Windows)."
+    }
+  ]
+}

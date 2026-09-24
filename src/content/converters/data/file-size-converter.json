@@ -1,0 +1,23 @@
+{
+  "title": "File Size Converter & Multi-Unit Calculator",
+  "primaryKeyword": "File Size Converter",
+  "metaDescription": "Calculate and convert file sizes across bytes, kilobytes, megabytes, gigabytes, and terabytes with storage approximations.",
+  "directAnswer": "File sizes scale progressively from bytes to kilobytes, megabytes, gigabytes, and terabytes. A typical photograph measures 3 to 5 MB, a 4K movie measures 15 to 25 GB, and a modern computer game requires 50 to 100 GB. Sizing depends on whether your operating system uses base-1000 or base-1024.",
+  "converterType": "data",
+  "fromUnit": "File Size Unit",
+  "toUnit": "All Digital Scales",
+  "faq": [
+    {
+      "question": "How big is an average MP3 song?",
+      "answer": "An average 3-minute MP3 audio track encoded at 320 kbps occupies between 7 and 10 MB of storage."
+    },
+    {
+      "question": "How many GB is a 2-hour 4K movie?",
+      "answer": "A compressed 4K streaming movie is approximately 14 to 20 GB; an uncompressed 4K Blu-ray file can exceed 50 to 80 GB."
+    },
+    {
+      "question": "What causes file size on disk to be larger than actual file size?",
+      "answer": "Filesystems allocate storage in fixed clusters (usually 4 KB). A 1 KB file still consumes one full 4 KB cluster on disk."
+    }
+  ]
+}

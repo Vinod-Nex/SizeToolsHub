@@ -1,0 +1,23 @@
+{
+  "title": "Dress Size Chart & International Converter",
+  "primaryKeyword": "Dress Size Chart & International Converter",
+  "metaDescription": "Universal dress size conversion chart comparing US, UK, European (EU), and International Alpha (XS-3XL) dimensions with body measurements.",
+  "directAnswer": "To determine your ideal dress size internationally, prioritize your largest body measurement between bust, waist, and hips. A standard US dress size 6 converts to a UK 10, an EU 38, and International Small (S), accommodating an approximate 35-inch bust, 28-inch waist, and 38-inch hip circumference across woven fabrics.",
+  "converterType": "clothing-size",
+  "fromUnit": "US Dress Size",
+  "toUnit": "International / EU Dress",
+  "faq": [
+    {
+      "question": "How do I choose a dress size if my bust and hips fall into different sizes?",
+      "answer": "For fitted sheath dresses, size up to fit your largest measurement and tailor down the rest. For A-line or flared dresses, fit to your bust and waist."
+    },
+    {
+      "question": "What is a US size 8 dress in the UK and Australia?",
+      "answer": "A US size 8 dress is a UK 12 and an Australian (AU) 12."
+    },
+    {
+      "question": "Do formal evening gowns run smaller than casual dresses?",
+      "answer": "Yes, designer evening wear and bridal gowns often follow vintage sizing and can run 1 to 2 sizes smaller than commercial ready-to-wear dresses."
+    }
+  ]
+}

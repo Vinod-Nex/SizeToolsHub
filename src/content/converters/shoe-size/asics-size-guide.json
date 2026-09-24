@@ -1,0 +1,23 @@
+{
+  "title": "ASICS Shoe Size Guide & Sizing Chart",
+  "primaryKeyword": "ASICS Shoe Size Guide & Sizing Chart",
+  "metaDescription": "Complete ASICS shoe sizing chart for running and tennis shoes with GEL-Kayano, Nimbus, and width fittings (Standard, 2E, 4E).",
+  "directAnswer": "ASICS performance running shoes fit true to length with a tailored athletic lockdown, converting a US Men's 10 to EU 44 and 28.0 cm. Because long-distance running causes foot swelling, ASICS recommends sizing up a half size or choosing their dedicated 2E (Wide) or 4E (Extra Wide) models.",
+  "converterType": "shoe-size",
+  "fromUnit": "US ASICS",
+  "toUnit": "EU / CM ASICS",
+  "faq": [
+    {
+      "question": "Do ASICS running shoes fit smaller than casual shoes?",
+      "answer": "Yes, like most running brands, ASICS features heel-clutching padding that may feel snug; choosing half a size larger is common."
+    },
+    {
+      "question": "What does 2E mean in ASICS shoes?",
+      "answer": "2E represents a Wide fit for men and Extra Wide for women, adding extra volume across the metatarsal area."
+    },
+    {
+      "question": "What is an ASICS US Men's 9.5 in EU?",
+      "answer": "An ASICS US Men's 9.5 is an EU 43.5 (27.5 cm)."
+    }
+  ]
+}

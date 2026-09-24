@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Calçados Primeiros Passos (Toddler)",
+  "primaryKeyword": "Tamanho Calçado Primeiros Passos",
+  "metaDescription": "Conversor de calçados toddler e primeiros passos dos EUA para o Brasil. Numeração de 1 a 4 anos.",
+  "directAnswer": "O termo americano 'Toddler' refere-se à fase de primeiros passos (crianças de 1 a 4 anos, tamanhos US 4C a 10C). No Brasil, essa faixa equivale aos números 18 ao 26 (pés de 11,5 cm a 16,5 cm).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "US Toddler",
+  "toUnit": "Brasil Primeiros Passos",
+  "faq": [
+    {
+      "question": "O que significa 'C' no tamanho infantil americano (ex: 7C)?",
+      "answer": "A letra 'C' significa 'Child' (criança). Os tamanhos vão de 1C a 13C antes de mudarem para 'Y' (Youth)."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface ToolItem {
+  slug: string;
+  title: string;
+  description: string;
+  fromUnit: string;
+  toUnit: string;
+}
+
+interface Props {
+  categoryName: string;
+  categorySlug: string;
+  headline: string;
+  description: string;
+  tools: ToolItem[];
+}
+
+const { categoryName, categorySlug, headline, description, tools } = Astro.props;
+---
+
+<BaseLayout title={`${categoryName} Converters & Charts — SizeToolsHub`} description={description}>
+  <!-- Breadcrumb Slot -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">{categoryName}</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Header Section -->
+    <header class="mb-12 max-w-3xl">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink mb-4">
+        <span>Category Hub</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        {headline}
+      </h1>
+      <p class="text-lg text-text-muted font-light leading-relaxed">
+        {description}
+      </p>
+    </header>
+
+    <!-- Tool Grid -->
+    <section class="mb-16">
+      <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold mb-6">
+        Available {categoryName} Converters ({tools.length})
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a
+            href={`/${categorySlug}/${tool.slug}/`}
+            class="group block p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline transition-all duration-200 hover:-translate-y-0.5"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full bg-canvas-soft text-xs text-ink font-medium">
+                {tool.fromUnit} → {tool.toUnit}
+              </span>
+              <span class="text-text-faint group-hover:text-ink transition-colors text-sm font-semibold">
+                Explore ↗
+              </span>
+            </div>
+            <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+              {tool.title}
+            </h3>
+            <p class="text-sm text-text-muted leading-relaxed line-clamp-2">
+              {tool.description}
+            </p>
+          </a>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

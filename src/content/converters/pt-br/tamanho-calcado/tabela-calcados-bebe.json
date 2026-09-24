@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanhos de Sapatos de Bebê",
+  "primaryKeyword": "Tamanho de Sapato de Bebê",
+  "metaDescription": "Guia de tamanhos de sapatos e meias para bebês recém-nascidos até 12 meses. Tabela Brasil, EUA e centímetros.",
+  "directAnswer": "Sapatos de bebê no Brasil começam no número 13 a 14 (recém-nascidos, cerca de 9 cm) até o número 18 (9 a 12 meses, cerca de 12 cm). Nos EUA, correspondem aos tamanhos 0C a 3C.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Meses / Centímetros",
+  "toUnit": "Tamanho Bebê",
+  "faq": [
+    {
+      "question": "Qual o tamanho de sapato para bebê de 6 meses no Brasil?",
+      "answer": "Geralmente tamanho 16 ou 17 no Brasil (aproximadamente 10,5 a 11 cm de pezinho)."
+    }
+  ]
+}

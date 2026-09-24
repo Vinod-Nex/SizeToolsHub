@@ -1,0 +1,23 @@
+{
+  "title": "A4 to Letter Paper Size & Dimension Guide",
+  "primaryKeyword": "A4 to Letter",
+  "metaDescription": "Convert between ISO A4 (210 x 297 mm) and North American US Letter (8.5 x 11 in). Compare true scale visual SVG dimensions, margins, and print scaling factors.",
+  "directAnswer": "A4 paper measures 210 by 297 millimeters (8.27 by 11.69 inches), making it 17.6 millimeters taller and 5.9 millimeters narrower than standard US Letter, which measures 215.9 by 279.4 millimeters (8.5 by 11.0 inches). When printing an A4 document onto US Letter, always enable scale to fit to prevent clipping top and bottom margins.",
+  "converterType": "paper-size",
+  "fromUnit": "A4",
+  "toUnit": "US Letter",
+  "faq": [
+    {
+      "question": "Which sheet is larger: A4 or US Letter?",
+      "answer": "A4 actually has a larger total surface area (0.0624 m² / 96.67 sq in) compared to US Letter (0.0603 m² / 93.5 sq in), giving A4 approximately 3.4% more printable surface. A4 is 17.6 mm (0.69 in) taller, while US Letter is 5.9 mm (0.23 in) wider."
+    },
+    {
+      "question": "Why do European PDFs get clipped when printed in the United States?",
+      "answer": "United States printers are stocked with US Letter paper (11.0 inches tall), whereas European PDFs formatted on A4 are 11.69 inches tall. Without automatic scaling enabled, the bottom 0.69 inches (17.6 mm)—frequently containing page numbers, legal disclaimers, or signature lines—gets truncated."
+    },
+    {
+      "question": "What printer scaling percentage should I use to print A4 on Letter?",
+      "answer": "To fit an entire A4 page onto US Letter paper without losing margins or headers, set your printer scaling to 94% (or select 'Fit to Printable Area'). This scales the 297 mm height cleanly into the 279.4 mm printable height."
+    }
+  ]
+}

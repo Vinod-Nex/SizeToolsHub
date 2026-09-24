@@ -1,0 +1,23 @@
+{
+  "title": "New Balance Shoe Size Chart & Width Guide",
+  "primaryKeyword": "New Balance Shoe Size Chart & Width Guide",
+  "metaDescription": "New Balance shoe size and width converter for 990v6, 574, 550, and 2002R with D, 2E, and 4E width calibrations.",
+  "directAnswer": "New Balance shoes fit exceptionally true to size and are renowned for dedicated width options spanning Standard (D men, B women), Wide (2E men, D women), and Extra Wide (4E men). A US Men's 10 converts to EU 44 and UK 9.5, maintaining consistent last length across lifestyle and heritage series.",
+  "converterType": "shoe-size",
+  "fromUnit": "US New Balance",
+  "toUnit": "EU / UK New Balance",
+  "faq": [
+    {
+      "question": "Are New Balance shoes true to size?",
+      "answer": "Yes, New Balance is widely regarded as one of the truest-to-size footwear brands on the market."
+    },
+    {
+      "question": "How do New Balance 550s fit?",
+      "answer": "New Balance 550s feature a retro basketball cupsole with a snug toe box; wide-footed wearers often go up half a size."
+    },
+    {
+      "question": "What is the difference between New Balance widths?",
+      "answer": "Standard width is D (men) / B (women); Wide is 2E (men) / D (women); Extra-Wide is 4E (men) / 2E (women)."
+    }
+  ]
+}

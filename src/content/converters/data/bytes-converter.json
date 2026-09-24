@@ -1,0 +1,23 @@
+{
+  "title": "Bytes Converter (B, KB, MB, GB, TB)",
+  "primaryKeyword": "Bytes Converter",
+  "metaDescription": "Convert raw computer bytes to bits, KB, MB, GB, TB, and PB across binary and decimal computer standards.",
+  "directAnswer": "A byte is the fundamental digital unit of data storage composed of 8 bits. To convert raw bytes into larger units, divide by 1,000 for decimal kilobytes (KB) or 1,024 for binary kibibytes (KiB). One billion bytes equals 1 Gigabyte (GB) in decimal, or 0.931 Gibibytes (GiB) in binary.",
+  "converterType": "data",
+  "fromUnit": "Raw Bytes (B)",
+  "toUnit": "KB / MB / GB / TB",
+  "faq": [
+    {
+      "question": "How many bits are in one byte?",
+      "answer": "There are exactly 8 bits in 1 byte. Each bit represents a binary zero (0) or one (1)."
+    },
+    {
+      "question": "How many bytes are in a Gigabyte?",
+      "answer": "In the decimal system, 1 GB equals 1,000,000,000 bytes (1 billion). In the binary system, 1 GiB equals 1,073,741,824 bytes."
+    },
+    {
+      "question": "What is the difference between a kilobit (Kb) and a kilobyte (KB)?",
+      "answer": "A lowercase 'b' denotes bits, while an uppercase 'B' denotes bytes. 1 Kilobyte (KB) = 8 Kilobits (Kb)."
+    }
+  ]
+}

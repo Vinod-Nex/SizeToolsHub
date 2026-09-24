@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Roupas Infantis: Brasil x EUA",
+  "primaryKeyword": "Tamanho Roupa Infantil Brasil EUA",
+  "metaDescription": "Tabela de conversão de roupas infantis dos Estados Unidos para o Brasil. Saiba o que significa 2T, 3T, 4T e tamanhos por idade e altura.",
+  "directAnswer": "Nos EUA, roupas para crianças pequenas levam a letra 'T' de Toddler (2T, 3T, 4T, 5T), correspondendo aproximadamente à idade em anos. No Brasil, a numeração é 1, 2, 3, 4, 6, 8, 10, 12 anos. Roupas da Carter's e Gap 3T equivalem ao tamanho 3 ou 4 no Brasil.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Tamanho EUA Infantil",
+  "toUnit": "Tamanho Brasil Infantil",
+  "faq": [
+    {
+      "question": "O que significa tamanho 2T, 3T e 4T da Carter's?",
+      "answer": "O 'T' significa Toddler (primeiros passos). 2T é para crianças de cerca de 2 anos (85-91 cm), 3T para 3 anos (91-98 cm) e 4T para 4 anos (98-105 cm)."
+    }
+  ]
+}

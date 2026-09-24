@@ -1,0 +1,23 @@
+{
+  "title": "Miles Per Gallon to L/100km Instant Calculator",
+  "primaryKeyword": "mpg to l/100km converter",
+  "metaDescription": "Convert Miles Per Gallon (US & UK) to Liters per 100 Kilometers (L/100km) with inverse fuel efficiency calculation formula and comparison charts.",
+  "directAnswer": "To convert Miles Per Gallon (US MPG) to Liters per 100 Kilometers (L/100km), divide 235.215 by the MPG figure. For example, 30 US MPG equals 7.84 L/100km, while 40 MPG equals 5.88 L/100km. Because this is an inverse relationship, lower L/100km ratings indicate superior fuel efficiency, whereas higher MPG numbers indicate lower fuel consumption.",
+  "converterType": "fuel",
+  "fromUnit": "US MPG",
+  "toUnit": "L/100km",
+  "faq": [
+    {
+      "question": "What is 30 MPG in L/100km?",
+      "answer": "30 US MPG is approximately 7.84 Liters per 100 kilometers (Formula: 235.214583 ÷ 30 = 7.84)."
+    },
+    {
+      "question": "Why is MPG to L/100km an inverse conversion?",
+      "answer": "Because MPG measures distance per volume of fuel (higher is better), whereas L/100km measures fuel consumed over distance (lower is better)."
+    },
+    {
+      "question": "How do you convert Imperial UK MPG to L/100km?",
+      "answer": "Divide 282.481 by the UK MPG number (Formula: 282.481 ÷ UK MPG = L/100km) because British gallons contain 4.546 liters."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: EE. UU. a Europa",
+  "primaryKeyword": "Talla de Calzado EE. UU. a Europa",
+  "metaDescription": "Tabla de conversión de calzado de Estados Unidos (US) a Europa (EU/España). Calcula la equivalencia exacta para hombres, mujeres y niños.",
+  "directAnswer": "Para convertir la talla de calzado de EE. UU. al estándar europeo (EU), suma aproximadamente 33 a 34 para hombres (un US 9 hombre equivale a EU 42-43) y aproximadamente 30.5 a 31 para mujeres (un US 8 mujer equivale a EU 38.5-39). En México (MX), la talla suele expresarse en centímetros.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla EE. UU. (US)",
+  "toUnit": "Talla Europa (EU)",
+  "faq": [
+    {
+      "question": "¿Qué talla es 9 de hombre de EE. UU. en Europa?",
+      "answer": "Una talla US 9 de hombre equivale a la talla 42 - 42.5 en Europa (EU) y corresponde a unos 27 cm de longitud de pie."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre la talla de calzado estadounidense y la europea?",
+      "answer": "El sistema estadounidense se incrementa en tercios de pulgada (8.46 mm), mientras que el europeo utiliza el punto de París (dos tercios de centímetro o 6.67 mm)."
+    },
+    {
+      "question": "¿Cómo elegir la talla correcta al comprar calzado importado?",
+      "answer": "Lo más seguro es medir el pie en centímetros desde el talón hasta la punta del dedo más largo y consultar la medida CM o JP en la etiqueta de la marca."
+    }
+  ]
+}

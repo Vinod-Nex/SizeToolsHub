@@ -1,0 +1,23 @@
+{
+  "title": "Men's to Women's Shoe Size Converter",
+  "primaryKeyword": "Men's to Women's Shoe Size Converter",
+  "metaDescription": "Calculate the exact conversion between Men's and Women's shoe sizes with width comparisons and unisex sneaker sizing charts.",
+  "directAnswer": "To convert Men's shoe sizes to Women's in US sizing, add 1.5 to the men's size. For example, a Men's size 8.5 converts to a Women's size 10. Men's shoes also feature a standard D width, which is wider than standard women's B width shoes across the forefoot and heel cup.",
+  "converterType": "shoe-size",
+  "fromUnit": "Men's US",
+  "toUnit": "Women's US",
+  "faq": [
+    {
+      "question": "Can women wear men's shoes?",
+      "answer": "Yes, by sizing down 1.5 sizes (e.g. a women's 9 is a men's 7.5). Keep in mind men's shoes are wider (standard D width vs women's B width)."
+    },
+    {
+      "question": "What is a Men's size 9 in Women's shoe size?",
+      "answer": "A Men's size 9 is equivalent to a Women's size 10.5 in US shoe sizing."
+    },
+    {
+      "question": "Is the heel cup shaped differently in men's and women's shoes?",
+      "answer": "Yes, women's shoes typically have a narrower heel-to-forefoot ratio compared to men's unisex shoes."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Tallas de Pantalones Vaqueros (Jeans)",
+  "primaryKeyword": "Talla de Pantalones Vaqueros Jeans",
+  "metaDescription": "Aprende a convertir la talla de jeans americana en pulgadas (W/L) a tallas de España y México. Guía de cintura y longitud.",
+  "directAnswer": "Los vaqueros importados (como Levi’s) indican \"W\" (Waist / Cintura) y \"L\" (Length / Largo de pierna) en pulgadas. Para saber tu talla en España, suma 10 a la W: W28 = ES 38, W30 = ES 40, W32 = ES 42, W34 = ES 44, W36 = ES 46.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Cintura en Pulgadas (W)",
+  "toUnit": "Talla España / Europa (EU)",
+  "faq": [
+    {
+      "question": "¿Qué significa W32 L32 en la etiqueta de un pantalón Levi's?",
+      "answer": "\"W32\" significa 32 pulgadas de cintura (unos 81 cm, talla 42 en España) y \"L32\" significa 32 pulgadas de entrepierna (unos 81 cm de largo)."
+    },
+    {
+      "question": "¿Cómo se mide el tiro de un pantalón?",
+      "answer": "Desde la costura central de la entrepierna hacia arriba hasta la parte superior de la pretina."
+    },
+    {
+      "question": "¿Los pantalones vaqueros con elastano encogen o ceden?",
+      "answer": "Los vaqueros con elastano/spandex ceden con el uso adaptándose al cuerpo, por lo que es preferible que queden bien ceñidos al comprarlos."
+    }
+  ]
+}

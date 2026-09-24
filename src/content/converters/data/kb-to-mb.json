@@ -1,0 +1,23 @@
+{
+  "title": "KB to MB Converter",
+  "primaryKeyword": "KB to MB Converter",
+  "metaDescription": "Convert Kilobytes (KB) to Megabytes (MB) with decimal (1000) and binary (1024 KiB) conversion formulas.",
+  "directAnswer": "To convert Kilobytes (KB) to Megabytes (MB), divide by 1,000 under the decimal SI standard (1,000 KB = 1 MB), or divide by 1,024 under the binary IEC standard (1,024 KiB = 1 MiB). For example, a 2,500 KB document equals 2.5 MB decimal, or 2.44 MiB in binary.",
+  "converterType": "data",
+  "fromUnit": "Kilobytes (KB)",
+  "toUnit": "Megabytes (MB)",
+  "faq": [
+    {
+      "question": "How many KB make 1 MB?",
+      "answer": "1 MB equals 1,000 KB in the decimal system, and 1 MiB equals 1,024 KiB in the binary system."
+    },
+    {
+      "question": "What is 500 KB in MB?",
+      "answer": "500 KB equals 0.5 MB decimal, or 0.488 MiB binary."
+    },
+    {
+      "question": "Why do image files often measure in KB while videos measure in MB?",
+      "answer": "Single web images and icons typically take between 50 to 500 KB of data, whereas complex multimedia video streams require millions of bytes (MB or GB)."
+    }
+  ]
+}

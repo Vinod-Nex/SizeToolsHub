@@ -1,0 +1,23 @@
+{
+  "title": "US to UK Ring Size Converter",
+  "primaryKeyword": "US to UK Ring Size Converter",
+  "metaDescription": "Convert American numeric ring sizes to British UK letter sizes (A to Z+3) with exact millimeter diameter and circumference measurements.",
+  "directAnswer": "To convert US ring sizes to UK letter sizes, remember that each full US number corresponds to two UK letter steps. For example, a US size 6 is a UK L 1/2, a US 7 is a UK N 1/2, and a US 8 is a UK P 1/2.",
+  "converterType": "ring-size",
+  "fromUnit": "US Ring Size",
+  "toUnit": "UK Letter Size",
+  "faq": [
+    {
+      "question": "What is a US size 7 in UK ring size?",
+      "answer": "A US size 7 corresponds directly to a UK size N 1/2 (inside diameter 17.32 mm, circumference 54.4 mm)."
+    },
+    {
+      "question": "Why do UK ring sizes use letters instead of numbers?",
+      "answer": "The British standard (BS 6820) adopted alphabetical sizing from A through Z, incrementing by half-letters (such as M 1/2) for quarter-millimeter increments."
+    },
+    {
+      "question": "Is Australian ring sizing identical to UK ring sizing?",
+      "answer": "Yes, Australia and New Zealand use the exact same alphabetical letter scale as the United Kingdom."
+    }
+  ]
+}

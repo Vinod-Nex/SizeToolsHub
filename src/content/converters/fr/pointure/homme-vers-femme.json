@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure Homme vers Femme",
+  "primaryKeyword": "Pointure Homme vers Femme",
+  "metaDescription": "Comment convertir une pointure de chaussure masculine en pointure féminine aux États-Unis et en Europe.",
+  "directAnswer": "Aux États-Unis, la pointure femme est 1,5 taille supérieure à la pointure homme (un US 7 homme = US 8.5 femme). En France et en Europe, la numérotation est unisexe : un 40 homme fait la même longueur qu’un 40 femme.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Homme (US/FR)",
+  "toUnit": "Pointure Femme (US/FR)",
+  "faq": [
+    {
+      "question": "Une femme peut-elle porter des baskets d’homme ?",
+      "answer": "Oui, en retirant 1.5 taille à sa pointure US habituelle. Attention cependant : les modèles homme ont une largeur standard \"D\", plus large que le standard femme \"B\"."
+    },
+    {
+      "question": "La forme du pied masculin est-elle différente ?",
+      "answer": "Oui, le pied masculin est généralement plus large au niveau du métatarse et présente un talon plus volumineux."
+    },
+    {
+      "question": "Comment fonctionnent les modèles unisexes chez Converse ou Vans ?",
+      "answer": "L’étiquette indique systématiquement les deux pointures, par exemple Men 7.5 / Women 9."
+    }
+  ]
+}

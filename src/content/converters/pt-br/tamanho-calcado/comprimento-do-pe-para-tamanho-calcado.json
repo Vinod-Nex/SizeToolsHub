@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Medida do Pé para Tamanho de Calçado",
+  "primaryKeyword": "Medida do Pé para Tamanho de Calçado",
+  "metaDescription": "Tabela completa de correspondência entre o comprimento do pé em centímetros e o número do sapato no Brasil, Estados Unidos e Europa.",
+  "directAnswer": "A tabela de correspondência internacional do sistema Mondopoint (ISO 9407) relaciona cada centímetro do pé ao número exato de sapato no Brasil (BR), Europa (EU), Estados Unidos (US) e Japão (JP).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Comprimento do Pé (cm)",
+  "toUnit": "Numeração do Calçado",
+  "faq": [
+    {
+      "question": "Quantos centímetros tem um sapato tamanho 38 no Brasil?",
+      "answer": "Um calçado tamanho 38 no Brasil é projetado para pés de aproximadamente 25,1 a 25,5 cm de comprimento."
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CookingConverterIsland from '../../components/CookingConverterIsland';
+import CookingStaticTable from '../../components/CookingStaticTable.astro';
+import PrintableChart from '../../components/PrintableChart.astro';
+import ShareableUrl from '../../components/ShareableUrl.astro';
+import CopyResultButton from '../../components/CopyResultButton.astro';
+import RelatedConverters from '../../components/RelatedConverters.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('converters', ({ data }) => data.converterType === 'cooking');
+  return entries.map((entry) => ({
+    params: {
+      slug: entry.id.replace(/^cooking\//, '').replace(/\.(json|md)$/, ''),
+    },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'converters'>;
+}
+
+const { entry } = Astro.props;
+const { slug } = Astro.params;
+---
+
+<BaseLayout
+  title={`${entry.data.title} — Culinary Measurement Calculator | SizeToolsHub`}
+  description={entry.data.metaDescription}
+  canonicalUrl={entry.data.canonicalUrl}
+  faq={entry.data.faq}
+  softwareAppName={entry.data.title}
+>
+
+  <!-- Breadcrumb Navigation Slot -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <a href="/cooking/" class="hover:text-ink transition-colors">Cooking</a>
+    <span>/</span>
+    <span class="text-ink font-semibold truncate">{entry.data.title}</span>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Header Section with exact target keyword as H1 -->
+    <header class="mb-10">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Culinary Precision Engine
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          Density & Weight Calibrated
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-field text-text-muted text-xs font-medium">
+          {entry.data.fromUnit} ⇄ {entry.data.toUnit}
+        </span>
+        <CopyResultButton
+          textToCopy={`${entry.data.title}: ${entry.data.fromUnit} to ${entry.data.toUnit} guide on SizeToolsHub.com`}
+          label="Copy Guide"
+          toastMessage="Culinary reference guide copied!"
+        />
+      </div>
+
+      <!-- Exact Target Keyword in H1 -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        {entry.data.primaryKeyword}
+      </h1>
+
+      {entry.data.directAnswer && (
+        <div class="p-5 sm:p-6 rounded-2xl bg-canvas-soft border border-hairline mb-6 max-w-3xl">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Direct Answer Summary</span>
+          </div>
+          <p class="text-base sm:text-lg text-ink font-medium leading-relaxed">
+            {entry.data.directAnswer}
+          </p>
+        </div>
+      )}
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed max-w-3xl">
+        {entry.data.metaDescription}
+      </p>
+    </header>
+
+    <!-- Live Interactive Converter Island (Client Hydrated) -->
+    <div class="mb-6">
+      <CookingConverterIsland
+        client:load
+        initialFromUnit={entry.data.fromUnit}
+        initialToUnit={entry.data.toUnit}
+        primaryKeyword={entry.data.primaryKeyword}
+      />
+    </div>
+
+    <!-- Shareable URL Bar -->
+    <ShareableUrl category="Cooking & Baking" />
+
+    <!-- Quick Reference Calculation Guide -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14" aria-label="Baking Precision Rules">
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Density Variance</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Weight Beats Volume</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          A cup of flour weighs 125g, while a cup of granulated sugar weighs 200g. Density differences mean 1 cup cannot have a single fixed weight.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Flour Technique</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Spoon & Level Method</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Scooping directly from the bag packs flour down by up to 25% (150g+ per cup), causing dry, dense cakes and bread. Spoon into the cup and level off.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Convection Adjustment</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Reduce Fan Temp by 20°C / 25°F</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Fan-forced ovens circulate air more efficiently. When baking with convection, reduce standard recipe temperatures by 20°C (25°F).
+        </p>
+      </div>
+    </section>
+
+    <!-- Static Conversion Table with Print Optimization -->
+    <PrintableChart
+      title={`${entry.data.title} Reference Table`}
+      subtitle="Verified Density, Weight & Volume Culinary Calibration Chart"
+      category="Cooking & Baking"
+    >
+      <CookingStaticTable />
+    </PrintableChart>
+
+    <!-- FAQ Accordion Section -->
+    {entry.data.faq && entry.data.faq.length > 0 && (
+      <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="faq-heading">
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Culinary Questions</span>
+          </div>
+          <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Frequently Asked Questions.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Expert answers regarding kitchen unit conversions, ingredient density, and oven calibration.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          {entry.data.faq.map((item) => (
+            <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+              <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+                <span>{item.question}</span>
+                <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                  ↓
+                </span>
+              </summary>
+              <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Related Converters Component (Links to 4 sibling pages in the cooking category) -->
+    <RelatedConverters
+      currentSlug={slug!}
+      categorySlug="cooking"
+      categoryName="Cooking & Baking"
+    />
+
+  </main>
+</BaseLayout>

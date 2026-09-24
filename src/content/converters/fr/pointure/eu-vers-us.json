@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure EU vers US",
+  "primaryKeyword": "Pointure EU vers US",
+  "metaDescription": "Convertissez facilement votre pointure française et européenne (EU) en pointure américaine (US). Guide complet pour chaussures et baskets.",
+  "directAnswer": "Pour convertir une pointure européenne en pointure US homme, retirez environ 33 (un 43 FR correspond à US 9.5-10). Pour les femmes, retirez 30.5 à 31 (un 38 FR correspond à US 7-7.5).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure France / EU",
+  "toUnit": "Pointure US",
+  "faq": [
+    {
+      "question": "Quelle est la taille US pour une pointure 42 en France ?",
+      "answer": "Un 42 en France équivaut à un US 8.5 pour les hommes et à un US 10 pour les femmes (environ 26.5-27 cm)."
+    },
+    {
+      "question": "La pointure française est-elle identique à la pointure européenne ?",
+      "answer": "Oui, la France utilise le système continental européen unifié basé sur le Point de Paris."
+    },
+    {
+      "question": "Les baskets taillent-elles plus petit que les chaussures de ville ?",
+      "answer": "Oui, les marques de sport recommandent fréquemment de choisir une demi-pointure au-dessus de sa pointure de ville habituelle."
+    }
+  ]
+}

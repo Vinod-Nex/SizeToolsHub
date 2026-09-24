@@ -1,0 +1,23 @@
+{
+  "title": "US to EU Ring Size Converter",
+  "primaryKeyword": "us to eu ring size converter",
+  "metaDescription": "Convert ring sizes from US numerical scale to European inner circumference in millimeters with calibrated diameter chart.",
+  "converterType": "ring-size",
+  "fromUnit": "US Ring Size",
+  "toUnit": "EU Circumference (mm)",
+  "faq": [
+    {
+      "question": "What is a US 7 in EU ring size?",
+      "answer": "A US 7 is an EU size 54 (circumference 54.4 mm, diameter 17.32 mm)."
+    },
+    {
+      "question": "How does the ISO 8653 European standard work?",
+      "answer": "Under ISO 8653, the European ring size number is exactly the inner circumference of the ring in millimeters."
+    },
+    {
+      "question": "What is the difference between French and German ring sizes?",
+      "answer": "Germany and most of Europe use ISO 8653 circumference (e.g. 52), while some French jewelers subtract 40 to denote diameter-based sizing (e.g. 12)."
+    }
+  ],
+  "directAnswer": "To convert US ring sizes to European (EU) sizes, multiply the inner diameter in millimeters by pi to find circumference. For example, a US size 6 equals an EU 52, a US 7 equals an EU 54, and a US 8 equals an EU 57 according to ISO 8653 standards."
+}

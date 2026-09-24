@@ -1,0 +1,23 @@
+{
+  "title": "Tallas de Calzado para Primeros Pasos",
+  "primaryKeyword": "Tallas Zapatos Primeros Pasos",
+  "metaDescription": "Guía de tallas para bebés que empiezan a caminar (tallas 18 a 23). Cómo elegir calzado flexible y ergonómico.",
+  "directAnswer": "Los primeros pasos corresponden normalmente a las tallas 18 a 22 en Europa (tallas US 3C a 6C), para niños de entre 9 y 24 meses, con longitudes de pie de 11 a 13.5 cm.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Meses / Centímetros",
+  "toUnit": "Talla Primeros Pasos",
+  "faq": [
+    {
+      "question": "¿Cómo debe ser la suela de un zapato de primeros pasos?",
+      "answer": "Debe ser extremadamente flexible en la zona del metatarso, antideslizante, sin tacón (zero drop) y con puntera ancha para el libre desarrollo motor."
+    },
+    {
+      "question": "¿Con qué frecuencia cambia de número un niño en etapa de primeros pasos?",
+      "answer": "Aproximadamente cada 3 a 4 meses el pie puede aumentar media o una talla completa."
+    },
+    {
+      "question": "¿Es bueno que los bebés usen zapatos antes de empezar a caminar?",
+      "answer": "Los pediatras aconsejan que los bebés no caminantes permanezcan descalzos o con calcetines antideslizantes para estimular su propiocepción."
+    }
+  ]
+}

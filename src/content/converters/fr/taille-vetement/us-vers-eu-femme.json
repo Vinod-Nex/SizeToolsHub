@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Tailles Vêtements Femme: US vers France / Europe",
+  "primaryKeyword": "Taille Vêtement Femme US vers France",
+  "metaDescription": "Convertissez les tailles de vêtements féminins américains (US 0 à 18) en tailles françaises (FR 32 à 50). Robes, pantalons, vestes et manteaux.",
+  "directAnswer": "Pour passer de la taille américaine (US) à la taille française (FR), ajoutez environ 32 à 34 : US 0 = FR 32-34, US 2 = FR 34-36, US 4 = FR 38, US 6 = FR 40, US 8 = FR 42, US 10 = FR 44.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille Femme US",
+  "toUnit": "Taille Femme France (FR)",
+  "faq": [
+    {
+      "question": "Quelle est la taille française pour un US 6 femme ?",
+      "answer": "Une taille US 6 correspond généralement à une taille 38 ou 40 en France (tour de poitrine d’environ 88-90 cm)."
+    },
+    {
+      "question": "À quoi correspond un US 8 en France ?",
+      "answer": "Un US 8 équivaut à un 40 ou 42 français (taille L)."
+    },
+    {
+      "question": "Que signifie la lettre \"P\" (Petite) sur les vêtements américains ?",
+      "answer": "Elle indique que le vêtement est proportionné pour les femmes mesurant moins de 1,63 m, avec des manches et longueurs écourtées."
+    }
+  ]
+}

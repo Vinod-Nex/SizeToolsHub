@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles et Pointures Nike",
+  "primaryKeyword": "Guide des Tailles Nike Pointure",
+  "metaDescription": "Tableau officiel de conversion des pointures Nike pour Air Jordan, Air Force 1, Dunk et running. Correspondances US, EU et centimètres.",
+  "directAnswer": "Nike utilise une échelle en centimètres très exacte. Les Air Force 1 taillent grand (prenez une demi-taille en moins), alors que les modèles running et Air Jordan 1 taillent fidèle à la taille ou légèrement ajusté.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Nike France / EU",
+  "toUnit": "Pointure Nike US",
+  "faq": [
+    {
+      "question": "À quoi correspond un 42.5 chez Nike ?",
+      "answer": "Un 42.5 Nike homme équivaut exactement à US 9 (longueur 27 cm)."
+    },
+    {
+      "question": "Nike taille-t-il plus petit qu’Adidas ?",
+      "answer": "Oui, Nike est reconnu pour son cou-de-pied plus étroit et son chaussant plus fuselé qu’Adidas."
+    },
+    {
+      "question": "Comment taillent les baskets Nike Dunk Low ?",
+      "answer": "Les Dunk Low taillent normalement (True to Size). Choisissez votre pointure habituelle."
+    }
+  ]
+}

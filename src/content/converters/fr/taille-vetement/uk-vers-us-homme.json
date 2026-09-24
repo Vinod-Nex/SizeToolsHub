@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Tailles Vêtements Homme: UK vers US",
+  "primaryKeyword": "Taille Vêtements Homme UK vers US",
+  "metaDescription": "Correspondance des vestes de costume, chemises et pantalons homme entre le Royaume-Uni, les États-Unis et la France.",
+  "directAnswer": "Les vestes de costume britanniques et américaines partagent la même numérotation en pouces (UK 38 = US 38). Pour convertir en taille française, ajoutez 10 (UK 38 = FR 48).",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille Homme UK",
+  "toUnit": "Taille Homme US",
+  "faq": [
+    {
+      "question": "Que signifie la lettre \"R\" sur une veste 40R ?",
+      "answer": "\"R\" signifie Regular (longueur standard pour hommes de 1m75 à 1m83). \"S\" indique Short et \"L\" indique Long."
+    },
+    {
+      "question": "Comment convertir le tour de cou des chemises ?",
+      "answer": "Un col 15.5 pouces au Royaume-Uni ou aux USA correspond à une taille 39-40 cm en France."
+    },
+    {
+      "question": "Quelle taille française pour un costume UK 42 ?",
+      "answer": "Un costume UK 42 équivaut à un 52 en France (tour de poitrine de 104 à 108 cm)."
+    }
+  ]
+}

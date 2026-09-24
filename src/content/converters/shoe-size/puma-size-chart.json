@@ -1,0 +1,23 @@
+{
+  "title": "Puma Shoe Size Chart & Fit Guide",
+  "primaryKeyword": "Puma Shoe Size Chart & Fit Guide",
+  "metaDescription": "Puma shoe sizing guide for Men, Women, and Kids with international conversion tables and fit recommendations for Suede, Clyde, and running shoes.",
+  "directAnswer": "Puma shoes generally fit true to standard international sizing, with a US Men's 10 converting directly to an EU 43, UK 9, and 28.0 cm. Certain motorsport and heritage lifestyle silhouettes fit slightly narrow, so selecting a half-size up is recommended for runners and individuals with broader midfoot profiles.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Puma",
+  "toUnit": "EU / CM Puma",
+  "faq": [
+    {
+      "question": "Do Puma shoes run true to size?",
+      "answer": "Yes, Puma generally fits true to size, matching standard international size charts."
+    },
+    {
+      "question": "What is a US Women's 7.5 in Puma?",
+      "answer": "A US Women's 7.5 in Puma converts to a UK 5, EU 38, and 24.0 cm."
+    },
+    {
+      "question": "Are Puma motorsport shoes narrower than standard sneakers?",
+      "answer": "Yes, models like the Speedcat and Drift Cat are designed with slim aerodynamic profiles and fit noticeably narrower."
+    }
+  ]
+}

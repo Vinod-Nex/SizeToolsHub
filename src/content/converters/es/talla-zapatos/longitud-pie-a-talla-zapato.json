@@ -1,0 +1,23 @@
+{
+  "title": "Medida del Pie a Talla de Calzado",
+  "primaryKeyword": "Longitud del Pie a Talla de Zapato",
+  "metaDescription": "Cómo medir tu pie en casa con una regla y convertir los milímetros o centímetros en tu talla correcta de calzado nacional e internacional.",
+  "directAnswer": "Coloca una hoja de papel en el suelo pegada a la pared. Apoya el talón contra la pared y marca con lápiz la punta del dedo más largo. Mide la distancia en centímetros con una regla y busca la cifra en nuestra tabla oficial.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Longitud del Pie (cm)",
+  "toUnit": "Talla de Calzado",
+  "faq": [
+    {
+      "question": "¿Debo medirme el pie con calcetines puestos?",
+      "answer": "Sí, utiliza el tipo de calcetín que vayas a vestir habitualmente con el tipo de calzado que planeas adquirir."
+    },
+    {
+      "question": "¿Qué es el sistema Mondopoint?",
+      "answer": "Es el estándar internacional ISO 9407 utilizado por ejércitos y fabricantes técnicos que expresa la talla directamente en milímetros de longitud y anchura."
+    },
+    {
+      "question": "¿Qué pasa si mi medida cae entre dos tallas?",
+      "answer": "Se aconseja elegir la talla superior o verificar si la marca ofrece medios números."
+    }
+  ]
+}

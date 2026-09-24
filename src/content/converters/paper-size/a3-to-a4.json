@@ -1,0 +1,23 @@
+{
+  "title": "A3 to A4 Paper Size Converter & Scale Ratio",
+  "primaryKeyword": "A3 to A4",
+  "metaDescription": "Convert between ISO A3 (297 x 420 mm) and A4 (210 x 297 mm). Includes scaling percentages (70.7% reduction, 141.4% enlargement) and true visual SVG diagrams.",
+  "directAnswer": "A3 paper measures 297 by 420 millimeters (11.69 by 16.54 inches) and is exactly twice the surface area of A4 (210 by 297 millimeters). Under ISO 216 standards, reducing an A3 document to fit A4 requires scaling down to precisely 70.7 percent, while enlarging an A4 sheet to A3 requires magnifying to 141.4 percent.",
+  "converterType": "paper-size",
+  "fromUnit": "A3",
+  "toUnit": "A4",
+  "faq": [
+    {
+      "question": "How do you fold an A3 sheet into an A4 binder?",
+      "answer": "Fold the right side of the A3 sheet inward in half (or into a French fold) so the total folded width matches 210 mm, leaving the left 20 mm margin uncreased for standard 2-hole or 4-hole European binder punching."
+    },
+    {
+      "question": "Why is the reduction percentage from A3 to A4 exactly 70.7%?",
+      "answer": "Because A3 has twice the surface area of A4, the linear dimensions differ by the square root of 2. Dividing 1 by √2 gives 0.7071, which means a 70.71% linear reduction scales the document down without altering aspect ratio."
+    },
+    {
+      "question": "Can standard desktop home printers print on A3 paper?",
+      "answer": "Most standard consumer desktop office printers only accept paper up to A4 or US Letter. To print directly on A3 sheets, you need a wide-format office multifunction printer or a dedicated A3+ photographic inkjet printer."
+    }
+  ]
+}

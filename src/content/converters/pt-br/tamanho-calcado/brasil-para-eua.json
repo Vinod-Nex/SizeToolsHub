@@ -1,0 +1,19 @@
+{
+  "title": "Conversor de Tamanho de Calçados Brasil para EUA",
+  "primaryKeyword": "Tamanho de Calçado Brasil para EUA",
+  "metaDescription": "Descubra qual é o seu tamanho de calçado nos Estados Unidos (US) a partir da numeração brasileira (BR). Guia completo para compras internacionais.",
+  "directAnswer": "Para descobrir seu tamanho nos EUA a partir da numeração brasileira, subtraia cerca de 31 a 32 do número masculino (BR 41 = US 9.5-10) ou cerca de 29 do número feminino (BR 36 = US 7-7.5). Sempre confirme a medida em centímetros (CM) na língua do calçado.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Brasil (BR)",
+  "toUnit": "Tamanho EUA (US)",
+  "faq": [
+    {
+      "question": "Quem calça 37 no Brasil usa qual tamanho nos EUA?",
+      "answer": "Mulheres que calçam 37 no Brasil geralmente usam tamanho US 7.5 ou 8 nos Estados Unidos, correspondendo a pés de 24,5 cm."
+    },
+    {
+      "question": "Quem calça 42 no Brasil usa qual tamanho nos EUA?",
+      "answer": "Homens que calçam 42 no Brasil usam tamanho US 10 ou 10.5 nos Estados Unidos (cerca de 28 cm de comprimento de pé)."
+    }
+  ]
+}

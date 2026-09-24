@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures Vans: Old Skool, Sk8-Hi et Slip-On",
+  "primaryKeyword": "Guide des Tailles Vans Pointure",
+  "metaDescription": "Tableau des pointures Vans pour homme et femme. Chaussant fidèle à la taille pour modèles de skate et casual.",
+  "directAnswer": "Les baskets Vans taillent fidèlement à la taille (True to Size). Un 42 en France équivaut exactement à un US 9 homme ou US 10.5 femme (27 cm).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Vans France / EU",
+  "toUnit": "Pointure Vans US",
+  "faq": [
+    {
+      "question": "Les Vans Slip-On sont-elles serrées au début ?",
+      "answer": "Oui, les élastiques latéraux peuvent sembler fermes lors des premiers ports, mais ils s’assouplissent rapidement."
+    },
+    {
+      "question": "Quelle pointure pour un US 8.5 chez Vans ?",
+      "answer": "Un US 8.5 homme correspond à la taille 41 en France (26.5 cm)."
+    },
+    {
+      "question": "Existe-t-il des versions larges chez Vans ?",
+      "answer": "Oui, certains modèles emblématiques existent en version \"Wide\" pour pieds larges."
+    }
+  ]
+}

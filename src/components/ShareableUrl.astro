@@ -1,0 +1,106 @@
+---
+interface Props {
+  label?: string;
+  category?: string;
+  class?: string;
+}
+
+const {
+  label = 'Share Calculation',
+  category = 'converter',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`shareable-url-container flex items-center justify-between p-3.5 sm:p-4 rounded-2xl bg-canvas-soft/60 border border-hairline-soft text-xs text-text-muted my-6 ${className}`}>
+  <div class="flex items-center gap-2">
+    <span class="w-2 h-2 rounded-full bg-accent"></span>
+    <span class="font-medium text-ink">Bookmarkable Calculation:</span>
+    <span class="hidden sm:inline text-text-faint">Input values automatically save to the browser URL</span>
+  </div>
+
+  <button
+    type="button"
+    class="shareable-copy-btn inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-canvas border border-hairline text-ink font-semibold hover:border-ink/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-150 active:scale-95 shadow-2xs hover:shadow-xs cursor-pointer"
+    data-default-label={label}
+    data-copied-label="Link Copied!"
+    aria-label="Copy shareable link"
+    aria-live="polite"
+  >
+    <svg class="share-icon w-3.5 h-3.5 text-text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+    </svg>
+    <svg class="check-icon hidden w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span class="share-btn-text">{label}</span>
+  </button>
+</div>
+
+<script>
+  import { showToast } from '../lib/toast';
+
+  function initShareButtons() {
+    const shareBtns = document.querySelectorAll('.shareable-copy-btn:not([data-initialized])');
+    shareBtns.forEach((btn) => {
+      btn.setAttribute('data-initialized', 'true');
+      btn.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const url = window.location.href;
+        const textEl = btn.querySelector('.share-btn-text');
+        const shareIcon = btn.querySelector('.share-icon');
+        const checkIcon = btn.querySelector('.check-icon');
+        const defaultLabel = btn.getAttribute('data-default-label') || 'Share';
+        const copiedLabel = btn.getAttribute('data-copied-label') || 'Link Copied!';
+
+        // Try native share on mobile
+        if (navigator.share && /mobile|android|iphone|ipad/i.test(navigator.userAgent)) {
+          try {
+            await navigator.share({
+              title: document.title,
+              url,
+            });
+            return;
+          } catch {
+            // Dismissed or unsupported, fall through to clipboard
+          }
+        }
+
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(url);
+          } else {
+            const textarea = document.createElement('textarea');
+            textarea.value = url;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+          }
+
+          if (textEl) textEl.textContent = copiedLabel;
+          shareIcon?.classList.add('hidden');
+          checkIcon?.classList.remove('hidden');
+          btn.classList.add('text-accent');
+
+          showToast('Shareable link copied to clipboard!');
+
+          setTimeout(() => {
+            if (textEl) textEl.textContent = defaultLabel;
+            shareIcon?.classList.remove('hidden');
+            checkIcon?.classList.add('hidden');
+            btn.classList.remove('text-accent');
+          }, 2000);
+        } catch (err) {
+          console.error('Failed to copy link:', err);
+        }
+      });
+    });
+  }
+
+  initShareButtons();
+  document.addEventListener('astro:page-load', initShareButtons);
+</script>

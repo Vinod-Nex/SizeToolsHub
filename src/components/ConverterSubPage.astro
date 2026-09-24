@@ -1,0 +1,166 @@
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CopyResultButton from './CopyResultButton.astro';
+import ShareableUrl from './ShareableUrl.astro';
+import PrintableChart from './PrintableChart.astro';
+import RelatedConverters from './RelatedConverters.astro';
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  primaryKeyword: string;
+  metaDescription: string;
+  converterType: string;
+  fromUnit: string;
+  toUnit: string;
+  faq: FAQ[];
+  categorySlug: string;
+  categoryName: string;
+}
+
+const {
+  title,
+  primaryKeyword,
+  metaDescription,
+  converterType,
+  fromUnit,
+  toUnit,
+  faq,
+  categorySlug,
+  categoryName
+} = Astro.props;
+---
+
+<BaseLayout title={`${title} — SizeToolsHub`} description={metaDescription}>
+  <!-- Breadcrumb Slot -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">Home</a>
+    <span>/</span>
+    <a href={`/${categorySlug}/`} class="hover:text-ink transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">{categoryName}</a>
+    <span>/</span>
+    <span class="text-ink font-semibold truncate">{title}</span>
+  </nav>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Header Section -->
+    <header class="mb-10">
+      <div class="flex flex-wrap items-center gap-2 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink">
+          {converterType.toUpperCase()} CONVERTER
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-field text-text-muted text-xs font-medium">
+          {fromUnit} ⇄ {toUnit}
+        </span>
+        <CopyResultButton
+          textToCopy={`${title}: ${fromUnit} to ${toUnit} converter on SizeToolsHub.com`}
+          label="Copy Link"
+          toastMessage="Converter link copied!"
+        />
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        {title}.
+      </h1>
+      <p class="text-lg text-text-muted font-light leading-relaxed">
+        {metaDescription}
+      </p>
+    </header>
+
+    <!-- Interactive Conversion Container (Adhering to DESIGN.md field & card styles) -->
+    <section class="p-6 sm:p-8 rounded-2xl bg-canvas border border-hairline-soft mb-6">
+      <div class="flex items-center justify-between border-b border-hairline-soft pb-4 mb-6">
+        <div>
+          <span class="text-xs uppercase tracking-wider text-text-faint font-semibold">Standard Calculator</span>
+          <h2 class="text-xl font-bold text-ink">{fromUnit} to {toUnit}</h2>
+        </div>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-medium text-ink">
+          Live Sync
+        </span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <!-- From Field -->
+        <div>
+          <label for="fromInput" class="block text-xs font-semibold text-text-muted mb-2">
+            Enter {fromUnit}
+          </label>
+          <input
+            id="fromInput"
+            type="number"
+            step="any"
+            placeholder={`Enter ${fromUnit}...`}
+            class="w-full px-4 py-3 rounded-2xl bg-field text-ink placeholder:text-text-faint outline-none focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all text-lg font-medium"
+            value="10"
+          />
+        </div>
+
+        <!-- To Field -->
+        <div>
+          <label for="toOutput" class="block text-xs font-semibold text-text-muted mb-2">
+            Converted Result ({toUnit})
+          </label>
+          <input
+            id="toOutput"
+            type="text"
+            readonly
+            class="w-full px-4 py-3 rounded-2xl bg-canvas-soft text-ink font-bold text-lg outline-none cursor-default"
+            value="Synchronized Result"
+          />
+        </div>
+      </div>
+
+      <!-- Action Bar -->
+      <div class="flex flex-wrap items-center gap-3 mt-6 pt-6 border-t border-hairline-soft">
+        <button
+          type="button"
+          class="px-5 py-2.5 rounded-full bg-primary text-on-primary text-sm font-semibold hover:opacity-90 active:scale-95 transition-all cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        >
+          Save to My Size Card
+        </button>
+        <CopyResultButton
+          textToCopy={`${title}: ${fromUnit} to ${toUnit}`}
+          label="Copy Conversion"
+          toastMessage="Conversion copied!"
+          variant="outline"
+          size="md"
+        />
+      </div>
+    </section>
+
+    <!-- Shareable URL Bar -->
+    <ShareableUrl category={categoryName} class="mb-12" />
+
+    <!-- FAQ Accordion Section (DESIGN.md faq-row spec) -->
+    {faq && faq.length > 0 && (
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold text-ink mb-6">Frequently Asked Questions.</h2>
+        <div class="space-y-3">
+          {faq.map((item, idx) => (
+            <details class="group rounded-2xl bg-canvas-soft p-5 transition-colors cursor-pointer open:bg-canvas open:border open:border-hairline-soft">
+              <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+                <span>{item.question}</span>
+                <span class="text-text-muted group-open:rotate-180 transition-transform">
+                  ↓
+                </span>
+              </summary>
+              <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Related Converters Internal Linking -->
+    <RelatedConverters
+      currentSlug={title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+      categorySlug={categorySlug}
+      categoryName={categoryName}
+      converterType={converterType}
+    />
+  </main>
+</BaseLayout>

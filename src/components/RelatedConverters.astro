@@ -1,0 +1,330 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  currentSlug: string;
+  categorySlug?: string;
+  categoryName?: string;
+  converterType?: string;
+  maxItems?: number;
+}
+
+const {
+  currentSlug,
+  categorySlug,
+  categoryName,
+  converterType,
+  maxItems = 8,
+} = Astro.props;
+
+const activeCategory = categorySlug || converterType || 'shoe-size';
+const pathname = Astro.url.pathname;
+let currentLocale: 'en' | 'pt-br' | 'es' | 'fr' = 'en';
+if (pathname.startsWith('/pt-br/') || activeCategory === 'tamanho-calcado' || activeCategory === 'tamanho-roupa') {
+  currentLocale = 'pt-br';
+} else if (pathname.startsWith('/es/') || activeCategory === 'talla-zapatos' || activeCategory === 'talla-ropa') {
+  currentLocale = 'es';
+} else if (pathname.startsWith('/fr/') || activeCategory === 'pointure' || activeCategory === 'taille-vetement') {
+  currentLocale = 'fr';
+}
+
+// Category metadata, canonical names, tags, and cross-category affinity mapping
+const CATEGORY_META: Record<string, { name: string; affinity: string[]; tag: string }> = {
+  'shoe-size': {
+    name: 'Shoe Size',
+    affinity: ['clothing-size', 'ring-size', 'paper-size'],
+    tag: 'Footwear',
+  },
+  'clothing-size': {
+    name: 'Clothing Size',
+    affinity: ['shoe-size', 'ring-size', 'paper-size'],
+    tag: 'Apparel',
+  },
+  'tamanho-calcado': {
+    name: 'Tamanho de Calçado',
+    affinity: ['tamanho-roupa'],
+    tag: 'Calçados',
+  },
+  'tamanho-roupa': {
+    name: 'Tamanho de Roupa',
+    affinity: ['tamanho-calcado'],
+    tag: 'Roupas',
+  },
+  'talla-zapatos': {
+    name: 'Talla de Calzado',
+    affinity: ['talla-ropa'],
+    tag: 'Calzado',
+  },
+  'talla-ropa': {
+    name: 'Talla de Ropa',
+    affinity: ['talla-zapatos'],
+    tag: 'Ropa',
+  },
+  'pointure': {
+    name: 'Pointure',
+    affinity: ['taille-vetement'],
+    tag: 'Chaussures',
+  },
+  'taille-vetement': {
+    name: 'Taille de Vêtement',
+    affinity: ['pointure'],
+    tag: 'Mode',
+  },
+  'ring-size': {
+    name: 'Ring Size',
+    affinity: ['clothing-size', 'shoe-size', 'paper-size'],
+    tag: 'Jewelry',
+  },
+  'cooking': {
+    name: 'Cooking & Baking',
+    affinity: ['fuel', 'data', 'shoe-size'],
+    tag: 'Culinary',
+  },
+  'data': {
+    name: 'Data Storage',
+    affinity: ['paper-size', 'fuel', 'cooking'],
+    tag: 'Digital',
+  },
+  'paper-size': {
+    name: 'Paper Size',
+    affinity: ['data', 'clothing-size', 'shoe-size'],
+    tag: 'Dimensions',
+  },
+  'fuel': {
+    name: 'Fuel Economy',
+    affinity: ['data', 'cooking', 'paper-size'],
+    tag: 'Automotive',
+  },
+};
+
+const activeCategoryName = categoryName || CATEGORY_META[activeCategory]?.name || 'Converters';
+
+// Fetch all converters from the collection
+const allEntries = await getCollection('converters');
+
+// Normalize entries
+const allNormalized = allEntries.map((entry) => {
+  let locale: 'en' | 'pt-br' | 'es' | 'fr' = 'en';
+  let cleanId = entry.id;
+  if (entry.id.startsWith('pt-br/')) {
+    locale = 'pt-br';
+    cleanId = entry.id.replace(/^pt-br\//, '');
+  } else if (entry.id.startsWith('es/')) {
+    locale = 'es';
+    cleanId = entry.id.replace(/^es\//, '');
+  } else if (entry.id.startsWith('fr/')) {
+    locale = 'fr';
+    cleanId = entry.id.replace(/^fr\//, '');
+  }
+
+  const cat = entry.data.converterType;
+  const slug = cleanId
+    .replace(new RegExp(`^${cat}/`), '')
+    .replace(/\.(json|md)$/, '');
+  const meta = CATEGORY_META[cat] || { name: cat, affinity: [], tag: 'Tool' };
+  const href = locale === 'en' ? `/${cat}/${slug}/` : `/${locale}/${cat}/${slug}/`;
+  return {
+    slug,
+    category: cat,
+    categoryName: meta.name,
+    categoryTag: meta.tag,
+    title: entry.data.title,
+    primaryKeyword: entry.data.primaryKeyword,
+    description: entry.data.metaDescription,
+    fromUnit: entry.data.fromUnit,
+    toUnit: entry.data.toUnit,
+    locale,
+    href,
+  };
+});
+
+// Filter by locale so localized pages only link to converters of the exact same locale
+const localeNormalized = allNormalized.filter((item) => item.locale === currentLocale);
+
+// 1. Separate candidates in the same category (excluding current page)
+const currentSlugClean = currentSlug.replace(/\.(json|md)$/, '');
+const sameCategoryCandidates = localeNormalized.filter(
+  (item) => item.category === activeCategory && item.slug !== currentSlugClean
+);
+
+// Rank same-category candidates by keyword overlap with the current page
+const currentTokens = new Set(
+  currentSlugClean.toLowerCase().split(/[-_]+/).filter((t) => t.length > 1)
+);
+
+function computeRelevanceScore(item: typeof allNormalized[0]): number {
+  let score = 0;
+  const text = `${item.slug} ${item.title} ${item.fromUnit} ${item.toUnit}`.toLowerCase();
+  for (const token of currentTokens) {
+    if (text.includes(token)) score += 3;
+  }
+  return score;
+}
+
+sameCategoryCandidates.sort((a, b) => {
+  const scoreDiff = computeRelevanceScore(b) - computeRelevanceScore(a);
+  if (scoreDiff !== 0) return scoreDiff;
+  return a.title.localeCompare(b.title);
+});
+
+// Take 4 to 5 same-category tools (or all available if fewer)
+const maxSame = Math.min(sameCategoryCandidates.length, sameCategoryCandidates.length >= 6 ? 5 : 4);
+const selectedSameCategory = sameCategoryCandidates.slice(0, maxSame).map((item) => ({
+  ...item,
+  isCrossCategory: false,
+}));
+
+// 2. Identify cross-category candidates in order of category affinity
+const neededCross = Math.max(0, maxItems - selectedSameCategory.length);
+const affinityCategories = CATEGORY_META[activeCategory]?.affinity || [];
+const otherCategories = Object.keys(CATEGORY_META).filter(
+  (c) => c !== activeCategory && !affinityCategories.includes(c)
+);
+const crossCategoryOrdered = [...affinityCategories, ...otherCategories];
+
+const crossCategoryCandidates: typeof localeNormalized = [];
+for (const cat of crossCategoryOrdered) {
+  const inCat = localeNormalized.filter((item) => item.category === cat);
+  crossCategoryCandidates.push(...inCat);
+}
+
+const selectedCrossCategory = crossCategoryCandidates.slice(0, neededCross).map((item) => ({
+  ...item,
+  isCrossCategory: true,
+}));
+
+// Combined 6-8 contextually related items (same category first, then cross-category)
+const relatedItems = [...selectedSameCategory, ...selectedCrossCategory];
+---
+
+{relatedItems.length > 0 && (
+  <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="related-converters-heading">
+    <!-- Section Header -->
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+      <div>
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3 border border-hairline-soft">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          <span>
+            {
+              currentLocale === 'pt-br' ? 'Conexões Inteligentes' :
+              currentLocale === 'es' ? 'Herramientas Relacionadas' :
+              currentLocale === 'fr' ? 'Outils Recommandés' :
+              'Intelligent Internal Linking'
+            }
+          </span>
+        </div>
+        <h2 id="related-converters-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          {
+            currentLocale === 'pt-br' ? `Conversores Relacionados: ${activeCategoryName}.` :
+            currentLocale === 'es' ? `Conversores Relacionados: ${activeCategoryName}.` :
+            currentLocale === 'fr' ? `Convertisseurs Connexes : ${activeCategoryName}.` :
+            `Related ${activeCategoryName} & Cross-Domain Converters.`
+          }
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+          {
+            currentLocale === 'pt-br' ? `Calculadoras irmãs e tabelas de conversão adicionais para ${activeCategoryName}.` :
+            currentLocale === 'es' ? `Calculadoras hermanas y tablas de conversión adicionales para ${activeCategoryName}.` :
+            currentLocale === 'fr' ? `Guides de correspondance et tableaux complémentaires pour ${activeCategoryName}.` :
+            `Contextually related calculation tools, sibling standards in ${activeCategoryName}, and cross-domain size converters.`
+          }
+        </p>
+      </div>
+
+      <a
+        href={currentLocale === 'en' ? `/${activeCategory}/` : `/${currentLocale}/${activeCategory}/`}
+        class="inline-flex items-center gap-1.5 text-xs font-semibold text-ink hover:text-accent transition-colors self-start sm:self-auto shrink-0 group"
+      >
+        <span>
+          {
+            currentLocale === 'pt-br' ? `Ver todos os conversores de ${activeCategoryName}` :
+            currentLocale === 'es' ? `Ver todos los conversores de ${activeCategoryName}` :
+            currentLocale === 'fr' ? `Voir tous les outils de ${activeCategoryName}` :
+            `View all ${activeCategoryName} tools`
+          }
+        </span>
+        <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+      </a>
+    </div>
+
+    <!-- Responsive 6-8 Card Grid (2 rows of 4 cards on desktop) -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {relatedItems.map((item) => (
+        <a
+          href={item.href}
+          class="group flex flex-col justify-between p-5 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.99]"
+        >
+          <div>
+            <!-- Top Badges Row -->
+            <div class="flex items-center justify-between gap-2 mb-3">
+              {item.isCrossCategory ? (
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-canvas-soft text-[10px] font-medium text-text-muted border border-hairline-soft">
+                  <span>
+                    {
+                      currentLocale === 'pt-br' ? 'Relacionado' :
+                      currentLocale === 'es' ? 'Relacionado' :
+                      currentLocale === 'fr' ? 'Connexe' :
+                      'Related'
+                    }
+                  </span>
+                  <span class="text-text-faint">•</span>
+                  <span class="font-semibold text-ink">{item.categoryTag}</span>
+                </span>
+              ) : (
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[10px] font-semibold">
+                  <span class="w-1 h-1 rounded-full bg-accent"></span>
+                  <span>{item.categoryTag}</span>
+                </span>
+              )}
+
+              <span class="text-xs text-text-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all font-bold">
+                ↗
+              </span>
+            </div>
+
+            <!-- Unit Conversion Badge -->
+            <div class="mb-2">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-md bg-field text-[11px] font-semibold text-text-muted">
+                {item.fromUnit} ⇄ {item.toUnit}
+              </span>
+            </div>
+
+            <!-- Tool Title -->
+            <h3 class="text-sm sm:text-base font-bold text-ink mb-1.5 group-hover:text-accent transition-colors leading-snug line-clamp-2">
+              {item.title}
+            </h3>
+
+            <!-- Tool Description -->
+            <p class="text-xs text-text-muted line-clamp-2 leading-relaxed font-normal">
+              {item.description}
+            </p>
+          </div>
+
+          <!-- Card Bottom Action -->
+          <div class="mt-4 pt-3 border-t border-hairline-soft flex items-center justify-between text-xs">
+            <span class="text-text-faint font-medium text-[11px]">
+              {
+                item.isCrossCategory ? item.categoryName :
+                currentLocale === 'pt-br' ? 'Calculadora Direta' :
+                currentLocale === 'es' ? 'Calculadora Directa' :
+                currentLocale === 'fr' ? 'Calculateur Direct' :
+                'Instant Calculator'
+              }
+            </span>
+            <span class="font-semibold text-ink group-hover:text-accent transition-colors flex items-center gap-1">
+              <span>
+                {
+                  currentLocale === 'pt-br' ? 'Calcular' :
+                  currentLocale === 'es' ? 'Calcular' :
+                  currentLocale === 'fr' ? 'Calculer' :
+                  'Convert'
+                }
+              </span>
+              <span class="group-hover:translate-x-0.5 transition-transform">→</span>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

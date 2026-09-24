@@ -1,0 +1,23 @@
+{
+  "title": "Bra Size Converter & Cup Calculator",
+  "primaryKeyword": "Bra Size Converter & Cup Calculator",
+  "metaDescription": "Convert bra band and cup sizes across US, UK, EU, and French sizing systems with step-by-step measurement formulas.",
+  "directAnswer": "To calculate your bra size, measure your snug underbust in inches and add 4 if even, or 5 if odd, for your band size. Next, subtract your band size from your fullest bust measurement: each 1-inch difference represents one cup letter (1 inch = A, 2 = B, 3 = C, 4 = D).",
+  "converterType": "clothing-size",
+  "fromUnit": "US Bra Size",
+  "toUnit": "UK / EU Bra Size",
+  "faq": [
+    {
+      "question": "What is the difference between US and UK bra cup sizes?",
+      "answer": "US and UK cups match through D and DD, but UK sizing utilizes double letters above DD (e.g. UK E, F, FF, G), whereas US sizing uses DDD, G, H."
+    },
+    {
+      "question": "What is an EU bra size equivalent to US 34C?",
+      "answer": "A US 34C converts to an EU size 75C (75 cm underbust with C cup)."
+    },
+    {
+      "question": "What is 'sister sizing' in bras?",
+      "answer": "Sister sizes share identical cup volume: if you go down one band size, go up one cup letter (e.g., 34C = 32D = 36B)."
+    }
+  ]
+}

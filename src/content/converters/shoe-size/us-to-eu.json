@@ -1,0 +1,23 @@
+{
+  "title": "US to EU Shoe Size Converter",
+  "primaryKeyword": "US to EU Shoe Size Converter",
+  "metaDescription": "Instantly convert US shoe sizes to European (EU) sizes for Men, Women, and Kids with exact foot length measurements and international conversion charts.",
+  "directAnswer": "To convert US shoe sizes to EU sizes, men add approximately 33 or 34 to their US size (a US Men's 10 is an EU 43-44), while women add 31 (a US Women's 8 is an EU 38-39). European sizing scales by 6.67 mm Paris points, providing continuous sizing across genders.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "EU Size",
+  "faq": [
+    {
+      "question": "What is a US Men's size 10 in EU?",
+      "answer": "A US Men's size 10 is typically equivalent to an EU size 43 to 44 (27.1 cm to 27.5 cm of foot length)."
+    },
+    {
+      "question": "Are US Women's shoe sizes the same as US Men's in EU?",
+      "answer": "No, a US Women's size is 1.5 sizes smaller in numerical scale than Men's. For example, a Women's US 8 is an EU 38.5, while a Men's US 8 is an EU 41."
+    },
+    {
+      "question": "How do EU shoe sizes scale compared to US sizes?",
+      "answer": "EU shoe sizes use the Paris point system, where each size increment equals two-thirds of a centimeter (6.67 mm), whereas US sizes increment by one-third of an inch (8.46 mm)."
+    }
+  ]
+}

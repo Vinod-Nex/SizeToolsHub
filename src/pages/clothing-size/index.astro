@@ -1,0 +1,232 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ClothingConverterIsland from '../../components/ClothingConverterIsland';
+import ClothingStaticTable from '../../components/ClothingStaticTable.astro';
+
+// Query all clothing-size converters
+const entries = await getCollection('converters', ({ data }) => data.converterType === 'clothing-size');
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^clothing-size\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "How do US women's clothing sizes convert to UK and EU?",
+    answer: "Generally, add 4 to your US dress size to get your UK size (US 6 = UK 10), and add 32 to get your French/EU size (US 6 = EU 38, or Italian EU 42)."
+  },
+  {
+    question: "Why do men's suit jacket sizes match in the US and UK?",
+    answer: "Both the US and UK use chest circumference in inches for men's suit jackets and blazers (e.g., size 40 corresponds to a 40-inch chest). Continental European sizes add 10 (size 50)."
+  },
+  {
+    question: "What is the difference between Misses, Petite, and Plus sizes?",
+    answer: "Misses sizes (0-16) are cut for individuals between 5'5\" and 5'7\". Petite sizes (P) are proportioned for heights under 5'4\" with shorter sleeve and torso lengths. Plus sizes (14W-28W) offer fuller cuts across the bust, waist, and arms."
+  },
+  {
+    question: "How do denim waist numbers work?",
+    answer: "Jeans waist numbers (such as W28, W30, W32) represent the waistband circumference in inches. A women's W28 is typically equivalent to a US dress size 6."
+  }
+];
+---
+
+<BaseLayout
+  title="International Clothing Size Converters & Global Fit Charts — SizeToolsHub"
+  description="Convert clothing sizes across US, UK, European (EU), and International standards for women, men, and children with ASTM and EN body dimension charts."
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Clothing Size</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Category Hub
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Dedicated Converters
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        International Clothing Size Converters & Fit Charts.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Seamlessly translate fashion sizing across US, UK, European (EU), and International standards. From tailored dress shirts and denim to evening dresses and plus sizes, find your exact fit with ASTM D5585 precision.
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Universal Apparel Engine
+        </h2>
+        <span class="text-xs text-text-muted">Interactive Calculator</span>
+      </div>
+      <ClothingConverterIsland
+        client:visible
+        initialFromUnit="US Women"
+        initialToUnit="EU Women"
+        primaryKeyword="International Clothing Size Converter"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="tools-directory-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Specialized Tools</span>
+          </div>
+          <h2 id="tools-directory-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Clothing Size Converters Directory.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Dedicated converters optimized for dresses, suits, jeans, shirts, and body types.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a
+            href={`/clothing-size/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-3xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted">
+                  {tool.fromUnit} ⇄ {tool.toUnit}
+                </span>
+                <span class="text-sm text-text-faint group-hover:text-accent font-bold transition-colors">
+                  ↗
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {tool.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-text-muted line-clamp-2 leading-relaxed mb-4">
+                {tool.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-hairline-soft flex items-center justify-between text-xs">
+              <span class="text-text-faint font-medium">Exact Scale Calcs</span>
+              <span class="font-semibold text-ink group-hover:text-accent transition-colors">
+                Launch tool →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Apparel Measurement Guide Section -->
+    <section class="mb-16 p-8 sm:p-10 rounded-3xl bg-canvas border border-hairline-soft">
+      <div class="max-w-2xl mb-8">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-3">
+          Body Measurement Guide
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          How to Measure Your Body for Garment Sizing.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Use a flexible cloth tape measure held snug but not tight against the body. Keep the tape parallel to the floor.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            01
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Bust / Chest</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Wrap the tape around the fullest part of your chest or bust, keeping the tape level across your shoulder blades.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            02
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Natural Waist</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Measure around the narrowest part of your torso, typically one inch above the belly button. Do not suck in your stomach.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            03
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Full Hips</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Stand with heels together and measure around the fullest circumference of your hips and buttocks (approx. 8″ below waist).
+          </p>
+        </div>
+
+        <div class="p-5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+          <div class="w-8 h-8 rounded-full bg-canvas flex items-center justify-center text-ink font-bold text-xs mb-3 shadow-2xs">
+            04
+          </div>
+          <h3 class="text-base font-bold text-ink mb-1.5">Inseam</h3>
+          <p class="text-xs text-text-muted leading-relaxed">
+            Measure from the lowest point of the crotch down to the ankle bone along the inside of the leg.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Static International Size Comparison Table -->
+    <ClothingStaticTable />
+
+    <!-- FAQ Accordion -->
+    <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="hub-faq-heading">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+          <span>Apparel FAQ</span>
+        </div>
+        <h2 id="hub-faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Frequently Asked Questions About Clothing Sizing.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Everything you need to know before buying international fashion apparel.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {hubFaq.map((item) => (
+          <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+            <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure US vers France",
+  "primaryKeyword": "Pointure US vers France",
+  "metaDescription": "Tableau officiel de conversion des chaussures américaines (US) vers les pointures françaises. Achat malin sur les sites US.",
+  "directAnswer": "Un US 8 homme équivaut au 41 français, US 9 au 42.5, US 10 au 44, et US 11 au 45. En modèle femme : US 6 = 36.5-37, US 7 = 37.5-38, US 8 = 38.5-39, US 9 = 40-40.5.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure US",
+  "toUnit": "Pointure France",
+  "faq": [
+    {
+      "question": "Pourquoi les pointures françaises ont-elles des décimales en US ?",
+      "answer": "Le pas d’une pointure française est de 6.67 mm alors que le pas US est de 8.46 mm, d’où les correspondances avec demi-pointures."
+    },
+    {
+      "question": "Quelle pointure française pour un US 7.5 homme ?",
+      "answer": "Un US 7.5 homme correspond à une pointure 40.5 en France (25.5 cm)."
+    },
+    {
+      "question": "Comment ne pas se tromper en achetant sur Amazon US ?",
+      "answer": "Vérifiez si l’offre est en pointure US Men ou US Women et fiez-vous au tableau des centimètres."
+    }
+  ]
+}

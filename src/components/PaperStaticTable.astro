@@ -1,0 +1,234 @@
+---
+// Static conversion reference tables for Paper & Document Sizes
+// Pure static HTML for zero JS overhead and instant SEO crawling
+
+const isoASizes = [
+  { name: 'A0', mm: '841 × 1189', cm: '84.1 × 118.9', in: '33.1 × 46.8', area: '1.000 m²', uses: 'Technical drawings, exhibition posters, blueprints' },
+  { name: 'A1', mm: '594 × 841', cm: '59.4 × 84.1', in: '23.4 × 33.1', area: '0.500 m²', uses: 'Architectural blueprints, charts, banners' },
+  { name: 'A2', mm: '420 × 594', cm: '42.0 × 59.4', in: '16.5 × 23.4', area: '0.250 m²', uses: 'Notices, diagrams, medium promotional posters' },
+  { name: 'A3', mm: '297 × 420', cm: '29.7 × 42.0', in: '11.7 × 16.5', area: '0.125 m²', uses: 'Ledgers, double-page spreads, presentations' },
+  { name: 'A4', mm: '210 × 297', cm: '21.0 × 29.7', in: '8.3 × 11.7', area: '0.062 m²', uses: 'Global standard for letters, contracts, forms, resumes' },
+  { name: 'A5', mm: '148 × 210', cm: '14.8 × 21.0', in: '5.8 × 8.3', area: '0.031 m²', uses: 'Notebooks, flyers, paperback booklets' },
+  { name: 'A6', mm: '105 × 148', cm: '10.5 × 14.8', in: '4.1 × 5.8', area: '0.016 m²', uses: 'Postcards, pocket flyers, recipe cards' },
+  { name: 'A7', mm: '74 × 105', cm: '7.4 × 10.5', in: '2.9 × 4.1', area: '0.008 m²', uses: 'Pocket memo pads, mini flashcards' },
+  { name: 'A8', mm: '52 × 74', cm: '5.2 × 7.4', in: '2.0 × 2.9', area: '0.004 m²', uses: 'Business card size, merchandise labels, stickers' },
+];
+
+const northAmericanSizes = [
+  { name: 'US Letter', in: '8.5 × 11.0', mm: '215.9 × 279.4', ansi: 'ANSI A', ratio: '1 : 1.294', uses: 'Standard North American office & school documents' },
+  { name: 'US Legal', in: '8.5 × 14.0', mm: '215.9 × 355.6', ansi: '—', ratio: '1 : 1.647', uses: 'Legal briefs, courtroom filings, real estate contracts' },
+  { name: 'Tabloid / Ledger', in: '11.0 × 17.0', mm: '279.4 × 431.8', ansi: 'ANSI B', ratio: '1 : 1.545', uses: 'Spreadsheets, newspapers, newsletters, CAD drawings' },
+  { name: 'Executive', in: '7.25 × 10.5', mm: '184.2 × 266.7', ansi: '—', ratio: '1 : 1.448', uses: 'Personal executive stationery, corporate letterheads' },
+  { name: 'Half Letter (Statement)', in: '5.5 × 8.5', mm: '139.7 × 215.9', ansi: '—', ratio: '1 : 1.545', uses: 'Bank statements, invoices, journals, notepads' },
+  { name: 'ANSI C', in: '17.0 × 22.0', mm: '431.8 × 558.8', ansi: 'ANSI C', ratio: '1 : 1.294', uses: 'Architectural schematics, engineering plans' },
+  { name: 'ANSI D', in: '22.0 × 34.0', mm: '558.8 × 863.6', ansi: 'ANSI D', ratio: '1 : 1.545', uses: 'Large civil engineering and municipal prints' },
+  { name: 'ANSI E', in: '34.0 × 44.0', mm: '863.6 × 1117.6', ansi: 'ANSI E', ratio: '1 : 1.294', uses: 'Full-scale structural master blueprints' },
+];
+
+const envelopeSizes = [
+  { name: 'DL Envelope', mm: '110 × 220', in: '4.33 × 8.66', standard: 'ISO 269', targetSheet: 'A4 folded in thirds (letter-fold)', category: 'Business' },
+  { name: '#10 Commercial', mm: '104.8 × 241.3', in: '4.125 × 9.5', standard: 'US Commercial', targetSheet: 'US Letter folded in thirds (standard US business mail)', category: 'Business' },
+  { name: 'C4 Envelope', mm: '229 × 324', in: '9.02 × 12.76', standard: 'ISO 269', targetSheet: 'A4 flat (unfolded) or A3 folded once', category: 'Catalog / Flat' },
+  { name: 'C5 Envelope', mm: '162 × 229', in: '6.38 × 9.02', standard: 'ISO 269', targetSheet: 'A4 folded in half or A5 flat sheet', category: 'Booklet' },
+  { name: 'C6 Envelope', mm: '114 × 162', in: '4.49 × 6.38', standard: 'ISO 269', targetSheet: 'A4 folded in quarters or A6 postcard', category: 'Postcard / Social' },
+  { name: '#9 Commercial', mm: '98.4 × 225.4', in: '3.875 × 8.875', standard: 'US Commercial', targetSheet: 'Pre-addressed return envelopes (slips inside #10)', category: 'Business Return' },
+  { name: 'Monarch', mm: '98.4 × 190.5', in: '3.875 × 7.5', standard: 'US Executive', targetSheet: 'Executive stationery folded in thirds', category: 'Executive' },
+  { name: 'A2 Announcement', mm: '111.1 × 146.1', in: '4.375 × 5.75', standard: 'US Announcement', targetSheet: '4.25 × 5.5″ quarter-sheet cards, RSVPs', category: 'Social / RSVP' },
+  { name: 'A7 Invitation', mm: '133.4 × 184.2', in: '5.25 × 7.25', standard: 'US Announcement', targetSheet: '5 × 7″ formal greeting cards and wedding invitations', category: 'Wedding / Formal' },
+];
+
+const posterSizes = [
+  { name: '11 × 17″ (Mini Poster)', in: '11 × 17', mm: '279.4 × 431.8', px300: '3300 × 5100', uses: 'Bulletin boards, event flyers, lamppost notices' },
+  { name: '18 × 24″ (Medium / Arch C)', in: '18 × 24', mm: '457.2 × 609.6', px300: '5400 × 7200', uses: 'Concert posters, band merch, framed art prints' },
+  { name: '24 × 36″ (Large / Arch D)', in: '24 × 36', mm: '609.6 × 914.4', px300: '7200 × 10800', uses: 'Retail store displays, trade show exhibits, photography' },
+  { name: '27 × 40″ (One-Sheet Movie)', in: '27 × 40', mm: '685.8 × 1016.0', px300: '8100 × 12000', uses: 'Official cinema marquee displays, bus stop shelters' },
+  { name: 'ISO A1 Poster', in: '23.4 × 33.1', mm: '594 × 841', px300: '7016 × 9933', uses: 'European commercial posters, museum exhibitions' },
+  { name: 'ISO B1 Poster', in: '27.8 × 39.4', mm: '707 × 1000', px300: '8350 × 11811', uses: 'International concert venues, large format billboards' },
+];
+
+const scalingRules = [
+  { from: 'A3', to: 'A4', factor: '70.7%', math: 'Divide by √2 (0.7071)', purpose: 'Downscale double-page ledger spread to single standard sheet' },
+  { from: 'A4', to: 'A3', factor: '141.4%', math: 'Multiply by √2 (1.4142)', purpose: 'Enlarge standard document to double-size presentation' },
+  { from: 'A4', to: 'US Letter', factor: '94.6%', math: 'Fit height (279.4 / 297)', purpose: 'Print European document on US office printer without clipping bottom' },
+  { from: 'US Letter', to: 'A4', factor: '97.3%', math: 'Fit width (210 / 215.9)', purpose: 'Print American letter on international paper without clipping side margins' },
+  { from: 'US Legal', to: 'US Letter', factor: '78.6%', math: 'Fit height (279.4 / 355.6)', purpose: 'Condense long legal contract onto standard letter page' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="paper-tables-heading">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Dimensional Standards</span>
+    </div>
+    <h2 id="paper-tables-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Global Paper Dimensions & Envelope Reference Charts.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+      Official ISO 216 metric, North American imperial ANSI, standard envelope capacities, and high-resolution print pixel requirements.
+    </p>
+  </div>
+
+  <!-- Table 1: ISO 216 A-Series -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-accent"></span>
+      <span>1. ISO 216 A-Series Dimensions (Metric Global Standard)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Format</th>
+            <th class="py-3 px-4 font-semibold">Width × Height (mm)</th>
+            <th class="py-3 px-4 font-semibold">Centimeters (cm)</th>
+            <th class="py-3 px-4 font-semibold">Inches (in)</th>
+            <th class="py-3 px-4 font-semibold">Surface Area</th>
+            <th class="py-3 px-4 font-semibold">Typical Applications</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {isoASizes.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-accent">{row.name}</td>
+              <td class="py-3 px-4 font-mono font-medium">{row.mm}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.cm}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.in}</td>
+              <td class="py-3 px-4 text-text-muted">{row.area}</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.uses}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 2: North American & ANSI Sizes -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-purple-600"></span>
+      <span>2. North American Loose Standards & ANSI Series</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Standard Name</th>
+            <th class="py-3 px-4 font-semibold">Inches (in)</th>
+            <th class="py-3 px-4 font-semibold">Millimeters (mm)</th>
+            <th class="py-3 px-4 font-semibold">ANSI Code</th>
+            <th class="py-3 px-4 font-semibold">Aspect Ratio</th>
+            <th class="py-3 px-4 font-semibold">Primary Uses</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {northAmericanSizes.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.name}</td>
+              <td class="py-3 px-4 font-mono font-bold text-purple-600 dark:text-purple-400">{row.in}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.mm}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.ansi}</td>
+              <td class="py-3 px-4 text-text-muted">{row.ratio}</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.uses}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 3: Envelope Size Chart -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span>3. Standard Envelope Sizes & Matching Document Folds</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Envelope Format</th>
+            <th class="py-3 px-4 font-semibold">Millimeters (mm)</th>
+            <th class="py-3 px-4 font-semibold">Inches (in)</th>
+            <th class="py-3 px-4 font-semibold">Standard</th>
+            <th class="py-3 px-4 font-semibold">Enclosed Document Fit</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {envelopeSizes.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.name}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.mm}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.in}</td>
+              <td class="py-3 px-4 text-xs font-semibold text-text-muted">{row.standard}</td>
+              <td class="py-3 px-4 text-xs font-medium text-emerald-600 dark:text-emerald-400">{row.targetSheet}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 4: Poster Size Chart -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+      <span>4. Standard Poster & Display Dimensions (with 300 DPI Pixel Requirements)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Poster Name</th>
+            <th class="py-3 px-4 font-semibold">Inches (in)</th>
+            <th class="py-3 px-4 font-semibold">Millimeters (mm)</th>
+            <th class="py-3 px-4 font-semibold">Print Pixels (300 DPI)</th>
+            <th class="py-3 px-4 font-semibold">Common Applications</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {posterSizes.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.name}</td>
+              <td class="py-3 px-4 font-mono text-amber-600 dark:text-amber-400 font-semibold">{row.in}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.mm}</td>
+              <td class="py-3 px-4 font-mono text-ink font-semibold">{row.px300} px</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.uses}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 5: Scaling Ratios -->
+  <div>
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+      <span>5. International Document Scaling & Magnification Percentages</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Source Sheet</th>
+            <th class="py-3 px-4 font-semibold">Target Sheet</th>
+            <th class="py-3 px-4 font-semibold">Printer Scale Factor</th>
+            <th class="py-3 px-4 font-semibold">Formula / Math</th>
+            <th class="py-3 px-4 font-semibold">Practical Purpose</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {scalingRules.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.from}</td>
+              <td class="py-3 px-4 font-bold text-ink">{row.to}</td>
+              <td class="py-3 px-4 font-mono font-bold text-accent">{row.factor}</td>
+              <td class="py-3 px-4 font-mono text-xs text-text-muted">{row.math}</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.purpose}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

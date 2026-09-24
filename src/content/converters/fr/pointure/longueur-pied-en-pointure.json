@@ -1,0 +1,23 @@
+{
+  "title": "Longueur du Pied en Pointure de Chaussure",
+  "primaryKeyword": "Longueur du Pied en Pointure",
+  "metaDescription": "Mesurez précisément vos pieds chez vous et déterminez votre pointure française, américaine et internationale (norme Mondopoint).",
+  "directAnswer": "Posez votre pied sur une feuille, talon contre une plinthe, tracez un trait devant l’orteil le plus avancé et mesurez la distance. Reportez cette longueur dans notre tableau pour obtenir immédiatement votre pointure.",
+  "converterType": "pointure",
+  "fromUnit": "Longueur du Pied (cm)",
+  "toUnit": "Pointure de Chaussure",
+  "faq": [
+    {
+      "question": "Faut-il porter des chaussettes lors de la mesure ?",
+      "answer": "Oui, portez les chaussettes que vous avez l’habitude d’utiliser avec le type de chaussures convoité."
+    },
+    {
+      "question": "Qu’est-ce que le système Mondopoint ?",
+      "answer": "Le système Mondopoint (ISO 9407) indique la longueur et la largeur du pied en millimètres. C’est la norme utilisée pour les chaussures de ski et militaires."
+    },
+    {
+      "question": "Comment savoir si une chaussure est trop étroite ?",
+      "answer": "Si vos orteils se chevauchent ou si vous ressentez une pression sur les côtés du gros orteil, le chaussant est trop étroit."
+    }
+  ]
+}

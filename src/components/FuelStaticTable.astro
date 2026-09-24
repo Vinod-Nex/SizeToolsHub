@@ -1,0 +1,149 @@
+---
+// Static conversion reference tables for Fuel Economy, Distance, and Fuel Cost
+// Pure static HTML for zero JS overhead and instant SEO indexing
+
+const economyRows = [
+  { usMpg: 60, l100km: 3.92, ukMpg: 72.06, kmL: 25.51, category: 'Plug-in Hybrid / High Efficiency' },
+  { usMpg: 55, l100km: 4.28, ukMpg: 66.05, kmL: 23.38, category: 'Compact Hybrid (e.g. Prius)' },
+  { usMpg: 50, l100km: 4.70, ukMpg: 60.05, kmL: 21.26, category: 'Standard Hybrid Sedan' },
+  { usMpg: 45, l100km: 5.23, ukMpg: 54.04, kmL: 19.13, category: 'Subcompact Diesel / Hybrid SUV' },
+  { usMpg: 40, l100km: 5.88, ukMpg: 48.04, kmL: 17.01, category: 'Efficient Gas Compact' },
+  { usMpg: 35, l100km: 6.72, ukMpg: 42.03, kmL: 14.88, category: 'Standard Compact Car' },
+  { usMpg: 30, l100km: 7.84, ukMpg: 36.03, kmL: 12.75, category: 'Midsize Sedan / Compact Crossover' },
+  { usMpg: 25, l100km: 9.41, ukMpg: 30.02, kmL: 10.63, category: 'Midsize SUV / Small Truck' },
+  { usMpg: 20, l100km: 11.76, ukMpg: 24.02, kmL: 8.50, category: 'Large SUV / Minivan / V6' },
+  { usMpg: 15, l100km: 15.68, ukMpg: 18.01, kmL: 6.38, category: 'Full-Size Truck / V8 Muscle' },
+  { usMpg: 12, l100km: 19.60, ukMpg: 14.41, kmL: 5.10, category: 'Heavy Commercial / Heavy Towing' },
+];
+
+const distanceRows = [
+  { km: 1, miles: 0.62, meters: '1,000 m', feet: '3,281 ft' },
+  { km: 5, miles: 3.11, meters: '5,000 m', feet: '16,404 ft (Standard 5K)' },
+  { km: 10, miles: 6.21, meters: '10,000 m', feet: '32,808 ft (Standard 10K)' },
+  { km: 21.1, miles: 13.11, meters: '21,097 m', feet: '69,219 ft (Half Marathon)' },
+  { km: 42.2, miles: 26.22, meters: '42,195 m', feet: '138,435 ft (Full Marathon)' },
+  { km: 50, miles: 31.07, meters: '50,000 m', feet: '164,042 ft' },
+  { km: 100, miles: 62.14, meters: '100,000 m', feet: '328,084 ft' },
+  { km: 150, miles: 93.21, meters: '150,000 m', feet: '492,126 ft' },
+  { km: 250, miles: 155.34, meters: '250,000 m', feet: '820,210 ft' },
+  { km: 500, miles: 310.69, meters: '500,000 m', feet: '1,640,420 ft' },
+  { km: 1000, miles: 621.37, meters: '1,000,000 m', feet: '3,280,840 ft' },
+];
+
+const vehicleBenchmarks = [
+  { vehicle: 'Hybrid Electric (e.g. Prius / Ioniq)', mpgUs: '52–58 MPG', l100km: '4.1–4.5 L', cost100Mi: '$6.25', rating: 'Ultra Efficient' },
+  { vehicle: 'Compact Sedan (e.g. Civic / Corolla)', mpgUs: '32–36 MPG', l100km: '6.5–7.3 L', cost100Mi: '$10.29', rating: 'High Efficiency' },
+  { vehicle: 'Compact Crossover (e.g. RAV4 / CR-V)', mpgUs: '28–32 MPG', l100km: '7.3–8.4 L', cost100Mi: '$11.67', rating: 'Average' },
+  { vehicle: 'Midsize 3-Row SUV (e.g. Explorer / Highlander)', mpgUs: '21–25 MPG', l100km: '9.4–11.2 L', cost100Mi: '$15.22', rating: 'Average Passenger' },
+  { vehicle: 'Full-Size Truck (e.g. F-150 / Silverado 1500)', mpgUs: '17–20 MPG', l100km: '11.8–13.8 L', cost100Mi: '$18.92', rating: 'Low Economy' },
+  { vehicle: 'Performance V8 Sports Car (e.g. Mustang GT)', mpgUs: '15–18 MPG', l100km: '13.1–15.7 L', cost100Mi: '$21.21', rating: 'Low Economy' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="fuel-tables-heading">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Conversion Reference</span>
+    </div>
+    <h2 id="fuel-tables-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Fuel Economy, Distance & Mileage Conversion Charts.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+      Official mathematical lookup tables between North American MPG, European L/100km, British Imperial MPG, and metric distance.
+    </p>
+  </div>
+
+  <!-- Table 1: Fuel Economy Grid -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-accent"></span>
+      <span>1. Fuel Economy Equivalence Table (US MPG ⇄ L/100km ⇄ UK MPG ⇄ km/L)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">US MPG</th>
+            <th class="py-3 px-4 font-semibold">Liters / 100km</th>
+            <th class="py-3 px-4 font-semibold">UK MPG (Imperial)</th>
+            <th class="py-3 px-4 font-semibold">Kilometers / Liter</th>
+            <th class="py-3 px-4 font-semibold">Vehicle Efficiency Class</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {economyRows.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.usMpg} MPG</td>
+              <td class="py-3 px-4 font-mono font-bold text-accent">{row.l100km} L/100km</td>
+              <td class="py-3 px-4 font-mono text-purple-600 dark:text-purple-400 font-semibold">{row.ukMpg} MPG</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.kmL} km/L</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.category}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 2: Vehicle Class Benchmarks -->
+  <div class="mb-12">
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span>2. Typical Vehicle Class Fuel Economy & Operating Expense Benchmarks</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Vehicle Category</th>
+            <th class="py-3 px-4 font-semibold">US Fuel Economy</th>
+            <th class="py-3 px-4 font-semibold">Metric Rating</th>
+            <th class="py-3 px-4 font-semibold">Estimated Cost / 100 Miles ($3.50/gal)</th>
+            <th class="py-3 px-4 font-semibold">Classification</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {vehicleBenchmarks.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.vehicle}</td>
+              <td class="py-3 px-4 font-mono font-semibold text-accent">{row.mpgUs}</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.l100km}</td>
+              <td class="py-3 px-4 font-mono font-bold text-emerald-600 dark:text-emerald-400">{row.cost100Mi}</td>
+              <td class="py-3 px-4 text-xs text-text-muted">{row.rating}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 3: Distance Reference Table -->
+  <div>
+    <h3 class="text-lg font-bold text-ink mb-3 flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-sky-500"></span>
+      <span>3. Kilometers to Miles Distance Lookup Table</span>
+    </h3>
+    <div class="overflow-x-auto rounded-2xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-xs sm:text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft/80 text-text-muted">
+            <th class="py-3 px-4 font-semibold">Kilometers (km)</th>
+            <th class="py-3 px-4 font-semibold">Statute Miles (mi)</th>
+            <th class="py-3 px-4 font-semibold">Meters (m)</th>
+            <th class="py-3 px-4 font-semibold">Feet (ft) / Milestone</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {distanceRows.map((row) => (
+            <tr class="hover:bg-canvas-soft/40 transition-colors">
+              <td class="py-3 px-4 font-bold text-ink">{row.km} km</td>
+              <td class="py-3 px-4 font-mono font-bold text-sky-600 dark:text-sky-400">{row.miles} miles</td>
+              <td class="py-3 px-4 font-mono text-text-muted">{row.meters}</td>
+              <td class="py-3 px-4 text-text-muted text-xs">{row.feet}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

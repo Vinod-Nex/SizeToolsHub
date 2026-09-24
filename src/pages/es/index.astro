@@ -1,0 +1,279 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import UniversalConverter from '../../components/UniversalConverter';
+import { getCollection } from 'astro:content';
+
+const esShoeConverters = await getCollection('converters', ({ id }) =>
+  id.startsWith('es/talla-zapatos/')
+);
+const esClothingConverters = await getCollection('converters', ({ id }) =>
+  id.startsWith('es/talla-ropa/')
+);
+
+const categories = [
+  {
+    name: 'Talla de Calzado',
+    href: '/es/talla-zapatos/',
+    desc: 'Conversión oficial entre España (EU), México (MX), EE. UU. (US) y centímetros (CM). Guías de marcas como Nike, Adidas, Asics y Vans.',
+    icon: '👟',
+    popularCount: `${esShoeConverters.length} Herramientas`,
+    isLocalized: true,
+  },
+  {
+    name: 'Talla de Ropa',
+    href: '/es/talla-ropa/',
+    desc: 'Tablas completas de vestidos, pantalones vaqueros importados (cintura W en pulgadas), trajes, camisas y sujetadores.',
+    icon: '👕',
+    popularCount: `${esClothingConverters.length} Herramientas`,
+    isLocalized: true,
+  },
+  {
+    name: 'Talla de Anillo',
+    href: '/ring-size/',
+    desc: 'Diámetro interno, circunferencia y numeraciones de alianzas con escala 1:1 para imprimir.',
+    icon: '💍',
+    popularCount: 'Guía Escala 1:1',
+    isLocalized: false,
+  },
+  {
+    name: 'Cocina y Recetas',
+    href: '/cooking/',
+    desc: 'Convierte tazas americanas (cups), cucharadas y onzas líquidas a gramos (g) y mililitros (ml).',
+    icon: '🥣',
+    popularCount: 'Gramos Exactos',
+    isLocalized: false,
+  },
+  {
+    name: 'Almacenamiento de Datos',
+    href: '/data/',
+    desc: 'Calculadora de Bytes, Kilobytes, Megabytes, Gigabytes (GB) y Terabytes (TB) decimal y binario.',
+    icon: '💾',
+    popularCount: 'GB ↔ TB',
+    isLocalized: false,
+  },
+  {
+    name: 'Formatos de Papel',
+    href: '/paper-size/',
+    desc: 'Norma ISO 216 (A4, A3, A5), Carta (US Letter), Oficio y dimensiones para impresión y marcos.',
+    icon: '📄',
+    popularCount: 'ISO 216 & Carta',
+    isLocalized: false,
+  },
+  {
+    name: 'Consumo de Combustible',
+    href: '/fuel/',
+    desc: 'Convierte MPG (Millas por Galón) a km/L y Litros a los 100 km (L/100km) para vehículos importados.',
+    icon: '⛽',
+    popularCount: 'MPG ↔ km/L',
+    isLocalized: false,
+  },
+];
+
+const featuredTools = [
+  {
+    title: 'Calzado EE. UU. a Europa',
+    href: '/es/talla-zapatos/eeuu-a-europa/',
+    badge: 'Más Usado',
+    desc: 'Descubre tu equivalencia de calzado americano (US Men y Women) a la talla española y europea.',
+    units: 'EE. UU. (US) ⇄ Europa (EU)',
+  },
+  {
+    title: 'Calzado EE. UU. a México',
+    href: '/es/talla-zapatos/eeuu-a-mexico/',
+    badge: 'Compras en EE. UU.',
+    desc: 'Convierte tenis y zapatos de tiendas de EE. UU. a numeración mexicana en centímetros.',
+    units: 'EE. UU. (US) ⇄ México (MX / cm)',
+  },
+  {
+    title: 'Ropa Mujer: EE. UU. a Europa',
+    href: '/es/talla-ropa/eeuu-a-europa-mujer/',
+    badge: 'Moda Femenina',
+    desc: 'Equivalencia exacta entre tallas de confección americanas (US 0-16) y españolas (ES 32-48).',
+    units: 'EE. UU. (US) ⇄ España / UE',
+  },
+  {
+    title: 'Pantalones Vaqueros: W en Pulgadas',
+    href: '/es/talla-ropa/conversor-tallas-pantalones-jeans/',
+    badge: 'Levi\'s & Denim',
+    desc: 'Comprende la medida W de cintura de pantalones importados y encuentra tu talla 38, 40, 42.',
+    units: 'Cintura W (in) ⇄ Talla España',
+  },
+  {
+    title: 'Guía de Tallas Nike',
+    href: '/es/talla-zapatos/tabla-tallas-nike/',
+    badge: 'Sneakers',
+    desc: 'Tabla oficial de zapatillas Nike Air Jordan, Dunk y Air Force 1 en centímetros.',
+    units: 'Nike España ⇄ Nike EE. UU.',
+  },
+  {
+    title: 'Calculadora de Sujetador',
+    href: '/es/talla-ropa/tabla-tallas-sujetador/',
+    badge: 'Lencería',
+    desc: 'Calcula tu copa exacta (A, B, C, D) y contorno francés/español con tus medidas en centímetros.',
+    units: 'Medidas (cm) ⇄ Talla Sujetador',
+  },
+];
+
+const portalFaq = [
+  {
+    question: "¿Qué es SizeToolsHub?",
+    answer: "SizeToolsHub es la plataforma global líder en conversión inteligente de tallas, dimensiones y medidas internacionales. Proporcionamos tablas oficiales y calculadoras en vivo para calzado, confección textil, joyería, equipaje y cocina."
+  },
+  {
+    question: "¿Por qué cambian las tallas entre países?",
+    answer: "Históricamente, cada región desarrolló sistemas propios basados en unidades de medida locales: Estados Unidos y Reino Unido usan pulgadas y tercios de pulgada, Europa continental utiliza el punto de París métrico, y países como México o Japón se basan directamente en centímetros."
+  },
+  {
+    question: "¿Cómo comprar ropa y zapatos online en el extranjero sin equivocarse?",
+    answer: "El método más seguro y universal es tomar tus medidas corporales en centímetros (largo del pie para calzado, contornos de busto, cintura y cadera para ropa) y cotejarlas con la tabla técnica del fabricante."
+  }
+];
+---
+
+<BaseLayout
+  title="SizeToolsHub Español — Conversores de Tallas y Medidas Internacionales"
+  description="Conversores instantáneos de tallas internacionales de calzado, ropa, zapatillas de marca, anillos y dimensiones. Estándares oficiales 2026 sin demoras."
+  lang="es"
+  isHomePage={true}
+  faq={portalFaq}
+>
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
+
+    <!-- Hero Section -->
+    <header class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-canvas-soft border border-hairline-soft mb-6 shadow-2xs">
+        <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+        <span class="text-xs font-semibold text-ink">Estándares Internacionales 2026</span>
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-bold tracking-tight text-ink mb-6" style="line-height: 1.08;">
+        Nunca más dudes de tu talla.
+      </h1>
+
+      <p class="text-lg sm:text-xl text-text-muted font-light leading-relaxed mb-8">
+        Conversiones internacionales exactas e instantáneas en más de 450 marcas globales, calzado, ropa, joyería y dimensiones cotidianas.
+      </p>
+    </header>
+
+    <!-- Universal Converter Island -->
+    <section class="mb-16 sm:mb-20">
+      <UniversalConverter client:load />
+    </section>
+
+    <!-- Top Featured Conversions Grid -->
+    <section class="mb-16 sm:mb-20">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Herramientas Populares en Español
+          </h2>
+          <p class="text-sm text-text-muted font-light mt-1">
+            Los conversores más consultados para compras internacionales en tiendas de EE. UU. y Europa.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {featuredTools.map((tool) => (
+          <a
+            href={tool.href}
+            class="group p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.99] flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[11px] font-semibold">
+                  {tool.badge}
+                </span>
+                <span class="text-xs text-text-faint group-hover:text-accent group-hover:translate-x-0.5 transition-all">
+                  →
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {tool.title}
+              </h3>
+              <p class="text-xs text-text-muted font-light leading-relaxed mb-4">
+                {tool.desc}
+              </p>
+            </div>
+            <div class="pt-3 border-t border-hairline-soft flex items-center justify-between text-[11px] text-text-faint">
+              <span>{tool.units}</span>
+              <span class="font-semibold text-accent group-hover:underline">Abrir ↗</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Categories Directory -->
+    <section class="mb-16 sm:mb-20">
+      <div class="mb-8">
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Explorar por Categoría
+        </h2>
+        <p class="text-sm text-text-muted font-light mt-1">
+          Navega por nuestros sistemas de calibración y calculadoras especializadas.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {categories.map((cat) => (
+          <a
+            href={cat.href}
+            class="group p-6 rounded-3xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-3xl p-3 rounded-2xl bg-canvas-soft border border-hairline-soft inline-block">
+                  {cat.icon}
+                </span>
+                <span class="text-xs font-semibold px-3 py-1 rounded-full bg-field text-text-muted">
+                  {cat.popularCount}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {cat.name}
+              </h3>
+              <p class="text-xs text-text-muted font-light leading-relaxed">
+                {cat.desc}
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-hairline-soft flex items-center justify-between text-xs font-semibold text-ink group-hover:text-accent transition-colors">
+              <span>{cat.isLocalized ? 'Ver Conversores' : 'Guía Universal'}</span>
+              <span>→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Portal FAQ -->
+    <section class="mt-16 pt-12 border-t border-hairline-soft">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+          <span>Preguntas Frecuentes</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Todo sobre Conversión de Tallas.
+        </h2>
+        <p class="text-sm text-text-muted font-light mt-1 max-w-2xl">
+          Respuestas rápidas para compradores y tiendas internacionales.
+        </p>
+      </div>
+
+      <div class="space-y-4 max-w-3xl">
+        {portalFaq.map((item) => (
+          <details class="group p-5 rounded-2xl bg-canvas border border-hairline-soft transition-all duration-200 open:border-hairline">
+            <summary class="flex items-center justify-between font-semibold text-sm sm:text-base text-ink cursor-pointer list-none focus:outline-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted transition-transform duration-200 group-open:rotate-180">↓</span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-text-muted font-light leading-relaxed border-t border-hairline-soft pt-3">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Centímetros a Talla de Zapato",
+  "primaryKeyword": "Centímetros a Talla de Zapato",
+  "metaDescription": "Calcula tu número exacto de calzado a partir de la longitud de tu pie en centímetros. Tabla para España, Europa, EE. UU., México y Reino Unido.",
+  "directAnswer": "Para calcular tu talla europea en centímetros, la fórmula oficial es: Talla EU = (Longitud del pie en cm + 1.5 cm de holgura) × 1.5. Por ejemplo, un pie de 26 cm requiere una talla 41 o 42 en España y un 8 u 8.5 en EE. UU.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Centímetros (cm)",
+  "toUnit": "Talla de Calzado (EU/US/MX)",
+  "faq": [
+    {
+      "question": "¿Cuántos centímetros mide una talla 42 en España?",
+      "answer": "Una talla 42 europea corresponde a un pie de aproximadamente 26.5 a 27.0 cm de longitud."
+    },
+    {
+      "question": "¿Por qué se debe añadir 1 a 1.5 cm a la medida del pie?",
+      "answer": "Porque al caminar o correr el pie se expande longitudinalmente y necesita espacio en la puntera para evitar que los dedos choquen."
+    },
+    {
+      "question": "¿Cuál es la mejor hora del día para medirse el pie?",
+      "answer": "Al final de la tarde o noche, cuando los pies han alcanzado su máximo volumen diario debido a la actividad y la circulación."
+    }
+  ]
+}

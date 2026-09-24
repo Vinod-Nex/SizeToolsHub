@@ -1,0 +1,23 @@
+{
+  "title": "Converse Shoe Size Chart & Fit Guide",
+  "primaryKeyword": "Converse Shoe Size Chart & Fit Guide",
+  "metaDescription": "Converse Chuck Taylor All Star and Chuck 70 sizing guide with half-size reduction rules and unisex sizing conversion.",
+  "directAnswer": "Classic Converse Chuck Taylor All Star sneakers famously run large by approximately a half size. If you normally wear a US Men's 10 (EU 44), purchase a size 9.5 in unisex Chuck Taylors. Chuck 70 models feature thicker cushioned insoles and run closer to true-to-size than classic canvas iterations.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Converse",
+  "toUnit": "EU / UK Converse",
+  "faq": [
+    {
+      "question": "Do Converse run big or small?",
+      "answer": "Classic Chuck Taylor All Stars run approximately a half size large. Order 0.5 size down from your normal sneaker size."
+    },
+    {
+      "question": "How does unisex sizing work for Converse?",
+      "answer": "Converse boxes display both men's and women's sizing: the women's size is always exactly 2 sizes larger than the men's size on the label."
+    },
+    {
+      "question": "Do Converse Chuck 70s fit the same as standard Chucks?",
+      "answer": "Chuck 70s have more arch support and foam cushioning, making them fit slightly closer to true-to-size than classic All Stars."
+    }
+  ]
+}

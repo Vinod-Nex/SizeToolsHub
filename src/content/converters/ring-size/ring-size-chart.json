@@ -1,0 +1,23 @@
+{
+  "title": "International Ring Size Chart & Measurement Guide",
+  "primaryKeyword": "International Ring Size Chart & Measurement Guide",
+  "metaDescription": "Complete global ring size chart cross-referencing US, UK, EU, and Japanese standards with diameter and circumference dimensions.",
+  "directAnswer": "International ring sizing varies across three primary systems: US/Canada numbers (3 to 14), UK/Australia imperial letters (A to Z), and European ISO 8653 millimeter circumferences (44 to 70). Checking your finger's inside diameter in millimeters remains the most reliable method for converting between international jewelry standards without sizing discrepancies.",
+  "converterType": "ring-size",
+  "fromUnit": "International Sizing",
+  "toUnit": "All Global Standards",
+  "faq": [
+    {
+      "question": "What is the most accurate way to convert international ring sizes?",
+      "answer": "Always use inside diameter in millimeters or inside circumference in millimeters, as metric millimeters are standardized worldwide under ISO 8653."
+    },
+    {
+      "question": "What is a US size 8 in Europe and Japan?",
+      "answer": "A US size 8 corresponds to an EU size 57 (inside circumference 57 mm) and a Japanese size 16 (diameter 18.14 mm)."
+    },
+    {
+      "question": "Why do some countries use quarter sizes while others use full numbers?",
+      "answer": "The US and UK allow fine quarter and half adjustments (e.g. 7.25 or N 1/2), whereas European sizes increment in 1-millimeter whole circumference steps."
+    }
+  ]
+}

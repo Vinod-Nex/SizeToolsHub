@@ -1,0 +1,23 @@
+{
+  "title": "Legal vs Letter Paper Size Comparison",
+  "primaryKeyword": "Legal vs Letter",
+  "metaDescription": "Compare US Legal (8.5 x 14 in) vs US Letter (8.5 x 11 in). Learn when to use legal paper, scanning solutions, printer tray setups, and proportional SVG differences.",
+  "directAnswer": "US Legal paper measures 8.5 by 14.0 inches (215.9 by 355.6 millimeters), sharing the exact same width as US Letter (8.5 by 11.0 inches) but extending 3.0 inches (76.2 millimeters) longer. Legal size provides 27.3 percent more vertical printable area, making it ideal for legal contracts, courtroom pleadings, real estate filings, and financial spreadsheets.",
+  "converterType": "paper-size",
+  "fromUnit": "US Legal",
+  "toUnit": "US Letter",
+  "faq": [
+    {
+      "question": "Why was legal paper created with an extra 3 inches?",
+      "answer": "Historically, American attorneys and court clerks handwritten extensive marginal notes, codicils, and court endorsements along the bottom or sides of legal briefs without turning pages, necessitating 14-inch long sheets."
+    },
+    {
+      "question": "Can I scan a Legal size document on a standard desktop flatbed scanner?",
+      "answer": "Most compact home flatbed scanners only accommodate 8.5 × 11.7 inches. To scan 14-inch Legal documents, you must use an automatic document feeder (ADF) or a dedicated legal-size flatbed scanner."
+    },
+    {
+      "question": "What scaling factor fits a Legal page onto a Letter sheet?",
+      "answer": "To shrink a 14-inch Legal page onto an 11-inch Letter sheet without cropping, reduce the document scale to 78.6% (11 ÷ 14) in your print dialog or select 'Fit to Printable Area'."
+    }
+  ]
+}

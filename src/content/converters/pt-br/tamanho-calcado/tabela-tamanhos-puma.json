@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanhos Puma: Brasil x EUA",
+  "primaryKeyword": "Tabela Puma Brasil",
+  "metaDescription": "Tabela de conversão de tênis Puma: Suede, RS-X e Palermo. Numeração Brasil (BR), Estados Unidos (US) e centímetros.",
+  "directAnswer": "A Puma segue medidas muito fiéis ao padrão europeu e brasileiro. Um Puma 40 no Brasil é US 8.5 ou 9 masc (27 cm) e EU 42.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Puma Brasil (BR)",
+  "toUnit": "Puma EUA (US)",
+  "faq": [
+    {
+      "question": "O Puma Suede tem forma estreita?",
+      "answer": "O clássico Puma Suede tem forma padrão na frente, porém cabedal de camurça que se molda confortavelmente aos pés após os primeiros usos."
+    }
+  ]
+}

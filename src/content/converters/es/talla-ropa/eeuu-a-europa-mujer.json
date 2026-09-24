@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Ropa Mujer: EE. UU. a Europa",
+  "primaryKeyword": "Talla Ropa Mujer EE. UU. a Europa",
+  "metaDescription": "Convierte tallas de ropa femenina de Estados Unidos a Europa y España. Tabla para vestidos, faldas, blusas y abrigos.",
+  "directAnswer": "Para convertir tallas de ropa de mujer de EE. UU. a Europa/España, suma 32: US 0 = ES 32, US 2 = ES 34, US 4 = ES 36, US 6 = ES 38, US 8 = ES 40, US 10 = ES 42 y US 12 = ES 44.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla Mujer EE. UU. (US)",
+  "toUnit": "Talla Mujer España / Europa (EU)",
+  "faq": [
+    {
+      "question": "¿Qué talla es la 6 de mujer de EE. UU. en España?",
+      "answer": "Una talla US 6 equivale a una talla 38 en España (Morfología Medium / unos 88-90 cm de busto y 70-72 cm de cintura)."
+    },
+    {
+      "question": "¿Qué talla es la US 8 en Europa?",
+      "answer": "Una talla US 8 equivale a la talla 40 en España, Francia y Alemania."
+    },
+    {
+      "question": "¿Qué significa la letra \"P\" en tallas de mujer en EE. UU. (ej. 4P)?",
+      "answer": "Indica la categoría \"Petite\", diseñada para mujeres de menos de 1.63 m (5'4\") de estatura, con mangas y tiros más cortos."
+    }
+  ]
+}

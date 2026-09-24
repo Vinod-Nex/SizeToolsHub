@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles de Vêtements pour Enfants",
+  "primaryKeyword": "Taille Vêtements Enfant",
+  "metaDescription": "Tableau des tailles enfants selon l’âge et la taille en centimètres (du 2 ans / 86 cm au 16 ans / 176 cm).",
+  "directAnswer": "En France, la taille des enfants correspond directement à la stature en centimètres : 2 ans (86 cm), 3 ans (94 cm), 4 ans (102 cm), 6 ans (114 cm), 8 ans (126 cm), 10 ans (138 cm), 12 ans (150 cm).",
+  "converterType": "taille-vetement",
+  "fromUnit": "Stature en cm",
+  "toUnit": "Taille Enfant (Années / FR)",
+  "faq": [
+    {
+      "question": "Faut-il choisir la taille selon l’âge ou selon la taille en cm ?",
+      "answer": "Fiez-vous toujours à la taille en centimètres, car deux enfants du même âge peuvent présenter des gabarits très différents."
+    },
+    {
+      "question": "À quoi correspond la taille 4T américaine ?",
+      "answer": "4T correspond à un enfant de 4 ans mesurant environ 100 à 104 cm et pesant 15 à 17 kg."
+    },
+    {
+      "question": "Comment taillent Petit Bateau et Jacadi ?",
+      "answer": "Ces marques de tradition française taillent plutôt ajusté. Il est d’usage de prendre la taille au-dessus en cas de doute."
+    }
+  ]
+}

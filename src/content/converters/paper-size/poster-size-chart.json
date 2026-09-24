@@ -1,0 +1,23 @@
+{
+  "title": "Standard Poster Size Chart & Print Dimensions",
+  "primaryKeyword": "Poster Size Chart",
+  "metaDescription": "Standard poster dimensions and image resolutions. Compare 11x17, 18x24, 24x36, 27x40 movie one-sheet, ISO A1, and B1 formats in inches, mm, and 300 DPI pixels.",
+  "directAnswer": "Standard poster sizes range from small promotional flyers (11 by 17 inches) and medium retail displays (18 by 24 inches) to large architectural blueprints (24 by 36 inches) and theatrical movie one-sheets (27 by 40 inches). European concert posters typically employ ISO A1 (594 by 841 millimeters) or B1 (700 by 1000 millimeters).",
+  "converterType": "paper-size",
+  "fromUnit": "18x24 Medium Poster",
+  "toUnit": "24x36 Large Poster",
+  "faq": [
+    {
+      "question": "What is the standard size for official movie posters?",
+      "answer": "The standard movie poster size used by film distributors in cinema displays and bus stops is the theatrical One-Sheet, measuring 27 × 40 inches (685.8 × 1016.0 mm)."
+    },
+    {
+      "question": "What image resolution in pixels is needed for an 18x24 poster?",
+      "answer": "For crisp 300 DPI commercial art reproduction, an 18 × 24 inch poster requires a digital image file of 5400 × 7200 pixels (~38.9 megapixels). For viewing at 3 feet distance, 150 DPI (2700 × 3600 pixels) is often acceptable."
+    },
+    {
+      "question": "What poster size fits best in standard college dorm frames?",
+      "answer": "The 24 × 36 inch (609.6 × 914.4 mm) format is the most widely sold poster size in retail stores, with inexpensive ready-made frames readily available at Target, IKEA, and Amazon."
+    }
+  ]
+}

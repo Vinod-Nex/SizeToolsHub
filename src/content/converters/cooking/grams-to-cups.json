@@ -1,0 +1,23 @@
+{
+  "title": "Grams to Cups Converter",
+  "primaryKeyword": "Grams to Cups Converter",
+  "metaDescription": "Convert metric grams to US cups for baking and cooking ingredients with exact density adjustments.",
+  "directAnswer": "To convert grams to cups accurately, divide the weight in grams by the ingredient's density per cup. For all-purpose flour, divide by 125 (250g equals 2 cups). For granulated white sugar, divide by 200 (200g equals 1 cup). For packed brown sugar, divide by 220 (110g equals half a cup).",
+  "converterType": "cooking",
+  "fromUnit": "Grams (g)",
+  "toUnit": "US Cups",
+  "faq": [
+    {
+      "question": "How many cups is 100 grams of flour?",
+      "answer": "100 grams of all-purpose flour equals approximately 0.8 cups (about 3/4 cup plus 1 tablespoon)."
+    },
+    {
+      "question": "What is 250 grams of butter in cups?",
+      "answer": "250 grams of butter is approximately 1.1 cups (or 2.2 US sticks of butter)."
+    },
+    {
+      "question": "Is measuring in grams more accurate than measuring in cups?",
+      "answer": "Yes, weighing in grams on a digital kitchen scale is the gold standard for baking because it eliminates volume variations caused by humidity and compaction."
+    }
+  ]
+}

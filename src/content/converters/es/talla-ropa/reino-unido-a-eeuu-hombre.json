@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Ropa Hombre: Reino Unido a EE. UU.",
+  "primaryKeyword": "Talla Ropa Hombre UK a EE. UU.",
+  "metaDescription": "Tabla de equivalencia para camisas, trajes y americanas de hombre entre Reino Unido, Estados Unidos y Europa.",
+  "directAnswer": "Los trajes y americanas de hombre utilizan la misma numeración en pulgadas en Reino Unido y Estados Unidos (UK 38 = US 38). Para convertir a talla europea, suma 10 (UK 38 = EU 48).",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla Reino Unido (UK)",
+  "toUnit": "Talla EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es 40R en trajes de hombre?",
+      "answer": "\"40\" indica 40 pulgadas de pecho (102 cm) y \"R\" indica longitud regular (Regular Length, para hombres de 1.75 a 1.83 m de estatura)."
+    },
+    {
+      "question": "¿Qué significan las letras S, R y L en trajes masculinos?",
+      "answer": "Short (S) para estaturas inferiores a 1.73 m, Regular (R) para estaturas entre 1.75 m y 1.83 m, y Long (L) para más de 1.85 m."
+    },
+    {
+      "question": "¿Cómo se mide el cuello de una camisa de hombre británica?",
+      "answer": "Se mide en pulgadas: un cuello de 15.5 pulgadas equivale a 39-40 cm en Europa."
+    }
+  ]
+}

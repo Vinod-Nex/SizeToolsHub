@@ -1,0 +1,180 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  category?: string;
+  class?: string;
+}
+
+const {
+  title = 'Verified Conversion Reference Table',
+  subtitle = 'Official dimensional standards and cross-regional sizing matrix.',
+  category = 'Conversion Guide',
+  class: className = '',
+} = Astro.props;
+---
+
+<div class={`printable-chart-wrapper my-10 ${className}`}>
+  <!-- Screen-Only Toolbar & Print Action -->
+  <div class="screen-only flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 sm:p-6 rounded-3xl bg-canvas border border-hairline-soft mb-4 shadow-2xs">
+    <div>
+      <div class="flex items-center gap-2 mb-1.5">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">
+          {category}
+        </span>
+        <span class="text-text-faint">•</span>
+        <span class="text-xs text-text-muted font-medium">Print-Optimized (A4 & US Letter)</span>
+      </div>
+      <h3 class="text-lg sm:text-xl font-bold tracking-tight text-ink">
+        {title}
+      </h3>
+      <p class="text-xs sm:text-sm text-text-muted mt-0.5">
+        {subtitle}
+      </p>
+    </div>
+
+    <div class="flex items-center gap-2 self-start sm:self-auto">
+      <button
+        type="button"
+        onclick="window.print()"
+        class="print-chart-btn inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-primary text-on-primary text-xs sm:text-sm font-semibold hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 active:scale-95 transition-all shadow-xs cursor-pointer select-none"
+        title="Print this reference table or save as PDF (Shortcut: ⌘P or Ctrl+P)"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+        </svg>
+        <span>Print Chart (PDF)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- The Actual Printable Area -->
+  <div class="printable-chart-content">
+    <!-- Print-Only Header: Appears exclusively when printing -->
+    <div class="print-only mb-6 border-b-2 border-black pb-4">
+      <div class="flex items-center justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-black tracking-tight">SizeToolsHub.com</h2>
+          <p class="text-xs text-gray-700 font-medium mt-0.5">Verified International Size & Measurement Reference Platform</p>
+        </div>
+        <div class="text-right text-xs text-gray-600">
+          <p class="font-bold text-black">{title}</p>
+          <p>{category} Guide</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nested Content Slot (Any conversion table or chart) -->
+    <div class="printable-table-slot">
+      <slot />
+    </div>
+
+    <!-- Print-Only Footer -->
+    <div class="print-only mt-6 pt-3 border-t border-gray-400 flex items-center justify-between text-[10px] text-gray-600">
+      <span>Official Reference Chart • https://sizetoolshub.com</span>
+      <span>Verify scale before precision engineering or commercial production.</span>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  /* Screen rules for print-only elements */
+  .print-only {
+    display: none !important;
+  }
+
+  /* High-Precision @media print styles */
+  @media print {
+    /* Hide all non-printable chrome */
+    nav,
+    header,
+    footer,
+    #theme-toggle,
+    .theme-toggle-btn,
+    .screen-only,
+    .copy-result-btn,
+    .shareable-url-container,
+    .print-chart-btn,
+    #mobile-menu-btn,
+    aside,
+    [role="dialog"] {
+      display: none !important;
+    }
+
+    /* Show print-only banners */
+    .print-only {
+      display: block !important;
+    }
+
+    /* Page Setup */
+    @page {
+      margin: 12mm 12mm 12mm 12mm;
+      size: auto;
+    }
+
+    html, body {
+      background: #ffffff !important;
+      color: #000000 !important;
+      font-size: 10pt !important;
+      line-height: 1.3 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    main {
+      max-width: 100% !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    /* Container resets */
+    .printable-chart-wrapper {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+      background: transparent !important;
+    }
+
+    .printable-chart-content {
+      width: 100% !important;
+    }
+
+    /* Table Print Formatting */
+    table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      color: #000000 !important;
+      font-size: 9pt !important;
+      margin-top: 10px !important;
+      margin-bottom: 15px !important;
+    }
+
+    thead {
+      display: table-header-group !important;
+    }
+
+    tr {
+      page-break-inside: avoid !important;
+    }
+
+    th, td {
+      border: 1px solid #9ca3af !important;
+      padding: 5px 8px !important;
+      color: #000000 !important;
+    }
+
+    th {
+      background-color: #f3f4f6 !important;
+      font-weight: bold !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    /* Strip shadows and background tints */
+    * {
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+  }
+</style>

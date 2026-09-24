@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas Petite para Mujeres",
+  "primaryKeyword": "Tabla de Tallas Petite",
+  "metaDescription": "Guía de ropa Petite para mujeres de menos de 1.63 m de altura. Mangas, tiros y proporciones ajustadas para evitar arreglos de costura.",
+  "directAnswer": "La categoría Petite (indicada con una \"P\" tras la talla, como 4P o SP) no significa delgadez, sino estatura inferior a 163 cm. El largo de pierna, mangas y talle de cintura están reducidos en 3 a 5 cm.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla Petite EE. UU. (P)",
+  "toUnit": "Talla Petite España / UE",
+  "faq": [
+    {
+      "question": "¿Quién debe comprar ropa de la sección Petite?",
+      "answer": "Cualquier mujer con una estatura de 1.62 m o menos que encuentre habitualmente que los pantalones le quedan largos o las mangas sobrepasan las muñecas."
+    },
+    {
+      "question": "¿Qué talla es una Small Petite (SP)?",
+      "answer": "Equivale a una talla S estándar (36-38 en España) pero adaptada a una silueta de menor estatura."
+    },
+    {
+      "question": "¿Se pueden comprar pantalones Petite siendo de estatura media?",
+      "answer": "Sí, muchas mujeres de estatura media compran pantalones Petite para lucir un corte estilo tobillero (Cropped o Ankle length)."
+    }
+  ]
+}

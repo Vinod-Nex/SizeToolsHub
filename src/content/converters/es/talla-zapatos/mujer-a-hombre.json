@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: Mujer a Hombre",
+  "primaryKeyword": "Talla Calzado Mujer a Hombre",
+  "metaDescription": "Calcula la equivalencia de calzado de mujer a hombre para zapatillas deportivas, modelos unisex y botas.",
+  "directAnswer": "Para convertir de talla femenina a masculina en EE. UU. (US), resta 1.5 números: una talla US 9 de mujer equivale a US 7.5 de hombre.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Mujer (US/EU)",
+  "toUnit": "Talla Hombre (US/EU)",
+  "faq": [
+    {
+      "question": "¿Un hombre puede usar calzado de mujer?",
+      "answer": "Sí, sumando 1.5 a su talla US, pero debe tener en cuenta que el calzado femenino tiene una horma más estrecha (ancho B frente a ancho D masculino)."
+    },
+    {
+      "question": "¿Qué talla de hombre es un 8.5 de mujer?",
+      "answer": "Un US 8.5 de mujer equivale a un US 7 de hombre (talla 40 europea o 25.5 cm)."
+    },
+    {
+      "question": "¿Varía el arco del pie entre calzado masculino y femenino?",
+      "answer": "Sí, muchos fabricantes diseñan el soporte de arco y la amortiguación del talón con densidades diferentes según la biomecánica de cada género."
+    }
+  ]
+}

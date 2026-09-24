@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures Asics: Running et Volley",
+  "primaryKeyword": "Guide des Pointures Asics",
+  "metaDescription": "Tableau officiel des pointures Asics Gel-Kayano, Gel-Nimbus et GT-2000. Guide de choix pour coureurs sur route et piste.",
+  "directAnswer": "Asics emploie des demi-pointures européennes (42.5, 43.5, 44). Pour courir sur route avec des Gel-Nimbus ou Kayano, prenez systématiquement une demi-pointure à une pointure de plus qu’en ville.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Asics France / EU",
+  "toUnit": "Pointure Asics US",
+  "faq": [
+    {
+      "question": "Quelle pointure US pour un 43.5 chez Asics ?",
+      "answer": "Un 43.5 homme correspond à un US 9.5 (27.5 cm)."
+    },
+    {
+      "question": "Existe-t-il des largeurs spécifiques chez Asics ?",
+      "answer": "Oui, Asics propose les options \"Wide\" (2E) et \"Extra Wide\" (4E) sur ses gammes de running phare."
+    },
+    {
+      "question": "Comment choisir entre Gel-Nimbus et Gel-Kayano ?",
+      "answer": "La Gel-Nimbus s’adresse aux foulées neutres, tandis que la Gel-Kayano apporte un soutien renforcé pour les foulées pronatrices."
+    }
+  ]
+}

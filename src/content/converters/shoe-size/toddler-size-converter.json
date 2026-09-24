@@ -1,0 +1,23 @@
+{
+  "title": "Toddler Shoe Size Converter",
+  "primaryKeyword": "Toddler Shoe Size Converter",
+  "metaDescription": "Convert toddler shoe sizes between US, UK, EU, and centimeter measurements with age guidelines and fit recommendations.",
+  "directAnswer": "Toddler shoe sizes encompass US sizes 4C through 10C for children aged 1 to 4 years, corresponding to European sizes 19 through 27. Toddler feet grow approximately half a size every two to three months, so always allow 10 to 12 millimeters of toe room when converting shoe sizes.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Toddler (C)",
+  "toUnit": "EU Toddler",
+  "faq": [
+    {
+      "question": "What shoe size is a 2-year-old?",
+      "answer": "Most 2-year-olds wear a US toddler size 6C to 8C (EU 22 to 24), measuring approximately 13.5 to 15.0 centimeters."
+    },
+    {
+      "question": "How much room should be left in a toddler's shoe?",
+      "answer": "Leave about 10 mm to 12 mm (the width of an adult's thumb) between the child's longest toe and the end of the shoe."
+    },
+    {
+      "question": "What is an EU 25 in US toddler sizing?",
+      "answer": "An EU 25 corresponds to a US toddler size 8.5C (approx. 15.5 cm)."
+    }
+  ]
+}

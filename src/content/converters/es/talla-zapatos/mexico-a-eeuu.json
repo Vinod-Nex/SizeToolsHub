@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: México a EE. UU.",
+  "primaryKeyword": "Talla de Calzado México a EE. UU.",
+  "metaDescription": "Convierte tu número mexicano de zapatos a talla americana (US). Ideal para comprar tenis y calzado en tiendas de Estados Unidos.",
+  "directAnswer": "Para calzado de hombre, suma generalmente 2 números a tu talla mexicana: un número 27 MX equivale a US 9 de hombre. Para mujer, suma 3 a tu número mexicano: un 24 MX equivale a US 7 de mujer.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla México (MX / cm)",
+  "toUnit": "Talla EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es 25 en México en calzado de mujer en EE. UU.?",
+      "answer": "El número 25 de mujer en México equivale a una talla US 8 (talla 38.5-39 en Europa)."
+    },
+    {
+      "question": "¿Qué número es el 28 mexicano en EE. UU. para hombre?",
+      "answer": "Un número 28 de hombre en México equivale a un US 10 en Estados Unidos (talla 43-44 en Europa)."
+    },
+    {
+      "question": "¿Varían las equivalencias si compro botas vaqueras o de trabajo?",
+      "answer": "En botas vaqueras de marcas como Ariat o Justin, la horma puede ser más ajustada en el empeine, por lo que a veces se pide medio número más o ancho EE."
+    }
+  ]
+}

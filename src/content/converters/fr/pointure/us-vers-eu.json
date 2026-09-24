@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure US vers EU et France",
+  "primaryKeyword": "Pointure US vers EU",
+  "metaDescription": "Tableau de correspondance des pointures de chaussures États-Unis (US) vers Europe et France (EU/FR). Hommes, femmes et enfants.",
+  "directAnswer": "Pour convertir une pointure américaine (US) en pointure française (FR/EU), ajoutez environ 33 à 34 pour les hommes (un US 9 homme équivaut à un 42.5 en France) et environ 31 pour les femmes (un US 8 femme équivaut à un 38.5 ou 39 en France).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure US",
+  "toUnit": "Pointure France / EU",
+  "faq": [
+    {
+      "question": "À quoi correspond une pointure US 9 homme en France ?",
+      "answer": "Une pointure US 9 homme correspond à une taille 42.5 en France et dans l’Union Européenne (longueur de pied d’environ 27 cm)."
+    },
+    {
+      "question": "Quelle est la différence entre pointure américaine et pointure française ?",
+      "answer": "Le système américain est gradué en tiers de pouce (8,46 mm), tandis que la pointure française utilise le Point de Paris (deux tiers de centimètre ou 6,67 mm)."
+    },
+    {
+      "question": "Comment mesurer son pied pour éviter les erreurs de pointure ?",
+      "answer": "Placez votre talon contre un mur sur une feuille de papier, tracez un repère devant le gros orteil, mesurez en centimètres et ajoutez 5 à 10 mm de marge."
+    }
+  ]
+}

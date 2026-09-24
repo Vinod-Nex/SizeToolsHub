@@ -1,0 +1,23 @@
+{
+  "title": "KM to Miles Distance & Speed Converter",
+  "primaryKeyword": "KM to Miles",
+  "metaDescription": "Convert kilometers to miles (km to mi) and km/h to mph. Includes rapid mental conversion shortcuts, highway driving charts, and marathon running milestones.",
+  "directAnswer": "To convert kilometers to miles, multiply the kilometer distance by 0.621371 (or divide by 1.609344). For example, 100 kilometers equals exactly 62.14 miles, and 5 kilometers equals 3.11 miles. For fast mental estimates on the highway, multiply the kilometer reading by six and drop the last digit (e.g., 50 km × 6 ≈ 30 miles).",
+  "converterType": "fuel",
+  "fromUnit": "Kilometers (km)",
+  "toUnit": "Miles (mi)",
+  "faq": [
+    {
+      "question": "What is the exact conversion factor between km and miles?",
+      "answer": "1 kilometer equals exactly 0.621371192 miles. Conversely, 1 international statute mile equals exactly 1.609344 kilometers."
+    },
+    {
+      "question": "What is 100 km/h in miles per hour (mph)?",
+      "answer": "100 km/h equals 62.14 mph, which represents the standard national highway speed limit in many European and Commonwealth nations."
+    },
+    {
+      "question": "How many miles is a 5K and a 10K race?",
+      "answer": "A 5K road race is exactly 3.107 miles (commonly rounded to 3.1 miles), and a 10K race is exactly 6.214 miles."
+    }
+  ]
+}

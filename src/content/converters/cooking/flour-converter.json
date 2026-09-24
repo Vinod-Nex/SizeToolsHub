@@ -1,0 +1,23 @@
+{
+  "title": "Flour Converter (All-Purpose, Bread, Cake, Whole Wheat)",
+  "primaryKeyword": "Flour Converter",
+  "metaDescription": "Convert flour cups to grams across all-purpose, bread, cake, and whole wheat flours with density calibration.",
+  "directAnswer": "Flour density varies significantly by type and packing method. One cup of sifted all-purpose flour weighs 125 grams, bread flour weighs 127 grams, cake flour weighs 114 grams, and whole wheat flour weighs 130 grams. Always spoon flour into your measuring cup and level off flat to avoid excess density.",
+  "converterType": "cooking",
+  "fromUnit": "Flour Cups",
+  "toUnit": "Flour Grams",
+  "faq": [
+    {
+      "question": "Why does 1 cup of flour weigh different amounts in different recipes?",
+      "answer": "King Arthur Baking uses 120g/cup, while USDA and many traditional cookbooks use 125g to 128g/cup. Scooping directly can pack up to 150g into a single cup."
+    },
+    {
+      "question": "What is 500 grams of flour in cups?",
+      "answer": "500 grams of all-purpose flour equals exactly 4 level cups (at 125g per cup)."
+    },
+    {
+      "question": "Can I substitute cake flour for all-purpose flour by cup volume?",
+      "answer": "Cake flour is lighter (114g/cup vs 125g/cup). To substitute by volume, add 2 extra tablespoons of cake flour for every cup of all-purpose flour, or weigh equal grams."
+    }
+  ]
+}

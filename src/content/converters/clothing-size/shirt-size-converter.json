@@ -1,0 +1,23 @@
+{
+  "title": "Men's Dress Shirt Size Converter",
+  "primaryKeyword": "Men's Dress Shirt Size Converter",
+  "metaDescription": "Convert men's dress shirt collar sizes between US/UK inches and European centimeters with sleeve length and chest fit guides.",
+  "directAnswer": "Men's dress shirt sizes are determined primarily by neck collar circumference. A US and UK 15.5-inch collar translates to an EU 39 or 40 centimeters, corresponding to a standard Medium (M) chest. Dress shirts also designate sleeve length (e.g., 34/35 inches) measured from the center back collar down to the wrist.",
+  "converterType": "clothing-size",
+  "fromUnit": "Collar (Inches)",
+  "toUnit": "EU Collar (cm) / Alpha",
+  "faq": [
+    {
+      "question": "How do I measure my collar size for a dress shirt?",
+      "answer": "Wrap a measuring tape around the base of your neck where the collar sits, placing two fingers beneath the tape for comfortable breathing allowance."
+    },
+    {
+      "question": "What collar size corresponds to a Men's Large shirt?",
+      "answer": "A Men's Large (L) shirt typically features a 16.0 or 16.5-inch collar (EU 41-42 cm)."
+    },
+    {
+      "question": "What is the difference between Slim Fit, Athletic Fit, and Classic Fit shirts?",
+      "answer": "Classic fit has fuller torso cuts; athletic fit offers broad shoulders with a tapered waist; slim fit features back darts and narrower armholes."
+    }
+  ]
+}

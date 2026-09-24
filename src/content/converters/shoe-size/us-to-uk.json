@@ -1,0 +1,23 @@
+{
+  "title": "US to UK Shoe Size Converter",
+  "primaryKeyword": "US to UK Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to UK shoe sizes for Men, Women, and Kids with international sizing charts and foot length in inches and cm.",
+  "directAnswer": "To convert US to UK shoe sizes, men subtract 0.5 to 1 size from their US size (a US Men's 10 is a UK 9 or 9.5), whereas women subtract 2 sizes (a US Women's 8 is a UK 6). UK sizing shares the imperial barleycorn increment but employs a slightly shorter last baseline.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "UK Size",
+  "faq": [
+    {
+      "question": "What size is a US 9 in UK shoes?",
+      "answer": "A US Men's size 9 is a UK 8 or 8.5 depending on the brand. A US Women's size 9 is typically a UK size 7."
+    },
+    {
+      "question": "Why are UK shoe sizes smaller in number than US sizes?",
+      "answer": "UK shoe sizes start at zero at a 4-inch last length with 1/3-inch size increments, while US men's sizes are calibrated with an additional offset."
+    },
+    {
+      "question": "Do sneaker brands follow standard US to UK conversion?",
+      "answer": "Most brands follow standard sizing, but Nike US Men 10 is UK 9, while Adidas US Men 10 is UK 9.5 due to different last grading rules."
+    }
+  ]
+}

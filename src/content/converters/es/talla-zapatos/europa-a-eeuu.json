@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: Europa a EE. UU.",
+  "primaryKeyword": "Talla de Calzado Europa a EE. UU.",
+  "metaDescription": "Convierte tallas de calzado europeas (EU/España) a tallas estadounidenses (US). Equivalencias para calzado deportivo, formal y botas.",
+  "directAnswer": "Para pasar de talla europea a estadounidense, resta 33 a la talla masculina (un EU 43 equivale a US 9.5-10) o resta 30 a 31 para calzado femenino (un EU 38 equivale a US 7-7.5).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Europa (EU)",
+  "toUnit": "Talla EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es la 40 europea en EE. UU.?",
+      "answer": "En calzado de hombre, una talla EU 40 equivale a US 7.5. En calzado de mujer, una EU 40 equivale a US 9 o 9.5."
+    },
+    {
+      "question": "¿La talla española es exactamente igual a la talla europea?",
+      "answer": "Sí, España utiliza el estándar continental europeo unificado (EU / Punto de París), idéntico al de Francia, Alemania e Italia."
+    },
+    {
+      "question": "¿Varían las tallas europeas entre calzado formal y zapatillas deportivas?",
+      "answer": "Sí, en zapatillas deportivas (como Nike o Adidas) se suele recomendar medio número más que en zapatos de vestir debido al acolchado interno."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "US to EU Women's Clothing Size Converter",
+  "primaryKeyword": "US to EU Women's Clothing Size Converter",
+  "metaDescription": "Convert US women's dress, top, and pant sizes to European (EU/FR/IT) sizing with bust, waist, and hip measurement charts.",
+  "directAnswer": "To convert US women's clothing sizes to European (EU) sizes, add 30 to 32 to your US dress size. For example, a US size 4 is an EU 36 (French 36, Italian 40), while a US 8 is an EU 40. Always check brand-specific measurements across bust, waist, and hips.",
+  "converterType": "clothing-size",
+  "fromUnit": "US Women's",
+  "toUnit": "EU Women's",
+  "faq": [
+    {
+      "question": "What is a US Women's size 6 in EU clothing?",
+      "answer": "A US Women's size 6 is typically an EU 38 in Germany/Scandinavia, a French 38, or an Italian size 42."
+    },
+    {
+      "question": "Why do Italian and French sizes differ from German EU sizes?",
+      "answer": "French sizing is offset by approximately 32 from US sizing (US 4 = FR 36), while Italian sizing is offset by 36 (US 4 = IT 40)."
+    },
+    {
+      "question": "What is an International Medium (M) in EU dress size?",
+      "answer": "An International Medium (M) corresponds to US 8-10, UK 12-14, and EU 40-42."
+    }
+  ]
+}

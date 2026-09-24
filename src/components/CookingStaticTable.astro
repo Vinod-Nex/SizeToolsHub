@@ -1,0 +1,92 @@
+---
+import { OVEN_TEMP_DATA } from '../lib/converters/cookingUnits';
+
+const ingredientRows = [
+  { name: 'All-Purpose Flour', cup: '125g', halfCup: '63g', thirdCup: '42g', quarterCup: '31g', tbsp: '7.8g' },
+  { name: 'Bread Flour', cup: '127g', halfCup: '64g', thirdCup: '42g', quarterCup: '32g', tbsp: '7.9g' },
+  { name: 'Cake Flour', cup: '114g', halfCup: '57g', thirdCup: '38g', quarterCup: '29g', tbsp: '7.1g' },
+  { name: 'Granulated Sugar', cup: '200g', halfCup: '100g', thirdCup: '67g', quarterCup: '50g', tbsp: '12.5g' },
+  { name: 'Brown Sugar (Packed)', cup: '220g', halfCup: '110g', thirdCup: '73g', quarterCup: '55g', tbsp: '13.8g' },
+  { name: 'Confectioners / Powdered', cup: '120g', halfCup: '60g', thirdCup: '40g', quarterCup: '30g', tbsp: '7.5g' },
+  { name: 'Butter (Solid/Melted)', cup: '227g', halfCup: '113g', thirdCup: '76g', quarterCup: '57g', tbsp: '14.2g' },
+  { name: 'White Rice (Uncooked)', cup: '185g', halfCup: '93g', thirdCup: '62g', quarterCup: '46g', tbsp: '11.6g' },
+  { name: 'Brown Rice (Uncooked)', cup: '190g', halfCup: '95g', thirdCup: '63g', quarterCup: '48g', tbsp: '11.9g' },
+  { name: 'Rolled Oats', cup: '90g', halfCup: '45g', thirdCup: '30g', quarterCup: '23g', tbsp: '5.6g' },
+  { name: 'Cocoa Powder', cup: '100g', halfCup: '50g', thirdCup: '33g', quarterCup: '25g', tbsp: '6.3g' },
+  { name: 'Whole Milk / Water', cup: '240g', halfCup: '120g', thirdCup: '80g', quarterCup: '60g', tbsp: '15g' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="cooking-table-heading">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Culinary Density Standards</span>
+    </div>
+    <h2 id="cooking-table-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Baking & Cooking Ingredient Conversion Chart.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Weight varies significantly by ingredient density. Here is the definitive culinary cross-reference chart from cups to grams and tablespoons.
+    </p>
+  </div>
+
+  <!-- Ingredients Table -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3">Common Baking Ingredients (Volume to Weight in Grams)</h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">Ingredient</th>
+            <th class="py-4 px-5">1 Cup</th>
+            <th class="py-4 px-5">1/2 Cup</th>
+            <th class="py-4 px-5">1/3 Cup</th>
+            <th class="py-4 px-5">1/4 Cup</th>
+            <th class="py-4 px-5">1 Tablespoon</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {ingredientRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{row.name}</td>
+              <td class="py-3 px-5 font-bold text-accent">{row.cup}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.halfCup}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.thirdCup}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.quarterCup}</td>
+              <td class="py-3 px-5 font-mono text-xs text-text-muted">{row.tbsp}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Oven Temperature Table -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3">Oven Temperature Conversion Table</h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">Fahrenheit (°F)</th>
+            <th class="py-4 px-5">Celsius (°C)</th>
+            <th class="py-4 px-5">Fan-Forced (°C)</th>
+            <th class="py-4 px-5">Gas Mark</th>
+            <th class="py-4 px-5">Heat Description</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {OVEN_TEMP_DATA.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{row.fahrenheit}°F</td>
+              <td class="py-3 px-5 font-semibold text-accent">{row.celsius}°C</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.fan}°C</td>
+              <td class="py-3 px-5 font-bold">{row.gasMark}</td>
+              <td class="py-3 px-5 text-text-muted">{row.desc}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

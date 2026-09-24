@@ -1,0 +1,23 @@
+{
+  "title": "GB to TB Converter",
+  "primaryKeyword": "GB to TB Converter",
+  "metaDescription": "Convert Gigabytes (GB) to Terabytes (TB) for SSDs, HDDs, and cloud backup systems with decimal and binary options.",
+  "directAnswer": "To convert Gigabytes (GB) to Terabytes (TB), divide by 1,000 in the decimal SI system used by storage drive manufacturers (1,000 GB = 1 TB), or divide by 1,024 in binary IEC architecture (1,024 GiB = 1 TiB). A 500 GB drive equals 0.5 TB decimal, or 0.488 TiB binary.",
+  "converterType": "data",
+  "fromUnit": "Gigabytes (GB)",
+  "toUnit": "Terabytes (TB)",
+  "faq": [
+    {
+      "question": "How many GB make 1 TB?",
+      "answer": "1 TB equals 1,000 GB in the decimal system, and 1 TiB equals 1,024 GiB in the binary system."
+    },
+    {
+      "question": "What is 500 GB in TB?",
+      "answer": "500 GB is exactly 0.5 TB decimal, or approximately 0.488 TiB binary."
+    },
+    {
+      "question": "Is 1 TB enough storage for a modern PC?",
+      "answer": "For general productivity, 1 TB is plenty. For gaming or 4K video editing, 2 TB to 4 TB is recommended due to modern games exceeding 100 GB each."
+    }
+  ]
+}

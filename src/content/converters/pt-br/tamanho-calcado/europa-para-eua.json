@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Calçados Europa (EU) para EUA",
+  "primaryKeyword": "Tamanho de Calçado Europa para EUA",
+  "metaDescription": "Converta numeração de sapatos da Europa (EU) para os Estados Unidos (US). Tabela completa para calçados europeus importados.",
+  "directAnswer": "Para converter sapatos da numeração europeia (EU) para os EUA, subtraia aproximadamente 33 a 34 para homens (EU 44 = US 10,5) e subtraia 30,5 a 31 para mulheres (EU 38 = US 7,5).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Europa (EU)",
+  "toUnit": "Tamanho EUA (US)",
+  "faq": [
+    {
+      "question": "O tamanho europeu é o mesmo que o brasileiro?",
+      "answer": "Não. O tamanho europeu (EU) é sempre dois números maior que o brasileiro (BR). Por exemplo, EU 40 equivale ao BR 38."
+    }
+  ]
+}

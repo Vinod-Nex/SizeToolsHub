@@ -1,0 +1,23 @@
+{
+  "title": "International Clothing Size Converter & Chart",
+  "primaryKeyword": "International Clothing Size Converter & Chart",
+  "metaDescription": "Comprehensive global apparel conversion chart comparing US, UK, European, French, Italian, and Japanese sizing standards.",
+  "directAnswer": "International clothing sizing varies significantly across regional fashion markets. A US women's size 6 translates to a UK 10, French EU 38, Italian 42, and Japanese size 9. When purchasing overseas garments, using anatomical body circumference in centimeters provides the most reliable fit across differing international grading rules.",
+  "converterType": "clothing-size",
+  "fromUnit": "US / Global Size",
+  "toUnit": "UK / EU / IT / JP",
+  "faq": [
+    {
+      "question": "What is a US Women's size Small (S) internationally?",
+      "answer": "US Small (sizes 4-6) corresponds to UK 8-10, EU 36-38, Italian 40-42, and Japanese sizes 7-9."
+    },
+    {
+      "question": "Why do Italian clothing sizes look so large numerically?",
+      "answer": "Italian sizing is based on half the total chest/bust circumference in centimeters, leading to labels like 40, 42, 44, and 46."
+    },
+    {
+      "question": "What is the best way to avoid sizing errors when ordering clothes abroad?",
+      "answer": "Always consult the brand's metric centimeter chart for bust, waist, and hip measurements rather than relying solely on regional numeric tags."
+    }
+  ]
+}

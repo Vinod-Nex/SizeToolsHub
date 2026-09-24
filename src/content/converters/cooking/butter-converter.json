@@ -1,0 +1,23 @@
+{
+  "title": "Butter Converter (Sticks, Cups, Grams, Tbsp)",
+  "primaryKeyword": "Butter Converter",
+  "metaDescription": "Convert butter measurements between US sticks, cups, tablespoons, grams, and ounces with international butter block conversions.",
+  "directAnswer": "In US baking, 1 stick of butter equals one-half cup, 8 tablespoons, 4 ounces, or 113.4 grams. Two sticks equal 1 full cup (226.8 grams). European butter blocks typically weigh 250 grams, which corresponds to approximately 1.1 cups or 2.2 US butter sticks with higher milkfat content.",
+  "converterType": "cooking",
+  "fromUnit": "Butter Sticks",
+  "toUnit": "Grams / Cups",
+  "faq": [
+    {
+      "question": "How much is 1 stick of butter in grams?",
+      "answer": "1 US stick of butter equals 113.4 grams (1/2 cup or 8 tablespoons)."
+    },
+    {
+      "question": "How do I substitute European butter for American butter?",
+      "answer": "European butter (like Kerrygold or President) has 82%+ butterfat compared to American 80%. You can substitute 1:1 by weight (grams) for richer pastries."
+    },
+    {
+      "question": "How many tablespoons of butter is 100 grams?",
+      "answer": "100 grams of butter equals approximately 7 tablespoons (or 0.88 US sticks)."
+    }
+  ]
+}

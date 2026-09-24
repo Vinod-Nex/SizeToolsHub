@@ -1,0 +1,116 @@
+---
+/**
+ * Tableau Statique de Correspondance des Tailles de Vêtements (France / International)
+ * Zéro JavaScript, accessible et conforme aux normes AFNOR et ISO 8559.
+ */
+
+const womenRows = [
+  { fr: '34', eu: '32', alfa: 'XS', us: '0', uk: '4', chestCm: '78-81 cm', waistCm: '60-63 cm', hipCm: '86-89 cm' },
+  { fr: '36', eu: '34', alfa: 'S', us: '2', uk: '6', chestCm: '82-85 cm', waistCm: '64-67 cm', hipCm: '90-93 cm' },
+  { fr: '38', eu: '36', alfa: 'S / M', us: '4', uk: '8', chestCm: '86-89 cm', waistCm: '68-71 cm', hipCm: '94-97 cm' },
+  { fr: '40', eu: '38', alfa: 'M', us: '6', uk: '10', chestCm: '90-93 cm', waistCm: '72-75 cm', hipCm: '98-101 cm' },
+  { fr: '42', eu: '40', alfa: 'L', us: '8', uk: '12', chestCm: '94-97 cm', waistCm: '76-79 cm', hipCm: '102-105 cm' },
+  { fr: '44', eu: '42', alfa: 'L / XL', us: '10', uk: '14', chestCm: '98-102 cm', waistCm: '80-84 cm', hipCm: '106-110 cm' },
+  { fr: '46', eu: '44', alfa: 'XL', us: '12', uk: '16', chestCm: '103-108 cm', waistCm: '85-90 cm', hipCm: '111-116 cm' },
+  { fr: '48', eu: '46', alfa: '2XL', us: '14', uk: '18', chestCm: '109-114 cm', waistCm: '91-96 cm', hipCm: '117-122 cm' },
+  { fr: '50', eu: '48', alfa: '3XL', us: '16', uk: '20', chestCm: '115-120 cm', waistCm: '97-102 cm', hipCm: '123-128 cm' },
+  { fr: '52', eu: '50', alfa: '4XL', us: '18', uk: '22', chestCm: '121-126 cm', waistCm: '103-108 cm', hipCm: '129-134 cm' },
+];
+
+const menRows = [
+  { fr: '44', eu: '44', alfa: 'XS', us: '34', chestCm: '88 cm', waistCm: '74 cm' },
+  { fr: '46', eu: '46', alfa: 'S', us: '36', chestCm: '92 cm', waistCm: '78 cm' },
+  { fr: '48', eu: '48', alfa: 'M', us: '38', chestCm: '96 cm', waistCm: '82 cm' },
+  { fr: '50', eu: '50', alfa: 'M / L', us: '40', chestCm: '100 cm', waistCm: '86 cm' },
+  { fr: '52', eu: '52', alfa: 'L', us: '42', chestCm: '104 cm', waistCm: '90 cm' },
+  { fr: '54', eu: '54', alfa: 'XL', us: '44', chestCm: '108 cm', waistCm: '96 cm' },
+  { fr: '56', eu: '56', alfa: '2XL', us: '46', chestCm: '114 cm', waistCm: '102 cm' },
+  { fr: '58', eu: '58', alfa: '3XL', us: '48', chestCm: '120 cm', waistCm: '108 cm' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Guides Morphologiques et Mensurations</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Guide des Tailles de Vêtements : France, Europe (EU), États-Unis et UK.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Grille officielle de confection AFNOR pour femmes et hommes. Convertissez facilement vos mensurations corporelles en centimètres vers les standards de prêt-à-porter internationaux.
+    </p>
+  </div>
+
+  <!-- Women's Table -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Prêt-à-porter Féminin : Robes, Tops, Jupes et Pantalons</span>
+      <span class="text-xs font-normal text-text-faint">(Poitrine, Taille, Bassin)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">Taille France (FR)</th>
+            <th class="py-4 px-5">Europe (EU)</th>
+            <th class="py-4 px-5">Lettre</th>
+            <th class="py-4 px-5">US</th>
+            <th class="py-4 px-5">UK</th>
+            <th class="py-4 px-5">Tour de Poitrine</th>
+            <th class="py-4 px-5">Tour de Taille</th>
+            <th class="py-4 px-5">Tour de Bassin</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {womenRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3.5 px-5 font-bold text-accent text-base">{row.fr}</td>
+              <td class="py-3.5 px-5 font-medium">{row.eu}</td>
+              <td class="py-3.5 px-5 font-semibold text-ink">{row.alfa}</td>
+              <td class="py-3.5 px-5 font-medium">{row.us}</td>
+              <td class="py-3.5 px-5 font-medium">{row.uk}</td>
+              <td class="py-3.5 px-5 font-mono">{row.chestCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.waistCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.hipCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Men's Table -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Vestiaire Masculin : Costumes, Chemises et Vestes</span>
+      <span class="text-xs font-normal text-text-faint">(Tour de Poitrine et Tour de Ceinture)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">Taille France (FR)</th>
+            <th class="py-4 px-5">Europe (EU)</th>
+            <th class="py-4 px-5">Lettre</th>
+            <th class="py-4 px-5">US</th>
+            <th class="py-4 px-5">Tour de Poitrine</th>
+            <th class="py-4 px-5">Tour de Ceinture</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {menRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3.5 px-5 font-bold text-accent text-base">{row.fr}</td>
+              <td class="py-3.5 px-5 font-medium">{row.eu}</td>
+              <td class="py-3.5 px-5 font-semibold text-ink">{row.alfa}</td>
+              <td class="py-3.5 px-5 font-medium">{row.us}</td>
+              <td class="py-3.5 px-5 font-mono">{row.chestCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.waistCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

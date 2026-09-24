@@ -1,0 +1,23 @@
+{
+  "title": "Calculadora y Tabla de Tallas de Sujetador",
+  "primaryKeyword": "Talla de Sujetador España",
+  "metaDescription": "Calcula tu talla correcta de sujetador (copa y contorno) a partir de tus medidas en centímetros. Equivalencia entre tallas FR/ES, EU, US y UK.",
+  "directAnswer": "En España y Francia (FR/ES), el contorno es 15 unidades mayor que el contorno europeo estándar (EU): una talla 90B en España equivale a una 75B en Europa y 34B en Estados Unidos. La copa se calcula restando el contorno bajo pecho al contorno de busto.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Medidas Corporales (cm)",
+  "toUnit": "Talla y Copa de Sujetador (ES/FR/US)",
+  "faq": [
+    {
+      "question": "¿Cómo se calcula la copa del sujetador (A, B, C, D)?",
+      "answer": "Resta el contorno bajo pecho (tórax) al contorno del busto: 12-14 cm de diferencia es Copa A, 14-16 cm es Copa B, 16-18 cm es Copa C, y 18-20 cm es Copa D."
+    },
+    {
+      "question": "¿Por qué la talla española de sujetador es diferente a la europea?",
+      "answer": "España y Francia utilizan el sistema tradicional francés que añade 15 cm a la medida bajo pecho (ej. un tórax de 75 cm da una talla 90 en España)."
+    },
+    {
+      "question": "¿Qué es una copa hermana (Sister Size)?",
+      "answer": "Son tallas con el mismo volumen de copa pero diferente banda de contorno: por ejemplo, una 90B tiene el mismo volumen de copa que una 85C o una 95A."
+    }
+  ]
+}

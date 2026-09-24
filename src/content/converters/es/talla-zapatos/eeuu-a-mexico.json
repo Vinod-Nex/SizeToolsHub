@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: EE. UU. a México",
+  "primaryKeyword": "Talla de Calzado EE. UU. a México",
+  "metaDescription": "Tabla de conversión de calzado americano (US) a numeración mexicana (MX en cm). Calcula la talla exacta para calzado de hombre, mujer y niños.",
+  "directAnswer": "En México el calzado se numera directamente en centímetros. Para hombre, una talla US 9 equivale a talla 27 MX. En mujer, una talla US 7 equivale aproximadamente a una talla 24 MX.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla EE. UU. (US)",
+  "toUnit": "Talla México (MX / cm)",
+  "faq": [
+    {
+      "question": "¿Cómo funciona la numeración de zapatos en México?",
+      "answer": "El número mexicano representa los centímetros de longitud del pie. Un número 28 corresponde a 28 cm."
+    },
+    {
+      "question": "¿Qué significa el punto cinco en las tallas mexicanas (ej. 26.5)?",
+      "answer": "Tradicionalmente en México, el medio punto (.5) incrementa principalmente el empeine o ancho de la horma, además de unos milímetros en la longitud."
+    },
+    {
+      "question": "¿Qué talla es 8.5 de hombre de EE. UU. en México?",
+      "answer": "Un US 8.5 de hombre equivale al número 26.5 o 27 en México (talla 41.5-42 europea)."
+    }
+  ]
+}

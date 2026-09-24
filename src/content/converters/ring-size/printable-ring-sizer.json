@@ -1,0 +1,23 @@
+{
+  "title": "Printable Ring Sizer Chart & Measuring Guide (PDF)",
+  "primaryKeyword": "Printable Ring Sizer Chart",
+  "metaDescription": "Free printable ring sizer PDF with true-to-scale circles and cutout finger wrap strip calibrated with a 50mm ruler check line.",
+  "directAnswer": "Our printable ring sizer provides an exact 1:1 scale reference guide for measuring fingers and existing jewelry. When printing, ensure printer scaling is set to 100% (disable 'fit to page') and verify the 50 mm calibration bar before comparing existing rings or cutting the wrap-around finger sizing ruler strip.",
+  "converterType": "ring-size",
+  "fromUnit": "Print Scale (100%)",
+  "toUnit": "US / UK / EU Rings",
+  "faq": [
+    {
+      "question": "How do I ensure the printable ring sizer prints at the correct size?",
+      "answer": "In your browser print dialog, set 'Scale' to 100% or 'Actual Size' and disable 'Fit to Page'. Measure the 50mm calibration line with a physical ruler before using."
+    },
+    {
+      "question": "How do I use the circular ring chart?",
+      "answer": "Place a ring that fits you comfortably over the printed circles until you find the circle that perfectly matches the inside edge of your ring band."
+    },
+    {
+      "question": "Can I measure someone else's ring secretly?",
+      "answer": "Yes, borrow a ring they wear on the intended finger and press it onto the printable circle chart to match its internal diameter without them knowing."
+    }
+  ]
+}

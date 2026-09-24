@@ -1,0 +1,6 @@
+name = "sizetoolshub"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-09-24"
+
+# Static site deployment configuration
+# Optimized for zero-lag edge caching across Cloudflare's global CDN network

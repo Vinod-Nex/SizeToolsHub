@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures Puma: Baskets et Crampons",
+  "primaryKeyword": "Guide des Tailles Puma Pointure",
+  "metaDescription": "Tableau de correspondance pour chaussures Puma Suede, RS-X et chaussures de football.",
+  "directAnswer": "Puma suit les normes européennes habituelles. Une pointure 42 en France équivaut à un US 9 homme (27 cm). Pour les chaussures de foot, prévoyez une demi-taille de plus avec des chaussettes épaisses.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Puma France / EU",
+  "toUnit": "Pointure Puma US",
+  "faq": [
+    {
+      "question": "Les Puma Suede taillent-elles normalement ?",
+      "answer": "Oui, le modèle classique Suede respecte la grille de pointure standard."
+    },
+    {
+      "question": "Quel est l’équivalent US d’un 43 Puma ?",
+      "answer": "Un 43 Puma correspond à un US 10 homme (28 cm)."
+    },
+    {
+      "question": "Comment chausse la gamme Puma RS-X ?",
+      "answer": "En raison de son rembourrage important, il est souvent préférable de choisir une demi-pointure au-dessus."
+    }
+  ]
+}

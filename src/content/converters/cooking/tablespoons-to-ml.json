@@ -1,0 +1,23 @@
+{
+  "title": "Tablespoons to ML Converter",
+  "primaryKeyword": "Tablespoons to ML Converter",
+  "metaDescription": "Convert tablespoons to milliliters (ml) across US, UK, and Australian culinary standards with fluid ounce conversions.",
+  "directAnswer": "One US tablespoon contains exactly 14.79 milliliters (commonly rounded to 15 ml in culinary recipes). One UK and Canadian tablespoon also equals 15 ml, while an Australian tablespoon uniquely equals 20 ml (4 teaspoons). For liquid seasonings and oils, using a standard 15 ml measuring spoon ensures consistent recipe proportions.",
+  "converterType": "cooking",
+  "fromUnit": "Tablespoons (tbsp)",
+  "toUnit": "Milliliters (ml)",
+  "faq": [
+    {
+      "question": "How many ml are in a US tablespoon?",
+      "answer": "A US tablespoon contains 14.787 ml, which is universally rounded to 15 ml on culinary measuring tools."
+    },
+    {
+      "question": "Why is an Australian tablespoon 20 ml?",
+      "answer": "Australia defines a tablespoon as 4 metric teaspoons (20 ml), whereas the US, UK, and Canada define a tablespoon as 3 teaspoons (15 ml)."
+    },
+    {
+      "question": "How many tablespoons are in 100 ml?",
+      "answer": "100 milliliters equals approximately 6.67 US tablespoons (6 tablespoons plus 2 teaspoons)."
+    }
+  ]
+}

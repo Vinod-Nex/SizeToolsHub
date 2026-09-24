@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure US vers UK",
+  "primaryKeyword": "Pointure US vers UK",
+  "metaDescription": "Correspondance des pointures entre les États-Unis (US) et le Royaume-Uni (UK) pour souliers, bottes et sneakers.",
+  "directAnswer": "Pour les hommes, la pointure britannique (UK) est généralement inférieure de 1 taille à la pointure US (US 10 homme = UK 9). Pour les femmes, la pointure UK est inférieure de 2 tailles à la pointure US (US 8 femme = UK 6).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure US",
+  "toUnit": "Pointure UK",
+  "faq": [
+    {
+      "question": "Pourquoi la pointure UK est-elle plus petite que la pointure US ?",
+      "answer": "Les deux pays utilisent l’échelle en tiers de pouce, mais le point zéro initial britannique a été fixé historiquement plus haut."
+    },
+    {
+      "question": "Quelle est la pointure UK pour un US 9 homme ?",
+      "answer": "Un US 9 homme équivaut à un UK 8 (environ 42.5 en France)."
+    },
+    {
+      "question": "Les chaussures d’enfants suivent-elles la même règle ?",
+      "answer": "Pour les enfants, la différence est souvent de 0.5 à 1 pointure selon la catégorie d’âge."
+    }
+  ]
+}

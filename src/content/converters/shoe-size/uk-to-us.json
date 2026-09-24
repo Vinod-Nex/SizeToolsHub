@@ -1,0 +1,23 @@
+{
+  "title": "UK to US Shoe Size Converter",
+  "primaryKeyword": "UK to US Shoe Size Converter",
+  "metaDescription": "Convert UK shoe sizes to American (US) shoe sizes across adult and youth shoes with centimeter measurements and precise width guidelines.",
+  "directAnswer": "Converting UK to US shoe sizes requires adding 0.5 to 1 size for men (a UK 9 corresponds to a US Men's 9.5 or 10) and adding 2 full sizes for women (a UK 6 equals a US Women's 8). Both systems use 1/3-inch increments, but US sizing starts with a higher baseline offset.",
+  "converterType": "shoe-size",
+  "fromUnit": "UK Size",
+  "toUnit": "US Size",
+  "faq": [
+    {
+      "question": "What is a UK 8 in US shoe size?",
+      "answer": "A UK 8 in men's footwear is a US Men's 8.5 (or 9 in athletic brands like Nike), and in women's is a US Women's 10."
+    },
+    {
+      "question": "How do UK and US shoe sizes compare for children?",
+      "answer": "Children's UK sizes are offset by approximately half a size from US kids' sizes up to youth size 13, after which adult scaling begins."
+    },
+    {
+      "question": "Are UK shoe widths different from US shoe widths?",
+      "answer": "Yes, standard UK men's width is typically labeled 'F' (equivalent to US 'D'), and standard UK women's width is 'D' (equivalent to US 'B')."
+    }
+  ]
+}

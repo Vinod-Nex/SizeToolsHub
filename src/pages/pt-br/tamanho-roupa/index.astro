@@ -1,0 +1,191 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ClothingConverterIsland from '../../../components/ClothingConverterIsland';
+import ClothingStaticTablePtBr from '../../../components/ClothingStaticTablePtBr.astro';
+
+// Query all Portuguese clothing converters
+const entries = await getCollection('converters', ({ id, data }) =>
+  id.startsWith('pt-br/tamanho-roupa/') || data.converterType === 'tamanho-roupa'
+);
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^pt-br\/tamanho-roupa\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "Como funciona a conversão de tamanho de roupas dos EUA para o Brasil?",
+    answer: "No vestuário feminino, as numerações dos EUA são menores numericamente: US 2 equivale ao BR 36 (PP), US 4 ao BR 38 (P), US 6 ao BR 40 (M), US 8 ao BR 42 (G) e US 10-12 ao BR 44-46 (GG). No vestuário masculino, os tamanhos por letras (S, M, L, XL) correspondem a P, M, G e GG no Brasil, porém com corte norte-americano habitualmente mais largo (Regular Fit)."
+  },
+  {
+    question: "O que significam as letras W e L nas calças jeans importadas (Levi's, GAP, Zara)?",
+    answer: "'W' significa Waist (cintura em polegadas) e 'L' significa Length (comprimento da perna em polegadas). Uma calça W30 tem aproximadamente 76 cm de cintura, equivalente ao manequim 38-40 brasileiro. Uma calça W32 equivale ao 40-42, e W34 equivale ao 42-44 no Brasil."
+  },
+  {
+    question: "Como descobrir o tamanho correto de sutiã importado (EUA e Europa)?",
+    answer: "O sutiã internacional utiliza duas medidas: as costas (faixa numérica: 32, 34, 36...) e a taça (letra do bojo: A, B, C, D, DD). No Brasil, costuma-se usar apenas um número (40, 42, 44, 46). Por exemplo, um sutiã 42B no Brasil geralmente corresponde a um 34B nos EUA ou 75B na Europa continental."
+  },
+  {
+    question: "Qual a diferença entre os cortes Petite, Regular e Plus Size em marcas internacionais?",
+    answer: "Peças 'Petite' são desenhadas para pessoas com altura até 1,60 m, trazendo mangas e torso ligeiramente mais curtos. Peças 'Regular' vestem entre 1,65 m e 1,73 m. Já as linhas 'Plus Size' (ou 'Curve', 14W a 28W) possuem proporções anatômicas diferenciadas no busto, braços e quadril para garantir caimento perfeito sem repuxar."
+  },
+  {
+    question: "Roupas da Shein, AliExpress e marcas asiáticas seguem a numeração brasileira?",
+    answer: "Não. A modelagem asiática é reconhecidamente menor do que o biotipo brasileiro. Recomenda-se comprar um ou até dois números acima do seu habitual (se você usa M no Brasil, escolha L ou XL na Shein) e sempre conferir as medidas de busto, cintura e quadril em centímetros na descrição da peça."
+  }
+];
+---
+
+<BaseLayout
+  title="Tabela de Conversão de Roupas: Brasil x EUA x Europa — SizeToolsHub"
+  description="Converta tamanhos de roupas femininas, masculinas e infantis entre Brasil (BR), Estados Unidos (US), Europa (EU) e Reino Unido (UK). Calculadora de calça jeans, sutiã e camisas."
+  lang="pt-br"
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/pt-br/" class="hover:text-ink transition-colors">Início</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Tamanho de Roupa</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Guia de Vestuário Brasil
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Conversores Especializados
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        Tabela de Tamanho de Roupas: Brasil, EUA e Europa.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Acabe com as dúvidas em compras internacionais na Amazon, Shein, Zara e marcas importadas. Converta com precisão as medidas de vestidos, calças jeans, camisas e lingerie para o manequim brasileiro (PP a XG e números 34 a 54).
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Calculadora de Roupas em Tempo Real
+        </h2>
+        <span class="text-xs text-text-muted">Interativo</span>
+      </div>
+      <ClothingConverterIsland
+        client:load
+        initialFromUnit="Tamanho EUA (US)"
+        initialToUnit="Tamanho Brasil (BR)"
+        primaryKeyword="Conversor de Tamanho de Roupas EUA para Brasil"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="clothing-tools-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Ferramentas de Vestuário</span>
+          </div>
+          <h2 id="clothing-tools-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Diretório de Conversores de Roupas.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Selecione o tipo de vestuário ou o padrão de medidas desejado para obter tabelas anatômicas detalhadas.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tools.map((tool) => (
+          <a
+            href={`/pt-br/tamanho-roupa/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.99]"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[11px] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>{tool.fromUnit} ⇄ {tool.toUnit}</span>
+                </span>
+                <span class="text-xs text-text-faint group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all font-bold">
+                  ↗
+                </span>
+              </div>
+
+              <h3 class="text-base sm:text-lg font-bold text-ink mb-2 group-hover:text-accent transition-colors leading-snug">
+                {tool.title}
+              </h3>
+
+              <p class="text-xs sm:text-sm text-text-muted line-clamp-3 leading-relaxed font-normal">
+                {tool.description}
+              </p>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-hairline-soft flex items-center justify-between text-xs font-semibold text-ink group-hover:text-accent transition-colors">
+              <span>Abrir Calculadora</span>
+              <span class="group-hover:translate-x-1 transition-transform">→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Comprehensive Reference Static Table -->
+    <section class="mb-16">
+      <div class="mb-6">
+        <h2 class="text-2xl font-bold tracking-tight text-ink">
+          Tabela Comparativa de Manequins: Brasil, EUA e Europa.
+        </h2>
+        <p class="text-sm text-text-muted font-light mt-1">
+          Guia completo de medidas anatômicas em centímetros segundo as normas ABNT NBR 15800 e ASTM D5585 para homens e mulheres.
+        </p>
+      </div>
+
+      <ClothingStaticTablePtBr />
+    </section>
+
+    <!-- FAQ Accordion Section -->
+    <section class="mb-16 pt-10 border-t border-hairline-soft" aria-labelledby="hub-clothing-faq-heading">
+      <div class="mb-8">
+        <h2 id="hub-clothing-faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Dúvidas Frequentes sobre Tamanhos de Roupas no Brasil.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Orientações práticas para acertar na escolha do manequim em lojas e sites internacionais.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {hubFaq.map((item) => (
+          <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+            <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

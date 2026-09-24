@@ -1,0 +1,115 @@
+---
+/**
+ * Static Clothing Size Conversion Reference Table (Below the fold)
+ * Zero JavaScript, fully accessible, SEO-optimized table following DESIGN.md
+ */
+
+const womenRows = [
+  { us: '00', uk: '2', eu: '30', intl: 'XXS', bustIn: '30″', bustCm: '76 cm', waistIn: '23″', waistCm: '58 cm', hipIn: '32″', hipCm: '82 cm' },
+  { us: '0', uk: '4', eu: '32', intl: 'XXS', bustIn: '31″', bustCm: '79 cm', waistIn: '24″', waistCm: '61 cm', hipIn: '33″', hipCm: '84 cm' },
+  { us: '2', uk: '6', eu: '34', intl: 'XS', bustIn: '32″', bustCm: '82 cm', waistIn: '25″', waistCm: '64 cm', hipIn: '35″', hipCm: '89 cm' },
+  { us: '4', uk: '8', eu: '36', intl: 'S', bustIn: '34″', bustCm: '86 cm', waistIn: '27″', waistCm: '69 cm', hipIn: '37″', hipCm: '94 cm' },
+  { us: '6', uk: '10', eu: '38', intl: 'S', bustIn: '35″', bustCm: '89 cm', waistIn: '28″', waistCm: '71 cm', hipIn: '38″', hipCm: '97 cm' },
+  { us: '8', uk: '12', eu: '40', intl: 'M', bustIn: '37″', bustCm: '94 cm', waistIn: '30″', waistCm: '76 cm', hipIn: '40″', hipCm: '102 cm' },
+  { us: '10', uk: '14', eu: '42', intl: 'M', bustIn: '38.5″', bustCm: '98 cm', waistIn: '31.5″', waistCm: '80 cm', hipIn: '41.5″', hipCm: '106 cm' },
+  { us: '12', uk: '16', eu: '44', intl: 'L', bustIn: '40″', bustCm: '102 cm', waistIn: '33″', waistCm: '84 cm', hipIn: '43″', hipCm: '110 cm' },
+  { us: '14', uk: '18', eu: '46', intl: 'L', bustIn: '42″', bustCm: '107 cm', waistIn: '35″', waistCm: '89 cm', hipIn: '45″', hipCm: '115 cm' },
+  { us: '16', uk: '20', eu: '48', intl: 'XL', bustIn: '44″', bustCm: '112 cm', waistIn: '37″', waistCm: '94 cm', hipIn: '47″', hipCm: '120 cm' },
+  { us: '18', uk: '22', eu: '50', intl: 'XXL', bustIn: '46″', bustCm: '117 cm', waistIn: '39″', waistCm: '99 cm', hipIn: '49″', hipCm: '125 cm' },
+  { us: '20', uk: '24', eu: '52', intl: '3XL', bustIn: '48″', bustCm: '122 cm', waistIn: '41″', waistCm: '104 cm', hipIn: '51″', hipCm: '130 cm' },
+];
+
+const menRows = [
+  { us: '34', uk: '34', eu: '44', intl: 'XS', chestIn: '34″', chestCm: '86 cm', waistIn: '28″', waistCm: '71 cm' },
+  { us: '36', uk: '36', eu: '46', intl: 'S', chestIn: '36″', chestCm: '91 cm', waistIn: '30″', waistCm: '76 cm' },
+  { us: '38', uk: '38', eu: '48', intl: 'M', chestIn: '38″', chestCm: '96 cm', waistIn: '32″', waistCm: '81 cm' },
+  { us: '40', uk: '40', eu: '50', intl: 'M', chestIn: '40″', chestCm: '102 cm', waistIn: '34″', waistCm: '86 cm' },
+  { us: '42', uk: '42', eu: '52', intl: 'L', chestIn: '42″', chestCm: '107 cm', waistIn: '36″', waistCm: '91 cm' },
+  { us: '44', uk: '44', eu: '54', intl: 'L', chestIn: '44″', chestCm: '112 cm', waistIn: '38″', waistCm: '97 cm' },
+  { us: '46', uk: '46', eu: '56', intl: 'XL', chestIn: '46″', chestCm: '117 cm', waistIn: '40″', waistCm: '102 cm' },
+  { us: '48', uk: '48', eu: '58', intl: 'XXL', chestIn: '48″', chestCm: '122 cm', waistIn: '42″', waistCm: '107 cm' },
+  { us: '50', uk: '50', eu: '60', intl: '3XL', chestIn: '50″', chestCm: '127 cm', waistIn: '44″', waistCm: '112 cm' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Official Standards</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      International Apparel Size Conversion Chart.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Cross-reference international apparel sizing comparing US, UK, European (EU), and International Alpha standards according to ASTM D5585 and EN 13402 specifications.
+    </p>
+  </div>
+
+  <!-- Women's Table -->
+  <div class="mb-10">
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Women's Apparel & Dress Sizing</span>
+      <span class="text-xs font-normal text-text-faint">(Bust, Waist & Hip Range)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">US Size</th>
+            <th class="py-4 px-5">UK</th>
+            <th class="py-4 px-5">EU</th>
+            <th class="py-4 px-5">Alpha</th>
+            <th class="py-4 px-5">Bust (in / cm)</th>
+            <th class="py-4 px-5">Waist (in / cm)</th>
+            <th class="py-4 px-5">Hips (in / cm)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {womenRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{row.us}</td>
+              <td class="py-3 px-5 font-medium">{row.uk}</td>
+              <td class="py-3 px-5 font-medium text-accent">{row.eu}</td>
+              <td class="py-3 px-5 font-semibold text-text-muted">{row.intl}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.bustIn} <span class="text-text-faint">({row.bustCm})</span></td>
+              <td class="py-3 px-5 font-mono text-xs">{row.waistIn} <span class="text-text-faint">({row.waistCm})</span></td>
+              <td class="py-3 px-5 font-mono text-xs">{row.hipIn} <span class="text-text-faint">({row.hipCm})</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Men's Table -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Men's Suits, Jackets & Tops</span>
+      <span class="text-xs font-normal text-text-faint">(Chest & Waist Circumference)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">US / UK Chest</th>
+            <th class="py-4 px-5">EU Size</th>
+            <th class="py-4 px-5">Alpha</th>
+            <th class="py-4 px-5">Chest (in / cm)</th>
+            <th class="py-4 px-5">Waist (in / cm)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {menRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{row.us}</td>
+              <td class="py-3 px-5 font-medium text-accent">{row.eu}</td>
+              <td class="py-3 px-5 font-semibold text-text-muted">{row.intl}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.chestIn} <span class="text-text-faint">({row.chestCm})</span></td>
+              <td class="py-3 px-5 font-mono text-xs">{row.waistIn} <span class="text-text-faint">({row.waistCm})</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

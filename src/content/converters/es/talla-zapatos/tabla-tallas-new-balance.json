@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas New Balance: Zapatillas y Hormas",
+  "primaryKeyword": "Tabla de Tallas New Balance",
+  "metaDescription": "Tabla de conversión para modelos New Balance 550, 990, 574 y 327. Información sobre opciones de anchura Standard y Wide.",
+  "directAnswer": "New Balance es famosa por su fidelidad a la escala estándar y por ofrecer anchos especiales: D (estándar hombre), 2E (ancho) y 4E (extra ancho). En zapatillas New Balance 550 se recomienda la talla habitual.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "New Balance España / UE",
+  "toUnit": "New Balance EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es 43 en New Balance?",
+      "answer": "En New Balance de hombre, un 43 equivale a US 9.5 (27.5 cm)."
+    },
+    {
+      "question": "¿Cómo tallan las zapatillas Made in USA / Made in UK de New Balance?",
+      "answer": "Suelen tener una horma ligeramente más generosa y materiales de cuero premium que se adaptan con suavidad al contorno del pie."
+    },
+    {
+      "question": "¿La serie New Balance 574 es adecuada para pies anchos?",
+      "answer": "Sí, el modelo 574 tiene una puntera redondeada y espaciosa muy cómoda para uso diario."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "UK to US Men's Clothing Size Converter",
+  "primaryKeyword": "UK to US Men's Clothing Size Converter",
+  "metaDescription": "Convert UK men's suits, shirts, and trousers to US sizes with chest measurements in inches and centimeters.",
+  "directAnswer": "Men's suit and jacket sizes are identical between the UK and US, as both utilize imperial chest measurements in inches (a UK 40 jacket equals a US 40). Men's trouser waist sizes also match directly in inches, while dress shirts share identical collar circumference numbers across British and American tailoring.",
+  "converterType": "clothing-size",
+  "fromUnit": "UK Men's",
+  "toUnit": "US Men's",
+  "faq": [
+    {
+      "question": "Are UK and US men's suit sizes the same?",
+      "answer": "Yes, both UK and US men's suits and blazers are measured by chest circumference in inches (e.g., 38R, 40R, 42L)."
+    },
+    {
+      "question": "What is a UK men's size 40 jacket in European sizing?",
+      "answer": "A UK/US size 40 chest corresponds to a European size 50 (add 10 to UK chest size)."
+    },
+    {
+      "question": "Do UK trousers fit differently than US pants?",
+      "answer": "While waist measurements in inches are identical, British tailoring often features a closer, higher-rise silhouette compared to traditional American relaxed cuts."
+    }
+  ]
+}

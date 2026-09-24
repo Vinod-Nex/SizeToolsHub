@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas Asics: Running y Voleibol",
+  "primaryKeyword": "Tabla de Tallas Asics",
+  "metaDescription": "Tabla de tallas de zapatillas Asics Gel-Kayano, Gel-Nimbus y GT-2000. Consejos de ajuste técnico para corredores.",
+  "directAnswer": "Asics utiliza números con medios puntos (ej. 42.5, 43.5, 44). Para correr en asfalto con Gel-Nimbus o Gel-Kayano, se recomienda elegir media talla más que tu calzado informal de vestir.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Asics España / UE",
+  "toUnit": "Asics EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es un US 9.5 en Asics?",
+      "answer": "Un US 9.5 en calzado de hombre Asics corresponde a la talla 43.5 europea (27.5 cm)."
+    },
+    {
+      "question": "¿Asics dispone de modelos en ancho especial?",
+      "answer": "Sí, Asics ofrece versiones \"Wide\" (2E) y \"Extra Wide\" (4E) en sus principales zapatillas de estabilidad y amortiguación."
+    },
+    {
+      "question": "¿Cómo saber si necesito una zapatilla de estabilidad en Asics?",
+      "answer": "Si tiendes a la sobrepronación (el pie rueda hacia adentro al apoyar), modelos como GT-1000, GT-2000 o Gel-Kayano están especialmente diseñados para corregirlo."
+    }
+  ]
+}

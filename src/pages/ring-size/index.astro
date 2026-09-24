@@ -1,0 +1,179 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RingConverterIsland from '../../components/RingConverterIsland';
+import RingStaticTable from '../../components/RingStaticTable.astro';
+import PrintableRingSizer from '../../components/PrintableRingSizer.astro';
+
+// Query all ring-size converters
+const entries = await getCollection('converters', ({ data }) => data.converterType === 'ring-size');
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^ring-size\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "What is the average ring size for women and men?",
+    answer: "In the United States, the average women's ring size is US 6 to 6.5 (UK L 1/2 to M, EU 52-53). The average men's ring size is US 9 to 10 (UK R 1/2 to T 1/2, EU 60-62)."
+  },
+  {
+    question: "How do US ring sizes convert to UK letter sizes?",
+    answer: "US sizes use numbers (e.g. 7.0), while UK sizes use alphabetical letters (e.g. N 1/2). Every full US number increment corresponds to approximately two UK letter steps."
+  },
+  {
+    question: "What does European (EU) ring sizing mean?",
+    answer: "EU ring sizing (ISO 8653) is the simplest and most objective standard: the size number is literally the inner circumference of the ring in millimeters (e.g., an EU 54 has an inside circumference of 54 mm)."
+  },
+  {
+    question: "Can a ring be resized if I order the wrong size?",
+    answer: "Most precious metal rings (gold, platinum, sterling silver) can easily be resized up or down by 1 to 2 sizes by a jeweler. Eternity bands with diamonds all the way around, tungsten, and titanium rings cannot be resized."
+  }
+];
+---
+
+<BaseLayout
+  title="International Ring Size Converters & Printable Sizing Charts — SizeToolsHub"
+  description="Convert ring sizes across US, UK, European (EU / ISO 8653), and Japanese standards with diameter in mm, circumference, and true-to-scale printable ring sizers."
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Ring Size</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Category Hub
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Dedicated Tools
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        International Ring Size Converters & Fit Tools.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Find your perfect ring size with absolute confidence. Cross-reference US numeric, UK alphabetical, and ISO 8653 metric standards, or print our calibrated true-to-scale PDF ring sizer.
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Universal Jewelry Sizing Engine
+        </h2>
+        <span class="text-xs text-text-muted">Interactive Calculator</span>
+      </div>
+      <RingConverterIsland
+        client:visible
+        initialFromUnit="US Ring Size"
+        initialToUnit="UK / EU Ring Size"
+        primaryKeyword="International Ring Size Converter"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="tools-directory-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Specialized Tools</span>
+          </div>
+          <h2 id="tools-directory-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Ring Size Converters & Guides.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Dedicated converters, wedding band charts, and printable finger sizers.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tools.map((tool) => (
+          <a
+            href={`/ring-size/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-3xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted">
+                  {tool.fromUnit} ⇄ {tool.toUnit}
+                </span>
+                <span class="text-sm text-text-faint group-hover:text-accent font-bold transition-colors">
+                  ↗
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {tool.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-text-muted line-clamp-2 leading-relaxed mb-4">
+                {tool.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-hairline-soft flex items-center justify-between text-xs">
+              <span class="text-text-faint font-medium">ISO 8653 Verified</span>
+              <span class="font-semibold text-ink group-hover:text-accent transition-colors">
+                Launch tool →
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Printable Ring Sizer Featured Section -->
+    <PrintableRingSizer />
+
+    <!-- Static International Size Comparison Table -->
+    <RingStaticTable />
+
+    <!-- FAQ Accordion -->
+    <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="hub-faq-heading">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+          <span>Jewelry FAQ</span>
+        </div>
+        <h2 id="hub-faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Frequently Asked Questions About Ring Sizing.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+          Everything you need to know before shopping for engagement and wedding rings.
+        </p>
+      </div>
+
+      <div class="space-y-3">
+        {hubFaq.map((item) => (
+          <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+            <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                ↓
+              </span>
+            </summary>
+            <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

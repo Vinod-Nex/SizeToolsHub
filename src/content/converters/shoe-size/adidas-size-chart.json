@@ -1,0 +1,23 @@
+{
+  "title": "Adidas Shoe Size Chart & Fit Guide",
+  "primaryKeyword": "Adidas Shoe Size Chart & Fit Guide",
+  "metaDescription": "Adidas shoe size conversion guide across US, UK, EU, and Japanese cm standards for Ultraboost, Samba, Superstar, and Stan Smith.",
+  "directAnswer": "Adidas uses fractional third sizing for European conversions, where a US Men's 9 converts to EU 42 2/3 (UK 8.5) and a US Men's 10 converts to EU 44 (UK 9.5). Adidas shoes generally offer a slightly wider toe box than Nike, fitting true to size for standard-width feet.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Adidas",
+  "toUnit": "EU / UK Adidas",
+  "faq": [
+    {
+      "question": "Why does Adidas use fractional EU sizes like 42 2/3?",
+      "answer": "Adidas translates UK full and half sizes directly into European Paris points, resulting in 1/3 and 2/3 European fractional increments."
+    },
+    {
+      "question": "Do Adidas Sambas fit true to size?",
+      "answer": "Adidas Samba and Gazelle models fit true to size length-wise, though they have a low-profile, snug forefoot."
+    },
+    {
+      "question": "How do Adidas Ultraboost running shoes fit?",
+      "answer": "Ultraboost models with Primeknit uppers fit snug like a sock; runners with wider feet often prefer a half size up."
+    }
+  ]
+}

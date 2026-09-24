@@ -1,0 +1,23 @@
+{
+  "title": "CM to Shoe Size Converter",
+  "primaryKeyword": "CM to Shoe Size Converter",
+  "metaDescription": "Convert centimeters (cm) and Mondopoint millimeters to US, UK, and EU shoe sizes for Men, Women, and Kids with ISO 9407 accuracy.",
+  "directAnswer": "Centimeter sizing (often called Mondopoint or Japanese sizing) represents the single most accurate international metric for buying shoes. A 27.0 cm foot length translates to a US Men's 9, UK 8.5, and EU 42.5. Unlike arbitrary regional number systems, centimeters directly reflect foot length across all major footwear brands.",
+  "converterType": "shoe-size",
+  "fromUnit": "Centimeters (cm)",
+  "toUnit": "US / UK / EU Shoe Size",
+  "faq": [
+    {
+      "question": "What is 28 cm in US shoe size?",
+      "answer": "A 28 cm foot length corresponds to a US Men's size 10 (EU 44, UK 9.5)."
+    },
+    {
+      "question": "Why do shoe boxes list CM or JP sizing?",
+      "answer": "CM (Centimeter) and JP sizing specify the anatomical foot length the shoe is designed for, serving as the international benchmark."
+    },
+    {
+      "question": "Is CM sizing the same as Mondopoint?",
+      "answer": "Yes, Mondopoint measures foot length in millimeters (e.g., 270 mm), which is simply centimeters multiplied by 10 (27.0 cm)."
+    }
+  ]
+}

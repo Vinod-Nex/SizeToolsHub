@@ -1,0 +1,23 @@
+{
+  "title": "US to UK Clothing Size Converter",
+  "primaryKeyword": "us to uk clothing size converter",
+  "metaDescription": "Convert women's and men's apparel sizes between US and UK standards with accurate bust, waist, and hip charts.",
+  "converterType": "clothing-size",
+  "fromUnit": "US Size",
+  "toUnit": "UK Size",
+  "faq": [
+    {
+      "question": "What is a US Women's size 6 in UK clothing?",
+      "answer": "A US Women's size 6 is a UK size 10."
+    },
+    {
+      "question": "Do UK clothes fit smaller than US clothes?",
+      "answer": "Yes, beyond the 4-number numerical offset, UK clothing is often cut slightly narrower through the shoulders and waist compared to American relaxed cuts."
+    },
+    {
+      "question": "Are men's clothing sizes different between the US and UK?",
+      "answer": "No, men's chest sizes for blazers and waist sizes for trousers match identically in inches between the US and UK."
+    }
+  ],
+  "directAnswer": "To convert US clothing sizes to UK sizing, women add 4 to their US dress size (a US 6 equals a UK 10; a US 8 equals a UK 12). Men's suit jackets and pants share identical chest and waist measurements in inches across both British and American fashion standards."
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanho de Sutiã: Brasil x EUA x Europa",
+  "primaryKeyword": "Tamanho de Sutiã Brasil EUA",
+  "metaDescription": "Calcule o tamanho de sutiã perfeito: meça o tórax e o busto para descobrir a taça (A, B, C, D) e costas nos padrões brasileiro, americano e europeu.",
+  "directAnswer": "O tamanho de sutiã nos EUA combina o diâmetro do tórax (32, 34, 36...) com o volume da taça (A, B, C, D, DD). No Brasil, a numeração tradicional vai do 40 ao 50, onde 40 equivale ao US 32B, 42 ao US 34B, 44 ao US 36B e 46 ao US 38B.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Medidas Corporais (cm)",
+  "toUnit": "Tamanho de Sutiã",
+  "faq": [
+    {
+      "question": "Como descobrir o tamanho correto da taça do sutiã?",
+      "answer": "Subtraia a medida do tórax (logo abaixo dos seios) da medida do busto (parte mais volumosa). Uma diferença de 2,5 cm é taça A; 5 cm é B; 7,5 cm é C; 10 cm é D."
+    }
+  ]
+}

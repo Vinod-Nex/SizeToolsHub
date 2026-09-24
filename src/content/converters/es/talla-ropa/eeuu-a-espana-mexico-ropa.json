@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Ropa: EE. UU. a España y México",
+  "primaryKeyword": "Talla Ropa EE. UU. a España México",
+  "metaDescription": "Tabla comparativa integral de prendas de vestir entre el sistema de Estados Unidos (US), España (ES/EU) y México (MX).",
+  "directAnswer": "En vestidos y blusas de mujer: US 4 = ES 36 = MX 30/Chica; US 8 = ES 40 = MX 34/Mediana. En pantalones de hombre: US 32 = ES 42 = MX 32.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla EE. UU. (US)",
+  "toUnit": "Talla España (ES) / México (MX)",
+  "faq": [
+    {
+      "question": "¿Qué talla es la M en México y España?",
+      "answer": "En mujer equivale a talla 38-40 en España y talla 32-34 en México. En hombre equivale a talla 48-50 en España y 38-40 en México."
+    },
+    {
+      "question": "¿Por qué en México se usan números como 28, 30, 32 en pantalones?",
+      "answer": "Porque tradicionalmente los pantalones masculinos y femeninos se basan en las pulgadas de cintura americanas."
+    },
+    {
+      "question": "¿Cómo elegir la talla correcta en tiendas online internacionales?",
+      "answer": "Compara siempre tus medidas corporales en centímetros con la tabla del fabricante específico, prestando atención al tejido elástico."
+    }
+  ]
+}

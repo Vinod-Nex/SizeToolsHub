@@ -1,0 +1,220 @@
+---
+/**
+ * Printable Ring Sizer Component
+ * Optimized for screen viewing and crisp @media print output (fits standard 8.5x11 / A4)
+ * Contains calibration check bar, true-to-scale ring circles (US 3-13), and cutout finger gauge strip.
+ */
+
+const ringCircles = [
+  { size: '3', mm: 14.1, in: 0.55 },
+  { size: '4', mm: 14.9, in: 0.59 },
+  { size: '5', mm: 15.7, in: 0.62 },
+  { size: '6', mm: 16.5, in: 0.65 },
+  { size: '7', mm: 17.3, in: 0.68 },
+  { size: '8', mm: 18.1, in: 0.71 },
+  { size: '9', mm: 19.0, in: 0.75 },
+  { size: '10', mm: 19.8, in: 0.78 },
+  { size: '11', mm: 20.6, in: 0.81 },
+  { size: '12', mm: 21.4, in: 0.84 },
+  { size: '13', mm: 22.2, in: 0.87 },
+];
+---
+
+<section class="printable-ring-sizer-container my-12" aria-labelledby="printable-sizer-heading">
+  <!-- Screen Header & Print Button -->
+  <div class="screen-only p-6 sm:p-8 rounded-3xl bg-canvas border border-hairline-soft mb-8">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          Print-Ready Tool
+        </span>
+        <h2 id="printable-sizer-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Printable Ring Sizer & Circle Chart.
+        </h2>
+        <p class="text-sm text-text-muted mt-1 max-w-xl">
+          Print this page at 100% scale (no scaling) to measure an existing ring or wrap the paper sizer around your finger.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        onclick="window.print()"
+        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary text-sm font-semibold hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all shadow-xs cursor-pointer self-start sm:self-auto"
+      >
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+        </svg>
+        <span>Print Sizer (PDF)</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Printable Area (Formatted for high-precision print output) -->
+  <div class="printable-sheet p-6 sm:p-8 rounded-3xl bg-canvas border border-hairline-soft text-ink">
+
+    <!-- Print Title Bar -->
+    <div class="border-b-2 border-ink pb-4 mb-6 flex items-center justify-between">
+      <div>
+        <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-ink">
+          SizeToolsHub — True-to-Scale Ring Sizing Guide
+        </h3>
+        <p class="text-xs text-text-muted mt-0.5">
+          Standard ISO 8653 Calibration | Verify printer scale before cutting or comparing
+        </p>
+      </div>
+      <div class="text-right hidden sm:block">
+        <span class="text-xs font-mono font-bold text-ink">sizetoolshub.com</span>
+      </div>
+    </div>
+
+    <!-- Step 1: Calibration Check Box (CRITICAL for print accuracy) -->
+    <div class="mb-8 p-4 rounded-2xl bg-canvas-soft border border-dashed border-hairline">
+      <span class="text-xs font-bold uppercase tracking-wider text-ink block mb-1">
+        Step 1: Check Printer Scale (Must Measure Exactly 50 mm / 5 cm)
+      </span>
+      <p class="text-xs text-text-muted mb-3">
+        Place a physical ruler on the bar below. If it does not measure exactly 50 mm, check your printer settings and disable "Fit to Page" or "Shrink to Fit". Set scale to <strong>100%</strong>.
+      </p>
+
+      <!-- Physical 50mm calibration line rendered with exact CSS millimeter units -->
+      <div class="flex items-center gap-3">
+        <div class="calibration-bar" style="width: 50mm; height: 10px; background-color: #000; border-radius: 2px;"></div>
+        <span class="text-xs font-mono font-bold text-ink">← 50.0 mm (Exact Scale) →</span>
+      </div>
+    </div>
+
+    <!-- Step 2: Diameter Circle Comparison Chart -->
+    <div class="mb-8">
+      <span class="text-xs font-bold uppercase tracking-wider text-ink block mb-2">
+        Method A: Measure an Existing Ring Against These Circles
+      </span>
+      <p class="text-xs text-text-muted mb-4">
+        Place a ring that fits the intended finger over the circles below. Match the <strong>inside circumference</strong> of the ring with the circle. If the ring falls between two sizes, choose the larger size.
+      </p>
+
+      <!-- Circles Grid with exact millimeter width & height -->
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
+        {ringCircles.map((circle) => (
+          <div class="flex flex-col items-center justify-between p-3 rounded-2xl bg-canvas-soft border border-hairline text-center">
+            <span class="text-xs font-bold text-ink">Size {circle.size}</span>
+            <div class="my-2 flex items-center justify-center">
+              <div
+                class="ring-print-circle rounded-full border-2 border-ink flex items-center justify-center"
+                style={`width: ${circle.mm}mm; height: ${circle.mm}mm; min-width: ${circle.mm}mm; min-height: ${circle.mm}mm;`}
+              >
+                <div class="w-1 h-1 rounded-full bg-ink/40"></div>
+              </div>
+            </div>
+            <span class="text-[10px] font-mono text-text-muted">{circle.mm} mm</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Step 3: Cutout Paper Finger Sizer Strip -->
+    <div class="p-5 rounded-2xl bg-canvas-soft border border-dashed border-hairline">
+      <span class="text-xs font-bold uppercase tracking-wider text-ink block mb-1">
+        Method B: Cutout Finger Sizer Wrap Strip
+      </span>
+      <p class="text-xs text-text-muted mb-4">
+        Cut along the outer outline of the ruler strip below. Cut a small slit at the marked line <strong>[SLIT]</strong>. Wrap the pointed end around the base of your finger and slide it through the slit. The number aligned with the slit is your ring size.
+      </p>
+
+      <!-- Strip Cutout graphic rendered in vector HTML/CSS with millimeter sizing -->
+      <div class="overflow-x-auto py-2">
+        <div class="cutout-strip flex items-center border border-ink rounded-lg bg-canvas text-ink h-12 max-w-2xl px-2 relative" style="width: 160mm;">
+          <div class="pr-3 border-r-2 border-dashed border-red-500 text-[10px] font-bold text-red-600 flex flex-col justify-center">
+            <span>✂ CUT</span>
+            <span>SLIT</span>
+          </div>
+          <div class="flex-1 flex justify-between items-center px-4 font-mono text-xs font-bold">
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+            <span>7</span>
+            <span>8</span>
+            <span>9</span>
+            <span>10</span>
+            <span>11</span>
+            <span>12</span>
+            <span>13</span>
+          </div>
+          <div class="pl-2 border-l border-hairline text-[10px] font-bold text-text-faint">
+            ► PULL
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Print Footer Notes -->
+    <div class="mt-6 pt-4 border-t border-hairline text-[10px] text-text-muted flex justify-between">
+      <span>Calibrated to ISO 8653 standards. Measure fingers in the evening for best fit.</span>
+      <span>SizeToolsHub.com/ring-size/</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- Print-Specific Stylesheet (Print CSS Media Query) -->
+<style>
+  @media print {
+    /* Hide all global navigation, breadcrumbs, footers, theme toggles, and sidebars */
+    header,
+    footer,
+    nav,
+    .screen-only,
+    #theme-toggle,
+    .universal-tabs,
+    section[aria-labelledby="related-converters-heading"],
+    section[aria-labelledby="faq-heading"] {
+      display: none !important;
+    }
+
+    body {
+      background: #ffffff !important;
+      color: #000000 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: 11pt !important;
+    }
+
+    .printable-ring-sizer-container {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .printable-sheet {
+      border: none !important;
+      padding: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    /* Force true millimeter circle rendering across all browsers */
+    .ring-print-circle {
+      border-color: #000000 !important;
+      border-width: 1px !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .calibration-bar {
+      background-color: #000000 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .cutout-strip {
+      border-color: #000000 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    @page {
+      size: auto;
+      margin: 12mm 15mm;
+    }
+  }
+</style>

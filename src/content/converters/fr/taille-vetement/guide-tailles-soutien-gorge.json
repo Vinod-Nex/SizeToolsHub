@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles et Bonnets de Soutien-Gorge",
+  "primaryKeyword": "Taille de Soutien-Gorge France",
+  "metaDescription": "Calculez votre taille exacte de soutien-gorge (bonnet et tour de dos) en centimètres. Correspondances entre France (FR), Europe (EU), US et UK.",
+  "directAnswer": "En France, la taille de soutien-gorge est égale au tour sous le buste en cm + 15 cm. Ainsi, un tour de dos de 75 cm donne un 90 en France (75 en Europe, 34 aux USA). La lettre du bonnet se détermine par la différence entre le tour de poitrine et le tour de dos.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Mensurations en cm",
+  "toUnit": "Taille et Bonnet de Soutien-Gorge (FR/EU)",
+  "faq": [
+    {
+      "question": "Comment calculer la profondeur de bonnet (A, B, C, D, E) ?",
+      "answer": "Différence tour de poitrine - tour sous-buste : 12-14 cm = Bonnet A, 14-16 cm = Bonnet B, 16-18 cm = Bonnet C, 18-20 cm = Bonnet D, 20-22 cm = Bonnet E."
+    },
+    {
+      "question": "Pourquoi la taille française fait-elle 15 cm de plus que la taille européenne ?",
+      "answer": "La norme française AFNOR ajoute historiquement 15 cm au tour de dos anatomique pour obtenir le numéro de taille."
+    },
+    {
+      "question": "Qu’est-ce qu’une taille équivalente (taille sœur) ?",
+      "answer": "Si le bonnet d’un 90B vous va mais que le dos est trop serré, essayez un 95A. S’il est trop lâche, essayez un 85C."
+    }
+  ]
+}

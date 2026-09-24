@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Tamanho de Calçados EUA para Brasil",
+  "primaryKeyword": "Tamanho de Calçado EUA para Brasil",
+  "metaDescription": "Tabela oficial de conversão de calçados dos EUA para o Brasil (BR). Descubra seu tamanho exato de sapato e tênis importado para homens, mulheres e crianças.",
+  "directAnswer": "Para converter o tamanho de calçados dos EUA para o Brasil, adicione aproximadamente 31 ou 32 ao tamanho masculino (US 9 masc = BR 40, US 10 masc = BR 41) e 29 ao tamanho feminino (US 7 fem = BR 35, US 8 fem = BR 36). O padrão brasileiro é baseado no ponto francês com subtração de 2 números em relação à Europa.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Brasil (BR)",
+  "faq": [
+    {
+      "question": "Qual tamanho nos EUA é o 40 no Brasil?",
+      "answer": "O tamanho 40 masculino no Brasil corresponde ao tamanho US 8.5 ou 9 nos Estados Unidos (aproximadamente 26,7 a 27 cm de pé). Para mulheres, o tamanho 40 BR equivale ao US 10 ou 10.5."
+    },
+    {
+      "question": "Por que o tamanho de calçado nos EUA é diferente para homens e mulheres?",
+      "answer": "Nos Estados Unidos, as escalas masculina e feminina têm uma defasagem de 1,5 número. Um pé feminino de 24 cm é US 7 feminino, enquanto o mesmo comprimento na escala masculina seria US 5.5."
+    },
+    {
+      "question": "Tênis esportivos (Nike, Adidas) usam a mesma tabela?",
+      "answer": "Sim, a maioria das grandes marcas segue a escala padrão, mas modelos de corrida com amortecimento volumoso podem exigir meio número maior (0.5 US a mais) para maior conforto."
+    }
+  ]
+}

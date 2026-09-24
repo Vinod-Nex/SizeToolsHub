@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Calçados Reino Unido (UK) para EUA",
+  "primaryKeyword": "Tamanho de Calçado UK para EUA",
+  "metaDescription": "Converta tamanhos de sapatos ingleses (UK) para o padrão americano (US). Ideal para marcas do Reino Unido como Dr. Martens e Clarks.",
+  "directAnswer": "Para converter tamanhos do Reino Unido (UK) para os Estados Unidos (US), adicione 0,5 ou 1 número para calçados masculinos (UK 9 = US 9,5-10) e adicione 2 números para femininos (UK 5 = US 7).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Reino Unido (UK)",
+  "toUnit": "Tamanho EUA (US)",
+  "faq": [
+    {
+      "question": "Como comprar Dr. Martens ou Clarks no tamanho correto?",
+      "answer": "Essas marcas britânicas utilizam a numeração UK como padrão de fábrica. Se você usa BR 40, compre UK 8 (US 9 masculino)."
+    }
+  ]
+}

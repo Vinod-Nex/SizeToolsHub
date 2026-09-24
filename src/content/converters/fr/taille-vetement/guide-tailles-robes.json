@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles de Robes: France, Europe et US",
+  "primaryKeyword": "Guide des Tailles Robes",
+  "metaDescription": "Guide pour bien choisir sa taille de robe de soirée, casual ou de mariée. Tableau complet des mensurations poitrine, taille et hanches.",
+  "directAnswer": "Pour une robe droite ou ajustée, basez-vous sur la mensuration la plus forte (souvent le bassin ou la poitrine). Pour une robe évasée ou empire, c’est le tour de poitrine qui détermine la taille.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille Robe US",
+  "toUnit": "Taille Robe France (FR)",
+  "faq": [
+    {
+      "question": "Quelle taille de robe pour un 38 en France ?",
+      "answer": "Une taille 38 correspond à environ 88 cm de tour de poitrine, 70 cm de tour de taille et 96 cm de tour de hanches (US 6)."
+    },
+    {
+      "question": "Pourquoi les robes de créateurs taillent-elles petit ?",
+      "answer": "Les maisons de couture appliquent des barèmes historiques plus stricts que le prêt-à-porter moderne doté d’élasthanne."
+    },
+    {
+      "question": "Comment mesurer le tour de hanches ?",
+      "answer": "Positionnez le mètre ruban à l’endroit le plus large du bassin, généralement 20 cm sous la ligne de taille."
+    }
+  ]
+}

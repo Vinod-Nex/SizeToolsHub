@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas Vans: Old Skool, Slip-On y Sk8-Hi",
+  "primaryKeyword": "Tabla de Tallas Vans",
+  "metaDescription": "Tabla de medidas para zapatillas Vans. Ajuste fiel a la talla para modelos de skate y lona casual.",
+  "directAnswer": "Las zapatillas Vans tallan generalmente fieles a la talla (True to Size). Un EU 42 en Vans equivale exactamente a US 9 de hombre o US 10.5 de mujer (27.0 cm).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Vans España / UE",
+  "toUnit": "Vans EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Las zapatillas Vans Slip-On quedan apretadas al principio?",
+      "answer": "Sí, debido a los elásticos laterales pueden sentirse ceñidas en el empeine los primeros días, pero ceden rápidamente con el uso."
+    },
+    {
+      "question": "¿Vans ofrece opciones de horma ancha (Wide)?",
+      "answer": "Sí, para modelos populares como Old Skool y Authentic existe versión Wide para personas con pie más ancho."
+    },
+    {
+      "question": "¿Qué talla es un US 8.5 en Vans?",
+      "answer": "Un US 8.5 de hombre en Vans equivale a la talla 41 europea (26.5 cm)."
+    }
+  ]
+}

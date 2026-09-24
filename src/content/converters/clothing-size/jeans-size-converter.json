@@ -1,0 +1,23 @@
+{
+  "title": "Jeans Size Converter & Denim Waist Chart",
+  "primaryKeyword": "Jeans Size Converter & Denim Waist Chart",
+  "metaDescription": "Convert denim waist sizes (W24-W40) to standard US dress sizes, UK, and EU apparel with stretch allowance guidelines.",
+  "directAnswer": "Jeans sizes correspond directly to your natural waist circumference in inches. For women, subtract 22 from your denim waist size to estimate your standard US dress size (a 28-inch waist equals size W28 or US 6). For 100% rigid cotton denim, consider sizing up one inch for comfortable hip mobility.",
+  "converterType": "clothing-size",
+  "fromUnit": "Waist (Inches / W)",
+  "toUnit": "Numeric Dress Size",
+  "faq": [
+    {
+      "question": "What does W28 L32 mean on a pair of jeans?",
+      "answer": "'W28' indicates a 28-inch waist circumference, and 'L32' indicates a 32-inch inseam leg length from crotch to hem."
+    },
+    {
+      "question": "What size is a women's 27 in jeans?",
+      "answer": "A size 27 waist is typically equivalent to a US Women's dress size 4 (or Small)."
+    },
+    {
+      "question": "How does stretch denim (elastane/spandex) affect sizing?",
+      "answer": "Jeans containing 2% or more elastane will stretch with wear; many shoppers prefer purchasing their true waist size or sizing down half a size."
+    }
+  ]
+}

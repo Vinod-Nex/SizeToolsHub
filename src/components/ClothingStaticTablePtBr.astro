@@ -1,0 +1,119 @@
+---
+/**
+ * Tabela Estática de Conversão de Tamanhos de Roupas no Brasil
+ * Zero JavaScript, acessível e estruturada segundo os padrões ABNT NBR 15800 e ASTM D5585.
+ */
+
+const womenRows = [
+  { br: '32', alfa: 'PP', us: '00', uk: '2', eu: '30', bustCm: '76 cm', waistCm: '58 cm', hipCm: '82 cm' },
+  { br: '34', alfa: 'PP', us: '0', uk: '4', eu: '32', bustCm: '79 cm', waistCm: '61 cm', hipCm: '84 cm' },
+  { br: '36', alfa: 'P', us: '2', uk: '6', eu: '34', bustCm: '82 cm', waistCm: '64 cm', hipCm: '89 cm' },
+  { br: '38', alfa: 'P', us: '4', uk: '8', eu: '36', bustCm: '86 cm', waistCm: '69 cm', hipCm: '94 cm' },
+  { br: '40', alfa: 'M', us: '6', uk: '10', eu: '38', bustCm: '89 cm', waistCm: '71 cm', hipCm: '97 cm' },
+  { br: '42', alfa: 'M', us: '8', uk: '12', eu: '40', bustCm: '94 cm', waistCm: '76 cm', hipCm: '102 cm' },
+  { br: '44', alfa: 'G', us: '10', uk: '14', eu: '42', bustCm: '98 cm', waistCm: '80 cm', hipCm: '106 cm' },
+  { br: '46', alfa: 'G', us: '12', uk: '16', eu: '44', bustCm: '102 cm', waistCm: '84 cm', hipCm: '110 cm' },
+  { br: '48', alfa: 'GG', us: '14', uk: '18', eu: '46', bustCm: '107 cm', waistCm: '89 cm', hipCm: '115 cm' },
+  { br: '50', alfa: 'XG', us: '16', uk: '20', eu: '48', bustCm: '112 cm', waistCm: '94 cm', hipCm: '120 cm' },
+  { br: '52', alfa: 'XG', us: '18', uk: '22', eu: '50', bustCm: '117 cm', waistCm: '99 cm', hipCm: '125 cm' },
+  { br: '54', alfa: 'Plus', us: '20', uk: '24', eu: '52', bustCm: '122 cm', waistCm: '104 cm', hipCm: '130 cm' },
+];
+
+const menRows = [
+  { br: '36', alfa: 'PP', us: '34', eu: '44', chestCm: '86 cm', waistCm: '71 cm' },
+  { br: '38', alfa: 'P', us: '36', eu: '46', chestCm: '91 cm', waistCm: '76 cm' },
+  { br: '40', alfa: 'M', us: '38', eu: '48', chestCm: '96 cm', waistCm: '81 cm' },
+  { br: '42', alfa: 'M', us: '40', eu: '50', chestCm: '102 cm', waistCm: '86 cm' },
+  { br: '44', alfa: 'G', us: '42', eu: '52', chestCm: '107 cm', waistCm: '91 cm' },
+  { br: '46', alfa: 'G', us: '44', eu: '54', chestCm: '112 cm', waistCm: '97 cm' },
+  { br: '48', alfa: 'GG', us: '46', eu: '56', chestCm: '117 cm', waistCm: '102 cm' },
+  { br: '50', alfa: 'GG', us: '48', eu: '58', chestCm: '122 cm', waistCm: '107 cm' },
+  { br: '52', alfa: 'XG', us: '50', eu: '60', chestCm: '127 cm', waistCm: '112 cm' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Tabelas de Medidas Corporais</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Tabela Completa de Tamanhos de Roupas: Brasil, EUA e Europa.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Equivalência de modelagem feminina e masculina comparando a numeração brasileira, letras (PP a XG), padrão norte-americano (US) e europeu (EU).
+    </p>
+  </div>
+
+  <!-- Women's Table -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Moda Feminina: Vestidos, Blusas, Saias e Calças</span>
+      <span class="text-xs font-normal text-text-faint">(Busto, Cintura e Quadril)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">Brasil (BR)</th>
+            <th class="py-4 px-5">Alfa BR</th>
+            <th class="py-4 px-5">EUA (US)</th>
+            <th class="py-4 px-5">Reino Unido (UK)</th>
+            <th class="py-4 px-5">Europa (EU)</th>
+            <th class="py-4 px-5">Busto</th>
+            <th class="py-4 px-5">Cintura</th>
+            <th class="py-4 px-5">Quadril</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {womenRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-accent text-base">{row.br}</td>
+              <td class="py-3 px-5 font-semibold text-text-muted">{row.alfa}</td>
+              <td class="py-3 px-5 font-bold text-ink">{row.us}</td>
+              <td class="py-3 px-5 font-medium">{row.uk}</td>
+              <td class="py-3 px-5 font-medium">{row.eu}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.bustCm}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.waistCm}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.hipCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Men's Table -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Moda Masculina: Camisas, Paletós e Calças</span>
+      <span class="text-xs font-normal text-text-faint">(Tórax e Cintura)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">Brasil (BR)</th>
+            <th class="py-4 px-5">Alfa BR</th>
+            <th class="py-4 px-5">EUA (US Chest)</th>
+            <th class="py-4 px-5">Europa (EU)</th>
+            <th class="py-4 px-5">Tórax</th>
+            <th class="py-4 px-5">Cintura</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {menRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-accent text-base">{row.br}</td>
+              <td class="py-3 px-5 font-semibold text-text-muted">{row.alfa}</td>
+              <td class="py-3 px-5 font-bold text-ink">{row.us}</td>
+              <td class="py-3 px-5 font-medium">{row.eu}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.chestCm}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.waistCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

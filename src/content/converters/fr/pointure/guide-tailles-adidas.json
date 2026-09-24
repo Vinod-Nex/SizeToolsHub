@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles et Pointures Adidas",
+  "primaryKeyword": "Guide des Tailles Adidas Pointure",
+  "metaDescription": "Tableau des pointures Adidas. Comprendre les tailles en tiers (ex: 42 2/3) et leur correspondance avec les pointures US et françaises.",
+  "directAnswer": "Adidas utilise un système européen en tiers : 41 1/3, 42, 42 2/3, 43 1/3, 44, etc. Par exemple, un US 9 homme chez Adidas correspond à un 42 2/3 en France (27 cm).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Adidas France / EU",
+  "toUnit": "Pointure Adidas US",
+  "faq": [
+    {
+      "question": "Pourquoi Adidas propose-t-il des pointures comme 42 2/3 ?",
+      "answer": "Parce qu’Adidas convertit ses pointures depuis les tailles anglaises entières et demi-tailles (UK) en multipliant par le Point de Paris."
+    },
+    {
+      "question": "Comment taillent les baskets Adidas Samba et Gazelle ?",
+      "answer": "Leur bout est assez fuselé. Si vous avez les pieds larges, il est conseillé de prendre une demi-taille au-dessus."
+    },
+    {
+      "question": "Quelle pointure US pour un 44 chez Adidas ?",
+      "answer": "Un 44 Adidas correspond à un US 10 pour homme (28 cm)."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Tailles Petite pour Femmes",
+  "primaryKeyword": "Guide des Tailles Petite",
+  "metaDescription": "Vêtements Petite pour femmes mesurant moins de 1m60. Manches, longueurs et découpes adaptées sans besoin d’ourlets.",
+  "directAnswer": "La mention Petite ne désigne pas une minceur extrême, mais une morphologie conçue pour les femmes mesurant 1m60 ou moins. Les longueurs de bras, buste et jambes sont réduites d’environ 3 à 5 cm.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille Petite US (P)",
+  "toUnit": "Taille Petite France (FR)",
+  "faq": [
+    {
+      "question": "Qui devrait s’habiller au rayon Petite ?",
+      "answer": "Toute femme de moins de 1m62 qui trouve systématiquement que les manteaux ont les épaules trop tombantes et les pantalons trop de longueur."
+    },
+    {
+      "question": "Quelle est l’équivalence pour un Small Petite (SP) ?",
+      "answer": "Cela correspond à une taille 36-38 française raccourcie au niveau du buste et des membres."
+    },
+    {
+      "question": "Peut-on porter des pièces Petite en ayant une stature moyenne ?",
+      "answer": "Oui, beaucoup de femmes portent des jeans Petite pour obtenir un effet 7/8e cropped sans retouche."
+    }
+  ]
+}

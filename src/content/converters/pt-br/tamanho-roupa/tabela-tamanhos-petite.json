@@ -1,0 +1,16 @@
+{
+  "title": "Tabela de Roupas Petite (Estatura Baixa): Brasil x EUA",
+  "primaryKeyword": "Tamanho Petite Brasil EUA",
+  "metaDescription": "Guia de medidas para moda petite feminina (mulheres até 1,60 m). Entenda a modelagem com mangas, tronco e pernas mais curtas.",
+  "directAnswer": "A categoria 'Petite' (identificada pela letra 'P', como 4P, 6P, 8P nos EUA) não significa tamanho magro, e sim proporção corporal para mulheres de até 1,60 m de altura. As mangas são cerca de 4 cm mais curtas e o comprimento total do tronco e da calça é adaptado para evitar bainhas excessivas.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Petite EUA (US P)",
+  "toUnit": "Petite Brasil"
+  ,
+  "faq": [
+    {
+      "question": "Qual a diferença entre tamanho Petite e tamanho PP?",
+      "answer": "'PP' refere-se à largura e circunferência corporal (muito pequeno). 'Petite' refere-se à altura e comprimento ósseo (tronco, mangas e pernas mais curtos para quem tem até 1,60 m)."
+    }
+  ]
+}

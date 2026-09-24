@@ -1,0 +1,23 @@
+{
+  "title": "Teaspoons to Grams Converter",
+  "primaryKeyword": "Teaspoons to Grams Converter",
+  "metaDescription": "Convert teaspoons to grams for baking powder, baking soda, salt, yeast, spices, and sugar with density accuracy.",
+  "directAnswer": "Converting teaspoons to grams depends strictly on ingredient density. For baking powder or salt, 1 teaspoon weighs approximately 5 to 6 grams. For granulated white sugar, 1 teaspoon equals 4.2 grams, while 1 teaspoon of all-purpose flour weighs approximately 2.6 grams. Three level teaspoons equal one standard tablespoon.",
+  "converterType": "cooking",
+  "fromUnit": "Teaspoons (tsp)",
+  "toUnit": "Grams (g)",
+  "faq": [
+    {
+      "question": "How many grams is 1 teaspoon of salt?",
+      "answer": "One level teaspoon of fine table salt weighs approximately 5.7 to 6.0 grams."
+    },
+    {
+      "question": "How many grams is 1 teaspoon of baking powder?",
+      "answer": "One level teaspoon of baking powder or baking soda weighs approximately 4.8 to 5.0 grams."
+    },
+    {
+      "question": "How many teaspoons make 10 grams of active dry yeast?",
+      "answer": "One standard 7g sachet of yeast is about 2.25 teaspoons, so 10 grams equals approximately 3.2 teaspoons."
+    }
+  ]
+}

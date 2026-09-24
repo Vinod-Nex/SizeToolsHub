@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla para Zapatillas de Running",
+  "primaryKeyword": "Talla Zapatillas de Running",
+  "metaDescription": "Cómo elegir la talla correcta para zapatillas de correr. Consejos sobre dilatación del pie, espacio en la puntera y drop.",
+  "directAnswer": "Para zapatillas de running, los podólogos y atletas recomiendan comprar entre medio número y un número completo más que en tu calzado casual habitual (unos 10 a 15 mm de espacio libre entre el dedo más largo y la punta de la zapatilla).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Casual",
+  "toUnit": "Talla Running",
+  "faq": [
+    {
+      "question": "¿Por qué se necesita una talla mayor para correr?",
+      "answer": "El impacto repetido y el incremento del flujo sanguíneo hacen que el pie se ensanche y alargue durante entrenamientos prolongados."
+    },
+    {
+      "question": "¿Cómo comprobar el ajuste de una zapatilla de running?",
+      "answer": "Debes poder presionar el ancho del pulgar de tu mano entre la punta del dedo gordo y el final de la zapatilla cuando estés de pie."
+    },
+    {
+      "question": "¿Qué marca de running talla más pequeña?",
+      "answer": "Marcas como Nike y Asics tienden a tallar ligeramente ajustadas, mientras que New Balance y Brooks ofrecen hormas más amplias y opciones de anchura 2E y 4E."
+    }
+  ]
+}

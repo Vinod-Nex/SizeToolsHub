@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Tailles de Jeans: Norme W/L vers France",
+  "primaryKeyword": "Taille de Jeans W et L en France",
+  "metaDescription": "Convertissez les tailles de jeans américains en pouces (Waist / Length) en tailles françaises (36 à 48). Tableau clair pour Levi’s et Diesel.",
+  "directAnswer": "Les jeans s’expriment en pouces : W (Waist / Tour de taille) et L (Length / Longueur d’entrejambe). Pour obtenir votre taille française, ajoutez 10 à la valeur W : W28 = FR 38, W30 = FR 40, W32 = FR 42, W34 = FR 44, W36 = FR 46.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille Jean en Pouces (W)",
+  "toUnit": "Taille Pantalon France (FR)",
+  "faq": [
+    {
+      "question": "Que veut dire W32 L34 sur un jean Levi’s ?",
+      "answer": "W32 correspond à un tour de taille de 32 pouces (environ 81 cm, taille 42 en France) et L34 correspond à une entrejambe longue de 34 pouces (86 cm)."
+    },
+    {
+      "question": "Quelle longueur \"L\" choisir selon sa stature ?",
+      "answer": "L30 pour moins de 1m75, L32 pour 1m75 à 1m83, et L34 pour plus de 1m85."
+    },
+    {
+      "question": "Un jean en coton brut va-t-il rétrécir au premier lavage ?",
+      "answer": "Oui, un jean en denim brut \"Shrink-to-fit\" non prélavé peut perdre 1 à 2 pouces en longueur et en largeur au premier bain."
+    }
+  ]
+}

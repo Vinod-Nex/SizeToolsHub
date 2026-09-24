@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Tailles Vêtements: US vers UK",
+  "primaryKeyword": "Taille Vêtements US vers UK",
+  "metaDescription": "Tableau de correspondance pour vêtements femme et homme entre les standards américains (US) et britanniques (UK). Idéal pour commandes ASOS.",
+  "directAnswer": "En prêt-à-porter féminin, la taille britannique (UK) est supérieure de 4 tailles à la taille américaine (US) : US 4 = UK 8, US 6 = UK 10, US 8 = UK 12, US 10 = UK 14.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille US",
+  "toUnit": "Taille UK",
+  "faq": [
+    {
+      "question": "Quelle taille UK pour un US 8 femme ?",
+      "answer": "Un US 8 femme équivaut à un UK 12 (soit une taille 40-42 en France)."
+    },
+    {
+      "question": "En mode masculine, les tailles US et UK sont-elles identiques ?",
+      "answer": "Oui, les vestes de costume et manteaux utilisent les mêmes mesures en pouces de tour de torse (ex: US 40 = UK 40)."
+    },
+    {
+      "question": "Comment taille la marque ASOS ?",
+      "answer": "Les collections ASOS Design taillent fidèlement aux grilles UK standard, tandis que les lignes Tall ou Petite s’adaptent à la stature."
+    }
+  ]
+}

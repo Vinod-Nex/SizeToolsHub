@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: Hombre a Mujer",
+  "primaryKeyword": "Talla Calzado Hombre a Mujer",
+  "metaDescription": "Descubre cómo convertir una talla de calzado masculina a femenina en Estados Unidos, Europa y marcas unisex como Converse y Vans.",
+  "directAnswer": "En el sistema estadounidense (US), la talla de mujer es 1.5 números mayor que la de hombre: un US 8 de hombre equivale a un US 9.5 de mujer. En Europa (EU), la numeración es unisex y depende exclusivamente de los centímetros.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Hombre (US/EU)",
+  "toUnit": "Talla Mujer (US/EU)",
+  "faq": [
+    {
+      "question": "¿Puedo comprar calzado de hombre si soy mujer?",
+      "answer": "Sí. Simplemente resta 1.5 números a tu talla habitual de mujer en EE. UU. Considera que el calzado de hombre suele tener una horma estándar más ancha (D en lugar de B)."
+    },
+    {
+      "question": "¿Qué talla es un 40 de hombre en mujer en España?",
+      "answer": "En España y Europa el número 40 mide lo mismo en hombre que en mujer (unos 25.5 cm), aunque los modelos de mujer suelen tener talón más estrecho."
+    },
+    {
+      "question": "¿Cómo funciona en zapatillas unisex como Converse Chuck Taylor?",
+      "answer": "Converse muestra ambas medidas en la etiqueta interior: por ejemplo, Mens 6 = Womens 8."
+    }
+  ]
+}

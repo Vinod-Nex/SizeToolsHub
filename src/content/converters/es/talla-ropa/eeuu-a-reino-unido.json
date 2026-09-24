@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Ropa: EE. UU. a Reino Unido",
+  "primaryKeyword": "Talla de Ropa EE. UU. a Reino Unido",
+  "metaDescription": "Tabla de conversión de tallas de confección americana (US) a británica (UK) para compras en comercios como ASOS o Marks & Spencer.",
+  "directAnswer": "En ropa femenina, la talla británica (UK) es generalmente 4 números superior a la americana (US): US 4 = UK 8, US 6 = UK 10, US 8 = UK 12, US 10 = UK 14.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla EE. UU. (US)",
+  "toUnit": "Talla Reino Unido (UK)",
+  "faq": [
+    {
+      "question": "¿Qué talla británica es una talla 8 de mujer de EE. UU.?",
+      "answer": "Una talla US 8 equivale a una talla UK 12 (equivalente a la 40 en España)."
+    },
+    {
+      "question": "¿Aplica esta regla también a la ropa de hombre?",
+      "answer": "En chaquetas y trajes de hombre, las tallas de EE. UU. y Reino Unido son idénticas porque ambas se miden en pulgadas de contorno de pecho (ej. US 40 = UK 40)."
+    },
+    {
+      "question": "¿Las marcas británicas tienen cortes más ajustados?",
+      "answer": "Marcas de moda joven británica como Topshop o ASOS Design suelen tener un entalle ceñido (Slim Fit)."
+    }
+  ]
+}

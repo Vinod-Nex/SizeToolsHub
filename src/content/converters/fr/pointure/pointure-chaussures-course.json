@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures pour Chaussures de Running",
+  "primaryKeyword": "Pointure Chaussures de Course Running",
+  "metaDescription": "Quelle pointure choisir pour ses chaussures de running ? Conseils pour anticiper le gonflement du pied et protéger les ongles.",
+  "directAnswer": "Pour les chaussures de course à pied, il est vivement conseillé de choisir entre une demi-pointure et une pointure entière de plus que pour vos souliers de ville (soit environ 10 à 15 mm d’espace libre devant les orteils).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Ville",
+  "toUnit": "Pointure Running",
+  "faq": [
+    {
+      "question": "Pourquoi faut-il prendre une pointure de plus en running ?",
+      "answer": "Lors de l’impact au sol, le pied s’écrase et glisse vers l’avant. En montée et en descente, le manque d’espace provoque des ongles noirs et des ampoules."
+    },
+    {
+      "question": "Comment tester la pointure d’une chaussure de course ?",
+      "answer": "Debout, vous devez pouvoir insérer la largeur de votre pouce entre votre orteil le plus long et l’extrémité de la chaussure."
+    },
+    {
+      "question": "Quelles marques de running chaussent petit ?",
+      "answer": "Asics et Nike taillent généralement plus ajusté, tandis que Brooks, New Balance et Hoka proposent un chaussant plus spacieux."
+    }
+  ]
+}

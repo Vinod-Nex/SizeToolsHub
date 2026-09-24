@@ -1,0 +1,19 @@
+{
+  "title": "Conversor de Calçados EUA para Reino Unido (UK)",
+  "primaryKeyword": "Tamanho de Calçado EUA para Reino Unido",
+  "metaDescription": "Converta numeração de sapatos e tênis dos EUA (US) para o Reino Unido (UK). Tabela de correspondência exata para modelos britânicos.",
+  "directAnswer": "A numeração de calçados masculinos dos EUA para o Reino Unido (UK) é exatamente meio número ou um número menor: subtraia 0,5 a 1 tamanho do US Men (um US 10 masc equivale ao UK 9 ou 9,5). Para calçados femininos, a diferença média é de 2 números (um US 8 fem equivale ao UK 6).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Reino Unido (UK)",
+  "faq": [
+    {
+      "question": "Qual a diferença entre o tamanho US e UK em calçados?",
+      "answer": "O sistema britânico (UK) e o americano (US) usam a mesma escala de passos em polegadas, mas a linha de base americana começa um número acima da britânica."
+    },
+    {
+      "question": "O tamanho UK é igual ao tamanho brasileiro?",
+      "answer": "Não. A numeração do Reino Unido (UK) tem valores muito menores (geralmente entre 3 e 12), enquanto a numeração brasileira vai do 34 ao 46 para adultos."
+    }
+  ]
+}

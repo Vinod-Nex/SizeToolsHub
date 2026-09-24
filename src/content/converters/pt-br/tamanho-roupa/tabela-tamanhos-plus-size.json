@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Roupas Plus Size: Brasil x EUA",
+  "primaryKeyword": "Tabela Plus Size Brasil EUA",
+  "metaDescription": "Guia de tamanhos grandes e plus size para moda feminina e masculina. Conversão de tamanhos americanos 1X, 2X, 3X para G1, G2, G3 e 48 a 60 no Brasil.",
+  "directAnswer": "A moda plus size nos EUA utiliza a escala 1X, 2X, 3X, 4X ou números 14W a 28W. No Brasil, corresponde aos tamanhos G1 a G5 ou numerações 48, 50, 52, 54, 56, 58 e 60.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Plus Size EUA (US)",
+  "toUnit": "Plus Size Brasil (BR)",
+  "faq": [
+    {
+      "question": "Qual a diferença entre XL e 1X nos Estados Unidos?",
+      "answer": "XL é o maior tamanho da grade regular. Já o 1X é o início da modelagem plus size, confeccionado com proporções específicas mais amplas nos quadris e braços."
+    }
+  ]
+}

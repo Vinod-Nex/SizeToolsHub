@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure Femme vers Homme",
+  "primaryKeyword": "Pointure Femme vers Homme",
+  "metaDescription": "Tableau de correspondance pour passer d’une pointure femme à une pointure homme sur les modèles unisexes et baskets.",
+  "directAnswer": "Pour convertir une pointure femme américaine en pointure homme, soustrayez 1,5 taille (US 9 femme = US 7.5 homme). En pointure française, la longueur en cm est strictement identique.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Femme (US/FR)",
+  "toUnit": "Pointure Homme (US/FR)",
+  "faq": [
+    {
+      "question": "Quelle pointure homme pour un 39 femme en France ?",
+      "answer": "En France, un 39 femme équivaut à un 39 homme (environ 24.5 à 25 cm de pied)."
+    },
+    {
+      "question": "Un homme peut-il acheter des baskets femme ?",
+      "answer": "Oui, en ajoutant 1.5 taille à sa pointure US, en veillant à ce que la largeur ne soit pas trop resserrée."
+    },
+    {
+      "question": "Les coloris femme sont-ils conçus avec les mêmes matériaux ?",
+      "answer": "Oui, les technologies de semelle et les composants d’amorti sont identiques au sein d’une même gamme technique."
+    }
+  ]
+}

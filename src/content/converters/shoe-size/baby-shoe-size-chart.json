@@ -1,0 +1,23 @@
+{
+  "title": "Baby Shoe Size Chart & Newborn Guide",
+  "primaryKeyword": "Baby Shoe Size Chart & Newborn Guide",
+  "metaDescription": "Infant and newborn baby shoe size chart covering ages 0 to 12 months with foot measurements in inches, centimeters, and EU sizes.",
+  "directAnswer": "Baby shoe sizes cover US 0C to 4C for infants from birth up to 12 months, mapping to European sizes 15 through 19. A newborn generally wears size 0C or 1C (8 to 9 centimeters), with soft-soled, flexible shoes recommended to support healthy foot development without restricting natural toe spreading.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Baby",
+  "toUnit": "EU Baby",
+  "faq": [
+    {
+      "question": "Do newborns need structured shoes?",
+      "answer": "No, pediatricians recommend soft, breathable booties or bare feet for newborns to encourage sensory development and muscle tone."
+    },
+    {
+      "question": "What shoe size does a 6-month-old wear?",
+      "answer": "A 6-month-old typically wears a US size 2C to 3C (EU 17 to 18), measuring around 10.5 cm."
+    },
+    {
+      "question": "How do I measure an infant's foot?",
+      "answer": "Use a flexible tape measure or piece of string while the baby is resting or sleeping, measuring from the back of the heel to the tip of the big toe."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanhos de Tênis Adidas: Brasil x EUA",
+  "primaryKeyword": "Tabela de Tamanho Adidas Brasil EUA",
+  "metaDescription": "Tabela de conversão de tamanhos de tênis Adidas: Brasil (BR), Estados Unidos (US) e centímetros. Modelos Ultraboost, Samba, Gazelle e Stan Smith.",
+  "directAnswer": "A Adidas utiliza frações em sua numeração europeia (como 42 2/3 ou 40 2/3). No Brasil, um Adidas 40 BR corresponde a 42 2/3 EU ou US 9 masculino (27 cm).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Adidas Brasil (BR)",
+  "toUnit": "Adidas EUA (US)",
+  "faq": [
+    {
+      "question": "O Adidas Samba e Gazelle vestem normal?",
+      "answer": "Sim, vestem fiéis ao tamanho (true to size), mas para pés mais largos pode ser recomendável meio número maior."
+    }
+  ]
+}

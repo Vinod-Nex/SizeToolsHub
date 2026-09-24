@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas de Calzado Infantil",
+  "primaryKeyword": "Talla de Calzado Infantil",
+  "metaDescription": "Tabla de conversión de zapatos y zapatillas para niños. Equivalencias entre España, Europa, EE. UU. (Kids) y Reino Unido.",
+  "directAnswer": "El calzado infantil suele dividirse en tallas para primeros pasos (EU 18-27 / US 2C-10C) y tallas escolares o juveniles (EU 28-39 / US 11C-7Y). Mide el pie del niño cada dos o tres meses por su rápido crecimiento.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Infantil (EU)",
+  "toUnit": "Talla Infantil EE. UU. (US Kids)",
+  "faq": [
+    {
+      "question": "¿Qué significa la letra \"C\" e \"Y\" en tallas de niños en EE. UU.?",
+      "answer": "\"C\" significa Child / Children (tallas pequeñas de 0C a 13.5C) e \"Y\" significa Youth (tallas juveniles de 1Y a 7Y, que empalman con las tallas de adultos)."
+    },
+    {
+      "question": "¿Qué talla europea es la 13C de EE. UU.?",
+      "answer": "La talla US 13C equivale aproximadamente a la talla 31 en España y Europa (unos 19 cm de pie)."
+    },
+    {
+      "question": "¿Cuánto margen de crecimiento se debe dejar en zapatos infantiles?",
+      "answer": "Se recomienda dejar entre 0.8 cm y 1.2 cm de margen para permitir el libre movimiento de los dedos sin que el zapato se descalce."
+    }
+  ]
+}

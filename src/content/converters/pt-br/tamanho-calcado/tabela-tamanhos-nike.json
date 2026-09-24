@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanhos de Tênis Nike: Brasil x EUA",
+  "primaryKeyword": "Tabela de Tamanho Nike Brasil EUA",
+  "metaDescription": "Tabela oficial de conversão de tênis Nike: numeração Brasil (BR), Estados Unidos (US) e centímetros (CM). Modelos Air Force, Dunk e Air Max.",
+  "directAnswer": "A forma da Nike costuma ser levemente ajustada. Um Nike tamanho 40 no Brasil corresponde ao US 8.5 ou 9 (27 cm) e EU 42. Para modelos como Air Force 1 ou Dunk, muitos compradores optam pelo tamanho exato ou meio número a mais.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Nike Brasil (BR)",
+  "toUnit": "Nike EUA (US)",
+  "faq": [
+    {
+      "question": "Como é a forma dos tênis da Nike no Brasil?",
+      "answer": "A Nike comercializa seus tênis no Brasil com a numeração BR estampada na caixa, que equivale rigorosamente ao tamanho europeu subtraído de 2 (BR = EU - 2)."
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Oven Temperature Converter (°F, °C, Gas Mark, Fan)",
+  "primaryKeyword": "Oven Temperature Converter",
+  "metaDescription": "Convert baking temperatures between Fahrenheit (°F), Celsius (°C), fan-forced convection ovens, and British Gas Marks.",
+  "directAnswer": "To convert oven temperatures between Fahrenheit and Celsius, use the formula (F - 32) × 5/9 = C. A moderate baking temperature of 350°F equals 177°C (rounded to 180°C), Fan 160°C, and British Gas Mark 4. For convection fan-forced ovens, always reduce the standard temperature by 20°C (25°F).",
+  "converterType": "cooking",
+  "fromUnit": "Oven °F",
+  "toUnit": "Oven °C / Gas Mark",
+  "faq": [
+    {
+      "question": "What is 350°F in Celsius and Gas Mark?",
+      "answer": "350°F equals 177°C (commonly rounded to 180°C for conventional ovens), 160°C for fan-forced ovens, and Gas Mark 4."
+    },
+    {
+      "question": "Why do convection (fan) ovens require temperature reduction?",
+      "answer": "Convection fans circulate hot air continuously, transferring thermal energy more rapidly to food and causing outer edges to brown before interiors bake if not reduced by 20°C."
+    },
+    {
+      "question": "What is Gas Mark 6 in Fahrenheit and Celsius?",
+      "answer": "Gas Mark 6 is 400°F (200°C conventional, or 180°C fan-forced), commonly used for roasting meats and baking pastries."
+    }
+  ]
+}

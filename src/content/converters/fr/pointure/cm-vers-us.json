@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Centimètres vers Pointure US",
+  "primaryKeyword": "Centimètres vers Pointure US",
+  "metaDescription": "Convertissez la longueur de votre pied en centimètres vers les pointures américaines (US Men / Women).",
+  "directAnswer": "26 cm correspondent à une pointure US 8 pour homme ou US 9.5 pour femme. 27 cm correspondent à un US 9 homme ou US 10.5 femme.",
+  "converterType": "pointure",
+  "fromUnit": "Centimètres (cm)",
+  "toUnit": "Pointure US",
+  "faq": [
+    {
+      "question": "Que signifie l’indication \"CM\" ou \"JP\" sur les boîtes de baskets ?",
+      "answer": "Elle indique la longueur en centimètres recommandée pour le pied, ce qui constitue le repère le plus fiable entre marques."
+    },
+    {
+      "question": "Quelle pointure US pour un pied de 28 cm ?",
+      "answer": "28 cm correspondent à une pointure US 10 pour homme (pointure 44 en France)."
+    },
+    {
+      "question": "Que faire si un pied est plus grand que l’autre ?",
+      "answer": "Basez-vous toujours sur la mesure du pied le plus long pour choisir votre pointure."
+    }
+  ]
+}

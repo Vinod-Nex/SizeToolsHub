@@ -1,0 +1,319 @@
+---
+import { languages, defaultLang, type SupportedLocale } from '../i18n/ui';
+import { getAlternateHreflangs } from '../lib/localeRoutes';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  noindex?: boolean;
+  lang?: SupportedLocale;
+  breadcrumbs?: BreadcrumbItem[];
+  faq?: FAQItem[];
+  softwareAppName?: string;
+  isHomePage?: boolean;
+  jsonLd?: Record<string, any> | Array<Record<string, any>>;
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage = 'https://sizetoolshub.com/og-default.png',
+  ogType = 'website',
+  publishedTime,
+  modifiedTime,
+  noindex = false,
+  lang: propLang,
+  breadcrumbs: customBreadcrumbs,
+  faq,
+  softwareAppName,
+  isHomePage: propIsHomePage,
+  jsonLd,
+} = Astro.props;
+
+// Determine current URL and origin
+const siteOrigin = Astro.site?.origin || 'https://sizetoolshub.com';
+const pathname = Astro.url.pathname;
+
+// Normalize path: ensure leading and trailing slash
+let cleanPath = pathname;
+if (!cleanPath.startsWith('/')) cleanPath = '/' + cleanPath;
+if (!cleanPath.endsWith('/')) cleanPath = cleanPath + '/';
+
+// Determine active locale prefix if present in the URL
+const nonDefaultLocales = ['pt-br', 'es', 'fr'] as const;
+let currentLocale: SupportedLocale = defaultLang;
+let basePath = cleanPath;
+
+for (const loc of nonDefaultLocales) {
+  const prefix = `/${loc}/`;
+  if (cleanPath.startsWith(prefix)) {
+    currentLocale = loc;
+    basePath = cleanPath.slice(prefix.length - 1); // retains leading slash
+    break;
+  }
+}
+
+if (propLang) {
+  currentLocale = propLang;
+}
+
+const isHomePage = propIsHomePage !== undefined ? propIsHomePage : basePath === '/';
+
+// Generate precise 4-locale hreflang alternates (+ x-default) via bi-directional matrix
+const altRoutes = getAlternateHreflangs(pathname, siteOrigin);
+const hrefEn = altRoutes.en;
+const hrefPtBr = altRoutes['pt-br'];
+const hrefEs = altRoutes.es;
+const hrefFr = altRoutes.fr;
+const hrefXDefault = altRoutes['x-default'];
+
+// Canonical URL calculation
+const finalCanonical = canonicalUrl || altRoutes.canonical;
+
+// OpenGraph Locale formatting
+const ogLocaleMap: Record<SupportedLocale, string> = {
+  en: 'en_US',
+  'pt-br': 'pt_BR',
+  es: 'es_ES',
+  fr: 'fr_FR',
+};
+const ogLocale = ogLocaleMap[currentLocale] || 'en_US';
+
+// Category dictionary for breadcrumbs
+const CATEGORY_NAMES: Record<string, string> = {
+  'shoe-size': 'Shoe Size',
+  'clothing-size': 'Clothing Size',
+  'tamanho-calcado': 'Tamanho de Calçado',
+  'tamanho-roupa': 'Tamanho de Roupa',
+  'talla-zapatos': 'Talla de Calzado',
+  'talla-ropa': 'Talla de Ropa',
+  'pointure': 'Pointure',
+  'taille-vetement': 'Taille Vêtement',
+  'ring-size': 'Ring Size',
+  'cooking': 'Cooking',
+  'data': 'Data Storage',
+  'paper-size': 'Paper Size',
+  'fuel': 'Fuel Economy',
+};
+
+const HOME_LABELS: Record<SupportedLocale, string> = {
+  en: 'Home',
+  'pt-br': 'Início',
+  es: 'Inicio',
+  fr: 'Accueil',
+};
+
+const segments = basePath.split('/').filter(Boolean);
+
+// ── Build Breadcrumb Hierarchy ──
+const breadcrumbItems: BreadcrumbItem[] = [];
+
+if (customBreadcrumbs && customBreadcrumbs.length > 0) {
+  breadcrumbItems.push(...customBreadcrumbs);
+} else if (!isHomePage && segments.length >= 1) {
+  const localePrefix = currentLocale === defaultLang ? '' : `/${currentLocale}`;
+
+  // Always start with Home in target language
+  breadcrumbItems.push({
+    name: HOME_LABELS[currentLocale] || 'Home',
+    url: `${siteOrigin}${localePrefix}/`,
+  });
+
+  const catSlug = segments[0];
+  const catName = CATEGORY_NAMES[catSlug] || catSlug.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  breadcrumbItems.push({
+    name: catName,
+    url: `${siteOrigin}${localePrefix}/${catSlug}/`,
+  });
+
+  if (segments.length >= 2) {
+    // Subpage: use explicit softwareAppName or clean title
+    const cleanTitle = softwareAppName || title.split(' — ')[0].split(' | ')[0];
+    breadcrumbItems.push({
+      name: cleanTitle,
+      url: finalCanonical,
+    });
+  }
+}
+
+// ── Structured Data (@graph) ──
+const schemaGraph: any[] = [];
+
+// 1. Organization (Sitewide in Base Layout)
+schemaGraph.push({
+  "@type": "Organization",
+  "@id": `${siteOrigin}/#organization`,
+  "name": "SizeToolsHub",
+  "url": `${siteOrigin}/`,
+  "logo": `${siteOrigin}/favicon.svg`,
+  "description": "Zero-lag international sizing charts, brand fit converters, and dimension tools."
+});
+
+// 2. BreadcrumbList (Every page reflecting hierarchy, requires at least 2 items)
+if (breadcrumbItems.length >= 2) {
+  schemaGraph.push({
+    "@type": "BreadcrumbList",
+    "@id": `${finalCanonical}#breadcrumb`,
+    "itemListElement": breadcrumbItems.map((crumb, idx) => ({
+      "@type": "ListItem",
+      "position": idx + 1,
+      "name": crumb.name,
+      "item": crumb.url.startsWith('http') ? crumb.url : `${siteOrigin}${crumb.url}`
+    }))
+  });
+}
+
+// 3. WebSite with SearchAction + SoftwareApplication on Homepage
+if (isHomePage) {
+  schemaGraph.push({
+    "@type": "WebSite",
+    "@id": `${siteOrigin}/#website`,
+    "name": "SizeToolsHub",
+    "url": `${siteOrigin}/`,
+    "publisher": {
+      "@id": `${siteOrigin}/#organization`
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": `${siteOrigin}/?q={search_term_string}`
+      },
+      "query-input": "required name=search_term_string"
+    }
+  });
+
+  schemaGraph.push({
+    "@type": "SoftwareApplication",
+    "@id": `${siteOrigin}/#software`,
+    "name": "SizeToolsHub Universal Conversion Engine",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": description || "Instant international size conversions, brand fit calculators, and luggage dimension checkers."
+  });
+}
+
+// 4. SoftwareApplication on Converter Pages
+if (!isHomePage && (softwareAppName || segments.length >= 2)) {
+  const appName = softwareAppName || title.split(' — ')[0].split(' | ')[0];
+  schemaGraph.push({
+    "@type": "SoftwareApplication",
+    "@id": `${finalCanonical}#software`,
+    "name": appName,
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "All",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": description
+  });
+}
+
+// 5. FAQPage on every converter page (from faq[])
+if (faq && faq.length > 0) {
+  schemaGraph.push({
+    "@type": "FAQPage",
+    "@id": `${finalCanonical}#faq`,
+    "mainEntity": faq.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  });
+}
+
+// 6. Merge any custom jsonLd passed
+if (jsonLd) {
+  if (Array.isArray(jsonLd)) {
+    schemaGraph.push(...jsonLd);
+  } else if (typeof jsonLd === 'object') {
+    if (jsonLd['@graph'] && Array.isArray(jsonLd['@graph'])) {
+      schemaGraph.push(...jsonLd['@graph']);
+    } else {
+      // Avoid duplicate @context inside @graph
+      const { ['@context']: _, ...rest } = jsonLd;
+      schemaGraph.push(rest);
+    }
+  }
+}
+
+const fullStructuredData = {
+  "@context": "https://schema.org",
+  "@graph": schemaGraph
+};
+---
+
+<!-- Core Document Identity -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="canonical" href={finalCanonical} />
+
+<!-- Crawl Control & Meta Directives -->
+<meta
+  name="robots"
+  content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+/>
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+
+<!-- Multilingual SEO & Hreflang Alternates for All 4 Locales -->
+<link rel="alternate" hreflang="en" href={hrefEn} />
+<link rel="alternate" hreflang="pt-br" href={hrefPtBr} />
+<link rel="alternate" hreflang="es" href={hrefEs} />
+<link rel="alternate" hreflang="fr" href={hrefFr} />
+<link rel="alternate" hreflang="x-default" href={hrefXDefault} />
+
+<!-- Open Graph / Facebook Protocol -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={finalCanonical} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:site_name" content="SizeToolsHub" />
+<meta property="og:locale" content={ogLocale} />
+{Object.entries(ogLocaleMap)
+  .filter(([l]) => l !== currentLocale)
+  .map(([_, localeTag]) => (
+    <meta property="og:locale:alternate" content={localeTag} />
+  ))}
+{ogImage && <meta property="og:image" content={ogImage} />}
+{ogImage && <meta property="og:image:alt" content={title} />}
+{publishedTime && <meta property="article:published_time" content={publishedTime} />}
+{modifiedTime && <meta property="article:modified_time" content={modifiedTime} />}
+
+<!-- Twitter Card Standards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={finalCanonical} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}
+{ogImage && <meta name="twitter:image:alt" content={title} />}
+
+<!-- Structured JSON-LD Data (Organization, BreadcrumbList, WebSite, SoftwareApplication, FAQPage) -->
+<script type="application/ld+json" set:html={JSON.stringify(fullStructuredData)} />

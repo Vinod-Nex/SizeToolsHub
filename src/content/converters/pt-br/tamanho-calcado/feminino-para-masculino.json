@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Calçado Feminino para Masculino",
+  "primaryKeyword": "Calçado Feminino para Masculino",
+  "metaDescription": "Aprenda a converter calçados femininos para masculinos nos padrões americano e brasileiro. Dicas sobre largura de forma e ajuste.",
+  "directAnswer": "Na numeração americana (US), subtraia 1,5 tamanho do calçado feminino para encontrar o correspondente masculino (um US 8 feminino equivale a um US 6,5 masculino). No padrão brasileiro, a numeração em centímetros é a mesma.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Feminino",
+  "toUnit": "Tamanho Masculino",
+  "faq": [
+    {
+      "question": "Qual a diferença de largura entre modelos masculinos e femininos?",
+      "answer": "Nos EUA, a largura padrão feminina é 'B' e a masculina é 'D'. Homens que compram modelos femininos podem achar a caixa dos dedos mais estreita."
+    }
+  ]
+}

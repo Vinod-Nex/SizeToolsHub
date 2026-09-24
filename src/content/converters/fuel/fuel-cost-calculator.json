@@ -1,0 +1,23 @@
+{
+  "title": "Fuel Cost Calculator & Trip Gas Estimator",
+  "primaryKeyword": "Fuel Cost Calculator",
+  "metaDescription": "Calculate total fuel costs and gasoline expenses for road trips. Estimate gallons or liters required, cost per mile or km, and total travel budgets.",
+  "directAnswer": "To calculate trip fuel cost, divide your total route distance by your vehicle fuel efficiency (MPG), then multiply that required fuel volume by the gas price per gallon. A 300-mile road trip in a 30-MPG vehicle requires 10 gallons of gasoline; at $3.50 per gallon, the total estimated trip expense equals exactly $35.00.",
+  "converterType": "fuel",
+  "fromUnit": "Trip Distance",
+  "toUnit": "Total Fuel Cost",
+  "faq": [
+    {
+      "question": "How do you calculate gas cost per mile?",
+      "answer": "Divide the local price per gallon by your car's fuel economy in MPG. For instance, with gasoline at $3.60 per gallon and a car averaging 30 MPG, your running cost is $3.60 ÷ 30 = $0.12 per mile (12 cents/mile)."
+    },
+    {
+      "question": "How does vehicle speed affect highway fuel cost?",
+      "answer": "Aerodynamic drag increases exponentially with speed. Driving at 75 mph consumes roughly 15% to 20% more fuel than driving at 65 mph, adding significant cost to long road trips."
+    },
+    {
+      "question": "How do you estimate fuel cost for metric routes (in Liters and km)?",
+      "answer": "Multiply the total kilometers driven by your car's L/100km rating, divide by 100 to find total liters consumed, then multiply by the price per liter: (Distance in km ÷ 100) × L/100km × Price per Liter = Total Cost."
+    }
+  ]
+}

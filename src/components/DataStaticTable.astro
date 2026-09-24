@@ -1,0 +1,121 @@
+---
+import { STORAGE_STANDARDS_TABLE } from '../lib/converters/dataStorage';
+
+const diskDrives = [
+  { advertised: '256 GB SSD', decimalBytes: '256,000,000,000', windowsGiB: '238.4 GiB', diff: '17.6 GB apparent loss' },
+  { advertised: '512 GB SSD', decimalBytes: '512,000,000,000', windowsGiB: '476.8 GiB', diff: '35.2 GB apparent loss' },
+  { advertised: '1 TB Drive', decimalBytes: '1,000,000,000,000', windowsGiB: '931.3 GiB', diff: '68.7 GB apparent loss' },
+  { advertised: '2 TB Drive', decimalBytes: '2,000,000,000,000', windowsGiB: '1,862.6 GiB', diff: '137.4 GB apparent loss' },
+  { advertised: '4 TB Drive', decimalBytes: '4,000,000,000,000', windowsGiB: '3,725.3 GiB', diff: '274.7 GB apparent loss' },
+  { advertised: '8 TB NAS', decimalBytes: '8,000,000,000,000', windowsGiB: '7,450.6 GiB', diff: '549.4 GB apparent loss' },
+];
+
+const downloadCheatSheet = [
+  { size: '1 GB (Movie clip)', speed50: '2m 44s', speed100: '1m 22s', speed300: '27s', speed1000: '8s' },
+  { size: '5 GB (HD Movie)', speed50: '13m 40s', speed100: '6m 50s', speed300: '2m 17s', speed1000: '41s' },
+  { size: '25 GB (4K Video)', speed50: '1h 08m', speed100: '34m 08s', speed300: '11m 23s', speed1000: '3m 25s' },
+  { size: '50 GB (Modern Game)', speed50: '2h 16m', speed100: '1h 08m', speed300: '22m 45s', speed1000: '6m 50s' },
+  { size: '100 GB (AAA Title)', speed50: '4h 33m', speed100: '2h 16m', speed300: '45m 31s', speed1000: '13m 39s' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="data-table-heading">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>IEEE 1541 & IEC 80000-13 Standards</span>
+    </div>
+    <h2 id="data-table-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Decimal (SI) vs Binary (IEC) Storage Reference.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Why data storage calculations differ between disk manufacturers and operating systems.
+    </p>
+  </div>
+
+  <!-- Table 1: Multiplier Standards -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3">Prefix Multipliers: Decimal (1000) vs Binary (1024)</h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">Scale</th>
+            <th class="py-4 px-5">Decimal (SI / Base 10)</th>
+            <th class="py-4 px-5">Decimal Bytes</th>
+            <th class="py-4 px-5">Binary (IEC / Base 2)</th>
+            <th class="py-4 px-5">Binary Bytes</th>
+            <th class="py-4 px-5">Capacity Difference</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {STORAGE_STANDARDS_TABLE.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{row.prefix}</td>
+              <td class="py-3 px-5 font-semibold text-accent">{row.decimalUnit}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.decimalBytes}</td>
+              <td class="py-3 px-5 font-semibold text-ink">{row.binaryUnit}</td>
+              <td class="py-3 px-5 font-mono text-xs">{row.binaryBytes}</td>
+              <td class="py-3 px-5 font-mono text-xs text-text-muted">{row.percentageDiff}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 2: Real-World Drive Capacities in Windows -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3">Real-World Drive Usable Capacity in Windows</h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">Advertised Drive Size</th>
+            <th class="py-4 px-5">Manufacturer Bytes</th>
+            <th class="py-4 px-5">Reported in Windows (GiB)</th>
+            <th class="py-4 px-5">Discrepancy Cause</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {diskDrives.map((drive, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{drive.advertised}</td>
+              <td class="py-3 px-5 font-mono text-xs">{drive.decimalBytes}</td>
+              <td class="py-3 px-5 font-bold text-accent">{drive.windowsGiB}</td>
+              <td class="py-3 px-5 text-xs text-text-muted">{drive.diff}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Table 3: Download Time Reference Cheat Sheet -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3">Download Time Reference Matrix</h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5">File Size</th>
+            <th class="py-4 px-5">50 Mbps (DSL)</th>
+            <th class="py-4 px-5">100 Mbps (Cable)</th>
+            <th class="py-4 px-5">300 Mbps (Fiber)</th>
+            <th class="py-4 px-5">1,000 Mbps (Gigabit)</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {downloadCheatSheet.map((item, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3 px-5 font-bold text-ink">{item.size}</td>
+              <td class="py-3 px-5 font-mono text-xs">{item.speed50}</td>
+              <td class="py-3 px-5 font-mono text-xs">{item.speed100}</td>
+              <td class="py-3 px-5 font-mono text-xs">{item.speed300}</td>
+              <td class="py-3 px-5 font-mono text-xs font-bold text-accent">{item.speed1000}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

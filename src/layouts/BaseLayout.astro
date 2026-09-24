@@ -1,0 +1,431 @@
+---
+import '../styles/global.css';
+import { getLangFromUrl, useTranslations, languages, type SupportedLocale } from '../i18n/ui';
+import { getAlternateHreflangs } from '../lib/localeRoutes';
+import DarkModeToggle from '../components/DarkModeToggle.astro';
+import Seo from '../components/Seo.astro';
+
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  lang?: SupportedLocale;
+  ogImage?: string;
+  ogType?: 'website' | 'article';
+  noindex?: boolean;
+  breadcrumbs?: BreadcrumbItem[];
+  faq?: FAQItem[];
+  softwareAppName?: string;
+  isHomePage?: boolean;
+  jsonLd?: Record<string, any> | Array<Record<string, any>>;
+}
+
+const {
+  title = 'SizeToolsHub — Sizing & Dimension Conversion Intelligence',
+  description = 'Instant international size conversions, brand fit calculators, and luggage dimension checkers.',
+  canonicalUrl,
+  lang: propLang,
+  ogImage,
+  ogType,
+  noindex,
+  breadcrumbs,
+  faq,
+  softwareAppName,
+  isHomePage,
+  jsonLd,
+} = Astro.props;
+
+const currentLang = propLang || getLangFromUrl(Astro.url);
+const t = useTranslations(currentLang);
+const alternates = getAlternateHreflangs(Astro.url.pathname);
+
+const categories = currentLang === 'pt-br'
+  ? [
+      { name: 'Calçados', href: '/pt-br/tamanho-calcado/', key: 'shoes' },
+      { name: 'Roupas', href: '/pt-br/tamanho-roupa/', key: 'clothing' },
+      { name: 'Anéis', href: '/ring-size/', key: 'rings' },
+      { name: 'Culinária', href: '/cooking/', key: 'cooking' },
+      { name: 'Dados', href: '/data/', key: 'data' },
+      { name: 'Papel', href: '/paper-size/', key: 'paper' },
+      { name: 'Combustível', href: '/fuel/', key: 'fuel' },
+    ]
+  : currentLang === 'es'
+  ? [
+      { name: 'Calzado', href: '/es/talla-zapatos/', key: 'shoes' },
+      { name: 'Ropa', href: '/es/talla-ropa/', key: 'clothing' },
+      { name: 'Anillos', href: '/ring-size/', key: 'rings' },
+      { name: 'Cocina', href: '/cooking/', key: 'cooking' },
+      { name: 'Datos', href: '/data/', key: 'data' },
+      { name: 'Papel', href: '/paper-size/', key: 'paper' },
+      { name: 'Combustible', href: '/fuel/', key: 'fuel' },
+    ]
+  : currentLang === 'fr'
+  ? [
+      { name: 'Chaussures', href: '/fr/pointure/', key: 'shoes' },
+      { name: 'Vêtements', href: '/fr/taille-vetement/', key: 'clothing' },
+      { name: 'Bagues', href: '/ring-size/', key: 'rings' },
+      { name: 'Cuisine', href: '/cooking/', key: 'cooking' },
+      { name: 'Données', href: '/data/', key: 'data' },
+      { name: 'Papier', href: '/paper-size/', key: 'paper' },
+      { name: 'Carburant', href: '/fuel/', key: 'fuel' },
+    ]
+  : [
+      { name: 'Shoe Size', href: '/shoe-size/', key: 'shoes' },
+      { name: 'Clothing', href: '/clothing-size/', key: 'clothing' },
+      { name: 'Ring Size', href: '/ring-size/', key: 'rings' },
+      { name: 'Cooking', href: '/cooking/', key: 'cooking' },
+      { name: 'Data', href: '/data/', key: 'data' },
+      { name: 'Paper Size', href: '/paper-size/', key: 'paper' },
+      { name: 'Fuel', href: '/fuel/', key: 'fuel' },
+    ];
+
+const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
+---
+
+<!doctype html>
+<html lang={currentLang} class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- Dynamic SEO Engine (Canonical, hreflang for 4 locales, OpenGraph, Twitter, Schema) -->
+    <Seo
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      lang={currentLang}
+      ogImage={ogImage}
+      ogType={ogType}
+      noindex={noindex}
+      breadcrumbs={breadcrumbs}
+      faq={faq}
+      softwareAppName={softwareAppName}
+      isHomePage={isHomePage}
+      jsonLd={jsonLd}
+    />
+
+    <!-- Slot for Page-Specific Head Extensions -->
+    <slot name="head" />
+
+    <!-- Google Font: Inter (Saans compatible axis) with font-display: swap & preloading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+
+    <!-- Inline script to prevent theme flash (FOUC) -->
+    <script is:inline>
+      (function() {
+        const stored = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null;
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+
+    <!-- Cloudflare Web Analytics (Privacy-First, Cookieless RUM Metrics) -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon={`{"token": "${import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN || 'a1b2c3d4e5f67890123456789abcdef0'}"}`}
+    ></script>
+  </head>
+
+  <body class="bg-canvas text-ink antialiased min-h-screen flex flex-col font-sans transition-colors duration-150">
+    <!-- Sticky Floating Navigation Bar (DESIGN.md nav-pill) -->
+    <header class="sticky top-0 z-50 w-full pt-3 pb-3 px-4 sm:px-6 pointer-events-none">
+      <div class="max-w-6xl mx-auto flex items-center justify-between pointer-events-auto">
+        <!-- Floating Stadium Nav Pill -->
+        <nav
+          class="w-full bg-canvas/85 dark:bg-canvas-soft/85 backdrop-blur-md border border-hairline-soft rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-xs transition-colors"
+          aria-label="Primary Navigation"
+        >
+          <!-- Logo & Squircle -->
+          <a href={currentLang === 'pt-br' ? '/pt-br/' : '/'} class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-full pr-2">
+            <div class="w-8 h-8 rounded-[30%] bg-primary flex items-center justify-center text-on-primary font-bold text-sm tracking-tight transition-transform group-hover:scale-105">
+              <span>S</span>
+            </div>
+            <span class="font-bold text-base sm:text-lg tracking-tight text-ink group-hover:opacity-90">
+              SizeTools<span class="text-accent">Hub</span>
+            </span>
+          </a>
+
+          <!-- Desktop Category Navigation (Collapsed below md: 768px per spec) -->
+          <div class="hidden md:flex items-center gap-1 lg:gap-2">
+            {categories.map((cat) => (
+              <a
+                href={cat.href}
+                class="px-3 py-1.5 rounded-full text-sm font-semibold text-ink-soft hover:text-ink hover:bg-canvas-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-all duration-150"
+              >
+                {cat.name}
+              </a>
+            ))}
+          </div>
+
+          <!-- Utility Controls: Dark Mode Toggle & Mobile Menu Button -->
+          <div class="flex items-center gap-2">
+            <!-- Theme Toggle Component -->
+            <DarkModeToggle />
+
+            <!-- Quick Action CTA -->
+            <a
+              href={
+                currentLang === 'pt-br' ? '/pt-br/tamanho-calcado/' :
+                currentLang === 'es' ? '/es/talla-zapatos/' :
+                currentLang === 'fr' ? '/fr/pointure/' :
+                '/shoe-size/'
+              }
+              class="hidden sm:inline-flex items-center px-4 py-2 rounded-full bg-primary text-on-primary text-xs font-semibold hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 transition-all"
+            >
+              {
+                currentLang === 'pt-br' ? 'Conversor Rápido' :
+                currentLang === 'es' ? 'Conversor Rápido' :
+                currentLang === 'fr' ? 'Conversion Rapide' :
+                'Quick Convert'
+              }
+            </a>
+
+            <!-- Mobile Hamburger Button (< 768px) -->
+            <button
+              id="mobile-menu-btn"
+              type="button"
+              class="md:hidden w-9 h-9 rounded-full bg-canvas-soft flex items-center justify-center text-ink hover:bg-hairline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors cursor-pointer"
+              aria-expanded="false"
+              aria-controls="mobile-menu"
+              aria-label="Open navigation menu"
+            >
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path id="hamburger-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </div>
+
+      <!-- Collapsible Mobile Menu Drawer (< 768px) -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden max-w-6xl mx-auto mt-2 pointer-events-auto transition-all duration-200"
+      >
+        <div class="p-6 rounded-3xl bg-canvas border border-hairline-soft shadow-lg space-y-4">
+          <p class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+            {
+              currentLang === 'pt-br' ? 'Categorias e Ferramentas' :
+              currentLang === 'es' ? 'Categorías y Herramientas' :
+              currentLang === 'fr' ? 'Catégories et Outils' :
+              'Categories & Tools'
+            }
+          </p>
+          <div class="grid grid-cols-2 gap-2">
+            {categories.map((cat) => (
+              <a
+                href={cat.href}
+                class="px-4 py-2.5 rounded-2xl bg-canvas-soft text-sm font-semibold text-ink hover:bg-hairline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent transition-colors"
+              >
+                {cat.name}
+              </a>
+            ))}
+          </div>
+
+          <div class="pt-4 border-t border-hairline-soft flex items-center justify-between">
+            <span class="text-xs text-text-muted">International Locales:</span>
+            <div class="flex items-center gap-2">
+              <a href={alternates.en} class="text-xs font-semibold text-ink hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">EN</a>
+              <span class="text-text-faint">•</span>
+              <a href={alternates['pt-br']} class="text-xs font-semibold text-text-muted hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">PT</a>
+              <span class="text-text-faint">•</span>
+              <a href={alternates.es} class="text-xs font-semibold text-text-muted hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">ES</a>
+              <span class="text-text-faint">•</span>
+              <a href={alternates.fr} class="text-xs font-semibold text-text-muted hover:text-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm">FR</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Optional Breadcrumb Slot Placeholder -->
+    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6">
+      <slot name="breadcrumb" />
+    </div>
+
+    <!-- Main Content Slot -->
+    <div class="flex-1 w-full">
+      <slot />
+    </div>
+
+    <!-- Inverse Footer (DESIGN.md line 209-213 & 505-506) -->
+    <!-- Full-bleed near-black footer with rounded-t-3xl corners -->
+    <footer class="mt-20 w-full bg-[#141414] dark:bg-[#070708] text-white rounded-t-[28px] sm:rounded-t-[36px] overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 sm:px-8 py-16 sm:py-20">
+        <!-- Top Footer Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
+          <!-- Brand Column (2 cols) -->
+          <div class="md:col-span-2 space-y-4">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-[30%] bg-white flex items-center justify-center text-black font-bold text-sm">
+                <span>S</span>
+              </div>
+              <span class="font-bold text-xl tracking-tight text-white">SizeToolsHub</span>
+            </div>
+            <p class="text-sm text-[#adadad] leading-relaxed max-w-sm">
+              The international sizing intelligence network. Instant, zero-lag unit conversions across footwear, apparel, jewelry, baggage, and everyday dimensional standards.
+            </p>
+
+            <!-- Language Switcher in Footer -->
+            <div class="pt-4">
+              <label class="block text-xs uppercase tracking-wider text-[#a8a8a8] font-semibold mb-2">
+                Region & Language
+              </label>
+              <div class="inline-flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-[#262626] border border-[#333333]">
+                {Object.entries(languages).map(([code, label]) => {
+                  const isCurrent = code === currentLang;
+                  const targetPath = code === 'en' ? alternates.en :
+                                     code === 'pt-br' ? alternates['pt-br'] :
+                                     code === 'es' ? alternates.es :
+                                     alternates.fr;
+                  return (
+                    <a
+                      href={targetPath}
+                      class={`px-3 py-1 rounded-full text-xs font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-white transition-all ${
+                        isCurrent
+                          ? 'bg-white text-black shadow-xs'
+                          : 'text-[#adadad] hover:text-white'
+                      }`}
+                    >
+                      {label}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Sitemap Links -->
+          <div>
+            <h4 class="text-xs uppercase tracking-wider text-[#a8a8a8] font-semibold mb-4">
+              {currentLang === 'pt-br' ? 'Categorias' : 'Categories'}
+            </h4>
+            <ul class="space-y-2.5 text-sm text-[#adadad]">
+              {currentLang === 'pt-br' ? (
+                <>
+                  <li><a href="/pt-br/tamanho-calcado/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Tamanhos de Calçados</a></li>
+                  <li><a href="/pt-br/tamanho-roupa/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Tamanhos de Roupas</a></li>
+                  <li><a href="/ring-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Tabela de Anéis</a></li>
+                  <li><a href="/cooking/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Cozinha e Culinária</a></li>
+                  <li><a href="/data/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Armazenamento de Dados</a></li>
+                  <li><a href="/paper-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Dimensões de Papel</a></li>
+                  <li><a href="/fuel/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Consumo de Combustível</a></li>
+                </>
+              ) : (
+                <>
+                  <li><a href="/shoe-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Shoe Size Conversion</a></li>
+                  <li><a href="/clothing-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Clothing & Apparel</a></li>
+                  <li><a href="/ring-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Ring Sizing Charts</a></li>
+                  <li><a href="/cooking/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Kitchen & Cooking</a></li>
+                  <li><a href="/data/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Data Storage Units</a></li>
+                  <li><a href="/paper-size/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Paper & Print Dimensions</a></li>
+                  <li><a href="/fuel/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Fuel Consumption</a></li>
+                </>
+              )}
+            </ul>
+          </div>
+
+          <!-- Popular Calculators -->
+          <div>
+            <h4 class="text-xs uppercase tracking-wider text-[#a8a8a8] font-semibold mb-4">
+              {currentLang === 'pt-br' ? 'Ferramentas Populares' : 'Popular Tools'}
+            </h4>
+            <ul class="space-y-2.5 text-sm text-[#adadad]">
+              {currentLang === 'pt-br' ? (
+                <>
+                  <li><a href="/pt-br/tamanho-calcado/eua-para-brasil/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">EUA para Brasil Calçados</a></li>
+                  <li><a href="/pt-br/tamanho-calcado/brasil-para-eua/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Brasil para EUA Calçados</a></li>
+                  <li><a href="/pt-br/tamanho-roupa/eua-para-brasil-roupas/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">EUA para Brasil Roupas</a></li>
+                  <li><a href="/pt-br/tamanho-roupa/conversor-tamanho-calca-jeans/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Calça Jeans EUA para Brasil</a></li>
+                  <li><a href="/pt-br/tamanho-calcado/tabela-tamanhos-nike/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Tabela de Tênis Nike</a></li>
+                  <li><a href="/pt-br/tamanho-roupa/tabela-tamanhos-sutia/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Tabela de Sutiã Internacional</a></li>
+                </>
+              ) : (
+                <>
+                  <li><a href="/shoe-size/us-to-eu/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">US to EU Shoes</a></li>
+                  <li><a href="/clothing-size/us-to-uk/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">US to UK Clothing</a></li>
+                  <li><a href="/ring-size/us-to-eu/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">US to EU Rings</a></li>
+                  <li><a href="/cooking/cups-to-grams/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Cups to Grams</a></li>
+                  <li><a href="/data/gb-to-tb/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">GB to TB Converter</a></li>
+                  <li><a href="/fuel/mpg-to-l-100km/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">MPG to L/100km</a></li>
+                </>
+              )}
+            </ul>
+          </div>
+
+          <!-- Standards & Legal -->
+          <div>
+            <h4 class="text-xs uppercase tracking-wider text-[#a8a8a8] font-semibold mb-4">
+              Standards
+            </h4>
+            <ul class="space-y-2.5 text-sm text-[#adadad]">
+              <li><span class="text-[#a8a8a8]">ISO 216 Paper Standard</span></li>
+              <li><span class="text-[#a8a8a8]">ISO 9407 Mondopoint</span></li>
+              <li><span class="text-[#a8a8a8]">ASTM International</span></li>
+              <li class="pt-4"><a href="#" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Terms of Service</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright & Disclaimer Strip -->
+        <div class="pt-8 border-t border-[#262626] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#a8a8a8]">
+          <p>© 2026 SizeToolsHub.com. All rights reserved.</p>
+          <p class="max-w-md text-center sm:text-right">
+            Calculations are derived from official metric and imperial standards. Brand manufacturing tolerances may vary.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Client-side Interactive Scripts: Mobile Menu Toggle -->
+    <script is:inline>
+
+      // 2. Mobile Menu Toggle (< 768px)
+      const mobileBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburgerIcon = document.getElementById('hamburger-icon');
+      const closeIcon = document.getElementById('close-icon');
+
+      mobileBtn?.addEventListener('click', () => {
+        const isExpanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        const nextState = !isExpanded;
+
+        mobileBtn.setAttribute('aria-expanded', String(nextState));
+        if (nextState) {
+          mobileMenu?.classList.remove('hidden');
+          hamburgerIcon?.classList.add('hidden');
+          closeIcon?.classList.remove('hidden');
+        } else {
+          mobileMenu?.classList.add('hidden');
+          hamburgerIcon?.classList.remove('hidden');
+          closeIcon?.classList.add('hidden');
+        }
+      });
+    </script>
+  </body>
+</html>

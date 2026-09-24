@@ -1,0 +1,23 @@
+{
+  "title": "Kids Shoe Size Chart & Converter",
+  "primaryKeyword": "Kids Shoe Size Chart & Converter",
+  "metaDescription": "Comprehensive kids shoe size conversion chart covering toddler, youth, and junior footwear across US, UK, and European standards.",
+  "directAnswer": "Kids' shoe sizing spans two distinct phases: toddler sizes (1C to 10C) and youth sizes (10.5C to 3Y, transitioning into adult sizing at 4Y). To convert US kids' sizes to EU, a US 10C equals an EU 27, while a youth 1Y equals an EU 32 (approximately 20 cm foot length).",
+  "converterType": "shoe-size",
+  "fromUnit": "US Kids",
+  "toUnit": "EU Kids",
+  "faq": [
+    {
+      "question": "When do kids' shoe sizes transition into adult sizes?",
+      "answer": "Kids' youth sizes transition into adult sizing at size 4Y, where a youth 4Y is equivalent to a Men's 4.0 or Women's 5.5."
+    },
+    {
+      "question": "How often should you check children's shoe size?",
+      "answer": "Children under age 3 should be measured every 2 to 3 months; kids aged 4 to 8 should be measured every 4 to 6 months."
+    },
+    {
+      "question": "What does the 'C' and 'Y' mean in kids' shoe sizes?",
+      "answer": "'C' stands for Child (toddler and young kids, sizes 1C to 13C), and 'Y' stands for Youth (older kids, sizes 1Y to 7Y)."
+    }
+  ]
+}

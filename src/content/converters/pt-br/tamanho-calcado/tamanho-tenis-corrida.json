@@ -1,0 +1,15 @@
+{
+  "title": "Guia de Tamanho de Tênis de Corrida",
+  "primaryKeyword": "Tamanho de Tênis de Corrida",
+  "metaDescription": "Saiba como escolher o tamanho certo de tênis de corrida. Dicas de folga frontal, dilatação do pé e conversão internacional.",
+  "directAnswer": "Para tênis de corrida e maratona, a recomendação unânime de especialistas é comprar um número ou meio número maior que o calçado casual (de 0,5 a 1 cm de folga na frente), pois os pés dilatam durante treinos longos.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Casual",
+  "toUnit": "Tamanho Corrida",
+  "faq": [
+    {
+      "question": "Por que o tênis de corrida deve ser maior?",
+      "answer": "Durante a corrida, o impacto repetido faz os pés incharem e deslizarem ligeiramente para a frente. A folga evita unhas pretas e bolhas."
+    }
+  ]
+}

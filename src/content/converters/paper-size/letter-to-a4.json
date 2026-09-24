@@ -1,0 +1,23 @@
+{
+  "title": "Letter to A4 Paper Size Converter",
+  "primaryKeyword": "Letter to A4",
+  "metaDescription": "Convert US Letter (8.5 x 11 inches) to international standard ISO A4 (210 x 297 mm). Includes proportional SVG scale, margin adjustments, and PDF scaling tips.",
+  "directAnswer": "US Letter paper measures 215.9 by 279.4 millimeters (8.5 by 11.0 inches), making it 5.9 millimeters wider and 17.6 millimeters shorter than international standard A4 paper (210 by 297 millimeters). When sending North American Letter PDFs to international recipients using A4 printers, select fit to printable area to avoid clipped side margins.",
+  "converterType": "paper-size",
+  "fromUnit": "US Letter",
+  "toUnit": "A4",
+  "faq": [
+    {
+      "question": "What happens when you print a US Letter document onto A4 paper?",
+      "answer": "Because A4 is narrower by 5.9 mm (0.23 in) and taller by 17.6 mm (0.69 in), an unscaled Letter document will fit vertically with extra white space at the top and bottom, but risks losing 2.95 mm on each side margin unless scaled."
+    },
+    {
+      "question": "What scaling factor converts US Letter to A4?",
+      "answer": "To scale a US Letter document to fit within the narrower width of A4, reduce the document scale to 97.3% (calculated as 210 mm ÷ 215.9 mm) in your print driver or Adobe Acrobat dialog."
+    },
+    {
+      "question": "Can standard US 3-ring binder paper fit into European 2-ring or 4-ring binders?",
+      "answer": "No. US Letter uses a 3-hole punch configuration with 4.25-inch (108 mm) hole spacing. International A4 binders use ISO 838 2-hole punching (80 mm spacing) or a 4-hole European standard (80-80-80 mm spacing)."
+    }
+  ]
+}

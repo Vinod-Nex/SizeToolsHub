@@ -1,0 +1,20 @@
+{
+  "title": "Conversor de Centímetros para Tamanho de Calçado",
+  "primaryKeyword": "Centímetros para Tamanho de Calçado",
+  "metaDescription": "Descubra o tamanho exato do seu sapato a partir da medida do pé em centímetros (cm). Conversão para Brasil (BR), EUA (US) e Europa (EU).",
+  "directAnswer": "A medida do pé em centímetros é o método mais preciso e universal para encontrar seu tamanho de calçado em qualquer país. Um pé de 26 cm equivale ao BR 39 (US 8 masculino ou EU 41), enquanto um pé de 27 cm equivale ao BR 40 (US 9 masculino ou EU 42).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Centímetros (cm)",
+  "toUnit": "Tamanho de Calçado"
+  ,
+  "faq": [
+    {
+      "question": "Como medir o pé em centímetros corretamente em casa?",
+      "answer": "Pise descalço ou com meia sobre uma folha de papel encostada na parede. Marque a ponta do dedo mais longo com uma caneta perpendicular e meça a distância até o calcanhar com uma régua. Adicione 0,5 cm para folga."
+    },
+    {
+      "question": "Por que a medida em centímetros (CM) é mais confiável?",
+      "answer": "Porque enquanto as numerações BR, US e EU mudam de convenção entre marcas, o centímetro é uma unidade métrica física invariável adotada no padrão internacional Mondopoint."
+    }
+  ]
+}

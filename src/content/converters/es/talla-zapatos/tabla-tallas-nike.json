@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas Nike: Zapatillas y Calzado",
+  "primaryKeyword": "Tabla de Tallas Nike",
+  "metaDescription": "Tabla oficial de tallas Nike para zapatillas Air Jordan, Air Force 1, Dunk y running. Equivalencias entre US, EU, UK y centímetros.",
+  "directAnswer": "Nike utiliza una escala muy precisa en centímetros (CM). Para zapatillas Air Force 1 se recomienda comprar media talla menos (tallan amplias), mientras que en Air Jordan 1 y zapatillas de running se recomienda tu talla habitual o media talla más.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Nike España / UE",
+  "toUnit": "Nike EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Cómo talla Nike en comparación con Adidas?",
+      "answer": "Nike suele tallar un poco más ajustado y estrecho en la zona media del pie que Adidas. Muchas personas usan medio número más en Nike."
+    },
+    {
+      "question": "¿Qué talla es 42.5 en Nike en EE. UU.?",
+      "answer": "La talla 42.5 en Nike para hombre equivale exactamente a US 9 (27.0 cm)."
+    },
+    {
+      "question": "¿Las zapatillas Nike Air Jordan tallan fiel a la talla?",
+      "answer": "Sí, la mayoría de modelos retro como Jordan 1, 3 y 4 tallan fieles a la talla (True to Size)."
+    }
+  ]
+}

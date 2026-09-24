@@ -1,0 +1,23 @@
+{
+  "title": "EU to US Shoe Size Converter",
+  "primaryKeyword": "EU to US Shoe Size Converter",
+  "metaDescription": "Accurately convert European (EU) shoe sizes to US sizes for Men, Women, and Children with Paris point conversions and foot length tables.",
+  "directAnswer": "To convert European (EU) shoe sizes to US sizes, subtract 33 from men's sizes (an EU 43 equals a US Men's 9.5-10) and subtract 31 from women's sizes (an EU 38 equals a US Women's 7.5). Because EU Paris points differ from US barleycorn steps, always verify millimeter foot length.",
+  "converterType": "shoe-size",
+  "fromUnit": "EU Size",
+  "toUnit": "US Size",
+  "faq": [
+    {
+      "question": "What is an EU 42 in US shoe size?",
+      "answer": "An EU size 42 corresponds to approximately a US Men's 8.5 to 9, or a US Women's 10 to 10.5."
+    },
+    {
+      "question": "What does an EU 38 convert to in US women's?",
+      "answer": "An EU size 38 is typically equivalent to a US Women's size 7.5, accommodating a foot length of approximately 24.0 cm."
+    },
+    {
+      "question": "Why don't all European shoe brands have half sizes?",
+      "answer": "European sizes use Paris points (6.67 mm per full step), which are already smaller increments than US full sizes (8.46 mm), so many European brands only manufacture full sizes."
+    }
+  ]
+}

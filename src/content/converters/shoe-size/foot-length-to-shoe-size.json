@@ -1,0 +1,23 @@
+{
+  "title": "Foot Length to Shoe Size Converter",
+  "primaryKeyword": "Foot Length to Shoe Size Converter",
+  "metaDescription": "Convert measured foot length in inches or centimeters directly to your exact US, UK, and European shoe size with toe allowance calculation.",
+  "directAnswer": "To convert measured foot length to your correct shoe size, measure the distance from your heel to longest toe in centimeters and add 1.5 cm of clearance allowance. For example, a 26.5 cm foot length needs a 28 cm internal shoe last, corresponding accurately to a US Men's size 10.",
+  "converterType": "shoe-size",
+  "fromUnit": "Foot Length (Inches/CM)",
+  "toUnit": "Global Shoe Size",
+  "faq": [
+    {
+      "question": "Why do I need to add extra clearance to my foot measurement?",
+      "answer": "Your foot lengthens during movement as your arch flexes. A clearance of 10 to 15 mm prevents repetitive toe trauma."
+    },
+    {
+      "question": "What shoe size is a 10.5 inch foot?",
+      "answer": "A 10.5 inch (26.7 cm) foot corresponds to a US Men's size 9.5 or Women's 11 (EU 43)."
+    },
+    {
+      "question": "Should I measure both feet?",
+      "answer": "Yes, most people have one foot slightly larger than the other. Always choose your shoe size to fit the larger foot."
+    }
+  ]
+}

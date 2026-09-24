@@ -1,0 +1,23 @@
+{
+  "title": "US to Japan Shoe Size Converter",
+  "primaryKeyword": "US to Japan Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to Japanese shoe sizes in centimeters (cm) with exact foot length measurements and brand comparison charts.",
+  "directAnswer": "To convert US shoe sizes to Japanese sizing, determine your exact foot length in centimeters. A US Men's 9 equals a Japanese 27.0 cm, while a US Women's 7 equals a Japanese 24.0 cm. Japan measures actual linear foot length directly, eliminating regional scale offsets and ensuring reliable international footwear fits.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "Japan (cm)",
+  "faq": [
+    {
+      "question": "How does Japanese shoe sizing work?",
+      "answer": "Japanese shoe sizes are based directly on foot length in centimeters (cm). A size 26.5 corresponds directly to a foot length of 26.5 cm."
+    },
+    {
+      "question": "What is a US Women's 8 in Japanese shoe size?",
+      "answer": "A US Women's 8 equals approximately 25.0 cm in Japanese shoe sizing."
+    },
+    {
+      "question": "Is Japanese sizing more accurate than US sizing?",
+      "answer": "Yes, because it measures linear anatomical distance in metric centimeters rather than arbitrary size units, making it universal across brands."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Camisas Sociais Masculinas: Brasil x EUA",
+  "primaryKeyword": "Tamanho Camisa Social Masculina",
+  "metaDescription": "Conversor de colarinho e medidas de camisas sociais masculinas entre Brasil (BR), Estados Unidos (US) e Europa (EU).",
+  "directAnswer": "Camisas sociais americanas utilizam a circunferência do colarinho em polegadas (15″, 15.5″, 16″...). No Brasil e na Europa, utiliza-se centímetros: 15″ = 38 cm (P), 15.5″ = 39-40 cm (M), 16″ = 41 cm (G), 16.5″ = 42 cm (G), 17″ = 43 cm (GG).",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Colarinho em Polegadas",
+  "toUnit": "Colarinho em Centímetros",
+  "faq": [
+    {
+      "question": "Como medir o colarinho da camisa social?",
+      "answer": "Passe a fita métrica ao redor da base do pescoço, onde fica o colarinho, deixando a folga de um dedo entre a fita e o pescoço para garantir conforto."
+    }
+  ]
+}

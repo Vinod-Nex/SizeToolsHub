@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Calçado Masculino para Feminino",
+  "primaryKeyword": "Calçado Masculino para Feminino",
+  "metaDescription": "Como converter tamanho de tênis e sapato masculino para feminino. Tabela prática para modelos unissex e compras internacionais.",
+  "directAnswer": "Para converter um calçado masculino dos EUA para feminino, adicione 1,5 tamanho (um US 8 masculino equivale a um US 9,5 feminino). No Brasil, a numeração é contínua e unissex: o tamanho 39 tem o mesmo comprimento para ambos os sexos, variando apenas a largura da forma.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Masculino",
+  "toUnit": "Tamanho Feminino",
+  "faq": [
+    {
+      "question": "Mulher pode usar tênis masculino no mesmo número no Brasil?",
+      "answer": "Sim, no Brasil a numeração é baseada no comprimento do pé. Porém, tênis masculinos costumam ter forma mais larga no calcanhar e no peito do pé."
+    }
+  ]
+}

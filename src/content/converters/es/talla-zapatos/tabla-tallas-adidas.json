@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas Adidas: Calzado Deportivo",
+  "primaryKeyword": "Tabla de Tallas Adidas",
+  "metaDescription": "Tabla de equivalencia de tallas Adidas. Descubre por qué Adidas utiliza tallas fraccionarias en tercios (ej. 42 2/3) y su conversión a US.",
+  "directAnswer": "Adidas divide sus tallas europeas en tercios (como 41 1/3, 42, 42 2/3, 43 1/3, 44). Por ejemplo, un US 9 de hombre en Adidas equivale a la talla EU 42 2/3 (27.0 cm).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Adidas España / UE",
+  "toUnit": "Adidas EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Por qué Adidas usa tallas como 42 2/3 o 43 1/3?",
+      "answer": "Porque convierte directamente desde las tallas enteras y medias del Reino Unido (UK) multiplicando por el punto de París (6.67 mm)."
+    },
+    {
+      "question": "¿Cómo tallan las zapatillas Adidas Samba y Gazelle?",
+      "answer": "Suelen tener una horma estrecha en la puntera. Si tienes el pie ancho, se recomienda pedir media talla más."
+    },
+    {
+      "question": "¿Qué talla US es un 44 en Adidas?",
+      "answer": "En Adidas de hombre, un 44 equivale a un US 10 (28.0 cm)."
+    }
+  ]
+}

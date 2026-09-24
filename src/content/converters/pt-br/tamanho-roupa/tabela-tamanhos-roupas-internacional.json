@@ -1,0 +1,15 @@
+{
+  "title": "Tabela Internacional de Tamanhos de Roupas",
+  "primaryKeyword": "Tabela de Roupas Internacional",
+  "metaDescription": "Tabela universal de roupas femininas e masculinas comparando Brasil (BR), Estados Unidos (US), Europa (EU), Reino Unido (UK) e Internacional (PP-XG).",
+  "directAnswer": "A tabela universal unifica os sistemas brasileiro (BR), europeu (EU), britânico (UK) e americano (US), permitindo compras seguras em qualquer e-commerce internacional como Shein, Amazon, ASOS e AliExpress.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Padrão Internacional",
+  "toUnit": "Padrão Brasil",
+  "faq": [
+    {
+      "question": "Como comprar roupas na Shein e AliExpress sem errar o tamanho?",
+      "answer": "Sempre confira a tabela de medidas em centímetros da peça específica, pois marcas asiáticas costumam ter modelagem 1 a 2 tamanhos menor que o padrão brasileiro."
+    }
+  ]
+}

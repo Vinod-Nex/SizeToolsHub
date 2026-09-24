@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: EE. UU. a Reino Unido",
+  "primaryKeyword": "Talla de Calzado EE. UU. a Reino Unido",
+  "metaDescription": "Aprende a convertir tallas de calzado americanas (US) a británicas (UK). Descubre por qué la talla UK es normalmente 0.5 o 1 número menor.",
+  "directAnswer": "En calzado masculino, la talla británica (UK) es generalmente 1 número menor que la talla estadounidense (US) (un US 10 hombre es un UK 9). En calzado femenino, la talla UK suele ser 2 números menor que la US (un US 8 mujer es un UK 6).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla EE. UU. (US)",
+  "toUnit": "Talla Reino Unido (UK)",
+  "faq": [
+    {
+      "question": "¿Por qué la talla UK es menor que la US?",
+      "answer": "Ambos sistemas utilizan la misma escala de tercios de pulgada, pero el punto de inicio (talla cero) en el Reino Unido se definió históricamente más alto que en Estados Unidos."
+    },
+    {
+      "question": "¿Qué talla es US 9.5 en calzado de hombre en Reino Unido?",
+      "answer": "Un US 9.5 de hombre equivale a un UK 8.5 (y a un EU 43 o 27.5 cm)."
+    },
+    {
+      "question": "¿Aplica esta diferencia a calzado de niños?",
+      "answer": "En calzado infantil, la talla UK suele ser medio número o un número entero menor que la US dependiendo de la etapa de desarrollo."
+    }
+  ]
+}

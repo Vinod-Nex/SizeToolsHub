@@ -1,0 +1,23 @@
+{
+  "title": "Vans Shoe Size Chart & Fit Guide",
+  "primaryKeyword": "Vans Shoe Size Chart & Fit Guide",
+  "metaDescription": "Vans shoe size chart for Old Skool, Authentic, Sk8-Hi, and Classic Slip-On sneakers with international conversions.",
+  "directAnswer": "Vans skate shoes (such as the Old Skool, Authentic, and Era) fit true to size for standard-width feet. A US Men's 10 converts to an EU 43, UK 9, and 28.0 cm. Slip-On models may initially feel snug across the instep but stretch comfortably after a few wears.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Vans",
+  "toUnit": "EU / CM Vans",
+  "faq": [
+    {
+      "question": "Do Vans fit true to size?",
+      "answer": "Yes, Vans skate models fit true to standard US athletic sizing."
+    },
+    {
+      "question": "How should Vans Classic Slip-Ons fit?",
+      "answer": "Slip-Ons should feel snug initially over the top of the foot; the canvas and elastic will conform to your foot after a few days."
+    },
+    {
+      "question": "What is a US Men's 9 in Vans EU sizing?",
+      "answer": "A US Men's 9 in Vans corresponds to EU 42 (UK 8, 27.0 cm)."
+    }
+  ]
+}

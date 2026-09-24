@@ -1,0 +1,19 @@
+{
+  "title": "Conversor de Tamanho de Calça Jeans: EUA para Brasil",
+  "primaryKeyword": "Tamanho de Calça Jeans EUA Brasil",
+  "metaDescription": "Aprenda a converter calça jeans americana em polegadas (W/L) para o tamanho brasileiro. Tabela prática de cintura e comprimento.",
+  "directAnswer": "A numeração de jeans importados utiliza o padrão 'W' (Waist / Cintura em polegadas) e 'L' (Length / Comprimento de perna). Para saber seu tamanho no Brasil, some 10 ou consulte a tabela: W28 = BR 36, W30 = BR 38, W32 = BR 40, W34 = BR 42, W36 = BR 44.",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Cintura em Polegadas (W)",
+  "toUnit": "Tamanho Jeans Brasil (BR)",
+  "faq": [
+    {
+      "question": "O que significa W32 L34 na etiqueta da calça Levi's?",
+      "answer": "'W32' significa 32 polegadas de cintura (aproximadamente 81 cm, equivalente ao tamanho 40 no Brasil) e 'L34' significa 34 polegadas de entrepernas (cerca de 86 cm de comprimento de perna)."
+    },
+    {
+      "question": "Como medir a cintura para calça jeans importada?",
+      "answer": "Passe a fita métrica ao redor da cintura natural, cerca de dois dedos acima do umbigo, e divida os centímetros por 2,54 para obter a medida em polegadas (W)."
+    }
+  ]
+}

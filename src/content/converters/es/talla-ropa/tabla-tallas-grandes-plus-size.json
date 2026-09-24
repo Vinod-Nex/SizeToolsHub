@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas Grandes (Plus Size / Curvy)",
+  "primaryKeyword": "Tabla de Tallas Grandes Plus Size",
+  "metaDescription": "Guía de medidas y correspondencias para tallas grandes femeninas y masculinas (de la 46 a la 60 en España y 1X a 4X en EE. UU.).",
+  "directAnswer": "Las tallas Plus Size de EE. UU. (1X, 2X, 3X, 4X) están diseñadas con proporciones anatómicas específicas para curvas. 1X equivale a talla 46-48 en España, 2X a talla 50-52 y 3X a talla 54-56.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Plus Size EE. UU. (1X-4X)",
+  "toUnit": "Tallas Grandes España / UE",
+  "faq": [
+    {
+      "question": "¿Cuál es la diferencia entre XL y 1X en tallas de mujer?",
+      "answer": "XL suele ser la talla más grande de la línea estándar (corte recto o ampliado), mientras que 1X pertenece a la línea Curve/Plus Size con mayor amplitud en busto, brazos y caderas."
+    },
+    {
+      "question": "¿Qué talla en España es la 18W de Estados Unidos?",
+      "answer": "La talla 18W equivale a una talla 50 o 52 en España (contorno de pecho de unos 115-120 cm)."
+    },
+    {
+      "question": "¿Cómo elegir vaqueros de talla grande para evitar que se bajen?",
+      "answer": "Busca modelos con tiro alto (High Rise) y pretinas anatómicas reforzadas con elastano."
+    }
+  ]
+}

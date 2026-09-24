@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure France vers US",
+  "primaryKeyword": "Pointure France vers US",
+  "metaDescription": "Passez de votre pointure française au système américain. Guide pour commander vos souliers aux USA.",
+  "directAnswer": "Pour les hommes : 40 = US 7, 41 = US 8, 42 = US 8.5-9, 43 = US 9.5-10, 44 = US 10.5, 45 = US 11.5. Pour les femmes : 36 = US 5.5, 37 = US 6.5, 38 = US 7.5, 39 = US 8.5, 40 = US 9.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure France",
+  "toUnit": "Pointure US",
+  "faq": [
+    {
+      "question": "Quelle pointure US pour un 38 femme en France ?",
+      "answer": "Un 38 en France équivaut à un US 7.5 pour femme."
+    },
+    {
+      "question": "Quelle pointure US pour un 43 homme en France ?",
+      "answer": "Un 43 homme équivaut à un US 9.5 ou 10 selon les marques de sport."
+    },
+    {
+      "question": "Existe-t-il des marques américaines taillant petit ?",
+      "answer": "Oui, Nike et Under Armour taillent généralement un peu plus ajusté que Ralph Lauren ou Timberland."
+    }
+  ]
+}

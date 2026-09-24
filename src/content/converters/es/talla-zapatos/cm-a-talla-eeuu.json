@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Centímetros a Talla de EE. UU. (US)",
+  "primaryKeyword": "Centímetros a Talla EE. UU.",
+  "metaDescription": "Convierte los centímetros de tu pie a tallas de calzado americanas (US Men / US Women). Guía para comprar calzado por internet sin equivocarte.",
+  "directAnswer": "26 cm corresponden aproximadamente a una talla US 8 de hombre o US 9.5 de mujer. 27 cm corresponden a una talla US 9 de hombre o US 10.5 de mujer.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Centímetros (cm)",
+  "toUnit": "Talla EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla US es un pie de 25 cm?",
+      "answer": "25 cm equivalen a una talla US 7 en hombres o US 8.5 en mujeres (talla 39-40 europea)."
+    },
+    {
+      "question": "¿La medida \"CM\" en la etiqueta de zapatillas indica el pie o la plantilla?",
+      "answer": "Indica la longitud recomendada del pie para esa zapatilla (algunas marcas marcan la longitud de la horma interior)."
+    },
+    {
+      "question": "¿Qué hacer si un pie es más largo que el otro?",
+      "answer": "Siempre elige la talla adecuada para el pie más grande para evitar molestias o rozaduras."
+    }
+  ]
+}

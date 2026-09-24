@@ -1,0 +1,23 @@
+{
+  "title": "Standard Envelope Size Chart & Paper Fit Guide",
+  "primaryKeyword": "Envelope Size Chart",
+  "metaDescription": "Complete guide to envelope sizes. Compare ISO 269 C-series (C4, C5, C6, DL) and US Commercial (#10, #9, Monarch, A2, A7) envelopes with matching paper fold charts.",
+  "directAnswer": "Standard envelope sizes correspond directly to document folds. ISO 269 C4 envelopes (229 by 324 millimeters) hold flat A4 sheets, C5 holds A4 folded in half, and DL envelopes (110 by 220 millimeters) fit tri-folded A4. In the United States, standard Number 10 envelopes (4.125 by 9.5 inches) fit tri-folded US Letter paper.",
+  "converterType": "paper-size",
+  "fromUnit": "DL",
+  "toUnit": "#10 Commercial",
+  "faq": [
+    {
+      "question": "Which envelope is the most popular for business correspondence?",
+      "answer": "In North America, the #10 Commercial envelope (4.125 × 9.5 inches) is the dominant standard. In the United Kingdom, Europe, and Australia, the ISO DL envelope (110 × 220 mm) is the universal business choice."
+    },
+    {
+      "question": "Can a #10 envelope hold an international A4 letter?",
+      "answer": "An A4 letter folded in thirds (99 × 210 mm) will slip into a #10 envelope (104.8 × 241.3 mm) comfortably because the #10 envelope is wider than a DL envelope."
+    },
+    {
+      "question": "What envelope size is best for 5x7 wedding invitations?",
+      "answer": "An A7 announcement envelope (5.25 × 7.25 inches / 133.4 × 184.2 mm) is specifically designed to hold standard 5 × 7 inch formal wedding invitations, holiday cards, and greeting cards."
+    }
+  ]
+}

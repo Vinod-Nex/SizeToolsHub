@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures Bébé (0 à 12 Mois)",
+  "primaryKeyword": "Pointure Bébé 0 à 12 Mois",
+  "metaDescription": "Tableau des pointures de chaussons et chaussures naissance pour nourrissons. Correspondance par âge et longueur en centimètres.",
+  "directAnswer": "Pour un nouveau-né (0-3 mois), la pointure moyenne est le 16 (9.5 cm). De 3 à 6 mois, c’est le 17 (10.5 cm), et de 6 à 12 mois le 18 ou 19 (11.5 cm).",
+  "converterType": "pointure",
+  "fromUnit": "Âge en Mois",
+  "toUnit": "Pointure Bébé (FR/US)",
+  "faq": [
+    {
+      "question": "Quelle pointure pour un bébé de 6 mois ?",
+      "answer": "Un bébé de 6 mois fait généralement du 17 ou 18 en pointure française (US 2 à 3)."
+    },
+    {
+      "question": "Comment mesurer le pied d’un nourrisson ?",
+      "answer": "Utilisez un pédimètre souple pour bébé ou mesurez du talon à l’orteil le plus avancé pendant qu’il est assis ou endormi."
+    },
+    {
+      "question": "Les chaussons en cuir souple sont-ils recommandés ?",
+      "answer": "Oui, le cuir souple offre une protection thermique tout en laissant le pied libre de ses mouvements comme une seconde peau."
+    }
+  ]
+}

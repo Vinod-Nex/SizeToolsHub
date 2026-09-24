@@ -1,0 +1,23 @@
+{
+  "title": "Guía de Tallas Puma: Calzado Deportivo",
+  "primaryKeyword": "Tabla de Tallas Puma",
+  "metaDescription": "Tabla de conversión oficial Puma para zapatillas Suede, Smash, RS-X y botas de fútbol.",
+  "directAnswer": "Puma talla de forma estándar europea. Un número EU 42 equivale a un US 9 en hombres (27.0 cm). En botas de fútbol Puma suele recomendarse media talla más si se usan calcetas gruesas.",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Puma España / UE",
+  "toUnit": "Puma EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Las zapatillas Puma Suede tallan fieles a la talla?",
+      "answer": "Sí, el modelo clásico Suede talla fiel a la talla estándar europea."
+    },
+    {
+      "question": "¿Qué número es US 10 en Puma?",
+      "answer": "Un US 10 de hombre en Puma equivale a la talla 43 europea (28.0 cm)."
+    },
+    {
+      "question": "¿Cómo talla la línea Puma RS-X?",
+      "answer": "Debido a su estructura robusta y acolchado envolvente, muchas personas prefieren pedir media talla adicional."
+    }
+  ]
+}

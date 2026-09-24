@@ -1,0 +1,23 @@
+{
+  "title": "US to India Shoe Size Converter",
+  "primaryKeyword": "US to India Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to Indian shoe sizes (BIS standard / UK sizing) for Men, Women, and Kids with millimeter measurements.",
+  "directAnswer": "Indian shoe sizing directly follows the British (UK) sizing standard (BIS 1638). To convert US to Indian sizes, men subtract 0.5 to 1 size (US Men's 10 equals India 9), while women subtract 2 sizes (US Women's 8 equals India 6). For athletic sneakers, checking centimeter foot length ensures the best fit.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "India Size (UK)",
+  "faq": [
+    {
+      "question": "Is Indian shoe size identical to UK shoe size?",
+      "answer": "Yes, the Bureau of Indian Standards (BIS 1638) officially adopted the UK shoe sizing scale for domestic footwear manufacturing."
+    },
+    {
+      "question": "What is a US Men's size 9 in Indian shoe size?",
+      "answer": "A US Men's size 9 is typically an Indian size 8 or 8.5 (approximately 27 cm foot length)."
+    },
+    {
+      "question": "Are Indian shoes made with wider fits?",
+      "answer": "Many domestic Indian footwear manufacturers accommodate slightly wider forefoot profiles due to cultural wearing habits and open-toed footwear preferences."
+    }
+  ]
+}

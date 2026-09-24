@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas de Vestidos: España, EE. UU. y Europa",
+  "primaryKeyword": "Tabla de Tallas de Vestidos",
+  "metaDescription": "Guía completa de tallas para vestidos de fiesta, casuales y de novia. Aprende a medir busto, cintura y cadera para dar con tu talla ideal.",
+  "directAnswer": "Para elegir la talla de un vestido, la medida más importante depende del corte: para vestidos entallados manda la cadera y la cintura; para vestidos de corte imperio o línea A, la medida principal es el contorno de busto.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Talla de Vestido EE. UU. (US)",
+  "toUnit": "Talla España / Europa (EU)",
+  "faq": [
+    {
+      "question": "¿Qué talla de vestido es una 38 en España?",
+      "answer": "Una talla 38 en España equivale a una talla US 6 (unos 88 cm de busto, 70 cm de cintura y 96 cm de cadera)."
+    },
+    {
+      "question": "¿Cómo medir el contorno de busto correctamente?",
+      "answer": "Pasa la cinta métrica horizontalmente por la parte más prominente del pecho, manteniendo los brazos relajados y usando el sujetador adecuado."
+    },
+    {
+      "question": "¿Los vestidos de novia se confeccionan en tallas habituales?",
+      "answer": "La alta costura y vestidos de novia suelen tallar entre 1 y 2 tallas más pequeños que el prêt-à-porter convencional de tiendas como Zara o Mango."
+    }
+  ]
+}

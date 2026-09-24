@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanho de Vestidos Femininos: Brasil x EUA",
+  "primaryKeyword": "Tamanho de Vestido Brasil EUA",
+  "metaDescription": "Tabela de medidas para vestidos de festa, formatura e casual: compare numeração americana (US 2-16) com o Brasil (36-48).",
+  "directAnswer": "Para vestidos importados, consulte as medidas de busto, cintura e quadril. A equivalência padrão é: US 2 (BR 36), US 4 (BR 38), US 6 (BR 40), US 8 (BR 42), US 10 (BR 44), US 12 (BR 46).",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Brasil (BR)",
+  "faq": [
+    {
+      "question": "Qual medida é mais importante para vestidos de festa?",
+      "answer": "Para vestidos ajustados ou modelo sereia, o quadril e a cintura são decisivos; para modelos evasê ou rodados, o busto é a medida principal."
+    }
+  ]
+}

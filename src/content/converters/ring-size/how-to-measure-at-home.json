@@ -1,0 +1,23 @@
+{
+  "title": "How to Measure Ring Size at Home (with Printable Sizer)",
+  "primaryKeyword": "How to Measure Ring Size at Home",
+  "metaDescription": "Accurately measure your ring size at home using our printable PDF-friendly sizer chart, measuring tape, or the string and ruler method.",
+  "directAnswer": "To measure ring size at home accurately, wrap a non-stretchy strip of paper snugly around the base of your finger in the evening. Mark where the ends meet, measure the length in millimeters with a ruler, and match that circumference against our ISO 8653 conversion chart to find your exact size.",
+  "converterType": "ring-size",
+  "fromUnit": "Home Measurement (mm)",
+  "toUnit": "Official Ring Size",
+  "faq": [
+    {
+      "question": "Why should I use paper instead of string to measure ring size?",
+      "answer": "String stretches and flexes, which can result in measuring 1 to 2 sizes too large. Paper or non-stretchy tape gives a much firmer, more consistent measurement."
+    },
+    {
+      "question": "What if my knuckle is significantly larger than my finger base?",
+      "answer": "Measure both the knuckle and the finger base where the ring sits, and select a size halfway between the two measurements so the ring slides over the joint smoothly."
+    },
+    {
+      "question": "Does finger size change during the day?",
+      "answer": "Yes, fingers swell by up to half a size in the evening or after physical activity, and shrink in cold weather. Always measure in the late afternoon at normal room temperature."
+    }
+  ]
+}

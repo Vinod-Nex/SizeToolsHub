@@ -1,0 +1,23 @@
+{
+  "title": "Plus Size Clothing Converter & Sizing Guide",
+  "primaryKeyword": "Plus Size Clothing Converter & Sizing Guide",
+  "metaDescription": "Convert women's and men's plus sizes across US (1X-5X / 14W-28W), UK, and EU standards with proportion guides.",
+  "directAnswer": "Plus size clothing (designated 14W to 28W or 1X to 4X) features proportions tailored for fuller figures, including deeper armholes and wider hip-to-waist ratios compared to straight Misses sizes. A US 16W corresponds to an EU 48 and UK 20, accommodating an approximate 44-inch bust and 37-inch waist circumference.",
+  "converterType": "clothing-size",
+  "fromUnit": "US Plus Size (W/X)",
+  "toUnit": "UK / EU Plus Size",
+  "faq": [
+    {
+      "question": "What is the difference between size 16 and 16W?",
+      "answer": "Size 16 is straight Misses sizing; 16W is Women's Plus sizing, offering about 1-2 extra inches across the bust, waist, and upper arms."
+    },
+    {
+      "question": "What is a 2X in numeric sizing?",
+      "answer": "A 2X typically equates to women's numeric sizes 20W to 22W (bust 47-49 inches, waist 40-42 inches)."
+    },
+    {
+      "question": "How do UK plus sizes compare to US plus sizes?",
+      "answer": "UK plus sizes are numbered 4 sizes higher than US sizes (a US 18W is equivalent to a UK 22)."
+    }
+  ]
+}

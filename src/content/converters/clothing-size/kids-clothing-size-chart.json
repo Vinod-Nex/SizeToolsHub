@@ -1,0 +1,23 @@
+{
+  "title": "Kids Clothing Size Chart & Age Converter",
+  "primaryKeyword": "Kids Clothing Size Chart & Age Converter",
+  "metaDescription": "Convert children's clothing sizes across baby, toddler (2T-5T), and youth (6-16) sizing with height and weight guidelines.",
+  "directAnswer": "Children's clothing sizes are categorized by age but are most accurately chosen by height and weight. Toddler sizes (2T to 5T) accommodate diaper room, while kids' youth sizes (4 to 16) align with height in centimeters. When choosing between sizes for growing children, always select the larger size for extended wear.",
+  "converterType": "clothing-size",
+  "fromUnit": "Kids US Size",
+  "toUnit": "EU Height (cm) / Age",
+  "faq": [
+    {
+      "question": "What is the difference between 24 months and 2T clothing?",
+      "answer": "24-month clothing is proportioned for infants still in diapers with rounder bottoms; 2T is cut leaner for walking toddlers transitioning out of diapers."
+    },
+    {
+      "question": "How does European children's sizing work?",
+      "answer": "European children's clothing is sized directly by the child's height in centimeters (e.g., size 104 fits kids up to 104 cm tall, approx. 4 years old)."
+    },
+    {
+      "question": "What size is a 7-year-old child?",
+      "answer": "A 7-year-old typically wears a US size 7 or 8 (Small youth), corresponding to an EU size 122 or 128 cm."
+    }
+  ]
+}

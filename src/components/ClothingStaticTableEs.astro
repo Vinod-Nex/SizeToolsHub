@@ -1,0 +1,118 @@
+---
+/**
+ * Tabla Estática de Conversión de Tallas de Ropa (Español / España y Latinoamérica)
+ * Cero JavaScript, accesible y estructurada según normas internacionales ISO y ASTM.
+ */
+
+const womenRows = [
+  { es: '32', alfa: 'XXS', us: '00', uk: '4', mx: '26 / Extra Chica', bustCm: '76 cm', waistCm: '58 cm', hipCm: '82 cm' },
+  { es: '34', alfa: 'XS', us: '0', uk: '6', mx: '28 / Extra Chica', bustCm: '80 cm', waistCm: '62 cm', hipCm: '86 cm' },
+  { es: '36', alfa: 'S', us: '2', uk: '8', mx: '30 / Chica', bustCm: '84 cm', waistCm: '66 cm', hipCm: '90 cm' },
+  { es: '38', alfa: 'S', us: '4', uk: '10', mx: '32 / Chica', bustCm: '88 cm', waistCm: '70 cm', hipCm: '94 cm' },
+  { es: '40', alfa: 'M', us: '6', uk: '12', mx: '34 / Mediana', bustCm: '92 cm', waistCm: '74 cm', hipCm: '98 cm' },
+  { es: '42', alfa: 'M', us: '8', uk: '14', mx: '36 / Mediana', bustCm: '96 cm', waistCm: '78 cm', hipCm: '102 cm' },
+  { es: '44', alfa: 'L', us: '10', uk: '16', mx: '38 / Grande', bustCm: '100 cm', waistCm: '82 cm', hipCm: '106 cm' },
+  { es: '46', alfa: 'L', us: '12', uk: '18', mx: '40 / Grande', bustCm: '106 cm', waistCm: '88 cm', hipCm: '112 cm' },
+  { es: '48', alfa: 'XL', us: '14', uk: '20', mx: '42 / Extra Grande', bustCm: '112 cm', waistCm: '94 cm', hipCm: '118 cm' },
+  { es: '50', alfa: 'XXL', us: '16', uk: '22', mx: '44 / Extra Grande', bustCm: '118 cm', waistCm: '100 cm', hipCm: '124 cm' },
+  { es: '52', alfa: '3XL', us: '18', uk: '24', mx: '46 / Plus', bustCm: '124 cm', waistCm: '106 cm', hipCm: '130 cm' },
+];
+
+const menRows = [
+  { es: '44', alfa: 'XS', us: '34', uk: '34', chestCm: '88 cm', waistCm: '74 cm' },
+  { es: '46', alfa: 'S', us: '36', uk: '36', chestCm: '92 cm', waistCm: '78 cm' },
+  { es: '48', alfa: 'M', us: '38', uk: '38', chestCm: '96 cm', waistCm: '82 cm' },
+  { es: '50', alfa: 'M', us: '40', uk: '40', chestCm: '100 cm', waistCm: '86 cm' },
+  { es: '52', alfa: 'L', us: '42', uk: '42', chestCm: '104 cm', waistCm: '90 cm' },
+  { es: '54', alfa: 'L', us: '44', uk: '44', chestCm: '108 cm', waistCm: '96 cm' },
+  { es: '56', alfa: 'XL', us: '46', uk: '46', chestCm: '114 cm', waistCm: '102 cm' },
+  { es: '58', alfa: 'XXL', us: '48', uk: '48', chestCm: '120 cm', waistCm: '108 cm' },
+  { es: '60', alfa: '3XL', us: '50', uk: '50', chestCm: '126 cm', waistCm: '114 cm' },
+];
+---
+
+<section class="mt-16 pt-12 border-t border-hairline-soft">
+  <div class="mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+      <span>Tablas de Medidas Corporales</span>
+    </div>
+    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+      Tabla Completa de Tallas de Ropa: España, México, EE. UU. y Europa.
+    </h2>
+    <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+      Equivalencia internacional de confección femenina y masculina comparando tallas españolas/europeas, letras estándar, tallas mexicanas y medidas en centímetros.
+    </p>
+  </div>
+
+  <!-- Women's Table -->
+  <div class="mb-12">
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Moda Femenina: Vestidos, Camisas, Faldas y Pantalones</span>
+      <span class="text-xs font-normal text-text-faint">(Busto, Cintura y Cadera)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">España / UE</th>
+            <th class="py-4 px-5">Talla Letra</th>
+            <th class="py-4 px-5">EE. UU. (US)</th>
+            <th class="py-4 px-5">Reino Unido (UK)</th>
+            <th class="py-4 px-5">México (MX)</th>
+            <th class="py-4 px-5">Busto</th>
+            <th class="py-4 px-5">Cintura</th>
+            <th class="py-4 px-5">Cadera</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {womenRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3.5 px-5 font-bold text-accent text-base">{row.es}</td>
+              <td class="py-3.5 px-5 font-semibold text-ink">{row.alfa}</td>
+              <td class="py-3.5 px-5 font-medium">{row.us}</td>
+              <td class="py-3.5 px-5 font-medium">{row.uk}</td>
+              <td class="py-3.5 px-5 text-text-muted">{row.mx}</td>
+              <td class="py-3.5 px-5 font-mono">{row.bustCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.waistCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.hipCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Men's Table -->
+  <div>
+    <h3 class="text-base font-bold text-ink mb-3 flex items-center gap-2">
+      <span>Moda Masculina: Trajes, Chaquetas y Pantalones</span>
+      <span class="text-xs font-normal text-text-faint">(Contorno de Pecho y Cintura)</span>
+    </h3>
+    <div class="overflow-x-auto rounded-3xl border border-hairline-soft bg-canvas shadow-2xs">
+      <table class="w-full text-left text-sm border-collapse">
+        <thead>
+          <tr class="border-b border-hairline-soft bg-canvas-soft text-xs font-bold uppercase tracking-wider text-text-muted">
+            <th class="py-4 px-5 text-accent">España / UE</th>
+            <th class="py-4 px-5">Talla Letra</th>
+            <th class="py-4 px-5">EE. UU. (US)</th>
+            <th class="py-4 px-5">Reino Unido (UK)</th>
+            <th class="py-4 px-5">Contorno de Pecho</th>
+            <th class="py-4 px-5">Cintura</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-hairline-soft text-ink">
+          {menRows.map((row, idx) => (
+            <tr class={`transition-colors hover:bg-canvas-soft/60 ${idx % 2 === 1 ? 'bg-canvas-soft/20' : 'bg-canvas'}`}>
+              <td class="py-3.5 px-5 font-bold text-accent text-base">{row.es}</td>
+              <td class="py-3.5 px-5 font-semibold text-ink">{row.alfa}</td>
+              <td class="py-3.5 px-5 font-medium">{row.us}</td>
+              <td class="py-3.5 px-5 font-medium">{row.uk}</td>
+              <td class="py-3.5 px-5 font-mono">{row.chestCm}</td>
+              <td class="py-3.5 px-5 font-mono">{row.waistCm}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

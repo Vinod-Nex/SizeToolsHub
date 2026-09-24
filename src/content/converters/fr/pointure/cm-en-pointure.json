@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Centimètres en Pointure de Chaussure",
+  "primaryKeyword": "Centimètres en Pointure",
+  "metaDescription": "Calculez votre pointure exacte à partir de la longueur de vos pieds en centimètres selon la formule du Point de Paris.",
+  "directAnswer": "La formule mathématique officielle pour la pointure française est : Pointure = (Longueur du pied en cm + 1 cm d’aisance) × 1,5. Par exemple, un pied de 26 cm donne : 27 × 1,5 = 40,5 ou 41.",
+  "converterType": "pointure",
+  "fromUnit": "Centimètres (cm)",
+  "toUnit": "Pointure de Chaussure",
+  "faq": [
+    {
+      "question": "Quelle pointure pour un pied de 25 cm ?",
+      "answer": "Un pied de 25 cm correspond à une pointure 39 ou 39.5 en France, et environ US 7 homme / US 8.5 femme."
+    },
+    {
+      "question": "Pourquoi faut-il ajouter 1 cm d’aisance ?",
+      "answer": "À chaque pas, le pied glisse vers l’avant et s’écrase sous le poids du corps. Sans aisance, les orteils butent contre le bout dur du soulier."
+    },
+    {
+      "question": "À quel moment de la journée mesurer ses pieds ?",
+      "answer": "Mesurez vos pieds en fin de journée lorsque la fatigue et la station debout ont légèrement augmenté leur volume."
+    }
+  ]
+}

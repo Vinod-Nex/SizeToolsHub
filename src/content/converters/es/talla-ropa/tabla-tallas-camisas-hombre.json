@@ -1,0 +1,23 @@
+{
+  "title": "Tabla de Tallas de Camisas para Hombre",
+  "primaryKeyword": "Talla de Camisas para Hombre",
+  "metaDescription": "Conversor de cuello y manga de camisas masculinas entre pulgadas y centímetros. Guía de ajustes Slim, Regular y Custom Fit.",
+  "directAnswer": "Las camisas formales de vestir se miden por el contorno del cuello: 15\" = 38 cm, 15.5\" = 39-40 cm (Talla M), 16\" = 41 cm, 16.5\" = 42 cm (Talla L), 17\" = 43 cm (Talla XL).",
+  "converterType": "talla-ropa",
+  "fromUnit": "Cuello en Pulgadas",
+  "toUnit": "Cuello en Centímetros",
+  "faq": [
+    {
+      "question": "¿Cómo se mide el contorno de cuello para una camisa formal?",
+      "answer": "Coloca la cinta métrica alrededor de la base del cuello y añade el grosor de un dedo (aproximadamente 1 cm) para asegurar comodidad al abotonar."
+    },
+    {
+      "question": "¿Cuál es la diferencia entre Slim Fit y Regular Fit?",
+      "answer": "Slim Fit presenta pinzas en la espalda y un contorno de cintura y pecho más ajustado al cuerpo, mientras que Regular Fit ofrece caída recta clásica."
+    },
+    {
+      "question": "¿Cómo se mide la longitud de manga en camisas de vestir?",
+      "answer": "Desde el centro de la nuca, pasando sobre el hombro y a lo largo del brazo flexionado hasta el hueso de la muñeca."
+    }
+  ]
+}

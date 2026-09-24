@@ -1,0 +1,23 @@
+{
+  "title": "Petite Clothing Size Chart & Fit Guide",
+  "primaryKeyword": "Petite Clothing Size Chart & Fit Guide",
+  "metaDescription": "Petite clothing size guide for women 5'4\" and under with adjusted torso lengths, sleeve lengths, and inseam measurements.",
+  "directAnswer": "Petite clothing sizes (labeled with a 'P' such as 4P or Small Petite) are designed for women 5 feet 4 inches (162 cm) and under. Petite garments share standard bust and waist circumferences with regular Misses sizes but feature shortened torso lengths, shorter sleeves, and shorter pant inseams by approximately 2 inches.",
+  "converterType": "clothing-size",
+  "fromUnit": "US Petite Size (P)",
+  "toUnit": "Regular Misses / EU",
+  "faq": [
+    {
+      "question": "Can someone who is not thin wear petite clothing?",
+      "answer": "Yes, 'petite' refers strictly to stature and vertical proportions (height under 5'4\"), not weight. Petite sizing is available from 00P up to plus-petite 22WP."
+    },
+    {
+      "question": "What is the standard inseam length for petite pants?",
+      "answer": "Petite inseams typically measure 27 to 29 inches, compared to 31 to 33 inches for standard regular pants."
+    },
+    {
+      "question": "Do petite jackets have shorter sleeves?",
+      "answer": "Yes, petite jackets and blazers feature sleeves that are approximately 1.5 to 2 inches shorter, with higher armholes and shorter shoulder-to-waist lengths."
+    }
+  ]
+}

@@ -1,0 +1,387 @@
+---
+import { paperSize, comparePaperSizes } from '../lib/converters/paperSize';
+import type { PaperSizeResult } from '../lib/converters/types';
+
+interface Props {
+  fromUnit?: string;
+  toUnit?: string;
+  sizeA?: PaperSizeResult | string;
+  sizeB?: PaperSizeResult | string;
+  caption?: string;
+}
+
+const {
+  fromUnit = 'A4',
+  toUnit = 'US Letter',
+  sizeA: propSizeA,
+  sizeB: propSizeB,
+  caption,
+} = Astro.props;
+
+const paperA: PaperSizeResult = typeof propSizeA === 'object' && propSizeA !== null
+  ? propSizeA
+  : paperSize(propSizeA || fromUnit);
+
+const paperB: PaperSizeResult = typeof propSizeB === 'object' && propSizeB !== null
+  ? propSizeB
+  : paperSize(propSizeB || toUnit);
+
+const comparison = comparePaperSizes(paperA, paperB);
+
+const wA = paperA.width_mm;
+const hA = paperA.height_mm;
+const wB = paperB.width_mm;
+const hB = paperB.height_mm;
+
+const pad = 60;
+const gap = 50;
+
+const sbsContentW = wA + gap + wB;
+const sbsContentH = Math.max(hA, hB);
+const sbsViewW = sbsContentW + pad * 2;
+const sbsViewH = sbsContentH + pad * 2 + 30;
+
+const aY = pad + (sbsContentH - hA);
+const bY = pad + (sbsContentH - hB);
+const aX = pad;
+const bX = pad + wA + gap;
+---
+
+<div class="rounded-3xl bg-canvas border border-hairline-soft p-5 sm:p-7 shadow-xs my-8">
+  <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-hairline-soft">
+    <div>
+      <div class="flex items-center gap-2 mb-1">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">
+          True Proportional Scale Comparison
+        </span>
+      </div>
+      <h3 class="text-xl sm:text-2xl font-bold text-ink">
+        {paperA.name} <span class="text-text-muted font-normal">vs</span> {paperB.name} Visual Layout
+      </h3>
+    </div>
+
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted border border-hairline-soft self-start sm:self-auto">
+      <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+      <span>Vector Scaled (1:1 Proportions)</span>
+    </div>
+  </div>
+
+  <!-- Responsive SVG Side-by-Side Canvas -->
+  <div class="relative w-full my-6 bg-canvas-soft/40 rounded-2xl p-4 sm:p-6 border border-hairline-soft flex items-center justify-center overflow-hidden">
+    <svg
+      viewBox={`0 0 ${sbsViewW} ${sbsViewH}`}
+      class="w-full max-h-[460px] select-none"
+      role="img"
+      aria-label={`Proportional side-by-side comparison of ${paperA.name} and ${paperB.name}`}
+    >
+      <defs>
+        <pattern id={`grid-${paperA.name}-${paperB.name}`.replace(/[^a-zA-Z0-9-]/g, '')} width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M 20 0 L 0 0 0 20" fill="none" stroke="currentColor" stroke-opacity="0.05" stroke-width="0.8" />
+        </pattern>
+        <filter id="paper-shadow-static" x="-5%" y="-5%" width="110%" height="110%">
+          <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.12" />
+        </filter>
+        <marker id="arrow-start-static" viewBox="0 0 10 10" refX="2" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 10 0 L 0 5 L 10 10 z" fill="currentColor" fill-opacity="0.6" />
+        </marker>
+        <marker id="arrow-end-static" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" fill-opacity="0.6" />
+        </marker>
+      </defs>
+
+      <!-- Grid Background -->
+      <rect width={sbsViewW} height={sbsViewH} fill={`url(#grid-${paperA.name}-${paperB.name}`.replace(/[^a-zA-Z0-9-]/g, '') + ')'} />
+
+      <!-- Baseline Alignment Ground -->
+      <line
+        x1={pad - 20}
+        y1={pad + sbsContentH}
+        x2={pad + sbsContentW + 20}
+        y2={pad + sbsContentH}
+        stroke="currentColor"
+        stroke-opacity="0.15"
+        stroke-width="1.5"
+        stroke-dasharray="4 4"
+      />
+
+      <!-- SHEET A -->
+      <g>
+        <rect
+          x={aX}
+          y={aY}
+          width={wA}
+          height={hA}
+          rx="6"
+          fill="var(--color-canvas, #ffffff)"
+          stroke="#2563eb"
+          stroke-width="2.5"
+          filter="url(#paper-shadow-static)"
+        />
+        <rect
+          x={aX}
+          y={aY}
+          width={wA}
+          height={hA}
+          rx="6"
+          fill="#2563eb"
+          fill-opacity="0.08"
+        />
+        <!-- Dog-ear fold -->
+        <path
+          d={`M ${aX + wA - 14} ${aY} L ${aX + wA} ${aY + 14} L ${aX + wA - 14} ${aY + 14} Z`}
+          fill="#2563eb"
+          fill-opacity="0.25"
+        />
+
+        <text
+          x={aX + wA / 2}
+          y={aY + hA / 2 - 14}
+          text-anchor="middle"
+          fill="var(--color-ink, #111827)"
+          font-size={Math.max(14, Math.min(22, wA * 0.1))}
+          font-weight="bold"
+        >
+          {paperA.name}
+        </text>
+        <text
+          x={aX + wA / 2}
+          y={aY + hA / 2 + 10}
+          text-anchor="middle"
+          fill="#2563eb"
+          font-size={Math.max(11, Math.min(15, wA * 0.07))}
+          font-weight="600"
+        >
+          {paperA.width_mm} × {paperA.height_mm} mm
+        </text>
+        <text
+          x={aX + wA / 2}
+          y={aY + hA / 2 + 28}
+          text-anchor="middle"
+          fill="var(--color-text-muted, #6b7280)"
+          font-size={Math.max(10, Math.min(13, wA * 0.06))}
+        >
+          ({paperA.width_in} × {paperA.height_in} in)
+        </text>
+        <text
+          x={aX + wA / 2}
+          y={aY + hA - 16}
+          text-anchor="middle"
+          fill="var(--color-text-faint, #9ca3af)"
+          font-size={Math.max(9, Math.min(12, wA * 0.05))}
+          font-weight="500"
+        >
+          Ratio {paperA.aspect_ratio}
+        </text>
+
+        <!-- Width Arrow -->
+        <line
+          x1={aX}
+          y1={aY - 14}
+          x2={aX + wA}
+          y2={aY - 14}
+          stroke="#2563eb"
+          stroke-width="1.5"
+          marker-start="url(#arrow-start-static)"
+          marker-end="url(#arrow-end-static)"
+        />
+        <text
+          x={aX + wA / 2}
+          y={aY - 22}
+          text-anchor="middle"
+          fill="#2563eb"
+          font-size="11"
+          font-weight="600"
+        >
+          {paperA.width_mm} mm ({paperA.width_in}″)
+        </text>
+
+        <!-- Height Arrow -->
+        <line
+          x1={aX - 14}
+          y1={aY}
+          x2={aX - 14}
+          y2={aY + hA}
+          stroke="#2563eb"
+          stroke-width="1.5"
+          marker-start="url(#arrow-start-static)"
+          marker-end="url(#arrow-end-static)"
+        />
+        <text
+          x={aX - 22}
+          y={aY + hA / 2}
+          text-anchor="middle"
+          fill="#2563eb"
+          font-size="11"
+          font-weight="600"
+          transform={`rotate(-90 ${aX - 22} ${aY + hA / 2})`}
+        >
+          {paperA.height_mm} mm ({paperA.height_in}″)
+        </text>
+      </g>
+
+      <!-- SHEET B -->
+      <g>
+        <rect
+          x={bX}
+          y={bY}
+          width={wB}
+          height={hB}
+          rx="6"
+          fill="var(--color-canvas, #ffffff)"
+          stroke="#8b5cf6"
+          stroke-width="2.5"
+          filter="url(#paper-shadow-static)"
+        />
+        <rect
+          x={bX}
+          y={bY}
+          width={wB}
+          height={hB}
+          rx="6"
+          fill="#8b5cf6"
+          fill-opacity="0.08"
+        />
+        <path
+          d={`M ${bX + wB - 14} ${bY} L ${bX + wB} ${bY + 14} L ${bX + wB - 14} ${bY + 14} Z`}
+          fill="#8b5cf6"
+          fill-opacity="0.25"
+        />
+
+        <text
+          x={bX + wB / 2}
+          y={bY + hB / 2 - 14}
+          text-anchor="middle"
+          fill="var(--color-ink, #111827)"
+          font-size={Math.max(14, Math.min(22, wB * 0.1))}
+          font-weight="bold"
+        >
+          {paperB.name}
+        </text>
+        <text
+          x={bX + wB / 2}
+          y={bY + hB / 2 + 10}
+          text-anchor="middle"
+          fill="#8b5cf6"
+          font-size={Math.max(11, Math.min(15, wB * 0.07))}
+          font-weight="600"
+        >
+          {paperB.width_mm} × {paperB.height_mm} mm
+        </text>
+        <text
+          x={bX + wB / 2}
+          y={bY + hB / 2 + 28}
+          text-anchor="middle"
+          fill="var(--color-text-muted, #6b7280)"
+          font-size={Math.max(10, Math.min(13, wB * 0.06))}
+        >
+          ({paperB.width_in} × {paperB.height_in} in)
+        </text>
+        <text
+          x={bX + wB / 2}
+          y={bY + hB - 16}
+          text-anchor="middle"
+          fill="var(--color-text-faint, #9ca3af)"
+          font-size={Math.max(9, Math.min(12, wB * 0.05))}
+          font-weight="500"
+        >
+          Ratio {paperB.aspect_ratio}
+        </text>
+
+        <!-- Width Arrow -->
+        <line
+          x1={bX}
+          y1={bY - 14}
+          x2={bX + wB}
+          y2={bY - 14}
+          stroke="#8b5cf6"
+          stroke-width="1.5"
+          marker-start="url(#arrow-start-static)"
+          marker-end="url(#arrow-end-static)"
+        />
+        <text
+          x={bX + wB / 2}
+          y={bY - 22}
+          text-anchor="middle"
+          fill="#8b5cf6"
+          font-size="11"
+          font-weight="600"
+        >
+          {paperB.width_mm} mm ({paperB.width_in}″)
+        </text>
+
+        <!-- Height Arrow -->
+        <line
+          x1={bX + wB + 14}
+          y1={bY}
+          x2={bX + wB + 14}
+          y2={bY + hB}
+          stroke="#8b5cf6"
+          stroke-width="1.5"
+          marker-start="url(#arrow-start-static)"
+          marker-end="url(#arrow-end-static)"
+        />
+        <text
+          x={bX + wB + 22}
+          y={bY + hB / 2}
+          text-anchor="middle"
+          fill="#8b5cf6"
+          font-size="11"
+          font-weight="600"
+          transform={`rotate(90 ${bX + wB + 22} ${bY + hB / 2})`}
+        >
+          {paperB.height_mm} mm ({paperB.height_in}″)
+        </text>
+      </g>
+    </svg>
+  </div>
+
+  {caption && (
+    <p class="text-xs text-text-muted text-center italic mb-4">
+      {caption}
+    </p>
+  )}
+
+  <!-- Delta Breakdown Cards -->
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+    <div class="p-3.5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+      <span class="text-[11px] font-semibold text-text-muted block">Height Delta</span>
+      <span class={`text-base font-bold ${comparison.heightDiffMm >= 0 ? 'text-accent' : 'text-purple-600'}`}>
+        {comparison.heightDiffMm > 0 ? `+${comparison.heightDiffMm} mm` : comparison.heightDiffMm < 0 ? `${comparison.heightDiffMm} mm` : 'Identical'}
+      </span>
+      <span class="text-[11px] text-text-faint block mt-0.5">
+        {comparison.heightDiffIn > 0 ? `+${comparison.heightDiffIn}″` : comparison.heightDiffIn < 0 ? `${comparison.heightDiffIn}″` : '0″'}
+      </span>
+    </div>
+
+    <div class="p-3.5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+      <span class="text-[11px] font-semibold text-text-muted block">Width Delta</span>
+      <span class={`text-base font-bold ${comparison.widthDiffMm >= 0 ? 'text-accent' : 'text-purple-600'}`}>
+        {comparison.widthDiffMm > 0 ? `+${comparison.widthDiffMm} mm` : comparison.widthDiffMm < 0 ? `${comparison.widthDiffMm} mm` : 'Identical'}
+      </span>
+      <span class="text-[11px] text-text-faint block mt-0.5">
+        {comparison.widthDiffIn > 0 ? `+${comparison.widthDiffIn}″` : comparison.widthDiffIn < 0 ? `${comparison.widthDiffIn}″` : '0″'}
+      </span>
+    </div>
+
+    <div class="p-3.5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+      <span class="text-[11px] font-semibold text-text-muted block">Surface Area Diff</span>
+      <span class="text-base font-bold text-ink">
+        {Math.abs(comparison.areaDiffPercent)}%
+      </span>
+      <span class="text-[11px] text-text-faint block mt-0.5">
+        {comparison.isALargerArea ? `${paperA.name} is larger` : comparison.areaDiffPercent === 0 ? 'Equal area' : `${paperB.name} is larger`}
+      </span>
+    </div>
+
+    <div class="p-3.5 rounded-2xl bg-canvas-soft border border-hairline-soft">
+      <span class="text-[11px] font-semibold text-text-muted block">Print Scale Fit</span>
+      <span class="text-base font-bold text-ink">
+        {comparison.scaleToFitPercent}%
+      </span>
+      <span class="text-[11px] text-text-faint block mt-0.5">
+        Scale {paperB.name} to fit {paperA.name}
+      </span>
+    </div>
+  </div>
+</div>

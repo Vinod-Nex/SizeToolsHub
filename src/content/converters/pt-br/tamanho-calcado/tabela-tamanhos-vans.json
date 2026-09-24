@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanhos Vans: Brasil x EUA",
+  "primaryKeyword": "Tabela de Tamanhos Vans Brasil",
+  "metaDescription": "Tabela de tamanhos de tênis Vans: Old Skool, Authentic e Slip-On. Compare numeração brasileira com tamanho americano e centímetros.",
+  "directAnswer": "A Vans adota padrão unissex em seus calçados com sola Waffle. Um Vans 39 no Brasil equivale ao US Men 7.5 / US Women 9 (25,5 cm).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Vans Brasil (BR)",
+  "toUnit": "Vans EUA (US)",
+  "faq": [
+    {
+      "question": "Tênis Vans laceia com o tempo?",
+      "answer": "Sim, modelos de lona como o Authentic e Old Skool adaptam-se ao formato do pé após alguns dias de uso."
+    }
+  ]
+}

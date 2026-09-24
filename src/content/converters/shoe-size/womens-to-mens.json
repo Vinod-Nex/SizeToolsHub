@@ -1,0 +1,23 @@
+{
+  "title": "Women's to Men's Shoe Size Converter",
+  "primaryKeyword": "Women's to Men's Shoe Size Converter",
+  "metaDescription": "Calculate the exact difference between Women's and Men's shoe sizes (typically 1.5 sizes difference) with width considerations.",
+  "converterType": "shoe-size",
+  "fromUnit": "Women's US",
+  "toUnit": "Men's US",
+  "faq": [
+    {
+      "question": "How do I convert women's shoe size to men's?",
+      "answer": "Subtract 1.5 from your women's shoe size. For example, a women's size 8.5 is a men's size 7."
+    },
+    {
+      "question": "Is the width different between men's and women's shoes?",
+      "answer": "Yes. A standard women's shoe is width 'B', whereas a standard men's shoe is width 'D' (slightly wider across the forefoot)."
+    },
+    {
+      "question": "Are unisex sneakers based on men's or women's sizing?",
+      "answer": "Most unisex sneakers (such as Converse Chuck Taylors and Vans) are numbered in men's sizing, requiring women to size down by 1.5."
+    }
+  ],
+  "directAnswer": "To convert Women's shoe sizes to Men's in US sizing, subtract 1.5 from the women's size. For example, a Women's size 8.5 converts to a Men's size 7. Women should also note that standard men's shoes feature a wider D width compared to women's standard B width."
+}

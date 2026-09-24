@@ -1,0 +1,23 @@
+{
+  "title": "Standard Paper Dimensions Chart (ISO 216 & North American)",
+  "primaryKeyword": "Paper Dimensions Chart",
+  "metaDescription": "Complete guide to paper sizes worldwide. Compare ISO 216 A-series (A0 to A8), B-series, ANSI (Letter, Legal, Tabloid), and Architectural sheets in mm, cm, and inches.",
+  "directAnswer": "Standard paper dimensions follow two global systems: ISO 216 (A4 measuring 210 by 297 millimeters, based on the invariant square root of two aspect ratio) used worldwide, and North American loose standards (Letter measuring 8.5 by 11.0 inches, and Legal measuring 8.5 by 14.0 inches). ISO sheets halve cleanly without changing aspect ratio.",
+  "converterType": "paper-size",
+  "fromUnit": "A4",
+  "toUnit": "US Letter",
+  "faq": [
+    {
+      "question": "What is the largest standard ISO paper size?",
+      "answer": "ISO A0 is the largest standard size in the A-series, measuring 841 × 1189 millimeters (33.1 × 46.8 inches) with an exact surface area of 1.000 square meter."
+    },
+    {
+      "question": "What are the ANSI paper sizes?",
+      "answer": "ANSI (American National Standards Institute) sizes are letter-based: ANSI A is US Letter (8.5 × 11 in), ANSI B is Ledger/Tabloid (11 × 17 in), ANSI C is 17 × 22 in, ANSI D is 22 × 34 in, and ANSI E is 34 × 44 in."
+    },
+    {
+      "question": "What is the difference between Tabloid and Ledger paper?",
+      "answer": "Tabloid and Ledger have identical dimensions (11 × 17 inches / 279.4 × 431.8 mm). The term Tabloid refers to vertical portrait orientation, while Ledger refers to horizontal landscape orientation."
+    }
+  ]
+}

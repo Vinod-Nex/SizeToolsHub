@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Roupas EUA para Reino Unido (UK)",
+  "primaryKeyword": "Tamanho de Roupa EUA para Reino Unido",
+  "metaDescription": "Tabela de conversão de roupas dos Estados Unidos (US) para o Reino Unido (UK). Equivalência para vestidos femininos e ternos masculinos.",
+  "directAnswer": "Para roupas femininas, a numeração do Reino Unido (UK) é 4 números maior que a americana (US): US 4 = UK 8; US 6 = UK 10; US 8 = UK 12; US 10 = UK 14. Para ternos e casacos masculinos, as medidas em polegadas de peito são idênticas (US 40 = UK 40).",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Reino Unido (UK)",
+  "faq": [
+    {
+      "question": "Qual tamanho nos EUA é o UK 10 feminino?",
+      "answer": "O tamanho UK 10 feminino equivale ao US 6 nos Estados Unidos e ao tamanho 40 (M) no Brasil."
+    }
+  ]
+}

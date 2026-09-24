@@ -1,0 +1,23 @@
+{
+  "title": "Guide International des Tailles de Vêtements",
+  "primaryKeyword": "Guide des Tailles Vêtements International",
+  "metaDescription": "Tableau de correspondance des tailles de vêtements entre la France (FR), l’Europe (EU), les États-Unis (US), le Royaume-Uni (UK) et les lettres (XS à 3XL).",
+  "directAnswer": "En prêt-à-porter féminin, une taille 38 française correspond à une taille 36 européenne standard, un US 4 ou 6, et un UK 8 ou 10. Pour les hommes, une taille 48 française correspond à une taille 38 US/UK.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Standard International",
+  "toUnit": "Taille France (FR)",
+  "faq": [
+    {
+      "question": "Pourquoi la taille française est-elle différente de la taille européenne (DE/IT) ?",
+      "answer": "En France, la taille femme s’exprime en demi-tour de poitrine : une taille FR 38 correspond à un tour de poitrine de 76 cm à la base, tandis qu’en Allemagne c’est une taille 36 et en Italie une taille 42."
+    },
+    {
+      "question": "À quoi correspond la taille M en France ?",
+      "answer": "Pour les femmes, M correspond au 38-40. Pour les hommes, M correspond au 48-50 (tour de poitrine de 96 à 100 cm)."
+    },
+    {
+      "question": "Comment mesurer ses mensurations facilement ?",
+      "answer": "Tenez-vous droite, sans comprimer le ruban, et mesurez le tour de poitrine à l’endroit le plus fort, la taille au creux naturel, et le bassin au point le plus large des hanches."
+    }
+  ]
+}

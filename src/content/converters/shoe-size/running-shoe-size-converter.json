@@ -1,0 +1,23 @@
+{
+  "title": "Running Shoe Size Converter & Sizing Guide",
+  "primaryKeyword": "Running Shoe Size Converter & Sizing Guide",
+  "metaDescription": "Calculate your optimal running shoe size from dress shoes with runner toe clearance, sock thickness, and foot swelling allowances.",
+  "directAnswer": "Running shoes should generally be purchased one half-size to a full size larger than your standard dress or casual shoe size. If you wear a casual US 9.5, select a 10 or 10.5 for running. This extra space accommodates foot swelling and forward foot movement during repeated impact strikes.",
+  "converterType": "shoe-size",
+  "fromUnit": "Casual Shoe Size",
+  "toUnit": "Running Shoe Size",
+  "faq": [
+    {
+      "question": "Why should running shoes be a half size bigger?",
+      "answer": "Blood flow increases during running, causing feet to swell up to a full size. Extra space prevents bruised toenails and blisters."
+    },
+    {
+      "question": "How much space should be between my big toe and running shoe tip?",
+      "answer": "You should have approximately a full thumb's width (about 1.2 to 1.5 cm) of space in front of your longest toe while standing."
+    },
+    {
+      "question": "Does sock thickness affect running shoe sizing?",
+      "answer": "Yes, cushioned running socks can add up to 2-3 mm of thickness, so always try on running shoes with the socks you plan to run in."
+    }
+  ]
+}

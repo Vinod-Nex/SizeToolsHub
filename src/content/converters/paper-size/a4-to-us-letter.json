@@ -1,0 +1,23 @@
+{
+  "title": "A4 to US Letter Paper Size Converter",
+  "primaryKeyword": "a4 to us letter converter",
+  "metaDescription": "Compare dimensions between ISO A4 (210 x 297 mm) and North American US Letter (8.5 x 11 inches) for printing, document scaling, and borderless margin alignment.",
+  "directAnswer": "A4 paper measures 210 by 297 millimeters (8.27 by 11.69 inches), making it 17.6 millimeters taller and 5.9 millimeters narrower than standard US Letter, which measures 215.9 by 279.4 millimeters (8.5 by 11.0 inches). When printing an A4 document onto US Letter, always enable scale to fit to prevent clipping top and bottom margins.",
+  "converterType": "paper-size",
+  "fromUnit": "A4",
+  "toUnit": "US Letter",
+  "faq": [
+    {
+      "question": "Which paper is taller: A4 or US Letter?",
+      "answer": "A4 is taller (297 mm vs 279.4 mm / 11.69 in vs 11.0 in), while US Letter is slightly wider (215.9 mm vs 210 mm / 8.5 in vs 8.27 in)."
+    },
+    {
+      "question": "Can I print an A4 document onto US Letter?",
+      "answer": "Yes, but you should select 'Fit to Printable Area' in print dialogs to prevent the top and bottom 17.6 mm from being cropped by the printer margin hardware."
+    },
+    {
+      "question": "What is the aspect ratio difference between A4 and Letter?",
+      "answer": "A4 follows the ISO 216 standard with a 1:√2 aspect ratio (1:1.414). US Letter has a 1:1.294 aspect ratio, making it noticeably squarer than European stationery."
+    }
+  ]
+}

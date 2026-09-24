@@ -1,0 +1,23 @@
+{
+  "title": "US to China Shoe Size Converter",
+  "primaryKeyword": "US to China Shoe Size Converter",
+  "metaDescription": "Convert US shoe sizes to Chinese shoe sizes across traditional EU-derived sizing and the modern GB/T millimeter standard.",
+  "directAnswer": "China uses two systems: the traditional system, which mirrors European EU Paris point numbers (a US Men's 9 is China 42.5), and the modern GB/T standard, measuring foot length in millimeters (265 mm). To convert US to China, map your foot length directly into millimeters or traditional EU-equivalent sizing.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Size",
+  "toUnit": "China Size",
+  "faq": [
+    {
+      "question": "What shoe sizing system does China use?",
+      "answer": "China officially uses the GB/T 3293.1 standard (Mondopoint in millimeters), though consumer footwear often displays traditional EU-style numbers like 41, 42, or 43."
+    },
+    {
+      "question": "What is a US Men's 9.5 in Chinese sizing?",
+      "answer": "A US Men's 9.5 corresponds to China size 43 (traditional) or 270 mm (modern GB standard)."
+    },
+    {
+      "question": "Do Chinese shoe brands run smaller than US shoes?",
+      "answer": "Yes, many Chinese and Asian domestic brands build shoes on narrower lasts with lower instep clearance, making sizing up a half step advisable."
+    }
+  ]
+}

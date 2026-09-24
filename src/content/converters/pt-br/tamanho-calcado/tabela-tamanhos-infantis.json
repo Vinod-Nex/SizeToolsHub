@@ -1,0 +1,15 @@
+{
+  "title": "Tabela de Tamanho de Calçados Infantis",
+  "primaryKeyword": "Tamanho de Calçado Infantil",
+  "metaDescription": "Tabela completa de conversão de sapatos infantis: Brasil (BR), EUA (US Kids) e Europa (EU). Meça o pé da criança e acerte o tamanho.",
+  "directAnswer": "Os calçados infantis no Brasil vão do número 16 ao 36. Nos Estados Unidos, a escala divide-se em Bebês/Primeiros Passos (Toddler 1C a 10C) e Crianças/Jovens (Youth 11C a 7Y). Um calçado infantil BR 25 equivale ao US 9C ou EU 27.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho Infantil Brasil (BR)",
+  "toUnit": "Tamanho EUA Infantil (US)",
+  "faq": [
+    {
+      "question": "Com que frequência o pé da criança cresce?",
+      "answer": "Crianças de até 3 anos podem trocar de numeração a cada 3 ou 4 meses. Meça os pés com frequência para evitar calçados apertados."
+    }
+  ]
+}

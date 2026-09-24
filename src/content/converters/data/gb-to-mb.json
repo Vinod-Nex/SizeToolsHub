@@ -1,0 +1,23 @@
+{
+  "title": "GB to MB Converter",
+  "primaryKeyword": "GB to MB Converter",
+  "metaDescription": "Convert Gigabytes (GB) to Megabytes (MB) across decimal and binary standards with exact byte calculations.",
+  "directAnswer": "To convert Gigabytes (GB) to Megabytes (MB), multiply by 1,000 in decimal SI notation (1 GB = 1,000 MB), or multiply by 1,024 in binary IEC notation (1 GiB = 1,024 MiB). For example, a 16 GB flash drive holds 16,000 MB in decimal, or 16,384 MiB in binary.",
+  "converterType": "data",
+  "fromUnit": "Gigabytes (GB)",
+  "toUnit": "Megabytes (MB)",
+  "faq": [
+    {
+      "question": "How many MB is a 4 GB file?",
+      "answer": "A 4 GB file equals 4,000 MB in decimal SI, or 4,096 MiB in binary IEC."
+    },
+    {
+      "question": "How many high-res photos fit in 1 GB?",
+      "answer": "At an average size of 4 MB per photo, 1 GB of storage holds approximately 250 high-resolution images."
+    },
+    {
+      "question": "What is 32 GB in MB?",
+      "answer": "32 GB equals 32,000 MB in decimal, or 32,768 MiB in binary."
+    }
+  ]
+}

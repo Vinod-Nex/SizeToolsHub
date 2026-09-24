@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Pointure UK vers US",
+  "primaryKeyword": "Pointure UK vers US",
+  "metaDescription": "Convertissez vos pointures anglaises (UK) en pointures américaines (US). Guide pour marques britanniques comme Dr. Martens et Clarks.",
+  "directAnswer": "Pour passer de UK à US en modèle homme, ajoutez 1 pointure (UK 8 = US 9). En modèle femme, ajoutez 2 pointures (UK 5 = US 7).",
+  "converterType": "pointure",
+  "fromUnit": "Pointure UK",
+  "toUnit": "Pointure US",
+  "faq": [
+    {
+      "question": "Quelle pointure US pour un UK 7 ?",
+      "answer": "Un UK 7 correspond à US 8 en homme et US 9 en femme (41 en France)."
+    },
+    {
+      "question": "Comment taillent les bottes Dr. Martens ?",
+      "answer": "Dr. Martens propose des pointures entières UK. Si vous êtes entre deux tailles, la marque conseille généralement de prendre la taille inférieure pour un modèle cuir souple."
+    },
+    {
+      "question": "Qu’est-ce que la largeur de chaussure UK ?",
+      "answer": "La lettre \"F\" désigne la largeur standard homme au Royaume-Uni, et \"G\" correspond à un chaussant large."
+    }
+  ]
+}

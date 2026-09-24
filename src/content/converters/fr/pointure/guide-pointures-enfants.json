@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Pointures de Chaussures Enfant",
+  "primaryKeyword": "Pointure Chaussures Enfant",
+  "metaDescription": "Tableau des pointures enfant de 1 à 14 ans. Correspondance entre pointure France/Europe (18 à 39) et pointure US Kids.",
+  "directAnswer": "Les pointures enfants s’échelonnent de la taille 18 (environ 11 cm) jusqu’à la taille 39 (environ 24.5 cm). Mesurez régulièrement les pieds de vos enfants car ils grandissent de 2 à 3 pointures par an durant la petite enfance.",
+  "converterType": "pointure",
+  "fromUnit": "Pointure Enfant France (FR)",
+  "toUnit": "Pointure Enfant US Kids",
+  "faq": [
+    {
+      "question": "Quelle pointure pour un enfant de 3 ans ?",
+      "answer": "À 3 ans, un enfant chausse généralement entre le 25 et le 27 (soit 8.5C à 10C en pointure US)."
+    },
+    {
+      "question": "Quelle marge laisser dans une chaussure enfant ?",
+      "answer": "Une marge de 1 cm à 1,2 cm est recommandée pour permettre le mouvement naturel et absorber la croissance."
+    },
+    {
+      "question": "À quelle fréquence mesurer le pied d’un enfant ?",
+      "answer": "Tous les 2 à 3 mois jusqu’à l’âge de 3 ans, puis tous les 4 à 6 mois jusqu’à la fin de la puberté."
+    }
+  ]
+}

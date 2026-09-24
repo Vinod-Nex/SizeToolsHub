@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Roupas Masculinas Reino Unido para EUA",
+  "primaryKeyword": "Tamanho Roupa Masculina UK para EUA",
+  "metaDescription": "Conversor de tamanhos de ternos, camisas e calças masculinas do Reino Unido (UK) para os Estados Unidos (US).",
+  "directAnswer": "Para ternos, casacos e jaquetas masculinas, as medidas no Reino Unido e nos EUA são iguais pois ambas utilizam polegadas de peito (UK 38R = US 38R). Para camisas sociais, ambos utilizam o colarinho em polegadas (UK 15.5 = US 15.5, que equivale a 39-40 cm no Brasil).",
+  "converterType": "tamanho-roupa",
+  "fromUnit": "Tamanho Reino Unido (UK)",
+  "toUnit": "Tamanho EUA (US)",
+  "faq": [
+    {
+      "question": "O que significa 'R', 'S' e 'L' em ternos masculinos (ex: 40R)?",
+      "answer": "'S' significa Short (para homens até 1,73m), 'R' significa Regular (1,74m a 1,83m) e 'L' significa Long (acima de 1,84m)."
+    }
+  ]
+}

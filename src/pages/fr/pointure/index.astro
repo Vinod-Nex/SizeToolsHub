@@ -1,0 +1,174 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ShoeConverterIsland from '../../../components/ShoeConverterIsland';
+import ShoeStaticTableFr from '../../../components/ShoeStaticTableFr.astro';
+
+// Query all French shoe converters
+const entries = await getCollection('converters', ({ id, data }) =>
+  id.startsWith('fr/pointure/') || data.converterType === 'pointure'
+);
+
+const tools = entries.map((entry) => ({
+  slug: entry.id.replace(/^fr\/pointure\//, '').replace(/\.(json|md)$/, ''),
+  title: entry.data.title,
+  primaryKeyword: entry.data.primaryKeyword,
+  description: entry.data.metaDescription,
+  fromUnit: entry.data.fromUnit,
+  toUnit: entry.data.toUnit,
+}));
+
+const hubFaq = [
+  {
+    question: "Comment convertir sa pointure de chaussures américaine (US) en pointure française ?",
+    answer: "Pour les hommes, ajoutez 33 ou 34 à votre pointure US (un US 9 homme correspond au 42.5 en France). Pour les femmes, ajoutez environ 31 (un US 8 femme correspond au 38.5 ou 39). La France utilise le système continental européen basé sur le Point de Paris (6,67 mm)."
+  },
+  {
+    question: "Quelle est la différence entre la pointure française et la pointure UK ?",
+    answer: "La pointure britannique (UK) est environ 1 pointure inférieure à la pointure US homme (UK 8 = US 9 = FR 42.5), et 2 pointures inférieure à la pointure US femme (UK 6 = US 8 = FR 39)."
+  },
+  {
+    question: "Comment mesurer la longueur de son pied en centimètres ?",
+    answer: "Placez votre talon contre une plinthe ou un mur sur une feuille de papier. Tracez un trait devant l’orteil le plus long. Mesurez la longueur en centimètres avec une règle, ajoutez 5 à 10 mm de jeu d'aisance et comparez avec la colonne 'CM' ou 'JP' de notre guide."
+  },
+  {
+    question: "Les marques de baskets (Nike, Adidas, Converse) chaussent-elles pareil ?",
+    answer: "Non. Nike taille souvent ajusté sur le cou-de-pied, Adidas utilise des tiers de pointure (ex: 42 2/3), tandis que Converse All Star taille notoirement grand (il est recommandé de commander une demi-pointure en moins)."
+  }
+];
+---
+
+<BaseLayout
+  title="Guide et Tableau des Pointures : France, Europe, US et UK — SizeToolsHub"
+  description="Convertissez facilement vos pointures de souliers et baskets entre la France (EU), les États-Unis (US) et le Royaume-Uni (UK). Calculateur interactif et grilles de correspondance officielles."
+  lang="fr"
+  faq={hubFaq}
+>
+  <!-- Breadcrumbs -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/fr/" class="hover:text-ink transition-colors">Accueil</a>
+    <span>/</span>
+    <span class="text-ink font-semibold">Pointure</span>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Category Header -->
+    <header class="mb-10 max-w-3xl">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Guide des Chaussures France
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          {entries.length} Outils Spécialisés
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        Guide et Correspondance des Pointures : France, US et UK.
+      </h1>
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed">
+        Commandez vos chaussures en ligne en toute sérénité. Tableaux de conversion officiels basés sur le Point de Paris et la norme ISO 9407 pour hommes, femmes et enfants.
+      </p>
+    </header>
+
+    <!-- Quick Live Interactive Converter Island -->
+    <section class="mb-16">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="text-xs uppercase tracking-wider text-text-faint font-semibold">
+          Calculateur de Pointure en Temps Réel
+        </h2>
+        <span class="text-xs text-text-muted">Interactif</span>
+      </div>
+      <ShoeConverterIsland
+        client:load
+        initialFromUnit="US Size"
+        initialToUnit="EU Size"
+        primaryKeyword="Convertisseur de Pointure"
+      />
+    </section>
+
+    <!-- Sub-Tool Directory Grid -->
+    <section class="mb-16" aria-labelledby="tools-directory-heading">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Outils Dédiés</span>
+          </div>
+          <h2 id="tools-directory-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Répertoire des Convertisseurs de Pointures.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Sélectionnez le calculateur adapté à votre pays ou à votre marque de sneakers préférée.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {tools.map((tool) => (
+          <a
+            href={`/fr/pointure/${tool.slug}/`}
+            class="group flex flex-col justify-between p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-1 transition-all duration-200 shadow-2xs hover:shadow-xs active:scale-[0.99]"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-3">
+                <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-accent/10 text-accent text-[11px] font-semibold">
+                  <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                  <span>{tool.fromUnit} ⇄ {tool.toUnit}</span>
+                </span>
+                <span class="text-xs text-text-faint group-hover:text-accent group-hover:translate-x-0.5 transition-all">
+                  →
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-ink mb-2 group-hover:text-accent transition-colors">
+                {tool.title}
+              </h3>
+              <p class="text-xs text-text-muted font-light leading-relaxed line-clamp-2">
+                {tool.description}
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-hairline-soft flex items-center justify-between text-[11px] text-text-faint">
+              <span>{tool.primaryKeyword}</span>
+              <span class="font-semibold text-accent group-hover:underline">Calculer ↗</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Static Reference Table Component -->
+    <ShoeStaticTableFr />
+
+    <!-- FAQ Section -->
+    <section class="mt-16 pt-12 border-t border-hairline-soft">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+          <span>Foire Aux Questions</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+          Questions Fréquentes sur les Pointures.
+        </h2>
+        <p class="text-sm sm:text-base text-text-muted font-light mt-1 max-w-2xl">
+          Éclairages techniques pour bien choisir sa taille de souliers et baskets internationales.
+        </p>
+      </div>
+
+      <div class="space-y-4 max-w-3xl">
+        {hubFaq.map((item) => (
+          <details class="group p-5 rounded-2xl bg-canvas border border-hairline-soft transition-all duration-200 open:border-hairline">
+            <summary class="flex items-center justify-between font-semibold text-sm sm:text-base text-ink cursor-pointer list-none focus:outline-none">
+              <span>{item.question}</span>
+              <span class="text-text-muted transition-transform duration-200 group-open:rotate-180">↓</span>
+            </summary>
+            <p class="mt-3 text-xs sm:text-sm text-text-muted font-light leading-relaxed border-t border-hairline-soft pt-3">
+              {item.answer}
+            </p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

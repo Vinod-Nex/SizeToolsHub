@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Tamanho de Calçados EUA para Europa",
+  "primaryKeyword": "Tamanho de Calçado EUA para Europa",
+  "metaDescription": "Tabela de conversão de calçados dos EUA para Europa (EU) e Brasil (BR). Calcule o tamanho correto de tênis e sapatos masculinos, femininos e infantis.",
+  "directAnswer": "Para converter o tamanho de calçado dos EUA para o padrão europeu (EU), soma-se cerca de 33 a 34 para calçados masculinos (um US 10 masculino é EU 43-44) e cerca de 30,5 a 31 para femininos (um US 8 feminino é EU 38,5-39). Lembre-se que o tamanho no Brasil (BR) é sempre 2 números a menos que na Europa (BR = EU - 2).",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Tamanho EUA (US)",
+  "toUnit": "Tamanho Europa (EU)",
+  "faq": [
+    {
+      "question": "Quanto vale o tamanho US 9 masculino na Europa e no Brasil?",
+      "answer": "O tamanho US 9 masculino equivale ao 42 na Europa (EU) e ao tamanho 40 no Brasil (BR), correspondendo a cerca de 27 cm de comprimento de pé."
+    },
+    {
+      "question": "Qual a diferença entre a numeração de calçados dos EUA e da Europa?",
+      "answer": "A numeração dos EUA varia em polegadas (aproximadamente 8,46 mm por número), enquanto a numeração europeia usa o ponto francês (dois terços de centímetro ou 6,67 mm)."
+    },
+    {
+      "question": "Como comprar sapato importado sem errar o tamanho?",
+      "answer": "A forma mais segura é medir o pé em centímetros de meia ponta a calcanhar e conferir a medida 'CM' ou 'JP' na etiqueta do tênis, pois os centímetros são universais entre marcas."
+    }
+  ]
+}

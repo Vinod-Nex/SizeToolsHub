@@ -1,0 +1,23 @@
+{
+  "title": "Download Time Calculator & Bandwidth Speed Estimator",
+  "primaryKeyword": "Download Time Calculator",
+  "metaDescription": "Calculate how long files take to download based on file size and internet connection speed in Mbps and Gbps.",
+  "directAnswer": "To calculate download time, divide total file size in bits by your internet speed in Megabits per second (Mbps). Because 1 byte equals 8 bits, an internet connection rated at 100 Mbps transfers data at a maximum speed of 12.5 MB/s, meaning a 10 GB file will download in approximately 13.5 minutes.",
+  "converterType": "data",
+  "fromUnit": "File Size & Speed (Mbps)",
+  "toUnit": "Estimated Transfer Time",
+  "faq": [
+    {
+      "question": "Why doesn't a 100 Mbps internet connection download at 100 MB per second?",
+      "answer": "Internet speed is measured in Megabits (Mb), while file sizes are measured in Megabytes (MB). Because 8 bits equal 1 byte, a 100 Mbps connection has a peak transfer rate of 12.5 MB/s."
+    },
+    {
+      "question": "How long does a 50 GB game take to download on a 300 Mbps fiber line?",
+      "answer": "At 300 Mbps (37.5 MB/s), a 50 GB file takes approximately 22 minutes and 45 seconds under ideal network conditions."
+    },
+    {
+      "question": "Does Wi-Fi reduce download speeds compared to an Ethernet cable?",
+      "answer": "Yes, Wi-Fi introduces radio interference, latency, and packet loss, typically delivering 20% to 50% slower real-world download throughput than direct Ethernet cables."
+    }
+  ]
+}

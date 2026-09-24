@@ -1,0 +1,23 @@
+{
+  "title": "MB to GB Converter",
+  "primaryKeyword": "MB to GB Converter",
+  "metaDescription": "Convert Megabytes (MB) to Gigabytes (GB) with both Decimal (SI 1000) and Binary (IEC 1024) calculations.",
+  "directAnswer": "To convert Megabytes (MB) to Gigabytes (GB), divide by 1,000 using the decimal SI standard (1,000 MB = 1 GB), or divide by 1,024 using the binary IEC standard (1,024 MiB = 1 GiB). For example, 5,000 MB equals 5 GB in decimal, or approximately 4.88 GiB in binary.",
+  "converterType": "data",
+  "fromUnit": "Megabytes (MB)",
+  "toUnit": "Gigabytes (GB)",
+  "faq": [
+    {
+      "question": "How many MB are in 1 GB?",
+      "answer": "In the decimal system (SI) used by disk makers and macOS, there are exactly 1,000 MB in 1 GB. In the binary system (IEC) used by Windows, there are 1,024 MiB in 1 GiB."
+    },
+    {
+      "question": "What is 2048 MB in GB?",
+      "answer": "2,048 MB in binary is exactly 2.0 GiB (or 2.048 GB in decimal)."
+    },
+    {
+      "question": "Why does Windows show less GB than my phone or Mac?",
+      "answer": "Windows divides by 1,024³ (binary GiB) while labeling it 'GB', whereas modern macOS and Android divide by 1,000³ (decimal GB)."
+    }
+  ]
+}

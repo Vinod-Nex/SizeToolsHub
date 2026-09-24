@@ -1,0 +1,23 @@
+{
+  "title": "Convertisseur Tailles Vêtements US vers France",
+  "primaryKeyword": "Taille Vêtement US vers France",
+  "metaDescription": "Tableau complet des correspondances de vêtements homme et femme entre les standards des États-Unis et de la France.",
+  "directAnswer": "En prêt-à-porter femme : US 2 = FR 34, US 4 = FR 36, US 6 = FR 38, US 8 = FR 40, US 10 = FR 42. En pantalons homme : US 32 = FR 42, US 34 = FR 44.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Taille US",
+  "toUnit": "Taille France (FR)",
+  "faq": [
+    {
+      "question": "À quoi correspond un US 6 en France pour une femme ?",
+      "answer": "Un US 6 correspond au 38 ou 40 français (taille M)."
+    },
+    {
+      "question": "Pourquoi les tailles de pantalons homme indiquent-elles 32 ou 34 ?",
+      "answer": "Parce qu’elles correspondent aux pouces de tour de taille américains. En France, on ajoute 10 pour avoir la taille équivalente (32 + 10 = 42)."
+    },
+    {
+      "question": "Comment être sûre de sa taille en commandant à l’étranger ?",
+      "answer": "Comparez vos mensurations en cm avec le guide spécifique du vendeur et tenez compte de la présence ou non d’élasthanne."
+    }
+  ]
+}

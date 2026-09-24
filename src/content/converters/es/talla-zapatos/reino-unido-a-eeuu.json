@@ -1,0 +1,23 @@
+{
+  "title": "Conversor de Talla de Calzado: Reino Unido a EE. UU.",
+  "primaryKeyword": "Talla de Calzado Reino Unido a EE. UU.",
+  "metaDescription": "Convierte tallas de calzado británicas (UK) a tallas de Estados Unidos (US). Tabla de correspondencia para marcas como Clarks, Dr. Martens y Reebok.",
+  "directAnswer": "Para convertir de UK a US en calzado de hombre, suma 1 número (UK 8 = US 9). En calzado de mujer, suma 2 números a la talla británica (UK 5 = US 7).",
+  "converterType": "talla-zapatos",
+  "fromUnit": "Talla Reino Unido (UK)",
+  "toUnit": "Talla EE. UU. (US)",
+  "faq": [
+    {
+      "question": "¿Qué talla es un UK 7 en Estados Unidos?",
+      "answer": "Un UK 7 equivale a US 8 en hombres y a US 9 en mujeres."
+    },
+    {
+      "question": "¿Cómo tallan las botas británicas tipo Dr. Martens?",
+      "answer": "Dr. Martens se fabrica en tallas enteras UK. Si usas US 9.5 hombre, generalmente se recomienda un UK 9."
+    },
+    {
+      "question": "¿Existe diferencia de ancho entre calzado UK y US?",
+      "answer": "El ancho estándar para hombre en US y UK es \"D\" o \"M\" (Medium). El calzado británico tradicional a veces usa \"F\" para ancho estándar y \"G\" para horma ancha."
+    }
+  ]
+}

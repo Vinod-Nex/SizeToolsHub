@@ -1,0 +1,23 @@
+{
+  "title": "Tabla Internacional de Tallas de Ropa",
+  "primaryKeyword": "Tabla de Tallas de Ropa Internacional",
+  "metaDescription": "Tabla de conversión internacional de ropa entre España/Europa (EU), Estados Unidos (US), Reino Unido (UK), México y tallas en letras (XS a 3XL).",
+  "directAnswer": "Una talla Medium (M) femenina corresponde generalmente a una talla 38-40 en España, una talla 6-8 en Estados Unidos, talla 10-12 en Reino Unido y 30-32 en México. Para hombres, una talla M corresponde a una 48-50 europea y 38-40 americana.",
+  "converterType": "talla-ropa",
+  "fromUnit": "Patrón Internacional",
+  "toUnit": "España y Latinoamérica",
+  "faq": [
+    {
+      "question": "¿Cómo saber mi talla de ropa al comprar en tiendas extranjeras?",
+      "answer": "Mídete con cinta métrica el contorno de pecho/busto, cintura y cadera y consulta la tabla de medidas corporales en centímetros del vendedor."
+    },
+    {
+      "question": "¿Cuál es la equivalencia entre tallas de ropa de EE. UU. y España?",
+      "answer": "En ropa de mujer, suma aproximadamente 32 a la talla americana para obtener la española (US 4 + 32 = ES 36). En trajes de hombre, suma 10 (US 38 + 10 = ES 48)."
+    },
+    {
+      "question": "¿Las tallas asiáticas son más pequeñas?",
+      "answer": "Sí, la confección en Asia suele ser de 1 a 2 tallas menor que el estándar europeo o americano en contorno de hombros y longitud de mangas."
+    }
+  ]
+}

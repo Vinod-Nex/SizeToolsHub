@@ -1,0 +1,23 @@
+{
+  "title": "Guide des Grandes Tailles (Plus Size / Curvy)",
+  "primaryKeyword": "Guide des Grandes Tailles Plus Size",
+  "metaDescription": "Tableau de conversion des grandes tailles de vêtements femme et homme (du 46 au 60 en France et 1X à 4X aux États-Unis).",
+  "directAnswer": "Les tailles Plus Size américaines 1X, 2X, 3X, 4X intègrent des aisances morphologiques spécifiques. Le 1X correspond au 46-48 en France, le 2X au 50-52 et le 3X au 54-56.",
+  "converterType": "taille-vetement",
+  "fromUnit": "Plus Size US (1X-4X)",
+  "toUnit": "Grandes Tailles France (FR)",
+  "faq": [
+    {
+      "question": "Quelle est la différence entre XL et 1X ?",
+      "answer": "Le XL est une grande taille issue de la grille standard, tandis que le 1X est spécialement patronné avec un tour de poitrine et un tour de bras plus généreux."
+    },
+    {
+      "question": "À quoi correspond la taille 18W américaine en France ?",
+      "answer": "Le 18W correspond à une taille 50 ou 52 en France (tour de poitrine de 115 à 120 cm)."
+    },
+    {
+      "question": "Comment choisir un pantalon grande taille flatteur ?",
+      "answer": "Privilégiez les tailles hautes pour bien envelopper le ventre et les tissus contenant 2 à 4 % d’élasthanne pour l’élasticité."
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Conversor de Centímetros para Tamanho EUA (US)",
+  "primaryKeyword": "Centímetros para Tamanho EUA",
+  "metaDescription": "Converta o comprimento do pé em centímetros (cm) diretamente para a numeração americana de calçados (US Men e US Women).",
+  "directAnswer": "Para converter centímetros para tamanho americano (US), consulte a escala: 25 cm = US 7 masc / US 8.5 fem; 26 cm = US 8 masc / US 9.5 fem; 27 cm = US 9 masc / US 10.5 fem; 28 cm = US 10 masc / US 11.5 fem.",
+  "converterType": "tamanho-calcado",
+  "fromUnit": "Centímetros (cm)",
+  "toUnit": "Tamanho EUA (US)",
+  "faq": [
+    {
+      "question": "Quantos centímetros tem o tamanho US 9 masculino?",
+      "answer": "O tamanho US 9 masculino equivale exatamente a 27 cm de comprimento de pé (palmilha de aproximadamente 27,5 cm)."
+    }
+  ]
+}

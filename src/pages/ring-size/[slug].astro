@@ -1,0 +1,188 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RingConverterIsland from '../../components/RingConverterIsland';
+import RingStaticTable from '../../components/RingStaticTable.astro';
+import PrintableRingSizer from '../../components/PrintableRingSizer.astro';
+import PrintableChart from '../../components/PrintableChart.astro';
+import ShareableUrl from '../../components/ShareableUrl.astro';
+import CopyResultButton from '../../components/CopyResultButton.astro';
+import RelatedConverters from '../../components/RelatedConverters.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('converters', ({ data }) => data.converterType === 'ring-size');
+  return entries.map((entry) => ({
+    params: {
+      slug: entry.id.replace(/^ring-size\//, '').replace(/\.(json|md)$/, ''),
+    },
+    props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'converters'>;
+}
+
+const { entry } = Astro.props;
+const { slug } = Astro.params;
+
+const isPrintablePage = slug === 'how-to-measure-at-home' || slug === 'printable-ring-sizer';
+---
+
+<BaseLayout
+  title={`${entry.data.title} — International Sizing Charts | SizeToolsHub`}
+  description={entry.data.metaDescription}
+  canonicalUrl={entry.data.canonicalUrl}
+  faq={entry.data.faq}
+  softwareAppName={entry.data.title}
+>
+
+  <!-- Breadcrumb Navigation Slot -->
+  <nav slot="breadcrumb" class="flex items-center gap-2 text-xs text-text-muted pt-6 pb-2" aria-label="Breadcrumb">
+    <a href="/" class="hover:text-ink transition-colors">Home</a>
+    <span>/</span>
+    <a href="/ring-size/" class="hover:text-ink transition-colors">Ring Size</a>
+    <span>/</span>
+    <span class="text-ink font-semibold truncate">{entry.data.title}</span>
+  </nav>
+
+  <main class="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-10">
+
+    <!-- Header Section with exact target keyword as H1 -->
+    <header class="mb-10">
+      <div class="flex flex-wrap items-center gap-2.5 mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-ink border border-hairline-soft">
+          Jewelry Sizing Matrix
+        </span>
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold">
+          <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+          ISO 8653 Calibrated
+        </span>
+        <span class="inline-flex items-center px-3 py-1 rounded-full bg-field text-text-muted text-xs font-medium">
+          {entry.data.fromUnit} ⇄ {entry.data.toUnit}
+        </span>
+        <CopyResultButton
+          textToCopy={`${entry.data.title}: ${entry.data.fromUnit} to ${entry.data.toUnit} reference guide on SizeToolsHub.com`}
+          label="Copy Guide"
+          toastMessage="Ring sizing guide copied!"
+        />
+      </div>
+
+      <!-- Exact Target Keyword in H1 -->
+      <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink mb-4" style="line-height: 1.1;">
+        {entry.data.primaryKeyword}
+      </h1>
+
+      {entry.data.directAnswer && (
+        <div class="p-5 sm:p-6 rounded-2xl bg-canvas-soft border border-hairline mb-6 max-w-3xl">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Direct Answer Summary</span>
+          </div>
+          <p class="text-base sm:text-lg text-ink font-medium leading-relaxed">
+            {entry.data.directAnswer}
+          </p>
+        </div>
+      )}
+
+      <p class="text-base sm:text-lg text-text-muted font-light leading-relaxed max-w-3xl">
+        {entry.data.metaDescription}
+      </p>
+    </header>
+
+    <!-- Live Interactive Converter Island (Client Hydrated) -->
+    <div class="mb-6">
+      <RingConverterIsland
+        client:load
+        initialFromUnit={entry.data.fromUnit}
+        initialToUnit={entry.data.toUnit}
+        primaryKeyword={entry.data.primaryKeyword}
+      />
+    </div>
+
+    <!-- Shareable URL Bar -->
+    <ShareableUrl category="Ring Size" />
+
+    <!-- Printable PDF-Friendly Chart Component (Included on how-to-measure-at-home and printable-ring-sizer) -->
+    {isPrintablePage && (
+      <PrintableRingSizer />
+    )}
+
+    <!-- Quick Reference Calculation Guide -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14" aria-label="Ring Fitting Principles">
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Knuckle Clearance</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Measure the Largest Joint</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          If your knuckle is noticeably larger than the base of your finger, measure both and pick a size midway between the two numbers.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Temperature Shift</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Measure in the Evening</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Fingers shrink in cold environments and swell in summer heat or during physical exertion. Measure at room temperature in the late afternoon.
+        </p>
+      </div>
+
+      <div class="p-5 rounded-2xl bg-canvas border border-hairline-soft">
+        <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Band Width Factor</span>
+        <h3 class="text-sm font-bold text-ink mt-1 mb-1.5">Size Up for Wide Bands</h3>
+        <p class="text-xs text-text-muted leading-relaxed">
+          Rings with wide bands (6mm or wider) feel tighter on the finger than delicate 2mm solitaire bands. Order a half size larger for wide bands.
+        </p>
+      </div>
+    </section>
+
+    <!-- Static Conversion Table with Print Optimization -->
+    <PrintableChart
+      title={`${entry.data.title} Reference Table`}
+      subtitle="Verified ISO 8653 International Ring Sizing Chart"
+      category="Ring Size"
+    >
+      <RingStaticTable />
+    </PrintableChart>
+
+    <!-- FAQ Accordion Section -->
+    {entry.data.faq && entry.data.faq.length > 0 && (
+      <section class="mt-16 pt-12 border-t border-hairline-soft" aria-labelledby="faq-heading">
+        <div class="mb-8">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-canvas-soft text-xs font-semibold text-text-muted mb-3">
+            <span>Common Questions</span>
+          </div>
+          <h2 id="faq-heading" class="text-2xl sm:text-3xl font-bold tracking-tight text-ink">
+            Frequently Asked Questions.
+          </h2>
+          <p class="text-sm sm:text-base text-text-muted font-light mt-1">
+            Expert answers regarding ring sizing, band comfort, and international conversions.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          {entry.data.faq.map((item) => (
+            <details class="group rounded-2xl bg-canvas border border-hairline-soft p-5 transition-colors cursor-pointer open:bg-canvas-soft/60">
+              <summary class="flex items-center justify-between text-base font-semibold text-ink list-none select-none">
+                <span>{item.question}</span>
+                <span class="text-text-muted group-open:rotate-180 transition-transform duration-200">
+                  ↓
+                </span>
+              </summary>
+              <p class="mt-4 text-sm text-text-muted leading-relaxed font-normal">
+                {item.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Related Converters Component (Links to 4 sibling pages in the ring-size category) -->
+    <RelatedConverters
+      currentSlug={slug!}
+      categorySlug="ring-size"
+      categoryName="Ring Size"
+    />
+
+  </main>
+</BaseLayout>

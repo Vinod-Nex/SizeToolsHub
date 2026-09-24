@@ -1,0 +1,23 @@
+{
+  "title": "Nike Shoe Size Chart & Fit Guide",
+  "primaryKeyword": "Nike Shoe Size Chart & Fit Guide",
+  "metaDescription": "Official Nike shoe size conversion chart for Men, Women, and Kids with exact UK, EU, and CM measurements for Air Jordan, Dunk, and Pegasus.",
+  "directAnswer": "Nike footwear typically fits true to length but features a snug, narrower athletic profile compared to casual shoes. A Nike US Men's 10 converts to an EU 44, UK 9, and 28.0 cm. For wider feet or running models like Pegasus, consider ordering a half-size larger for optimal forefoot comfort.",
+  "converterType": "shoe-size",
+  "fromUnit": "US Nike",
+  "toUnit": "EU / CM Nike",
+  "faq": [
+    {
+      "question": "Does Nike run small or large?",
+      "answer": "Nike shoes generally run slightly small and narrow, particularly in performance basketball and running models. Many buyers go up a half size."
+    },
+    {
+      "question": "What is a US Men's 10 in Nike EU sizing?",
+      "answer": "A US Men's 10 in Nike is an EU 44 (28.0 cm foot length)."
+    },
+    {
+      "question": "Do Nike Air Force 1s fit true to size?",
+      "answer": "Nike Air Force 1 sneakers run about a half-size large due to their roomy toe box; many wearers size down by 0.5."
+    }
+  ]
+}
