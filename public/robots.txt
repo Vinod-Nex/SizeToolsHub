@@ -1,4 +1,28 @@
+# ==============================================================================
+# SizeToolsHub — Crawl Control & Robots Directives
+# Optimized for global search indexation and crawl budget efficiency
+# ==============================================================================
+
 User-agent: *
 Allow: /
 
+# Disallow internal application APIs, endpoints, and admin panels
+Disallow: /api/
+Disallow: /admin/
+Disallow: /staging/
+Disallow: /draft/
+
+# Disallow URL parameters that generate duplicate or ephemeral preview states
+Disallow: /*?*preview=true
+Disallow: /*?*draft=true
+
+# Cloudflare Pages preview deployment isolation
+# Prevents *.pages.dev staging and preview builds from competing with production rankings
+User-agent: *
+Disallow: /*.pages.dev/
+
+# Host authority declaration
+Host: https://sizetoolshub.com
+
+# Global Multilingual XML Sitemap Index
 Sitemap: https://sizetoolshub.com/sitemap-index.xml

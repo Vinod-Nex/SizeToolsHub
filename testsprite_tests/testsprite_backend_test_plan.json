@@ -1,0 +1,12 @@
+[
+  {
+    "id": "TC001",
+    "title": "get api health json returns operational status app name and version",
+    "description": "Verify that a GET request to /api/health.json returns a 200 status code with a payload containing the operational status, application name, and version when the service is healthy."
+  },
+  {
+    "id": "TC002",
+    "title": "get api converters json returns list of converters categories and default units",
+    "description": "Verify that a GET request to /api/converters.json returns a 200 status code with a payload containing all available converters, their categories, and default unit metadata for UI consumption."
+  }
+]

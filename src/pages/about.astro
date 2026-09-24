@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About SizeToolsHub — Our Mission & Story"
+  description="Learn about SizeToolsHub, the international sizing intelligence network providing instant, zero-lag unit conversions across footwear, apparel, jewelry, and everyday dimensional standards."
+  canonicalUrl="https://sizetoolshub.com/about/"
+>
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
+
+    <!-- Hero -->
+    <header class="mb-16 sm:mb-20">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-canvas-soft border border-hairline-soft mb-6 shadow-2xs">
+        <span class="w-2 h-2 rounded-full bg-accent"></span>
+        <span class="text-xs font-semibold text-ink">Our Story</span>
+      </div>
+      <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-ink mb-6" style="line-height: 1.08;">
+        About SizeToolsHub
+      </h1>
+      <p class="text-lg sm:text-xl text-text-muted font-light leading-relaxed max-w-2xl">
+        The international sizing intelligence network — built to eliminate guesswork for shoppers, travelers, and merchants worldwide.
+      </p>
+    </header>
+
+    <!-- Mission -->
+    <section class="mb-16 p-8 sm:p-10 rounded-3xl bg-canvas border border-hairline-soft">
+      <h2 class="text-2xl font-bold text-ink mb-4">Our Mission</h2>
+      <p class="text-base text-text-muted leading-relaxed mb-4">
+        SizeToolsHub was founded with a single purpose: to make international sizing effortless. Whether you're buying shoes from a US store, ordering clothes from a European brand, or checking luggage dimensions for an airline, our tools give you instant, accurate answers.
+      </p>
+      <p class="text-base text-text-muted leading-relaxed">
+        We believe that sizing confusion costs people time, money, and frustration. Our tools are built on official ISO, ASTM, and manufacturer standards — updated regularly to reflect real-world brand tolerances.
+      </p>
+    </section>
+
+    <!-- What We Offer -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-ink mb-8">What We Offer</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {[
+          {
+            icon: '👟',
+            title: 'Shoe Size Conversions',
+            desc: 'US, EU, UK, CM, JP — 22+ converters covering all major footwear standards and popular brands.',
+            href: '/shoe-size/',
+          },
+          {
+            icon: '👕',
+            title: 'Clothing & Apparel',
+            desc: 'International clothing size tables for men, women, kids, plus-size, and petite fits across all regions.',
+            href: '/clothing-size/',
+          },
+          {
+            icon: '💍',
+            title: 'Ring Size Charts',
+            desc: 'Precise ring sizing with printable 1:1 scale guide and diameter/circumference conversion.',
+            href: '/ring-size/',
+          },
+          {
+            icon: '🥣',
+            title: 'Kitchen & Cooking',
+            desc: 'Cups to grams, fluid ounces to milliliters, tablespoons to teaspoons — perfect for international recipes.',
+            href: '/cooking/',
+          },
+          {
+            icon: '💾',
+            title: 'Data Storage',
+            desc: 'Binary and decimal byte conversion — GB to TB, MB to GB, and everything in between.',
+            href: '/data/',
+          },
+          {
+            icon: '📄',
+            title: 'Paper Sizes',
+            desc: 'ISO 216 (A4, A3, A5), US Letter, Legal — all paper dimensions for printing and framing.',
+            href: '/paper-size/',
+          },
+        ].map((item) => (
+          <a
+            href={item.href}
+            class="group p-6 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-0.5 transition-all duration-200 shadow-2xs hover:shadow-xs flex gap-4"
+          >
+            <span class="text-3xl flex-shrink-0 p-3 rounded-2xl bg-canvas-soft border border-hairline-soft inline-block h-fit">{item.icon}</span>
+            <div>
+              <h3 class="font-bold text-ink mb-1 group-hover:text-accent transition-colors">{item.title}</h3>
+              <p class="text-xs text-text-muted leading-relaxed">{item.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Standards -->
+    <section class="mb-16 p-8 sm:p-10 rounded-3xl bg-canvas-soft border border-hairline-soft">
+      <h2 class="text-2xl font-bold text-ink mb-4">Our Data Sources</h2>
+      <p class="text-base text-text-muted leading-relaxed mb-6">
+        All size tables and conversion formulas are derived from official international standards and manufacturer specifications:
+      </p>
+      <ul class="space-y-3 text-sm text-text-muted">
+        {[
+          { name: 'ISO 216', desc: 'International paper size standard (A-series, B-series)' },
+          { name: 'ISO 9407', desc: 'Mondopoint foot measurement system for footwear' },
+          { name: 'ASTM International', desc: 'US clothing and dimensional standards' },
+          { name: 'EN 13402', desc: 'European clothing size labeling standard' },
+          { name: 'JIS S 5037', desc: 'Japanese footwear sizing standard (cm-based)' },
+          { name: 'Brand Specifications', desc: 'Nike, Adidas, Zara, H&M, and 450+ brand size guides' },
+        ].map((src) => (
+          <li class="flex items-start gap-3">
+            <span class="w-1.5 h-1.5 rounded-full bg-accent mt-2 flex-shrink-0"></span>
+            <span><strong class="text-ink font-semibold">{src.name}</strong> — {src.desc}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <!-- Languages -->
+    <section class="mb-16">
+      <h2 class="text-2xl font-bold text-ink mb-4">Available Languages</h2>
+      <p class="text-base text-text-muted leading-relaxed mb-6">
+        SizeToolsHub is available in four languages, with localized content for each region:
+      </p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        {[
+          { lang: 'English', code: 'en', href: '/', flag: '🇺🇸' },
+          { lang: 'Português (BR)', code: 'pt-br', href: '/pt-br/', flag: '🇧🇷' },
+          { lang: 'Español', code: 'es', href: '/es/', flag: '🇪🇸' },
+          { lang: 'Français', code: 'fr', href: '/fr/', flag: '🇫🇷' },
+        ].map((l) => (
+          <a
+            href={l.href}
+            class="group flex flex-col items-center gap-2 p-4 rounded-2xl bg-canvas border border-hairline-soft hover:border-hairline hover:-translate-y-0.5 transition-all shadow-2xs hover:shadow-xs"
+          >
+            <span class="text-2xl">{l.flag}</span>
+            <span class="text-sm font-semibold text-ink group-hover:text-accent transition-colors">{l.lang}</span>
+            <span class="text-[10px] uppercase tracking-wider text-text-faint">{l.code}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Legal Links -->
+    <section class="pt-8 border-t border-hairline-soft flex flex-wrap gap-6 text-sm text-text-muted">
+      <a href="/privacy/" class="hover:text-ink transition-colors">Privacy Policy</a>
+      <a href="/terms/" class="hover:text-ink transition-colors">Terms of Service</a>
+      <a href="/about/standards/" class="hover:text-ink transition-colors">Sizing Standards</a>
+    </section>
+
+  </main>
+</BaseLayout>

@@ -262,12 +262,13 @@ export function getAlternateHreflangs(
   siteOrigin: string = 'https://sizetoolshub.com'
 ): {
   en: string;
-  'pt-br': string;
-  es: string;
-  fr: string;
+  'pt-br'?: string;
+  es?: string;
+  fr?: string;
   'x-default': string;
   canonical: string;
   currentLocale: 'en' | 'pt-br' | 'es' | 'fr';
+  hasCounterparts: boolean;
 } {
   const normalized = normalizePath(pathname);
 
@@ -277,7 +278,7 @@ export function getAlternateHreflangs(
   else if (normalized.startsWith('/es/')) currentLocale = 'es';
   else if (normalized.startsWith('/fr/')) currentLocale = 'fr';
 
-  // 2. Search in matrix
+  // 2. Search in matrix of verified 4-locale counterparts (37 routes)
   const match = ROUTE_MATRIX.find(
     (row) =>
       normalizePath(row.en) === normalized ||
@@ -305,10 +306,13 @@ export function getAlternateHreflangs(
       'x-default': enUrl,
       canonical,
       currentLocale,
+      hasCounterparts: true,
     };
   }
 
-  // 3. Fallback for unmapped or other categories (e.g. /ring-size/, /cooking/, etc.)
+  // 3. Routes without foreign-language counterparts (e.g. /ring-size/, /cooking/, /about/, /terms/)
+  // Only self-referencing canonical, en, and x-default are returned.
+  // Foreign locale alternates are omitted so hreflangs never point to 404 pages.
   let basePath = normalized;
   if (currentLocale !== 'en') {
     basePath = normalized.slice(`/${currentLocale}`.length);
@@ -316,22 +320,16 @@ export function getAlternateHreflangs(
   }
 
   const enUrl = new URL(basePath, siteOrigin).href;
-  const ptBrUrl = new URL(`/pt-br${basePath === '/' ? '/' : basePath}`, siteOrigin).href;
-  const esUrl = new URL(`/es${basePath === '/' ? '/' : basePath}`, siteOrigin).href;
-  const frUrl = new URL(`/fr${basePath === '/' ? '/' : basePath}`, siteOrigin).href;
-
-  let canonical = enUrl;
-  if (currentLocale === 'pt-br') canonical = ptBrUrl;
-  else if (currentLocale === 'es') canonical = esUrl;
-  else if (currentLocale === 'fr') canonical = frUrl;
+  const canonical = new URL(normalized, siteOrigin).href;
 
   return {
     en: enUrl,
-    'pt-br': ptBrUrl,
-    es: esUrl,
-    fr: frUrl,
+    'pt-br': undefined,
+    es: undefined,
+    fr: undefined,
     'x-default': enUrl,
     canonical,
     currentLocale,
+    hasCounterparts: false,
   };
 }

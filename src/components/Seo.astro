@@ -83,8 +83,12 @@ const hrefEs = altRoutes.es;
 const hrefFr = altRoutes.fr;
 const hrefXDefault = altRoutes['x-default'];
 
-// Canonical URL calculation
+// Canonical URL calculation (guaranteed self-referencing)
 const finalCanonical = canonicalUrl || altRoutes.canonical;
+
+// Cloudflare Pages preview isolation: wildcard noindex for preview subdomains (*.pages.dev)
+const isPreviewHost = Astro.url.hostname.includes('pages.dev') || Astro.url.hostname.includes('preview');
+const effectiveNoindex = noindex || isPreviewHost;
 
 // OpenGraph Locale formatting
 const ogLocaleMap: Record<SupportedLocale, string> = {
@@ -278,17 +282,17 @@ const fullStructuredData = {
 <!-- Crawl Control & Meta Directives -->
 <meta
   name="robots"
-  content={noindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
+  content={effectiveNoindex ? "noindex, nofollow" : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"}
 />
 <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 
-<!-- Multilingual SEO & Hreflang Alternates for All 4 Locales -->
-<link rel="alternate" hreflang="en" href={hrefEn} />
-<link rel="alternate" hreflang="pt-br" href={hrefPtBr} />
-<link rel="alternate" hreflang="es" href={hrefEs} />
-<link rel="alternate" hreflang="fr" href={hrefFr} />
-<link rel="alternate" hreflang="x-default" href={hrefXDefault} />
+<!-- Multilingual SEO & Hreflang Alternates (Only emit verified 200 counterpart URLs) -->
+{hrefEn && <link rel="alternate" hreflang="en" href={hrefEn} />}
+{hrefPtBr && <link rel="alternate" hreflang="pt-br" href={hrefPtBr} />}
+{hrefEs && <link rel="alternate" hreflang="es" href={hrefEs} />}
+{hrefFr && <link rel="alternate" hreflang="fr" href={hrefFr} />}
+{hrefXDefault && <link rel="alternate" hreflang="x-default" href={hrefXDefault} />}
 
 <!-- Open Graph / Facebook Protocol -->
 <meta property="og:type" content={ogType} />

@@ -1,0 +1,85 @@
+---
+/**
+ * SizeToolsHub Brand Mark & Logo Component
+ * Phase 32: Logo & Brand Mark (DESIGN.md Tokens)
+ * 
+ * - Flat single-concept mark: Precision ruler calibration ticks with bidirectional resize arrows
+ * - Geometry: 30% squircle tile per DESIGN.md specifications
+ * - Color tokens: primary (#141414), canvas (#ffffff), accent (#0066ff)
+ * - Highly legible at 24px, 32px, and full header display
+ * - Adaptive for light mode, dark mode, and inverted dark footer
+ */
+
+interface Props {
+  variant?: 'combo' | 'icon' | 'wordmark';
+  size?: number; // size in px for icon (default: 32)
+  class?: string;
+  showTagline?: boolean;
+  inverse?: boolean; // For display on dark-only backgrounds like the footer
+}
+
+const {
+  variant = 'combo',
+  size = 32,
+  class: className = '',
+  showTagline = false,
+  inverse = false,
+} = Astro.props;
+---
+
+<div class={`inline-flex items-center gap-2.5 select-none ${className}`}>
+  {variant !== 'wordmark' && (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      width={size}
+      height={size}
+      fill="none"
+      class="shrink-0 transition-transform duration-200 group-hover:scale-105"
+      aria-hidden="true"
+    >
+      <!-- 30% iOS Squircle Base Tile -->
+      <rect
+        x="1"
+        y="1"
+        width="30"
+        height="30"
+        rx="9"
+        ry="9"
+        class={inverse ? "fill-white" : "fill-primary dark:fill-white transition-colors"}
+      />
+
+      <!-- Calibration Ruler Ticks -->
+      <line x1="7" y1="7.5" x2="7" y2="12" stroke-width="1.75" stroke-linecap="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+      <line x1="11.5" y1="7.5" x2="11.5" y2="10.5" stroke-width="1.5" stroke-linecap="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+      
+      <!-- Electric Blue Accent Center Tick (#0066ff) -->
+      <line x1="16" y1="7.5" x2="16" y2="13.5" stroke-width="2" stroke-linecap="round" stroke="#0066ff" />
+      
+      <line x1="20.5" y1="7.5" x2="20.5" y2="10.5" stroke-width="1.5" stroke-linecap="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+      <line x1="25" y1="7.5" x2="25" y2="12" stroke-width="1.75" stroke-linecap="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+
+      <!-- Dimensional Measure Line & Bidirectional Resize Arrows -->
+      <line x1="7" y1="18.5" x2="25" y2="18.5" stroke-width="1.75" stroke-linecap="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+      <path d="M10 15.5L7 18.5L10 21.5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+      <path d="M22 15.5L25 18.5L22 21.5" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" class={inverse ? "stroke-[#141414]" : "stroke-on-primary dark:stroke-[#141414] transition-colors"} />
+
+      <!-- Precision Accent Center Dot and Bottom Caliper -->
+      <circle cx="16" cy="18.5" r="1.25" fill="#0066ff" />
+      <line x1="16" y1="22" x2="16" y2="24.5" stroke-width="1.75" stroke-linecap="round" stroke="#0066ff" />
+    </svg>
+  )}
+
+  {variant !== 'icon' && (
+    <div class="flex flex-col">
+      <span class={`font-bold text-base sm:text-lg tracking-tight leading-tight group-hover:opacity-90 ${inverse ? 'text-white' : 'text-ink'}`}>
+        SizeTools<span class={inverse ? 'text-[#3385ff] font-extrabold' : 'text-accent font-extrabold'}>Hub</span>
+      </span>
+      {showTagline && (
+        <span class={`text-[10px] uppercase tracking-wider font-medium ${inverse ? 'text-[#a8a8a8]' : 'text-text-muted'}`}>
+          Conversion Intelligence
+        </span>
+      )}
+    </div>
+  )}
+</div>

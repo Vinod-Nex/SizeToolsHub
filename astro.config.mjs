@@ -7,43 +7,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-// Dynamically discover all routes across categories and content collection
-function getNonDefaultLocaleUrls() {
-  const converterDir = path.resolve('./src/content/converters');
-  const categories = ['shoe-size', 'clothing-size', 'ring-size', 'cooking', 'data', 'paper-size', 'fuel'];
-  const basePaths = ['/'];
-
-  for (const cat of categories) {
-    basePaths.push(`/${cat}/`);
-    const catDir = path.join(converterDir, cat);
-    if (fs.existsSync(catDir)) {
-      const files = fs.readdirSync(catDir);
-      for (const f of files) {
-        if (f.endsWith('.json') || f.endsWith('.md')) {
-          const slug = f.replace(/\.(json|md)$/, '');
-          basePaths.push(`/${cat}/${slug}/`);
-        }
-      }
-    }
-  }
-
-  const customPages = [];
-  const nonDefaultLocales = ['pt-br', 'es', 'fr'];
-  for (const loc of nonDefaultLocales) {
-    for (const p of basePaths) {
-      if ((loc === 'pt-br' || loc === 'es' || loc === 'fr') && (p.startsWith('/shoe-size') || p.startsWith('/clothing-size') || p === '/')) {
-        continue; // Handled by actual localized pages in src/pages/{locale}/
-      }
-      customPages.push(`https://sizetoolshub.com/${loc}${p === '/' ? '/' : p}`);
-    }
-  }
-
-  return customPages;
-}
-
 /**
- * Post-processes sitemaps to ensure exact filenames requested:
- * sitemap-en.xml, sitemap-pt-br.xml, sitemap-es.xml, sitemap-fr.xml, and sitemap-index.xml
+ * Phase 27: Sitemaps per locale + Validation Cross-Check Hook
+ * Outputs:
+ *   - sitemap-en.xml (all English pages)
+ *   - sitemap-pt-br.xml (all Portuguese pages)
+ *   - sitemap-es.xml (all Spanish pages)
+ *   - sitemap-fr.xml (all French pages)
+ *   - sitemap-index.xml (index pointing to the 4 locale sitemaps)
+ * Cross-checks every URL in each sitemap against actual pages built in dist/
  */
 function sitemapLocaleNormalizer() {
   return {
@@ -53,7 +25,7 @@ function sitemapLocaleNormalizer() {
         const destDir = fileURLToPath(dir);
         const locales = ['en', 'pt-br', 'es', 'fr'];
 
-        // 1. Copy chunk files to exact locale filenames
+        // 1. Copy chunk files to exact requested locale filenames
         for (const loc of locales) {
           const chunkFile = path.join(destDir, `sitemap-${loc}-0.xml`);
           const targetFile = path.join(destDir, `sitemap-${loc}.xml`);
@@ -88,7 +60,7 @@ function sitemapLocaleNormalizer() {
         fs.writeFileSync(path.join(destDir, 'sitemap-index.xml'), indexXml, 'utf8');
         fs.writeFileSync(path.join(destDir, 'sitemap.xml'), indexXml, 'utf8');
 
-        // 3. Mirror to public/ directory so dev server serves them at root
+        // 3. Mirror to public/ directory so dev/preview servers serve them at root
         const publicDir = path.resolve('./public');
         for (const loc of locales) {
           const srcFile = path.join(destDir, `sitemap-${loc}.xml`);
@@ -98,6 +70,53 @@ function sitemapLocaleNormalizer() {
         }
         fs.writeFileSync(path.join(publicDir, 'sitemap-index.xml'), indexXml, 'utf8');
         fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), indexXml, 'utf8');
+
+        // 4. Cross-check validation: verify sitemap URLs vs actual dist HTML pages
+        console.log('\n[Sitemap Validation Audit]');
+        let totalMismatch = 0;
+
+        for (const loc of locales) {
+          const sitemapFile = path.join(destDir, `sitemap-${loc}.xml`);
+          if (!fs.existsSync(sitemapFile)) {
+            console.error(`❌ Mismatch: ${sitemapFile} was not generated!`);
+            totalMismatch++;
+            continue;
+          }
+
+          const content = fs.readFileSync(sitemapFile, 'utf8');
+          const locMatches = content.match(/<loc>(.*?)<\/loc>/g) || [];
+          const sitemapUrls = locMatches.map(m => m.replace(/<\/?loc>/g, '').trim());
+
+          // Count actual HTML pages in dist for this locale
+          let distCount = 0;
+          const missingFiles = [];
+
+          for (const sUrl of sitemapUrls) {
+            const urlObj = new URL(sUrl);
+            let relPath = urlObj.pathname;
+            if (relPath.endsWith('/')) relPath += 'index.html';
+            const diskPath = path.join(destDir, relPath.replace(/^\//, ''));
+            if (fs.existsSync(diskPath)) {
+              distCount++;
+            } else {
+              missingFiles.push({ sUrl, diskPath });
+            }
+          }
+
+          if (missingFiles.length > 0) {
+            console.error(`❌ Mismatch in sitemap-${loc}.xml: ${missingFiles.length} URLs do not exist on disk!`);
+            missingFiles.forEach(m => console.error(`   - Missing: ${m.sUrl}`));
+            totalMismatch += missingFiles.length;
+          } else {
+            console.log(`✅ sitemap-${loc}.xml: ${sitemapUrls.length} URLs verified (100% matched to built pages)`);
+          }
+        }
+
+        if (totalMismatch === 0) {
+          console.log('✅ Phase 27 XML Sitemap Audit PASSED: 0 orphaned or missing URLs.\n');
+        } else {
+          console.error(`⚠️ Phase 27 XML Sitemap Audit found ${totalMismatch} mismatches.\n`);
+        }
       },
     },
   };
@@ -118,7 +137,6 @@ export default defineConfig({
           fr: 'fr',
         },
       },
-      customPages: getNonDefaultLocaleUrls(),
       chunks: {
         'en': (item) => {
           if (!/\/pt-br\/|\/es\/|\/fr\//.test(item.url)) {

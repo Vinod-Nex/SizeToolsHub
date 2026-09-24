@@ -1,0 +1,1045 @@
+[
+  {
+    "id": "TC001",
+    "title": "Use the homepage search to open a converter",
+    "description": "This verifies that a visitor can use the homepage universal search to find a converter and continue to a tool page.",
+    "category": "Homepage Search and Quick Entry",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Use the universal search to find a converter"
+      },
+      {
+        "type": "action",
+        "description": "Open the selected converter from search results"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converter page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the selected conversion tool content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC002",
+    "title": "Find and open a converter from the homepage search",
+    "description": "A visitor can search from the homepage, see relevant converter suggestions, and open the matching converter page.",
+    "category": "Universal Search & Quick Converter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type a shoe size conversion query into the search input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify matching converter suggestions are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Select a matching search result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the shoe size converter page is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC003",
+    "title": "Perform a quick conversion after searching from the homepage",
+    "description": "This verifies that a visitor can start from the homepage search, enter a converter, and complete a conversion in the tool.",
+    "category": "Homepage Search and Quick Entry",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Use the universal search to find a converter"
+      },
+      {
+        "type": "action",
+        "description": "Open the selected converter from search results"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid value into the converter"
+      },
+      {
+        "type": "action",
+        "description": "Select the relevant source unit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify converted results are displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the calculation updates from the entered value"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC004",
+    "title": "Open a localized homepage from the language switcher",
+    "description": "A visitor can switch the homepage language and land on a translated localized version of the site.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher in the navigation or footer"
+      },
+      {
+        "type": "action",
+        "description": "Select a supported localized language"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a localized version of the homepage is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated site content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC005",
+    "title": "Toggle the site theme",
+    "description": "This verifies that a visitor can switch between light and dark appearance modes from the homepage.",
+    "category": "Dark Mode Toggle",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Click the theme toggle in the navigation header"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page appearance switches to dark mode"
+      },
+      {
+        "type": "action",
+        "description": "Click the theme toggle in the navigation header"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the page appearance switches back to light mode"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC006",
+    "title": "See instant conversion preview from the homepage search",
+    "description": "A visitor can use the homepage search to get an immediate conversion preview before opening the dedicated tool.",
+    "category": "Universal Search & Quick Converter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Type a conversion query into the search input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify an instant conversion preview is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Clear the search input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the search suggestions and preview are no longer displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC007",
+    "title": "Change language and open a localized converter page",
+    "description": "This verifies that a multilingual visitor can switch the site language and reach a localized converter page with translated content.",
+    "category": "Language Switcher and Localized Browsing",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Switch the site language"
+      },
+      {
+        "type": "action",
+        "description": "Open a localized converter page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the localized route content is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC008",
+    "title": "Convert data storage values in binary base",
+    "description": "This verifies that a user can enter a storage value, choose a source unit, and see the full binary conversion breakdown.",
+    "category": "Digital Data Storage Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /data"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid data value"
+      },
+      {
+        "type": "action",
+        "description": "Choose a source unit"
+      },
+      {
+        "type": "action",
+        "description": "Select the binary base"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the full conversion breakdown is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify multiple storage units are shown"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC009",
+    "title": "Open a localized page and see translated content",
+    "description": "A multilingual visitor can switch to a localized version of the site and confirm the converter content is translated.",
+    "category": "Universal Search & Quick Converter",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Switch the site language to a different supported language"
+      },
+      {
+        "type": "action",
+        "description": "Open a converter page in the selected language"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify localized converter content is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the route reflects the selected language"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC010",
+    "title": "Switch theme and keep browsing the site",
+    "description": "This verifies that a visitor can toggle the site theme and continue using converter pages with the visual mode applied.",
+    "category": "Theme Switching",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the site theme"
+      },
+      {
+        "type": "action",
+        "description": "Open a converter page"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the theme change is visible"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converter page remains usable in the selected theme"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC011",
+    "title": "Switch between binary and decimal data bases",
+    "description": "This verifies that changing the data storage base updates the conversion results for the same entered value.",
+    "category": "Digital Data Storage Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /data"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid data value"
+      },
+      {
+        "type": "action",
+        "description": "Choose a source unit"
+      },
+      {
+        "type": "action",
+        "description": "Select the binary base"
+      },
+      {
+        "type": "action",
+        "description": "Select the decimal base"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversion breakdown updates"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the displayed unit values change"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC012",
+    "title": "Open the equivalent localized page from a translated page",
+    "description": "A visitor can switch languages from one localized page and arrive at the matching page in another supported language.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /es/"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher in the navigation or footer"
+      },
+      {
+        "type": "action",
+        "description": "Select another supported localized language"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the equivalent localized page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated content remains visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC013",
+    "title": "Convert a men's shoe size across regions",
+    "description": "A shopper can convert a men's shoe size and see synchronized regional results update on the shoe size converter.",
+    "category": "Shoe Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /shoe-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the men demographic category"
+      },
+      {
+        "type": "action",
+        "description": "Select a source sizing system"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid shoe size"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify converted shoe sizes are displayed across the supported regions"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC014",
+    "title": "Update shoe conversions when the input changes",
+    "description": "A shopper can change the shoe size value and immediately see the converted results recalculate.",
+    "category": "Shoe Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /shoe-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the women demographic category"
+      },
+      {
+        "type": "action",
+        "description": "Select a source sizing system"
+      },
+      {
+        "type": "action",
+        "description": "Enter one valid shoe size"
+      },
+      {
+        "type": "action",
+        "description": "Enter a different valid shoe size in the same input"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted results update to reflect the new shoe size"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC015",
+    "title": "Convert fuel consumption on the fuel calculator",
+    "description": "This verifies that a visitor can enter a fuel consumption rate on the fuel calculator and see the converted values update automatically when the unit changes.",
+    "category": "Fuel Economy and Cost Calculator",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /fuel"
+      },
+      {
+        "type": "action",
+        "description": "Enter a fuel consumption rate into the input field"
+      },
+      {
+        "type": "action",
+        "description": "Switch the input unit to MPG (UK)"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted fuel economy values are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Switch the input unit to L/100km"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted fuel economy values update"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC016",
+    "title": "Access translated homepage content in Portuguese",
+    "description": "A visitor opening the Portuguese localized route sees translated homepage content and correct localized browsing.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /pt-br/"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a localized version of the homepage is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated site content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC017",
+    "title": "Convert women's clothing sizes across standards",
+    "description": "A shopper can convert a women's clothing size and see the corresponding regional and international sizes.",
+    "category": "Clothing Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /clothing-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the tops clothing type"
+      },
+      {
+        "type": "action",
+        "description": "Select the women gender category"
+      },
+      {
+        "type": "action",
+        "description": "Select a region and input size"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify converted clothing sizes are displayed across the supported standards"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC018",
+    "title": "Access translated homepage content in French",
+    "description": "A visitor opening the French localized route sees translated homepage content and correct localized browsing.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /fr/"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a localized version of the homepage is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated site content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC019",
+    "title": "Calculate trip fuel cost",
+    "description": "This verifies that a visitor can switch to the trip fuel cost view, enter trip details, and see the total fuel cost calculated.",
+    "category": "Fuel Economy and Cost Calculator",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /fuel"
+      },
+      {
+        "type": "action",
+        "description": "Switch to the trip fuel cost view"
+      },
+      {
+        "type": "action",
+        "description": "Enter a trip distance into the distance field"
+      },
+      {
+        "type": "action",
+        "description": "Enter a fuel price into the price field"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the trip fuel cost result is displayed"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC020",
+    "title": "Access translated homepage content in Spanish",
+    "description": "A visitor opening the Spanish localized route sees translated homepage content and correct localized browsing.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /es/"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a localized version of the homepage is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated site content is visible"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC021",
+    "title": "Convert a cooking ingredient measurement by density",
+    "description": "A home cook can select an ingredient, enter a quantity, and see the converted cooking measurement reflect ingredient density.",
+    "category": "Cooking Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /cooking"
+      },
+      {
+        "type": "action",
+        "description": "Select a cooking ingredient"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid quantity"
+      },
+      {
+        "type": "action",
+        "description": "Change the measurement unit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted cooking value updates based on the selected ingredient"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC022",
+    "title": "Convert cooking measurements with ingredient density",
+    "description": "This verifies that a user can choose an ingredient, enter a quantity, and get a density-based conversion result.",
+    "category": "Cooking Measurement Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /cooking"
+      },
+      {
+        "type": "action",
+        "description": "Select an ingredient"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid quantity into the source amount field"
+      },
+      {
+        "type": "action",
+        "description": "Select a source unit"
+      },
+      {
+        "type": "action",
+        "description": "Select a target unit"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted measurement is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the result updates based on the selected ingredient"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC023",
+    "title": "Update cooking conversion when changing ingredient",
+    "description": "A home cook can switch to a different ingredient and see the conversion output recalculate accordingly.",
+    "category": "Cooking Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /cooking"
+      },
+      {
+        "type": "action",
+        "description": "Select one cooking ingredient"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid quantity"
+      },
+      {
+        "type": "action",
+        "description": "Select a different cooking ingredient"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversion output changes for the new ingredient"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC024",
+    "title": "Switch clothing size range and see options update",
+    "description": "A shopper can switch between regular and plus or petite ranges and see the available clothing sizes and conversions update.",
+    "category": "Clothing Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /clothing-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the dresses clothing type"
+      },
+      {
+        "type": "action",
+        "description": "Select the men or women gender category as available"
+      },
+      {
+        "type": "action",
+        "description": "Switch the size range selector"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the available size options or converted results change with the selected range"
+      }
+    ],
+    "priority": "High"
+  },
+  {
+    "id": "TC025",
+    "title": "Switch ingredient and confirm the conversion changes",
+    "description": "This verifies that changing the ingredient on the cooking converter updates the output for the same quantity and units.",
+    "category": "Cooking Measurement Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /cooking"
+      },
+      {
+        "type": "action",
+        "description": "Select one ingredient"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid quantity into the source amount field"
+      },
+      {
+        "type": "action",
+        "description": "Select a source unit"
+      },
+      {
+        "type": "action",
+        "description": "Select a target unit"
+      },
+      {
+        "type": "action",
+        "description": "Select a different ingredient"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the converted measurement changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify ingredient-specific output is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC026",
+    "title": "Return to the default site language from a localized page",
+    "description": "A visitor can switch from a localized page back to the default site language without losing access to the site.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /fr/"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher in the navigation or footer"
+      },
+      {
+        "type": "action",
+        "description": "Select the default site language"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the default site language page is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify default site content is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC027",
+    "title": "Copy the converted shoe result",
+    "description": "A shopper can copy a converted shoe size result after generating it on the converter page.",
+    "category": "Shoe Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /shoe-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the men demographic category"
+      },
+      {
+        "type": "action",
+        "description": "Select a source sizing system"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid shoe size"
+      },
+      {
+        "type": "action",
+        "description": "Copy the converted result"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify a copy confirmation is visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC028",
+    "title": "Open a localized page directly and continue browsing in that language",
+    "description": "A visitor landing on a localized route can continue browsing the site in the same language through the language switcher.",
+    "category": "Internationalization & Language Switcher",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /pt-br/"
+      },
+      {
+        "type": "action",
+        "description": "Click the language switcher in the navigation or footer"
+      },
+      {
+        "type": "action",
+        "description": "Select the current language"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the localized page remains displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify translated content is still visible"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC029",
+    "title": "Change paper units for a selected format",
+    "description": "This verifies that a visitor can select a paper format and switch measurement units to see the dimensions update.",
+    "category": "Paper Size Dimensions and Comparison",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /paper-size"
+      },
+      {
+        "type": "action",
+        "description": "Select a paper format"
+      },
+      {
+        "type": "action",
+        "description": "Switch the measurement unit to centimeters"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the paper dimensions are displayed"
+      },
+      {
+        "type": "action",
+        "description": "Switch the measurement unit to inches"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the paper dimensions update"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC030",
+    "title": "Convert a half-size shoe value",
+    "description": "A shopper can enter a half-size shoe value and still see converted results update correctly.",
+    "category": "Shoe Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /shoe-size"
+      },
+      {
+        "type": "action",
+        "description": "Select the kids demographic category"
+      },
+      {
+        "type": "action",
+        "description": "Select a source sizing system"
+      },
+      {
+        "type": "action",
+        "description": "Enter a half-size shoe value"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify converted shoe sizes are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC031",
+    "title": "Convert ring size from a regional size",
+    "description": "This verifies that a user can choose a ring size mode, enter a regional size, and see the matching conversion results.",
+    "category": "Ring Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /ring-size"
+      },
+      {
+        "type": "action",
+        "description": "Select ring size mode"
+      },
+      {
+        "type": "action",
+        "description": "Choose a regional ring size system"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid ring size value"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversion table is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify exact millimeter values are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC032",
+    "title": "Compare two paper formats visually",
+    "description": "This verifies that a visitor can select two paper formats and inspect the visual comparison between them.",
+    "category": "Paper Size Dimensions and Comparison",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /paper-size"
+      },
+      {
+        "type": "action",
+        "description": "Select a first paper format"
+      },
+      {
+        "type": "action",
+        "description": "Select a second paper format"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the paper comparison visualization is displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC033",
+    "title": "Convert ring size from diameter",
+    "description": "This verifies that a user can convert a ring size from inside diameter and see the matching regional equivalents.",
+    "category": "Ring Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /ring-size"
+      },
+      {
+        "type": "action",
+        "description": "Select inside diameter mode"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid diameter value"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversion table is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify regional ring size results are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC034",
+    "title": "Convert ring size from circumference",
+    "description": "This verifies that a user can convert a ring size from inside circumference and see the matching regional equivalents.",
+    "category": "Ring Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /ring-size"
+      },
+      {
+        "type": "action",
+        "description": "Select inside circumference mode"
+      },
+      {
+        "type": "action",
+        "description": "Enter a valid circumference value"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the conversion table is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify exact millimeter values are displayed"
+      }
+    ],
+    "priority": "Medium"
+  },
+  {
+    "id": "TC035",
+    "title": "Open the printable ring sizer guide",
+    "description": "This verifies that a user can access the offline ring sizing guide from the ring converter page.",
+    "category": "Ring Size Conversion",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to /ring-size"
+      },
+      {
+        "type": "action",
+        "description": "Open the printable ring sizer link"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify the measurement guide is displayed"
+      },
+      {
+        "type": "assertion",
+        "description": "Verify offline sizing instructions are available"
+      }
+    ],
+    "priority": "Low"
+  }
+]

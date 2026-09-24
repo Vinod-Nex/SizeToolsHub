@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations, languages, type SupportedLocale } from
 import { getAlternateHreflangs } from '../lib/localeRoutes';
 import DarkModeToggle from '../components/DarkModeToggle.astro';
 import Seo from '../components/Seo.astro';
+import Logo from '../components/Logo.astro';
 
 interface BreadcrumbItem {
   name: string;
@@ -97,8 +98,16 @@ const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon & App Icon Architecture (Phase 33) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="apple-mobile-web-app-title" content="SizeToolsHub" />
+    <meta name="application-name" content="SizeToolsHub" />
+    <meta name="msapplication-TileColor" content="#141414" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <!-- Dynamic SEO Engine (Canonical, hreflang for 4 locales, OpenGraph, Twitter, Schema) -->
     <Seo
@@ -158,14 +167,9 @@ const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
           class="w-full bg-canvas/85 dark:bg-canvas-soft/85 backdrop-blur-md border border-hairline-soft rounded-full px-4 sm:px-6 py-2.5 flex items-center justify-between shadow-xs transition-colors"
           aria-label="Primary Navigation"
         >
-          <!-- Logo & Squircle -->
-          <a href={currentLang === 'pt-br' ? '/pt-br/' : '/'} class="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-full pr-2">
-            <div class="w-8 h-8 rounded-[30%] bg-primary flex items-center justify-center text-on-primary font-bold text-sm tracking-tight transition-transform group-hover:scale-105">
-              <span>S</span>
-            </div>
-            <span class="font-bold text-base sm:text-lg tracking-tight text-ink group-hover:opacity-90">
-              SizeTools<span class="text-accent">Hub</span>
-            </span>
+          <!-- Logo & Brand Mark (Phase 32) -->
+          <a href={currentLang === 'pt-br' ? '/pt-br/' : '/'} class="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-full pr-2">
+            <Logo size={32} />
           </a>
 
           <!-- Desktop Category Navigation (Collapsed below md: 768px per spec) -->
@@ -280,11 +284,8 @@ const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
         <div class="grid grid-cols-1 md:grid-cols-5 gap-12 mb-16">
           <!-- Brand Column (2 cols) -->
           <div class="md:col-span-2 space-y-4">
-            <div class="flex items-center gap-3">
-              <div class="w-8 h-8 rounded-[30%] bg-white flex items-center justify-center text-black font-bold text-sm">
-                <span>S</span>
-              </div>
-              <span class="font-bold text-xl tracking-tight text-white">SizeToolsHub</span>
+            <div class="flex items-center">
+              <Logo size={32} inverse={true} />
             </div>
             <p class="text-sm text-[#adadad] leading-relaxed max-w-sm">
               The international sizing intelligence network. Instant, zero-lag unit conversions across footwear, apparel, jewelry, baggage, and everyday dimensional standards.
@@ -298,10 +299,26 @@ const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
               <div class="inline-flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-[#262626] border border-[#333333]">
                 {Object.entries(languages).map(([code, label]) => {
                   const isCurrent = code === currentLang;
-                  const targetPath = code === 'en' ? alternates.en :
-                                     code === 'pt-br' ? alternates['pt-br'] :
-                                     code === 'es' ? alternates.es :
-                                     alternates.fr;
+                  // Use root-relative paths so language switching works in both dev and prod
+                  const homeForLocale: Record<string, string> = {
+                    'en': '/',
+                    'pt-br': '/pt-br/',
+                    'es': '/es/',
+                    'fr': '/fr/',
+                  };
+                  // Try to get the locale-specific equivalent from alternates, fall back to locale home
+                  const rawTarget = code === 'en' ? alternates.en :
+                                    code === 'pt-br' ? alternates['pt-br'] :
+                                    code === 'es' ? alternates.es :
+                                    alternates.fr;
+                  // Convert absolute URL to root-relative path for internal navigation
+                  let targetPath: string;
+                  try {
+                    const url = new URL(rawTarget);
+                    targetPath = url.pathname;
+                  } catch {
+                    targetPath = homeForLocale[code] || '/';
+                  }
                   return (
                     <a
                       href={targetPath}
@@ -380,14 +397,14 @@ const localePrefix = currentLang === 'en' ? '' : `/${currentLang}`;
           <!-- Standards & Legal -->
           <div>
             <h4 class="text-xs uppercase tracking-wider text-[#a8a8a8] font-semibold mb-4">
-              Standards
+              Company
             </h4>
             <ul class="space-y-2.5 text-sm text-[#adadad]">
-              <li><span class="text-[#a8a8a8]">ISO 216 Paper Standard</span></li>
-              <li><span class="text-[#a8a8a8]">ISO 9407 Mondopoint</span></li>
-              <li><span class="text-[#a8a8a8]">ASTM International</span></li>
-              <li class="pt-4"><a href="#" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Privacy Policy</a></li>
-              <li><a href="#" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Terms of Service</a></li>
+              <li><a href="/about/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">About Us</a></li>
+              <li><a href="/about/standards/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Sizing Standards</a></li>
+              <li><span class="text-[#666666] text-xs">ISO 216 · ISO 9407 · ASTM</span></li>
+              <li class="pt-3"><a href="/privacy/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms/" class="hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded-xs transition-colors">Terms of Service</a></li>
             </ul>
           </div>
         </div>
